@@ -1,0 +1,750 @@
+/* ---------------------------------------- price_list ---------------------------------------- */
+/* ---------------------------------------- price_list ---------------------------------------- */
+#wrap_content {
+    padding: 120px 0 0;
+}
+
+/* ------------------- 요금제안내페이지(price_list.html) ------------------- */
+#wrap_content .price_section,
+#wrap_content .payment_section {
+    padding: 100px 0 150px;
+    text-align: center;
+}
+
+.tit_wrap {
+    margin: 0 0 80px;
+}
+
+.tit_wrap h2 {
+    margin: 0 0 20px;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.tit_wrap p {
+    font-size: 16px;
+    color: #444;
+}
+
+.price_section .price_select {
+    display: flex;
+    align-items: center;
+    width: 1042px;
+    margin: 0 auto;
+}
+
+.price_section .option {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 328px;
+    height: 573px;
+    padding: 35px 35px 50px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    text-align: left;
+    transition: all .3s ease;
+}
+
+.price_section .option:nth-child(2) {
+    margin: 0 30px;
+}
+
+.price_section .option .title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #24CE7B;
+}
+
+.price_section .option .price {
+    display: flex;
+    align-items: baseline;
+    margin: 20px 0 46px;
+    font-size: 20px;
+    font-weight: 500;
+    color: #222;
+}
+
+.price_section .option .price span {
+    margin-right: 4px;
+    line-height: 20px;
+    font-size: 54px;
+    font-weight: 600;
+    color: #222;
+}
+
+.price_section .option .descrip {
+    margin-top: 35px;
+    line-height: 1.6;
+    font-size: 14px;
+    color: #555;
+    white-space: nowrap;
+}
+
+.price_section .option .price+p {
+    padding-top: 13px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #222222;
+    border-top: 1px solid #CCCCCC;
+}
+
+.price_section .option ul {
+    margin: 18px 0 0;
+}
+
+.price_section .option li {
+    margin: 0 0 10px;
+    line-height: 1.5;
+    font-weight: 500;
+    color: #444;
+}
+
+.price_section .option li span {
+    display: block;
+    margin-left: 1.7em;
+}
+
+.price_section .option li:last-child {
+    margin: 0;
+}
+
+.price_section .option li::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    vertical-align: middle;
+    background: url('../images/icon/icon_check_circle.svg') no-repeat center / contain;
+}
+
+.price_section .option button {
+    width: 100%;
+    height: 50px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.price_section .option .cancel_btn {
+    position: absolute;
+    bottom: 15px;
+    right: 30px;
+    display: inline-flex;
+    align-items: center;
+    margin-top: 20px;
+    text-decoration: underline;
+    font-weight: 500;
+    color: #666;
+}
+
+.price_section .option .cancel_btn::after {
+    content: "";
+    width: 16px;
+    height: 16px;
+    background: url("../images/icon/icon_arrow_16px.svg") no-repeat center / 100%;
+    filter: invert(38%) sepia(5%) saturate(0%) hue-rotate(279deg) brightness(101%) contrast(89%);
+}
+
+/* 옵션에 월 추가 */
+.price_section .option.month .price::before {
+    content: '월/';
+    margin-right: 5px;
+    color: #666;
+}
+
+/* 선택 되었을때 */
+.price_section .option.active {
+    border-color: #24CE7B;
+}
+
+.price_section .option.active::before {
+    content: '';
+    display: block;
+    position: absolute;
+    top: -8px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    background: url('../images/icon/icon_bookmark.svg') no-repeat center / cover;
+}
+
+/* 옵션 마우스 오버 */
+.price_section .option:hover {
+    transform: translateY(-20px);
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+}
+
+.price_section .option.active:hover {
+    border: 1px solid #24CE7B;
+}
+
+/* 비활성된 아이템 */
+.price_section .option.disabled *:not(button) {
+    color: #aaaaaa;
+}
+
+.price_section .option.disabled .price span {
+    color: #aaaaaa;
+}
+
+.price_section .option.disabled .price+p {
+    color: #aaaaaa;
+}
+
+.price_section .option.disabled .price::before {
+    color: #aaaaaa;
+}
+
+/* ------------------- 결제방법선택페이지(payment_select.html) ------------------- */
+.payment_section {
+    width: 750px;
+    margin: 0 auto;
+}
+
+.payment_select .option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 32px 35px;
+    margin: 0 0 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: left;
+}
+
+.payment_select .option:last-child {
+    margin: 0;
+}
+
+.payment_select p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.payment_select p::before {
+    content: '';
+    display: block;
+    width: 20px;
+    height: 14px;
+    margin-right: 8px;
+    background: url('../images/icon/icon_card_black.svg') no-repeat center / cover;
+}
+
+.payment_select span {
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #ACACAC;
+}
+
+.payment_select button {
+    width: 120px;
+    height: 42px;
+}
+
+/* 결제하기 버튼 눌렀을때 */
+.payment_select .option.active {
+    border-color: transparent;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.08);
+}
+
+.payment_select .option.active button {
+    background: linear-gradient(92.62deg, #13e880 3.65%, #80e8ff 102.01%);
+    border: transparent;
+    color: #fff;
+}
+
+/* ------------------- 나의 요금제 설정(mypage > payment.html) ------------------- */
+.my_payment_wrap .price_section {
+    width: 1260px;
+    margin: 0 auto;
+    border-top: 1px solid #ccc;
+}
+
+.my_payment_wrap .tit_wrap {
+    margin: 0 0 75px;
+}
+
+.my_payment_wrap .tit_wrap h2,
+.my_payment_wrap .tit_wrap span {
+    margin: 0 0 25px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.my_payment_wrap .option.active button {
+    border: 1px solid #24CE7B;
+    background: transparent;
+    color: #24CE7B;
+}
+
+/* 마우스 오버효과 삭제 */
+.my_payment_wrap .option:hover {
+    transform: translateY(0);
+    box-shadow: none;
+    border-color: #ccc;
+}
+
+.my_payment_wrap .option:nth-child(2):hover {
+    margin: 0 30px;
+}
+
+/* 요금제 변경 팝업 */
+/* .change_price_modal p span {
+    font-size: 16px;
+} */
+
+.payment_wrap .descrip_list {
+    text-align: left;
+    margin-top: 30px;
+}
+.payment_wrap .descrip_list p {
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+.payment_wrap .descrip_list p::before {
+    content: "";
+    display: inline-block;
+    width: 22px;
+    height: 22px;
+    margin-right: 4px;
+    vertical-align: middle;
+    background: url("../images/icon/icon_warning.svg") no-repeat center / 100%;
+}
+.payment_wrap .descrip_list li {
+    line-height: 1.5;
+    list-style-type: "-";
+    padding-left: 6px;
+    margin-left: 7px;
+    color: #444;
+}
+
+.payment_wrap .descrip_list li + li {
+    margin-top: 7px;
+}
+
+
+/* ======================== 테블릿 ======================== */
+@media (max-width: 1300px) {
+
+    /* ---------------------------------------- price_list ---------------------------------------- */
+    /* ---------------------------------------- price_list ---------------------------------------- */
+    #wrap_content {
+        padding: calc(100vw * (120 /1300)) 0 0;
+    }
+
+    /* ------------------- 요금제안내페이지(price_list.html) ------------------- */
+    #wrap_content .price_section,
+    #wrap_content .payment_section {
+        padding: calc(100vw * (100 /1300)) 0 calc(100vw * (150 /1300));
+    }
+
+    .tit_wrap {
+        margin: 0 0 calc(100vw * (80 /1300));
+    }
+
+    .tit_wrap h2 {
+        margin: 0 0 calc(100vw * (20 /1300));
+        font-size: calc(100vw * (24 /1300));
+    }
+
+    .tit_wrap p {
+        font-size: calc(100vw * (16 /1300));
+    }
+
+    .price_section .price_select {
+        width: calc(100vw * (1042 /1300));
+    }
+
+    .price_section .option {
+        width: calc(100vw * (328 /1300));
+        height: calc(100vw * (573 /1300));
+        padding: calc(100vw * (35 /1300)) calc(100vw * (35 /1300)) calc(100vw * (50 /1300));
+    }
+
+    .price_section .option:nth-child(2) {
+        margin: 0 calc(100vw * (30 /1300));
+    }
+
+    .price_section .option .title {
+        font-size: calc(100vw * (20 /1300));
+    }
+
+    .price_section .option .price {
+        margin: calc(100vw * (20 /1300)) 0 calc(100vw * (46 /1300));
+        font-size: calc(100vw * (20 /1300));
+    }
+
+    .price_section .option .price span {
+        margin-right: calc(100vw * (4 /1300));
+        line-height: calc(100vw * (20 /1300));
+        font-size: calc(100vw * (54 /1300));
+    }
+
+    .price_section .option .descrip {
+        margin-top: calc(100vw * (35 /1300));
+        font-size: calc(100vw * (14 /1300));
+    }
+
+    .price_section .option .price+p {
+        padding-top: calc(100vw * (13 /1300));
+    }
+
+    .price_section .option ul {
+        margin: calc(100vw * (18 /1300)) 0 0;
+    }
+
+    .price_section .option li {
+        margin: 0 0 calc(100vw * (10 /1300));
+    }
+
+    .price_section .option li::before {
+        width: calc(100vw * (20 /1300));
+        height: calc(100vw * (20 /1300));
+        margin-right: calc(100vw * (6 /1300));
+    }
+
+    .price_section .option button {
+        height: calc(100vw * (50 /1300));
+        font-size: calc(100vw * (16 /1300));
+    }
+
+    .price_section .option .cancel_btn {
+        bottom: calc(100vw * (15 /1300));
+        right: calc(100vw * (30 /1300));
+        margin-top: calc(100vw * (20 /1300));
+    }
+    
+    .price_section .option .cancel_btn::after {
+        width: calc(100vw * (16 /1300));
+        height: calc(100vw * (16 /1300));
+    }
+
+    /* 옵션에 월 추가 */
+    .price_section .option.month .price::before {
+        margin-right: calc(100vw * (5 /1300));
+    }
+
+    /* 선택 되었을때 */
+    .price_section .option.active::before {
+        top: calc(100vw * (-8 /1300));
+        right: calc(100vw * (20 /1300));
+        width: calc(100vw * (44 /1300));
+        height: calc(100vw * (44 /1300));
+    }
+
+    /* 옵션 마우스 오버 */
+    .price_section .option:hover {
+        transform: translateY(calc(100vw * (-20 /1300)));
+    }
+
+    /* ------------------- 결제방법선택페이지(payment_select.html) ------------------- */
+    .payment_section {
+        width: calc(100vw * (750 /1300));
+    }
+
+    .payment_select .option {
+        padding: calc(100vw * (32 /1300)) calc(100vw * (35 /1300));
+        margin: 0 0 calc(100vw * (10 /1300));
+    }
+
+    .payment_select p {
+        margin-bottom: calc(100vw * (5 /1300));
+        font-size: calc(100vw * (20 /1300));
+    }
+
+    .payment_select p::before {
+        width: calc(100vw * (20 /1300));
+        height: calc(100vw * (14 /1300));
+        margin-right: calc(100vw * (8 /1300));
+    }
+
+    .payment_select span {
+        font-size: calc(100vw * (14 /1300));
+    }
+
+    .payment_select button {
+        width: calc(100vw * (120 /1300));
+        height: calc(100vw * (42 /1300));
+    }
+
+    /* ------------------- 나의 요금제 설정(mypage > payment.html) ------------------- */
+    .my_payment_wrap .price_section {
+        width: calc(100vw * (1260 /1300));
+    }
+
+    .my_payment_wrap .tit_wrap {
+        margin: 0 0 calc(100vw * (75 /1300));
+    }
+
+    .my_payment_wrap .tit_wrap h2,
+    .my_payment_wrap .tit_wrap span {
+        margin: 0 0 calc(100vw * (25 /1300));
+        font-size: calc(100vw * (24 /1300));
+    }
+
+    .my_payment_wrap .option:nth-child(2):hover {
+        margin: 0 calc(100vw * (30 /1300));
+    }
+
+    .payment_wrap .descrip_list {
+        margin-top: calc(100vw * (30 /1300));
+    }
+    .payment_wrap .descrip_list p {
+        margin-bottom: calc(100vw * (15 /1300));
+    }
+    .payment_wrap .descrip_list p::before {
+        width: calc(100vw * (22 /1300));
+        height: calc(100vw * (22 /1300));
+        margin-right: calc(100vw * (4 /1300));
+    }
+    .payment_wrap .descrip_list li {
+        padding-left: calc(100vw * (6 /1300));
+        margin-left: calc(100vw * (7 /1300));
+    }
+    
+    .payment_wrap .descrip_list li + li {
+        margin-top: calc(100vw * (7 /1300));
+    }
+}
+
+
+/* ================ mobile ================ */
+@media all and (max-width: 768px) {
+
+    #wrap_content {
+        padding: calc(100vw * (57/375)) 0 0;
+    }
+
+    /* ------------------- 요금제안내페이지(price_list.html) ------------------- */
+    #wrap_content .price_section,
+    #wrap_content .payment_section {
+        padding: calc(100vw * (20/375)) 0 calc(100vw * (70/375));
+    }
+
+    .tit_wrap {
+        margin: 0;
+    }
+
+    .tit_wrap h2 {
+        margin: 0 0 calc(100vw * (20/375));
+        font-size: calc(100vw * (16/375));
+    }
+
+    .tit_wrap p {
+        width: calc(100vw * (260/375));
+        margin: 0 auto;
+        line-height: 1.4;
+        font-size: calc(100vw * (14/375));
+    }
+
+    .price_section .price_select {
+        align-items: flex-end;
+        width: 100%;
+        padding: calc(100vw * (50/375)) calc(100vw * (16/375)) 0 0;
+        overflow: auto;
+        /* scroll-snap-type: x mandatory; */
+    }
+
+    .price_section .price_select::-webkit-scrollbar {
+        display: none;
+    }
+
+    .price_section .option {
+        flex: 0 0 auto;
+        width: calc(100vw * (260/375));
+        height: calc(100vw * (488/375));
+        margin: 0 0 0 calc(100vw * (20/375));
+        padding: calc(100vw * (20/375));
+        border-radius: calc(100vw * (10/375));
+        /* scroll-snap-align: start; */
+    }
+
+    .price_section .option:nth-child(2) {
+        margin: 0 0 0 calc(100vw * (20/375));
+    }
+
+    .price_section .option .title {
+        font-size: calc(100vw * (18/375));
+    }
+
+    .price_section .option .descrip {
+        white-space: normal;
+        font-size: calc(100vw * (14/375));
+    }
+
+    .price_section .option p {
+        font-size: calc(100vw * (18/375));
+    }
+
+    .price_section .option .price {
+        margin: calc(100vw * (20/375)) 0 calc(100vw * (10/375));
+        font-size: calc(100vw * (16/375));
+    }
+
+    .price_section .option .price span {
+        margin-right: calc(100vw * (4/375));
+        line-height: 1;
+        font-size: calc(100vw * (40/375));
+    }
+
+    .price_section .option span {
+        line-height: 1.5;
+        font-size: calc(100vw * (14/375));
+        white-space: unset;
+    }
+
+    .price_section .option ul {
+        margin: calc(100vw * (16/375)) 0 0;
+    }
+
+    .price_section .option li {
+        margin: 0 0 calc(100vw * (6/375));
+        font-size: calc(100vw * (13/375));
+    }
+
+    .price_section .option li::before {
+        width: calc(100vw * (20/375));
+        height: calc(100vw * (20/375));
+        margin-right: calc(100vw * (10/375));
+    }
+
+    .price_section .option button {
+        width: 100%;
+        height: calc(100vw * (40/375));
+        margin: calc(100vw * (20/375)) 0 0;
+        font-size: calc(100vw * (14/375));
+    }
+
+    /* 옵션에 월 추가 */
+    .price_section .option.month .price::before {
+        margin-right: calc(100vw * (4/375));
+        font-size: calc(100vw * (14/375));
+    }
+
+    /* 선택 되었을때 */
+    .price_section .option.active {
+        order: -1;
+        margin: 0 0 0 calc(100vw * (16/375));
+    }
+
+    .price_section .option.active::before {
+        top: calc(100vw * (-7/375));
+        right: calc(100vw * (16/375));
+        width: calc(100vw * (44/375));
+        height: calc(100vw * (44/375));
+    }
+
+    /* 옵션 마우스 오버 */
+    .price_section .option:hover {
+        transform: translateY(calc(100vw * (-20/375)));
+        box-shadow: 0px 0px calc(100vw * (12/375)) rgba(0, 0, 0, 0.08);
+    }
+
+    /* ------------------- 결제방법선택페이지(payment_select.html) ------------------- */
+    .payment_section {
+        width: 100%;
+    }
+
+    .payment_section .tit_wrap {
+        margin: 0 0 calc(100vw * (40/375));
+    }
+
+    .payment_section .payment_select {
+        padding: 0 calc(100vw * (16/375));
+    }
+
+    .payment_select .option {
+        align-items: flex-start;
+        min-height: calc(100vw * (90/375));
+        padding: calc(100vw * (14/375));
+        margin: 0 0 calc(100vw * (10/375));
+        border-radius: calc(100vw * (5/375));
+    }
+
+    .payment_select .option:last-child {
+        margin: 0;
+    }
+
+    .payment_select p {
+        margin-bottom: calc(100vw * (6/375));
+        font-size: calc(100vw * (14/375));
+    }
+
+    .payment_select p::before {
+        width: calc(100vw * (24/375));
+        height: calc(100vw * (24/375));
+        margin-right: calc(100vw * (11/375));
+    }
+
+    .payment_select span {
+        font-size: calc(100vw * (13/375));
+    }
+
+    .payment_select button {
+        width: calc(100vw * (92/375));
+        height: calc(100vw * (38/375));
+        margin: calc(100vw * (10/375)) 0 0;
+    }
+
+    /* 결제하기 버튼 눌렀을때 */
+    .payment_select .option.active {
+        box-shadow: calc(100vw * (3/375)) calc(100vw * (2/375)) calc(100vw * (7/375)) rgba(0, 0, 0, 0.09);
+    }
+
+    /* ------------------- 나의 요금제 설정(mypage > payment.html) ------------------- */
+    .my_payment_wrap .top_section {
+        display: none;
+    }
+
+    .my_payment_wrap .price_section {
+        width: 100%;
+        border: none;
+    }
+
+    .my_payment_wrap .tit_wrap {
+        margin: 0;
+    }
+
+    .my_payment_wrap .tit_wrap h2,
+    .my_payment_wrap .tit_wrap span {
+        margin: 0 0 calc(100vw * (20/375));
+        font-size: calc(100vw * (16/375));
+        font-weight: 600;
+    }
+
+    .my_payment_wrap .option:nth-child(2) {
+        margin: 0 0 0 calc(100vw * (20/375));
+    }
+
+    .my_payment_wrap .option.active button {
+        border: 1px solid #24CE7B;
+        background: transparent;
+        color: #24CE7B;
+    }
+
+    /* 마우스 오버효과 삭제 */
+    .my_payment_wrap .option {
+        margin: 0 0 0 calc(100vw * (20/375));
+        transition: unset;
+    }
+
+    .my_payment_wrap .option:hover {
+        margin: 0 0 0 calc(100vw * (20/375));
+        transform: translateY(0);
+        box-shadow: none;
+        border-color: #ccc;
+    }
+
+    .my_payment_wrap .option:nth-child(2):hover {
+        margin: 0 0 0 calc(100vw * (20/375));
+    }
+
+    .price_section .option.active {
+        margin: 0 0 0 calc(100vw * (16/375));
+    }
+}

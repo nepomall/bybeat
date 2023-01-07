@@ -1,0 +1,2640 @@
+.mb-only {
+  display: none;
+}
+
+.music_management_list .wrap_inner {
+  padding-top: 120px;
+}
+
+.music_management_list .check_box .check_box_text {
+  font-size: 14px;
+}
+
+/* 업로드 */
+.music_management_list .upload_section {
+  width: 1260px;
+  margin: 0 auto;
+}
+
+.music_management_list .upload_area {
+  background: #f8f8f8;
+  text-align: center;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='5' ry='5' stroke='lightgray' stroke-width='1' stroke-dasharray='10%2c 6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 5px;
+}
+
+.music_management_list .upload_wrap {
+  display: flex;
+  margin-bottom: 16px;
+  padding: 27px 30px;
+  height: 178px;
+}
+
+.music_management_list .upload_wrap>ul {
+  display: flex;
+}
+
+.music_management_list .upload_wrap .upload_btn {
+  width: 100%;
+  /* padding: 30px 0 35px; */
+}
+
+.music_management_list .upload_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70px;
+  height: 70px;
+  margin: 0 auto 25px;
+}
+
+.music_management_list .upload_music_list {
+  flex-shrink: 0;
+  width: 225px;
+}
+
+.music_management_list .upload_music_list:not(:last-child) {
+  margin-right: 18px;
+}
+
+/* loading */
+.music_management_list .loading_icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 42px;
+  height: 42px;
+
+  margin: 0 auto 25px;
+}
+
+.music_management_list .upload_loading {
+  margin: auto;
+}
+
+.music_management_list .upload_text {
+  font-weight: 400;
+  font-size: 16px;
+  color: #666666;
+}
+
+.music_management_list .album_img_big_wrap {
+  position: relative;
+  height: 100px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.music_management_list .album_img_wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+
+  cursor: pointer;
+}
+
+.music_management_list .album_img_wrap>img {
+  object-fit: cover;
+}
+
+.music_management_list .file_name {
+  text-align: left;
+  font-weight: 400;
+  font-size: 12px;
+
+  color: #666666;
+
+  /* 한줄처리 */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+
+.music_management_list .loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: none;
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+}
+
+.music_management_list .album_img_big_wrap.active {
+  border: 3px solid #24ce7b;
+}
+
+.music_management_list .album_img_big_wrap.active+.file_name {
+  color: #24ce7b;
+}
+
+/* 업로드 로딩중 */
+.music_management_list .loading .album_img_wrap:after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #000000;
+  opacity: 0.5;
+}
+
+.music_management_list .loading .loader {
+  display: block;
+}
+
+.music_management_list .loading .loader img {
+  animation: loading 2s alternate infinite;
+}
+
+.music_management_list .loading .loader .loading_num {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 12px;
+  color: #ffffff;
+}
+
+.music_management_list .btn_list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+}
+
+.music_management_list .btn_list button {
+  font-size: 14px;
+}
+
+.music_management_list .del_list {
+  display: flex;
+  align-items: center;
+}
+
+.music_management_list .del_list button:first-child {
+  margin-right: 10px;
+}
+
+.music_management_list .del_list button {
+  flex-shrink: 0;
+  width: 97px;
+}
+
+.music_management_list .del_list .basic_btn_gray {
+  height: 34px;
+  color: #666;
+  border: 1px solid #666;
+}
+
+.music_management_list .del_list .basic_btn_gray:disabled {
+  color: #aaa;
+  border: 1px solid #aaa;
+}
+
+.music_management_list .btn_list .music_upload_btn {
+  flex-shrink: 0;
+  width: 110px;
+  height: 34px;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(720deg);
+  }
+}
+
+/* 컨텐츠 */
+.music_management_list .content_list_section {
+  width: 1260px;
+  margin: 0 auto;
+}
+
+.music_management_list .search {
+  display: flex;
+  padding: 20px 0;
+}
+
+.music_management_list .search_wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 291px;
+  padding: 7px 15px 7px 20px;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 100px;
+  margin-left: auto;
+}
+
+.music_management_list .search input {
+  width: calc(100% - 30px);
+  font-size: 16px;
+  padding: 0;
+}
+
+.music_management_list .search_icon {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  width: 26px;
+  height: 26px;
+}
+
+.music_management_list .filter {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 20px;
+}
+
+.music_management_list .filter>ul {
+  display: flex;
+}
+
+.music_management_list .filter_list {
+  flex-shrink: 0;
+  width: 185px;
+
+  margin-right: 14px;
+}
+
+.music_management_list .filter_list>p {
+  font-weight: 400;
+  font-size: 14px;
+  color: #666666;
+  margin-bottom: 9px;
+}
+
+.music_management_list .filter_list .select_title {
+  font-size: 16px;
+  /* color: #222; */
+}
+
+.music_management_list .filter_list .select_title:disabled {
+  color: #aaa;
+}
+
+.music_management_list .filter .check_box_text {
+  font-weight: 400;
+  font-size: 14px;
+  color: #666;
+}
+
+.music_management_list .filter #SearchDetail:disabled+label .check_box_text {
+  color: #aaaaaa;
+}
+
+.music_management_list .check_list {
+  margin-left: 6px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+
+  align-self: flex-end;
+}
+
+.music_management_list .util_btn_list {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  transform: translateY(-100%);
+  display: flex;
+  align-items: center;
+  align-self: flex-end;
+}
+
+.music_management_list .util_btn_list button {
+  width: 97px;
+  height: 34px;
+  font-size: 14px;
+}
+
+.music_management_list .edit_function_btn_list {
+  display: none;
+  height: 100%;
+
+  align-items: center;
+}
+
+.music_management_list .edit_function_btn_list.active {
+  display: flex;
+}
+
+.music_management_list .edit_function_btn_list button {
+  margin-right: 10px;
+}
+
+.music_management_list .edit_function_btn_list .basic_btn.list_del_btn {
+  width: 97px;
+  font-size: 16px;
+  background: #ffffff;
+  border: 1px solid #666666;
+  border-radius: 5px;
+  font-weight: 500;
+  color: #222;
+}
+
+.music_management_list .edit_function_btn_list .basic_btn_light_gray.list_del_btn.active {
+  border: 1px solid #666;
+  color: #222;
+}
+
+.music_management_list .util_btn_list.upload .edit_function_btn_list {
+  display: block;
+}
+
+.music_management_list .util_btn_list.upload .list_edit_btn {
+  display: none;
+}
+
+/* 상세 검색 클릭시 보이는 부분 */
+.music_management_list .search_detail_wrap {
+  position: relative;
+}
+
+.music_management_list .search_detail_wrap .search_detail_box {
+  display: none;
+  margin-bottom: 30px;
+}
+
+.music_management_list .search_detail_wrap .search_detail_box>ul {
+  background: #f7f7f7;
+  border-bottom: 1px solid #aaaaaa;
+  margin-bottom: 16px;
+}
+
+.music_management_list .search_detail_list {
+  display: flex;
+}
+
+.music_management_list .search_detail_list:not(:first-child) {
+  border-top: 1px solid #f0efef;
+}
+
+.music_management_list .dt {
+  flex-shrink: 0;
+  width: 180px;
+  padding: 30px 20px;
+  font-weight: 500;
+}
+
+/* 작업자 / 태그 */
+.music_management_list .producer_tag_list_wrap {
+  display: flex;
+  flex-wrap: wrap;
+
+  /* padding: 30px 0; */
+  padding-bottom: 30px;
+}
+
+.music_management_list .producer_tag_list {
+  margin: 30px 42px 0 0;
+}
+
+/* 음원 등록일 */
+.music_management_list .date_input_big_wrap {
+  display: flex;
+  align-items: center;
+}
+
+.music_management_list .date_input_wrap {
+  width: 185px;
+
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+  background: #ffffff;
+
+  cursor: pointer;
+}
+
+.music_management_list .date_input_wrap input[type="date"] {
+  position: relative;
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 14px;
+
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.music_management_list .date_input_wrap input[type="date"]:invalid:before {
+  content: attr(data-placeholder);
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  color: #aaaaaa;
+}
+
+.music_management_list .date_input_wrap input[type="date"]::-webkit-clear-button,
+.music_management_list .date_input_wrap input[type="date"]::-webkit-inner-spin-button {
+  display: none;
+}
+
+.music_management_list .date_input_wrap input[type="date"]::-webkit-calendar-picker-indicator {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  z-index: 1;
+}
+
+.music_management_list .date_input_wrap input[type="date"]:after {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  content: "";
+  width: 19px;
+  height: 19px;
+
+  background: url("../images/icon/icon_calendar.svg") no-repeat center center / contain;
+  transform: translateY(-50%);
+  z-index: 0;
+}
+
+.music_management_list .wave {
+  padding: 0 10px;
+  font-size: 16px;
+  color: #666666;
+}
+
+/* 작업 진행률 */
+.music_management_list .range_big_wrap {
+  display: flex;
+  align-items: center;
+}
+
+.music_management_list .range_wrap {
+  display: flex;
+  align-items: center;
+  width: 290px;
+
+  margin-right: 19px;
+}
+
+.music_management_list input[type="range"] {
+  position: relative;
+  width: 100%;
+
+  height: 4px;
+  cursor: pointer;
+  background: #dddddd;
+  border-radius: 5px;
+  padding: 0;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  -webkit-appearance: none;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+input[type="range"]::-moz-range-thumb,
+input[type="range"]::-ms-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type="range"]:after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  content: "";
+
+  width: var(--range-width);
+  height: 100%;
+  background: linear-gradient(92.62deg, #13e880 3.65%, #80e8ff 102.01%);
+  transform: translate(0, -50%);
+  border-radius: 10px;
+}
+
+.music_management_list .range_value {
+  min-width: 38px;
+  margin-right: 22px;
+  font-size: 16px;
+}
+
+.music_management_list .range_control>.arrow_icon {
+  width: 15px;
+  height: 17px;
+}
+
+.music_management_list .range_control>.arrow_icon.prev {
+  transform: rotate(180deg);
+  margin-right: 8px;
+}
+
+/* 상세검색 버튼리스트 */
+.music_management_list .search_detail_btn_wrap {
+  display: flex;
+  align-items: center;
+
+  justify-content: flex-end;
+}
+
+.music_management_list .search_detail_btn_wrap>button {
+  padding: 10px 0;
+  width: 107px;
+}
+
+.music_management_list .search_detail_btn_wrap>button:nth-child(2) {
+  margin-left: 10px;
+}
+
+/* 등록된 음원 리스트 */
+.music_management_list .music_table {}
+
+.music_management_list .thead {
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  background: #f6f6f6;
+  border-bottom: 1px solid #f0efef;
+
+  padding: 15px 0;
+}
+
+.music_management_list .empty_list {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.67;
+  text-align: center;
+
+  text-align: center;
+
+  color: #666666;
+
+  padding: 150px 0 175px;
+}
+
+/* table width 값 */
+.music_management_list .music_title_box {
+  flex-shrink: 0;
+  width: 500px;
+
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.music_management_list .music_option {
+  flex-shrink: 0;
+  width: 143px;
+
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.music_management_list .option {
+  flex: 1;
+  flex-shrink: 0;
+}
+
+.music_management_list .tbody {}
+
+.music_management_list .music_list {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: 133px;
+
+  border-bottom: 1px solid #f0efef;
+  overflow: hidden;
+}
+
+.music_management_list .music_list.on {
+  border-radius: 5px;
+  border: 2px solid #24ce7b;
+}
+
+.music_management_list .music_list.on b {
+  color: #24ce7b;
+}
+
+.music_management_list .music_list .delete_list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(17px);
+  -webkit-backdrop-filter: blur(17px);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.music_management_list .delete_list .delete_time {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.music_management_list .delete_list .delete_cancel_btn {
+  width: 107px;
+  height: 38px;
+  margin: 15px auto 0;
+  font-size: 14px;
+}
+
+.music_management_list .music_list.border {
+  border: 2px solid #24ce7b;
+  border-radius: 5px;
+}
+
+.music_management_list .music_list.border .music_title b {
+  color: #24ce7b;
+}
+
+/* 곡제목 */
+.music_management_list .music_list .music_title_box {
+  display: flex;
+  align-items: center;
+}
+
+.music_management_list .music_title_box .chat_con {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 16px;
+  font-size: 13px;
+  color: #666666;
+}
+
+.music_management_list .music_title_box .chat_img {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-right: 7px;
+}
+
+.music_management_list .play_icon {
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  width: 52px;
+  height: 52px;
+
+  margin: 0 28px;
+}
+
+.music_management_list .music_text {
+  flex-shrink: 0;
+
+  width: calc(100% - 110px);
+}
+
+.music_management_list .music_title {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 5px;
+}
+
+.music_management_list .music_title>b {
+  font-weight: 500;
+  font-size: 16px;
+
+  width: 100%;
+  cursor: pointer;
+  /* 한줄처리 */
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+.music_management_list .final_badge {
+  flex-shrink: 0;
+  width: 63px;
+  font-size: 12px;
+  line-height: 1.25;
+  text-align: center;
+  color: #ffffff;
+
+  padding: 4px 0;
+  margin-right: 8px;
+
+  background: #24ce7b;
+  border-radius: 100px;
+}
+
+.music_management_list .date {
+  margin-right: 10px;
+  font-weight: 400;
+  font-size: 14px;
+  color: #aaaaaa;
+}
+
+.music_management_list .music_list .date_wrap {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.music_management_list .tag_list_wrap {
+  display: flex;
+}
+
+.music_management_list .tag_icon {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+
+  margin-right: 10px;
+  filter: invert(37%) sepia(8%) saturate(5%) hue-rotate(316deg) brightness(100%) contrast(83%);
+}
+
+.music_management_list .music_tag_list_wrap {
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 1.3;
+
+  color: #666666;
+
+  /* 두줄처리 */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+
+/* fix 바 */
+.music_management_list .play_bar {
+  display: none;
+  position: fixed;
+  z-index: 5;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  background: linear-gradient(92.62deg,
+      rgba(255, 255, 255, 0.5) 3.65%,
+      rgba(255, 255, 255, 0) 102.01%);
+  backdrop-filter: blur(23px);
+  -webkit-backdrop-filter: blur(23px);
+}
+
+.music_management_list .play_bar.active {
+  display: block;
+}
+
+.music_management_list .play_bar_inner {
+  display: flex;
+  align-items: center;
+  width: 1260px;
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+.music_management_list .play_bar_inner .btn_group {
+  display: flex;
+  align-items: center;
+}
+
+.music_management_list .play_bar .play_bar_icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.music_management_list .play_bar .play_bar_icon:nth-child(2) {
+  width: 24px;
+  height: 24px;
+}
+
+.music_management_list .play_bar .play_bar_icon.prev img {
+  transform: rotate(180deg);
+}
+
+.music_management_list .play_bar .play_bar_icon:disabled {
+  opacity: 0.5;
+}
+
+.music_management_list .play_bar .play_bar_icon:not(:last-child){
+  margin-right: 35px;
+}
+
+.music_management_list .play_bar .beat_icon {
+  width: 695px;
+  height: 48px;
+  margin: 0 130px 0 116px;
+  flex-shrink: 0;
+}
+
+.music_management_list .play_bar .music_name {
+  font-size: 16px;
+  font-weight: 500;
+  /* 한줄처리 */
+  text-overflow: ellipsis;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  word-wrap: break-word;
+}
+
+.music_management_list .pagination_wrap {
+  margin-bottom: 220px;
+}
+
+/*  작업방식, 작업진행률, 재생시간, 판매상태 */
+.music_management_list .music_option_box {
+  display: flex;
+  align-items: center;
+}
+
+.music_management_list .music_list .music_option {
+  display: flex;
+  flex-direction: column;
+}
+
+.music_management_list .option_wrap {
+  margin: auto;
+}
+
+.music_management_list .music_option_icon {
+  width: 26px;
+  height: 26px;
+
+  margin: 0 auto 14px;
+}
+
+.music_management_list .icon_text {
+  font-weight: 400;
+  font-size: 14px;
+
+  color: #666666;
+}
+
+.music_management_list .music_option_icon.secret .icon_text {
+  color: #aaaaaa;
+}
+
+.music_management_list .music_option_icon.hundred_percent +.icon_text {
+  color: #24ce7b;
+}
+
+/* 옵션 */
+
+.music_management_list .option {
+  position: relative;
+  align-self: flex-start;
+  padding-top: 10px;
+}
+
+.music_management_list .option_icon {
+  display: flex;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+
+  margin-bottom: auto;
+  margin-left: auto;
+}
+
+.music_management_list .option_tab {
+  display: none;
+  position: absolute;
+  width: 98px;
+  height: 82px;
+  right: 0;
+  padding: 14px 16px;
+
+  background: #ffffff;
+  box-shadow: 3px 1px 8px rgba(0, 0, 0, 0.09);
+  border-radius: 5px;
+}
+
+.music_management_list .option_tab.active {
+  display: block;
+}
+
+.music_management_list .option_list {
+  font-size: 14px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.music_management_list .option_list:first-child {
+  margin-bottom: 20px;
+}
+
+.add_btn_wrap {
+  position: relative;
+}
+
+.add_btn_wrap .alert_box {
+  height: 38px;
+  color: #24CE7B;
+}
+
+/* 모달 */
+.music_upload_modal h2 {
+  margin-bottom: 35px;
+}
+
+/* 음원 상세 */
+.modal_bg.upload h2 {
+  font-size: 22px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.modal_bg.upload .text_wrap {
+  width: 400px;
+  margin: 0 auto;
+}
+
+.modal_bg.upload_modal .upload_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: auto;
+  padding: 14px;
+  max-height: 210px;
+  margin-top: 25px;
+  /* background: #f8f8f8; */
+  /* border: 1px dashed #dddddd; */
+  background-image: repeating-linear-gradient(-18deg,
+      #dddddd,
+      #dddddd 10px,
+      transparent 10px,
+      transparent 15px,
+      #dddddd 15px),
+    repeating-linear-gradient(72deg,
+      #dddddd,
+      #dddddd 10px,
+      transparent 10px,
+      transparent 15px,
+      #dddddd 15px),
+    repeating-linear-gradient(162deg,
+      #dddddd,
+      #dddddd 10px,
+      transparent 10px,
+      transparent 15px,
+      #dddddd 15px),
+    repeating-linear-gradient(252deg,
+      #dddddd,
+      #dddddd 10px,
+      transparent 10px,
+      transparent 15px,
+      #dddddd 15px);
+  background-size: 1px 100%, 100% 1px, 1px 100%, 100% 1px;
+  background-position: 0 0, 0 0, 100% 0, 0 100%;
+  background-repeat: no-repeat;
+  background-color: #f8f8f8;
+  border-radius: 5px;
+}
+
+.modal_bg.upload input[type="file"] {
+  display: none;
+}
+
+.modal_bg.upload .upload_icon {
+  display: block;
+  width: 70px;
+  height: 70px;
+  margin: 8px auto 22px;
+  cursor: pointer;
+}
+
+.modal_bg.upload .main_text {
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.modal_bg.upload .sub_text {
+  margin: 5px 0 8px;
+  font-size: 12px;
+  color: #666;
+  line-height: 1.6;
+  text-align: center;
+}
+
+.modal_bg.upload .file_btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  margin: 15px 0 10px;
+  font-size: 16px;
+  font-weight: 500;
+  border: 1px solid #00ce7c;
+  border-radius: 5px;
+  color: #00ce7c;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.modal_bg.upload .gray_text {
+  margin: 0 0 8px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #888;
+}
+
+.modal_bg.upload .gray_text:first-of-type {
+  margin-bottom: 8px;
+}
+
+.modal_bg.upload .gray_text:last-child {
+  margin-top: 8px;
+  margin-bottom: 55px;
+  line-height: 1.4;
+}
+
+.modal_bg.upload .black_btn {
+  width: 100%;
+  height: 50px;
+  margin: 30px 0 10px;
+  font-size: 16px;
+  font-weight: 500;
+  color: #fff;
+  background: #222;
+  border-radius: 5px;
+}
+
+.modal_bg.upload .button_wrap {
+  margin-top: 14px;
+}
+
+.modal_bg.upload .red_text {
+  margin-top: 24px;
+  color: #ff1e1e;
+  text-align: center;
+}
+
+.modal_bg.upload .upload_box.after {
+  justify-content: flex-start;
+  padding: 18px 14px;
+}
+
+.modal_bg.upload .upload_inner {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.modal_bg.upload .upload_inner::-webkit-scrollbar {
+  width: 2px;
+  border-radius: 5px;
+}
+
+.modal_bg.upload .upload_inner::-webkit-scrollbar-thumb {
+  background-color: #ddd;
+}
+
+.modal_bg.upload .upload_list {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.modal_bg.upload .upload_list:last-child {
+  margin: 0;
+}
+
+.modal_bg.upload .file_icon {
+  flex-shrink: 0;
+  display: block;
+  width: 18px;
+  height: 18px;
+}
+
+.modal_bg.upload .file_name {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0 25px 0 7px;
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.modal_bg.upload .close_icon {
+  flex-shrink: 0;
+  display: block;
+  width: 14px;
+  height: 14px;
+  margin-left: auto;
+  cursor: pointer;
+}
+
+/* 음원 업데이트 모달 */
+.modal_bg.update_modal .music_name {
+  margin: 55px 0 11px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.modal_bg.update_modal .date {
+  font-size: 12px;
+  font-weight: 400;
+  color: #666;
+}
+
+.modal_bg.update_modal .update_list_wrap {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.modal_bg.update_modal .update_list {
+  display: flex;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.modal_bg.update_modal .update_list:last-child {
+  margin-right: 0;
+}
+
+.modal_bg.update_modal .green_icon {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-right: 5px;
+}
+
+.modal_bg.update_modal .main_text br {
+  display: none;
+}
+
+.modal_bg.update_modal .update_text {
+  width: 100%;
+  white-space: nowrap;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.modal_bg.update_modal .upload_box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  /* height: 121px; */
+  margin-top: 23px;
+  background-color: #f8f8f8;
+  background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' rx='5' ry='5' stroke='lightgray' stroke-width='1' stroke-dasharray='10%2c 6' stroke-dashoffset='0' stroke-linecap='square'/%3e%3c/svg%3e");
+  border-radius: 5px;
+}
+
+.modal_bg.update_modal .upload_box.after {
+  height: 121px;
+  padding: 18px 14px;
+}
+
+.modal_bg.update_modal .upload_box.before {
+  padding: 22px 0;
+}
+
+.modal_bg.update_modal .upload_box.before::before {
+  content: "";
+  width: 70px;
+  height: 70px;
+  display: block;
+  margin: 0 0 22px;
+  background: url("../images/icon/icon_upload.svg") no-repeat center / 100%;
+}
+
+
+
+/* ======================== 테블릿 ======================== */
+@media screen and (max-width: 1300px) {
+  .music_management_list .wrap_inner {
+    padding-top: calc(100vw * (120/1300));
+  }
+
+  .music_management_list .check_box .check_box_text {
+    font-size: calc(100vw * (14/1300));
+  }
+
+  /* 업로드 */
+  .music_management_list .upload_section {
+    width: calc(100vw * (1260/1300));
+  }
+
+  .music_management_list .upload_wrap {
+    margin-bottom: calc(100vw * (16/1300));
+    padding: calc(100vw * (27/1300)) calc(100vw * (30/1300));
+    height: calc(100vw * (178/1300));
+  }
+
+  .music_management_list .upload_icon {
+    width: calc(100vw * (70/1300));
+    height: calc(100vw * (70/1300));
+    margin: 0 auto calc(100vw * (25/1300));
+  }
+
+  .music_management_list .upload_music_list {
+    width: calc(100vw * (225/1300));
+  }
+
+  .music_management_list .upload_music_list:not(:last-child) {
+    margin-right: calc(100vw * (18/1300));
+  }
+
+  /* loading */
+  .music_management_list .loading_icon {
+    width: calc(100vw * (42/1300));
+    height: calc(100vw * (42/1300));
+    margin: 0 auto calc(100vw * (25/1300));
+  }
+
+  .music_management_list .upload_text {
+    font-size: calc(100vw * (16/1300));
+  }
+
+  .music_management_list .album_img_big_wrap {
+    height: calc(100vw * (100/1300));
+    margin-bottom: calc(100vw * (10/1300));
+  }
+
+  .music_management_list .file_name {
+    font-size: calc(100vw * (12/1300));
+  }
+
+  .music_management_list .loader {
+    width: calc(100vw * (50/1300));
+    height: calc(100vw * (50/1300));
+  }
+
+  /* 업로드 로딩중 */
+  .music_management_list .loading .loader .loading_num {
+    font-size: calc(100vw * (12/1300));
+  }
+
+  .music_management_list .btn_list {
+    padding-bottom: calc(100vw * (20/1300));
+  }
+
+  .music_management_list .btn_list button {
+    font-size: calc(100vw * (14/1300));
+  }
+
+  .music_management_list .del_list button:first-child {
+    margin-right: calc(100vw * (10/1300));
+  }
+
+  .music_management_list .del_list button {
+    width: calc(100vw * (97/1300));
+  }
+
+  .music_management_list .del_list .basic_btn_gray {
+    height: calc(100vw * (34/1300));
+  }
+
+  .music_management_list .btn_list .music_upload_btn {
+    width: calc(100vw * (110/1300));
+    height: calc(100vw * (34/1300));
+  }
+
+  /* 컨텐츠 */
+  .music_management_list .content_list_section {
+    width: calc(100vw * (1260/1300));
+  }
+
+  .music_management_list .search {
+    padding: calc(100vw * (20/1300)) 0;
+  }
+
+  .music_management_list .search_wrap {
+    width: calc(100vw * (291/1300));
+    padding: calc(100vw * (7/1300)) calc(100vw * (15/1300)) calc(100vw * (7/1300)) calc(100vw * (20/1300));
+  }
+
+  .music_management_list .search input {
+    width: calc(100% - calc(100vw * (30/1300)));
+    font-size: calc(100vw * (16/1300));
+  }
+
+  .music_management_list .search_icon {
+    width: calc(100vw * (26/1300));
+    height: calc(100vw * (26/1300));
+  }
+
+  .music_management_list .filter {
+    margin-bottom: calc(100vw * (20/1300));
+  }
+
+  .music_management_list .filter_list {
+    width: calc(100vw * (185/1300));
+    margin-right: calc(100vw * (14/1300));
+  }
+
+  .music_management_list .filter_list>p {
+    font-size: calc(100vw * (14/1300));
+    margin-bottom: calc(100vw * (9/1300));
+  }
+
+  .music_management_list .filter_list .select_title {
+    font-size: calc(100vw * (16/1300));
+  }
+
+  .music_management_list .filter .check_box_text {
+    font-size: calc(100vw * (14/1300));
+  }
+
+  .music_management_list .check_list {
+    margin-left: calc(100vw * (6/1300));
+    height: calc(100vw * (40/1300));
+  }
+
+  .music_management_list .util_btn_list {
+    top: calc(100vw * (-20/1300));
+  }
+
+  .music_management_list .util_btn_list button {
+    width: calc(100vw * (97/1300));
+    height: calc(100vw * (34/1300));
+    font-size: calc(100vw * (14/1300));
+  }
+
+  .music_management_list .edit_function_btn_list button {
+    margin-right: calc(100vw * (10/1300));
+  }
+
+  .music_management_list .edit_function_btn_list .basic_btn.list_del_btn {
+    width: calc(100vw * (97/1300));
+    font-size: calc(100vw * (16/1300));
+  }
+
+  /* 상세 검색 클릭시 보이는 부분 */
+  .music_management_list .search_detail_wrap .search_detail_box {
+    margin-bottom: calc(100vw * (30/1300));
+  }
+
+  .music_management_list .search_detail_wrap .search_detail_box>ul {
+    margin-bottom: calc(100vw * (16/1300));
+  }
+
+  .music_management_list .dt {
+    width: calc(100vw * (180/1300));
+    padding: calc(100vw * (30/1300)) calc(100vw * (20/1300));
+  }
+
+  /* 작업자 / 태그 */
+  .music_management_list .producer_tag_list_wrap {
+    padding-bottom: calc(100vw * (30/1300));
+  }
+
+  .music_management_list .producer_tag_list {
+    margin: calc(100vw * (30/1300)) calc(100vw * (42/1300)) 0 0;
+  }
+
+  /* 음원 등록일 */
+  .music_management_list .date_input_wrap {
+    width: calc(100vw * (185/1300));
+  }
+
+  .music_management_list .date_input_wrap input[type="date"] {
+    padding: calc(100vw * (10/1300)) calc(100vw * (14/1300));
+    font-size: calc(100vw * (14/1300));
+  }
+
+  .music_management_list .date_input_wrap input[type="date"]:after {
+    right: calc(100vw * (14/1300));
+    width: calc(100vw * (19/1300));
+    height: calc(100vw * (19/1300));
+  }
+
+  .music_management_list .wave {
+    padding: 0 calc(100vw * (10/1300));
+    font-size: calc(100vw * (16/1300));
+  }
+
+  /* 작업 진행률 */
+  .music_management_list .range_wrap {
+    width: calc(100vw * (290/1300));
+    margin-right: calc(100vw * (19/1300));
+  }
+
+  .music_management_list input[type="range"] {
+    height: calc(100vw * (4/1300));
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    width: calc(100vw * (18/1300));
+    height: calc(100vw * (18/1300));
+  }
+
+  input[type="range"]::-moz-range-thumb,
+  input[type="range"]::-ms-thumb {
+    width: calc(100vw * (18/1300));
+    height: calc(100vw * (18/1300));
+  }
+
+  .music_management_list .range_value {
+    min-width: calc(100vw * (38/1300));
+    margin-right: calc(100vw * (22/1300));
+    font-size: calc(100vw * (16/1300));
+  }
+
+  .music_management_list .range_control>.arrow_icon {
+    width: calc(100vw * (15/1300));
+    height: calc(100vw * (17/1300));
+  }
+
+  .music_management_list .range_control>.arrow_icon.prev {
+    margin-right: calc(100vw * (8/1300));
+  }
+
+  /* 상세검색 버튼리스트 */
+
+  .music_management_list .search_detail_btn_wrap>button {
+    padding: calc(100vw * (10/1300)) 0;
+    width: calc(100vw * (107/1300));
+  }
+
+  .music_management_list .search_detail_btn_wrap>button:nth-child(2) {
+    margin-left: calc(100vw * (10/1300));
+  }
+
+  /* 등록된 음원 리스트 */
+  .music_management_list .thead {
+    padding: calc(100vw * (15/1300)) 0;
+  }
+
+  .music_management_list .empty_list {
+    font-size: calc(100vw * (16/1300));
+    padding: calc(100vw * (150/1300)) 0 calc(100vw * (175/1300));
+  }
+
+  /* table width 값 */
+  .music_management_list .music_title_box {
+    width: calc(100vw * (500/1300));
+    font-size: calc(100vw * (14/1300));
+  }
+
+  .music_management_list .music_option {
+    width: calc(100vw * (143/1300));
+    font-size: calc(100vw * (14/1300));
+  }
+
+  .music_management_list .music_list {
+    height: calc(100vw * (133/1300));
+  }
+
+  .music_management_list .delete_list .delete_time {
+    font-size: calc(100vw * (16/1300));
+  }
+
+  .music_management_list .delete_list .delete_cancel_btn {
+    width: calc(100vw * (107/1300));
+    height: calc(100vw * (38/1300));
+    margin: calc(100vw * (15/1300)) auto 0;
+    font-size: calc(100vw * (14/1300));
+  }
+
+  /* 곡제목 */
+  .music_management_list .music_title_box .chat_con {
+    margin-top: calc(100vw * (16/1300));
+    font-size: calc(100vw * (13/1300));
+  }
+
+  .music_management_list .music_title_box .chat_img {
+    width: calc(100vw * (14/1300));
+    height: calc(100vw * (14/1300));
+    margin-right: calc(100vw * (7/1300));
+  }
+
+  .music_management_list .play_icon {
+    width: calc(100vw * (52/1300));
+    height: calc(100vw * (52/1300));
+    margin: 0 calc(100vw * (28/1300));
+  }
+
+  .music_management_list .music_text {
+    width: calc(100% - calc(100vw * (110/1300)));
+  }
+
+  .music_management_list .music_title {
+    margin-bottom: calc(100vw * (5/1300));
+  }
+
+  .music_management_list .music_title>b {
+    font-size: calc(100vw * (16/1300));
+  }
+
+  .music_management_list .final_badge {
+    width: calc(100vw * (63/1300));
+    font-size: calc(100vw * (12/1300));
+    padding: calc(100vw * (4/1300)) 0;
+    margin-right: calc(100vw * (8/1300));
+  }
+
+  .music_management_list .date {
+    margin-right: calc(100vw * (10/1300));
+    font-size: calc(100vw * (14/1300));
+  }
+  
+  .music_management_list .music_list .date_wrap {
+    margin-bottom: calc(100vw * (18/1300));
+  }
+
+  .music_management_list .tag_icon {
+    width: calc(100vw * (18/1300));
+    height: calc(100vw * (18/1300));
+    margin-right: calc(100vw * (10/1300));
+  }
+
+  .music_management_list .music_tag_list_wrap {
+    font-size: calc(100vw * (13/1300));
+  }
+
+  /* fix 바 */
+  .music_management_list .play_bar_inner {
+    width: calc(100vw * (1260/1300));
+    padding: calc(100vw * (24/1300)) 0;
+  }
+
+  .music_management_list .play_bar .play_bar_icon {
+    width: calc(100vw * (20/1300));
+    height: calc(100vw * (20/1300));
+  }
+  
+  .music_management_list .play_bar .play_bar_icon:nth-child(2) {
+    width: calc(100vw * (24/1300));
+    height: calc(100vw * (24/1300));
+  }
+  
+  .music_management_list .play_bar .play_bar_icon:not(:last-child){
+    margin-right: calc(100vw * (35/1300));
+  }
+
+  .music_management_list .play_bar .beat_icon {
+    width: calc(100vw * (695/1300));
+    height: calc(100vw * (48/1300));
+    margin: 0 calc(100vw * (130/1300)) 0 calc(100vw * (116/1300));
+  }
+
+  .music_management_list .play_bar .music_name {
+    font-size: calc(100vw * (16/1300));
+  }
+
+  .music_management_list .pagination_wrap {
+    margin-bottom: calc(100vw * (220/1300));
+  }
+
+  /*  작업방식, 작업진행률, 재생시간, 판매상태 */
+
+  .music_management_list .music_option_icon {
+    width: calc(100vw * (26/1300));
+    height: calc(100vw * (26/1300));
+    margin: 0 auto calc(100vw * (14/1300));
+  }
+
+  .music_management_list .icon_text {
+    font-size: calc(100vw * (14/1300));
+  }
+
+  /* 옵션 */
+
+  .music_management_list .option {
+    padding-top: calc(100vw * (10/1300));
+  }
+
+  .music_management_list .option_icon {
+    width: calc(100vw * (25/1300));
+    height: calc(100vw * (25/1300));
+  }
+
+  .music_management_list .option_tab {
+    width: calc(100vw * (98/1300));
+    height: calc(100vw * (82/1300));
+    padding: calc(100vw * (14/1300)) calc(100vw * (16/1300));
+  }
+
+  .music_management_list .option_list {
+    font-size: calc(100vw * (14/1300));
+  }
+
+  .music_management_list .option_list:first-child {
+    margin-bottom: calc(100vw * (20/1300));
+  }
+
+  .add_btn_wrap .alert_box {
+    height: calc(100vw * (38/1300));
+  }
+
+  /* 모달 */
+  .music_upload_modal h2 {
+    margin-bottom: calc(100vw * (35/1300));
+  }
+
+  /* 음원 상세 */
+  .modal_bg.upload h2 {
+    font-size: calc(100vw * (22/1300));
+  }
+
+  .modal_bg.upload .text_wrap {
+    width: calc(100vw * (400/1300));
+  }
+
+  .modal_bg.upload_modal .upload_box {
+    padding: calc(100vw * (14/1300));
+    max-height: calc(100vw * (210/1300));
+    margin-top: calc(100vw * (25/1300));
+  }
+
+  .modal_bg.upload .upload_icon {
+    width: calc(100vw * (70/1300));
+    height: calc(100vw * (70/1300));
+    margin: calc(100vw * (8/1300)) auto calc(100vw * (22/1300));
+  }
+
+  .modal_bg.upload .main_text {
+    font-size: calc(100vw * (14/1300));
+  }
+
+  .modal_bg.upload .sub_text {
+    margin: calc(100vw * (5/1300)) 0 calc(100vw * (8/1300));
+    font-size: calc(100vw * (12/1300));
+    margin: calc(100vw * (15/1300)) 0 calc(100vw * (10/1300));
+    font-size: calc(100vw * (16/1300));
+  }
+
+  .modal_bg.upload .file_btn {
+    height: calc(100vw * (50/1300));
+    margin: calc(100vw * (15/1300)) 0 calc(100vw * (10/1300));
+    font-size: calc(100vw * (16/1300));
+  }
+
+  .modal_bg.upload .gray_text {
+    margin: 0 0 calc(100vw * (8/1300));
+  }
+
+  .modal_bg.upload .gray_text:first-of-type {
+    margin-bottom: calc(100vw * (8/1300));
+  }
+
+  .modal_bg.upload .gray_text:last-child {
+    margin-top: calc(100vw * (8/1300));
+    margin-bottom: calc(100vw * (55/1300));
+  }
+
+  .modal_bg.upload .black_btn {
+    height: calc(100vw * (50/1300));
+    margin: calc(100vw * (30/1300)) 0 calc(100vw * (10/1300));
+    font-size: calc(100vw * (16/1300));
+  }
+
+  .modal_bg.upload .button_wrap {
+    margin-top: calc(100vw * (14/1300));
+  }
+
+  .modal_bg.upload .red_text {
+    margin-top: calc(100vw * (24/1300));
+  }
+
+  .modal_bg.upload .upload_box.after {
+    padding: calc(100vw * (18/1300)) calc(100vw * (14/1300));
+  }
+
+  .modal_bg.upload .upload_list {
+    margin-bottom: calc(100vw * (10/1300));
+  }
+
+  .modal_bg.upload .file_icon {
+    width: calc(100vw * (18/1300));
+    height: calc(100vw * (18/1300));
+  }
+
+  .modal_bg.upload .file_name {
+    font-size: calc(100vw * (14/1300));
+    margin: 0 calc(100vw * (25/1300)) 0 calc(100vw * (7/1300));
+  }
+
+  .modal_bg.upload .close_icon {
+    width: calc(100vw * (14/1300));
+    height: calc(100vw * (14/1300));
+  }
+
+  /* 음원 업데이트 모달 */
+  .modal_bg.update_modal .music_name {
+    margin: calc(100vw * (55/1300)) 0 calc(100vw * (11/1300));
+    font-size: calc(100vw * (18/1300));
+  }
+
+  .modal_bg.update_modal .date {
+    font-size: calc(100vw * (12/1300));
+  }
+
+  .modal_bg.update_modal .update_list_wrap {
+    margin: calc(100vw * (20/1300)) 0;
+  }
+
+  .modal_bg.update_modal .update_list {
+    margin-right: calc(100vw * (40/1300));
+  }
+
+  .modal_bg.update_modal .green_icon {
+    width: calc(100vw * (18/1300));
+    height: calc(100vw * (18/1300));
+    margin-right: calc(100vw * (5/1300));
+  }
+
+  .modal_bg.update_modal .update_text {
+    font-size: calc(100vw * (14/1300));
+  }
+
+  .modal_bg.update_modal .upload_box {
+    margin-top: calc(100vw * (23/1300));
+  }
+
+  .modal_bg.update_modal .upload_box.after {
+    height: calc(100vw * (121/1300));
+    padding: calc(100vw * (18/1300)) calc(100vw * (14/1300));
+  }
+
+  .modal_bg.update_modal .upload_box.before {
+    padding: calc(100vw * (22/1300)) 0;
+  }
+
+  .modal_bg.update_modal .upload_box.before::before {
+    width: calc(100vw * (70/1300));
+    height: calc(100vw * (70/1300));
+    margin: 0 0 calc(100vw * (22/1300));
+  }
+}
+
+
+
+/* ============================ 모바일분기 ============================ */
+@media screen and (max-width: 768px) {
+  .pc_only {
+    display: none;
+  }
+
+  .mb-only {
+    display: block;
+  }
+
+  .music_management_list {
+    width: calc(100vw * (343 / 375));
+    margin: 0 auto;
+    padding-bottom: calc(100vw * (100 / 375));
+  }
+
+  .music_management_list .wrap_inner {
+    padding-top: calc(100vw * (78 / 375));
+  }
+
+  /* 공통 */
+  .top_section {
+    width: 100%;
+  }
+
+  .music_management_list .check_box .check_box_text {
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  .top_section .select_big_wrap {
+    width: 100%;
+    height: calc(100vw * (40 / 375));
+  }
+
+  /* 업로드 */
+  .music_management_list .upload_section {
+    width: 100%;
+    margin-bottom: calc(100vw * (33 / 375));
+  }
+
+  .music_management_list .upload_wrap {
+    height: calc(100vw * (142 / 375));
+    margin-bottom: calc(100vw * (14 / 375));
+    padding: calc(100vw * (20 / 375));
+  }
+
+  .music_management_list .upload_wrap>ul {
+    /* 모바일 가로스크롤 */
+    white-space: nowrap;
+    overflow-y: visible;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+  }
+
+  .music_management_list .upload_wrap>ul::-webkit-scrollbar {
+    display: none;
+  }
+
+  .music_management_list .upload_icon {
+    width: calc(100vw * (42 / 375));
+    height: calc(100vw * (42 / 375));
+    margin-bottom: calc(100vw * (12 / 375));
+  }
+
+  .music_management_list .upload_music_list {
+    width: calc(100vw * (178 / 375));
+  }
+
+  .music_management_list .upload_music_list:not(:last-child) {
+    margin-right: calc(100vw * (10 / 375));
+  }
+
+  /* loading */
+  .music_management_list .loading_icon {
+    width: calc(100vw * (36 / 375));
+    height: calc(100vw * (36 / 375));
+
+    margin: 0 auto calc(100vw * (13 / 375));
+  }
+
+  .music_management_list .upload_text {
+    display: inline-block;
+    width: 70%;
+    font-size: calc(100vw * (14 / 375));
+    line-height: 1.7;
+  }
+
+  .music_management_list .album_img_big_wrap {
+    height: calc(100vw * (80 / 375));
+    margin-bottom: calc(100vw * (10 / 375));
+  }
+
+  .music_management_list .file_name {
+    font-size: calc(100vw * (12 / 375));
+  }
+
+  .music_management_list .loader {
+    width: calc(100vw * (50 / 375));
+    height: calc(100vw * (50 / 375));
+  }
+
+  /* 업로드 로딩중 */
+  .music_management_list .loading .loader .loading_num {
+    font-size: calc(100vw * (12 / 375));
+  }
+
+  .music_management_list .btn_list {
+    padding-bottom: calc(100vw * (16 / 375));
+    border-color: #cccccc;
+  }
+
+  .music_management_list .btn_list button {
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  .music_management_list .del_list button:first-child {
+    margin-right: calc(100vw * (8 / 375));
+  }
+
+  .music_management_list .del_list button {
+    width: calc(100vw * (92 / 375));
+  }
+
+  .music_management_list .del_list .basic_btn_gray {
+    height: calc(100vw * (34 / 375));
+  }
+
+  .music_management_list .btn_list .music_upload_btn {
+    width: calc(100vw * (117 / 375));
+    height: calc(100vw * (34 / 375));
+  }
+
+  /* 컨텐츠 */
+  .music_management_list .content_list_section {
+    width: 100%;
+  }
+
+  .music_management_list .search {
+    padding: 0 0 calc(100vw * (20 / 375));
+  }
+
+  .music_management_list .search_wrap {
+    width: 100%;
+    padding: calc(100vw * (8 / 375)) calc(100vw * (20 / 375));
+  }
+
+  .music_management_list .search input {
+    width: calc(100% - calc(100vw * (30 / 375)));
+    font-size: calc(100vw * (15 / 375));
+  }
+
+  .music_management_list .search_icon {
+    width: calc(100vw * (26 / 375));
+    height: calc(100vw * (26 / 375));
+  }
+
+  .music_management_list .filter {
+    margin-bottom: 0;
+    padding-bottom: 0;
+
+    flex-direction: column;
+  }
+
+  .music_management_list .filter>ul {
+    flex-shrink: 0;
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .music_management_list .filter_list {
+    flex-shrink: 0;
+    width: 100%;
+    flex-direction: column;
+
+    margin-right: 0;
+    margin-bottom: calc(100vw * (20 / 375));
+  }
+
+  .music_management_list .filter_list>p {
+    font-size: calc(100vw * (14 / 375));
+    margin-bottom: calc(100vw * (10 / 375));
+  }
+
+  .music_management_list .filter_list .select_title {
+    font-size: calc(100vw * (16 / 375));
+  }
+
+  .music_management_list .filter .check_box_text {
+    font-size: calc(100vw * (14 / 375));
+    color: #aaaaaa;
+  }
+
+  .music_management_list .check_list {
+    height: auto;
+
+    margin-left: calc(100vw * (8 / 375));
+    margin-bottom: calc(100vw * (10 / 375));
+  }
+
+  /* 목록편집 버튼 리스트 */
+  .music_management_list .util_btn_list button {
+    width: calc(100vw * (92 / 375));
+    height: calc(100vw * (34 / 375));
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  .music_management_list .edit_function_btn_list button {
+    height: calc(100vw * (34 / 375));
+    margin-right: 0;
+  }
+
+  .music_management_list .edit_function_btn_list button:not(:first-child) {
+    margin-left: calc(100vw * (8 / 375));
+  }
+
+  .music_management_list .edit_function_btn_list .basic_btn.list_del_btn {
+    width: calc(100vw * (92 / 375));
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  /* 상세 검색 클릭시 보이는 부분 */
+  .music_management_list .search_detail_wrap {
+    margin-bottom: calc(100vw * (30 / 375));
+  }
+
+  .music_management_list .search_detail_wrap .search_detail_box {
+    margin-bottom: calc(100vw * (40 / 375));
+  }
+
+  .music_management_list .search_detail_wrap>ul {
+    margin-bottom: calc(100vw * (20 / 375));
+
+    padding: 0;
+  }
+
+  .music_management_list .search_detail_list {
+    flex-direction: column;
+    padding: 0 calc(100vw * (20 / 375));
+    margin-bottom: calc(100vw * (40 / 375));
+  }
+
+  .music_management_list .dt {
+    width: 100%;
+    padding: calc(100vw * (20 / 375)) 0 calc(100vw * (15 / 375));
+  }
+
+  /* 작업자 / 타이틀 */
+  .music_management_list .producer_detail_list .dt {
+    padding-bottom: 0;
+  }
+
+  /* 작업자 / 태그 */
+  .music_management_list .producer_tag_list_wrap {
+    padding-bottom: 0;
+  }
+
+  .music_management_list .producer_tag_list {
+    margin: calc(100vw * (15 / 375)) calc(100vw * (46 / 375)) 0 0;
+  }
+
+  /* 음원 등록일 */
+  .music_management_list .date_input_big_wrap {
+    flex-direction: column;
+  }
+
+  .music_management_list .date_input_wrap {
+    width: 100%;
+  }
+
+  .music_management_list .date_input_wrap:first-child {
+    margin-bottom: calc(100vw * (8 / 375));
+  }
+
+  .music_management_list .date_input_wrap input[type="date"] {
+    padding: calc(100vw * (10 / 375)) calc(100vw * (14 / 375));
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  .music_management_list .date_input_wrap input[type="date"]:after {
+    right: calc(100vw * (14 / 375));
+    width: calc(100vw * (19 / 375));
+    height: calc(100vw * (19 / 375));
+  }
+
+  .music_management_list .wave {
+    padding: 0 calc(100vw * (10 / 375));
+    font-size: calc(100vw * (15 / 375));
+  }
+
+  /* 작업 진행률 */
+  .music_management_list .range_big_wrap {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .music_management_list .range_wrap {
+    width: 82%;
+
+    margin-right: calc(100vw * (15 / 375));
+  }
+
+  .music_management_list input[type="range"] {
+    height: calc(100vw * (4 / 375));
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    width: calc(100vw * (18 / 375));
+    height: calc(100vw * (18 / 375));
+  }
+
+  input[type="range"]::-moz-range-thumb,
+  input[type="range"]::-ms-thumb {
+    width: calc(100vw * (18 / 375));
+    height: calc(100vw * (18 / 375));
+  }
+
+  .music_management_list .range_value {
+    min-width: auto;
+    margin-right: 0;
+    font-size: calc(100vw * (15 / 375));
+  }
+
+  .music_management_list .range_control {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: calc(100vw * (27 / 375));
+  }
+
+  .music_management_list .range_control>.arrow_icon {
+    width: calc(100vw * (26 / 375));
+    height: calc(100vw * (30 / 375));
+  }
+
+  .music_management_list .range_control>.arrow_icon.prev {
+    margin-right: calc(100vw * (8 / 375));
+  }
+
+  /* 상세검색 버튼리스트 */
+  .music_management_list .search_detail_btn_wrap>button {
+    padding: 0;
+    width: calc(100vw * (92 / 375));
+    height: calc(100vw * (34 / 375));
+  }
+
+  .music_management_list .search_detail_btn_wrap>button:nth-child(2) {
+    margin-left: calc(100vw * (10 / 375));
+  }
+
+  .music_management_list .util_btn_list {
+    justify-content: flex-end;
+  }
+
+  .music_management_list .util_btn_list {
+    position: initial;
+    display: flex;
+    transform: unset;
+    margin-left: auto;
+    margin-top: calc(100vw * (40 / 375));
+  }
+
+  /* 등록된 음원 리스트 */
+  .music_management_list .thead {
+    display: none;
+  }
+
+  .music_management_list .empty_list {
+    font-size: calc(100vw * (15 / 375));
+
+    padding: calc(100vw * (100 / 375)) 0;
+  }
+
+  /* table width 값 */
+  .music_management_list .music_list {
+    flex-wrap: wrap;
+    width: 100%;
+    height: auto;
+    padding: calc(100vw * (20 / 375)) 0;
+    overflow: unset;
+  }
+
+  .music_management_list .tbody {
+    border-top: 1px solid #f0efef;
+  }
+
+  .music_management_list .music_list.on {
+    border: none;
+  }
+
+  .music_management_list .music_title_box {
+    order: 2;
+    width: 100%;
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  .music_management_list .music_title_box .chat_con {
+    margin-top: calc(100vw * (16 / 375));
+    font-size: calc(100vw * (13 / 375));
+  }
+
+  .music_management_list .music_title_box .chat_img {
+    width: calc(100vw * (14 / 375));
+    height: calc(100vw * (14 / 375));
+    margin-right: calc(100vw * (7 / 375));
+  }
+
+  .music_management_list .play_con {
+    display: none;
+  }
+
+  .music_management_list .music_option_box {
+    justify-content: space-between;
+    order: 3;
+    width: 100%;
+    margin-top: calc(100vw * (25 / 375));
+    padding: 0 calc(100vw * (5 / 375));
+  }
+
+  .music_management_list .music_option {
+    width: auto;
+    font-size: calc(100vw * (13 / 375));
+  }
+
+  .music_management_list .option {
+    order: 1;
+    padding: 0;
+  }
+
+  .music_management_list .music_option_icon {
+    width: calc(100vw * (22 / 375));
+    height: calc(100vw * (22 / 375));
+  }
+
+  .music_management_list .option_icon {
+    width: calc(100vw * (22 / 375));
+    height: calc(100vw * (22 / 375));
+  }
+
+  .music_management_list .icon_text {
+    font-size: calc(100vw * (13 / 375));
+  }
+
+  .music_management_list .music_list .delete_list {
+    left: 50%;
+    width: calc(100vw * (375 / 375));
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 0;
+  }
+
+  .music_management_list .delete_list .delete_time {
+    font-size: calc(100vw * (15 / 375));
+  }
+
+  .music_management_list .delete_list .delete_cancel_btn {
+    width: calc(100vw * (92 / 375));
+    height: calc(100vw * (34 / 375));
+    margin: calc(100vw * (27 / 375)) auto 0;
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  /* 곡제목 */
+  .music_management_list .music_text {
+    width: 100%;
+    margin-top: calc(100vw * (17 / 375));
+  }
+
+  .music_management_list .music_title {
+    align-items: flex-start;
+    margin-bottom: calc(100vw * (17 / 375));
+  }
+
+  .music_management_list .music_title>b {
+    width: 100%;
+    line-height: 1.5;
+    font-weight: 500;
+    font-size: calc(100vw * (15 / 375));
+    white-space: unset;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+  }
+
+  .music_management_list .final_badge {
+    width: calc(100vw * (63 / 375));
+    font-size: calc(100vw * (12 / 375));
+    padding: calc(100vw * (4 / 375)) 0;
+    margin-right: calc(100vw * (15 / 375));
+    margin-top: calc(100vw * (3 / 375));
+  }
+
+  .music_management_list .date {
+    margin-right: calc(100vw * (10/375));
+    font-size: calc(100vw * (14/375));
+  }
+  
+  .music_management_list .music_list .date_wrap {
+    position: absolute;
+    top: calc(100vw * (20 / 375));
+    left: 0;
+    margin-bottom: 0;
+  }
+
+  .music_management_list .tag_icon {
+    width: calc(100vw * (16 / 375));
+    height: calc(100vw * (16 / 375));
+    margin-right: calc(100vw * (8 / 375));
+  }
+
+  .music_management_list .music_tag_list_wrap {
+    font-weight: 400;
+    font-size: calc(100vw * (12 / 375));
+    line-height: 1.5;
+    -webkit-line-clamp: 3;
+  }
+
+  /* fix 바 */
+  .music_management_list .play_bar {
+    bottom: calc(100vw * (90 / 375));
+  }
+
+  .music_management_list .play_bar_inner {
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: calc(100vw * (16 / 375)) calc(100vw * (12 / 375));
+  }
+
+  .music_management_list .play_bar .play_bar_icon {
+    width: calc(100vw * (20 / 375));
+    height: calc(100vw * (20 / 375));
+  }
+  
+  .music_management_list .play_bar .play_bar_icon:nth-child(2) {
+    width: calc(100vw * (24 / 375));
+    height: calc(100vw * (24 / 375));
+  }
+
+  .music_management_list .play_bar .btn_group {
+    order: 3;
+  }
+
+  .music_management_list .play_bar .play_bar_icon:not(:last-child) {
+    margin-right: calc(100vw * (20 / 375));
+  }
+
+  .music_management_list .play_bar .beat_icon {
+    width: 100%;
+    height: auto;
+    margin: 0 auto calc(100vw * (23 / 375));
+  }
+
+  .music_management_list .play_bar .music_name {
+    font-size: calc(100vw * (15 / 375));
+    max-width: 68%;
+  }
+
+  .music_management_list .pagination_wrap {
+    margin-bottom: calc(100vw * (50 / 375));
+  }
+
+  /* 옵션 */
+
+  .music_management_list .option {
+    padding-top: 0;
+  }
+
+  .music_management_list .option_icon {
+    width: calc(100vw * (20 / 375));
+    height: calc(100vw * (20 / 375));
+  }
+
+  .music_management_list .option_tab {
+    bottom: calc(100vw * (-10 / 375));
+    width: calc(100vw * (98 / 375));
+    height: auto;
+    padding: calc(100vw * (14 / 375)) calc(100vw * (16 / 375));
+    transform: translateY(100%);
+    box-shadow: calc(100vw * (3 / 375)) calc(100vw * (1 / 375)) calc(100vw * (8 / 375)) rgba(0, 0, 0, 0.09);
+    border-radius: calc(100vw * (5 / 375));
+  }
+
+  .music_management_list .option_list {
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  .music_management_list .option_list:first-child {
+    margin-bottom: calc(100vw * (20 / 375));
+  }
+
+  .add_btn_wrap .alert_box {
+    width: calc(100vw * (178/375));
+    height: auto;
+    padding: calc(100vw * (10/375));
+    white-space: normal;
+    line-height: 1.3;
+  }
+
+  /* 모달 */
+  .music_upload_modal h2 {
+    margin-bottom: 35px;
+  }
+
+  /* 음원 상세 */
+  .modal_bg.upload h2 {
+    font-size: calc(100vw * (15 / 375));
+  }
+
+  .modal_bg.upload .text_wrap {
+    width: calc(100vw * (303 / 375));
+  }
+
+  .modal_bg.upload_modal .upload_box {
+    padding: calc(100vw * (18 / 375)) calc(100vw * (14 / 375));
+    max-height: calc(100vw * (303 / 375));
+    margin-top: calc(100vw * (20 / 375));
+    /* background: #f8f8f8; */
+    /* border: 1px dashed #dddddd; */
+    background-image: repeating-linear-gradient(-18deg,
+        #dddddd,
+        #dddddd calc(100vw * (10 / 375)),
+        transparent calc(100vw * (10 / 375)),
+        transparent calc(100vw * (15 / 375)),
+        #dddddd calc(100vw * (15 / 375))),
+      repeating-linear-gradient(72deg,
+        #dddddd,
+        #dddddd calc(100vw * (10 / 375)),
+        transparent calc(100vw * (10 / 375)),
+        transparent calc(100vw * (15 / 375)),
+        #dddddd calc(100vw * (15 / 375))),
+      repeating-linear-gradient(162deg,
+        #dddddd,
+        #dddddd calc(100vw * (10 / 375)),
+        transparent calc(100vw * (10 / 375)),
+        transparent calc(100vw * (15 / 375)),
+        #dddddd calc(100vw * (15 / 375))),
+      repeating-linear-gradient(252deg,
+        #dddddd,
+        #dddddd calc(100vw * (10 / 375)),
+        transparent calc(100vw * (10 / 375)),
+        transparent calc(100vw * (15 / 375)),
+        #dddddd calc(100vw * (15 / 375)));
+    border-radius: calc(100vw * (5 / 375));
+  }
+
+  .modal_bg.upload_modal .upload_box.before {
+    max-height: unset;
+  }
+
+  .modal_bg.upload .upload_icon {
+    width: calc(100vw * (42 / 375));
+    height: calc(100vw * (42 / 375));
+    margin: calc(100vw * (2 / 375)) auto calc(100vw * (20 / 375));
+  }
+
+  .modal_bg.upload .main_text {
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  .modal_bg.upload .sub_text {
+    width: 86%;
+    margin: calc(100vw * (12 / 375)) 0 calc(100vw * (2 / 375));
+    font-size: calc(100vw * (12 / 375));
+  }
+
+  .modal_bg.upload .file_btn {
+    height: calc(100vw * (42 / 375));
+    margin: calc(100vw * (15 / 375)) 0;
+    font-size: calc(100vw * (14 / 375));
+    border-radius: calc(100vw * (5 / 375));
+  }
+
+  .modal_bg.upload .gray_text {
+    margin: 0 0 calc(100vw * (10 / 375));
+    line-height: 1.5;
+    letter-spacing: -0.09px;
+  }
+
+  .modal_bg.upload .gray_text:first-of-type {
+    margin-bottom: calc(100vw * (8 / 375));
+  }
+
+  .modal_bg.upload .gray_text:last-child {
+    margin-top: calc(100vw * (5 / 375));
+    margin-bottom: calc(100vw * (40 / 375));
+  }
+
+  .modal_bg.upload .black_btn {
+    height: calc(100vw * (42 / 375));
+    margin: calc(100vw * (30 / 375)) 0 calc(100vw * (10 / 375));
+    font-size: calc(100vw * (14 / 375));
+    border-radius: calc(100vw * (5 / 375));
+  }
+
+  .modal_bg.upload .button_wrap {
+    margin-top: calc(100vw * (11 / 375));
+  }
+
+  
+  .modal_bg.upload .button_wrap button {
+    width: calc(100vw * (148/375));
+  }
+
+  .modal_bg.upload .red_text {
+    margin-top: calc(100vw * (19 / 375));
+  }
+
+  .modal_bg.upload .upload_box.after {
+    padding: calc(100vw * (18 / 375)) calc(100vw * (14 / 375));
+  }
+
+  .modal_bg.upload .upload_inner::-webkit-scrollbar {
+    width: calc(100vw * (2 / 375));
+  }
+
+  .modal_bg.upload .upload_inner::-webkit-scrollbar {
+    width: calc(100vw * (2 / 375));
+  }
+
+  .modal_bg.upload .upload_list {
+    margin-bottom: calc(100vw * (10 / 375));
+  }
+
+  .modal_bg.upload .file_icon {
+    width: calc(100vw * (18 / 375));
+    height: calc(100vw * (18 / 375));
+  }
+
+  .modal_bg.upload .file_name {
+    font-size: calc(100vw * (14 / 375));
+    margin: 0 calc(100vw * (25 / 375)) 0 calc(100vw * (7 / 375));
+  }
+
+  .modal_bg.upload .close_icon {
+    width: calc(100vw * (14 / 375));
+    height: calc(100vw * (14 / 375));
+  }
+
+  /* 음원 업데이트 모달 */
+  .modal_bg.upload .modal_content {
+    height: 80%;
+    overflow-y: auto;
+  }
+
+  .modal_bg.upload .scroll_wrap {
+    height: calc(100% - 100vw * (51 / 375));
+    /* min-height: calc(100vw * (300/ 375));
+    max-height: calc(100vw * (462/ 375)); */
+    overflow-y: scroll;
+  }
+
+  .modal_bg.update_modal .music_name {
+    margin: calc(100vw * (30 / 375)) 0 calc(100vw * (5 / 375));
+    font-size: calc(100vw * (15 / 375));
+  }
+
+  .modal_bg.update_modal .date {
+    font-size: calc(100vw * (11 / 375));
+  }
+
+  .modal_bg.update_modal .update_list_wrap {
+    flex-wrap: wrap;
+    margin: calc(100vw * (20 / 375)) 0 calc(100vw * (15 / 375));
+  }
+
+  .modal_bg.update_modal .update_list {
+    margin-right: calc(100vw * (21 / 375));
+  }
+
+  .modal_bg.update_modal .update_list:last-child {
+    margin-top: calc(100vw * (14 / 375));
+  }
+
+  .modal_bg.update_modal .green_icon {
+    width: calc(100vw * (18 / 375));
+    height: calc(100vw * (18 / 375));
+    margin-right: calc(100vw * (5 / 375));
+  }
+
+  .modal_bg.update_modal .update_text {
+    font-size: calc(100vw * (13 / 375));
+  }
+
+  .modal_bg.update_modal .main_text {
+    line-height: 1.5;
+  }
+
+  .modal_bg.update_modal .main_text br {
+    display: block;
+  }
+
+  .modal_bg.update_modal .sub_text {
+    display: none;
+  }
+
+  .modal_bg.update_modal .upload_box {
+    height: calc(100vw * (142 / 375));
+    margin-top: 0;
+    border-radius: calc(100vw * (5 / 375));
+    text-align: center;
+  }
+
+  .modal_bg.update_modal .upload_box.before::before {
+    width: calc(100vw * (42 / 375));
+    height: calc(100vw * (42 / 375));
+    margin: 0 0 calc(100vw * (12 / 375));
+  }
+
+  .modal_bg.update_modal .upload_box.after {
+    height: calc(100vw * (120 / 375));
+    padding: calc(100vw * (14 / 375));
+  }
+
+  .modal_bg.update_modal .button_wrap button {
+    width: calc(100vw * (147 / 375));
+  }
+}

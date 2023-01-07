@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BY BEATS</title>
+  <link rel="stylesheet" href="../../css/common.css" />
+  <link rel="stylesheet" href="../../css/reset.css" />
+
+  <!-- js -->
+  <script src="../../js/jquery-3.6.0.js"></script>
+  <script src="../../js/common.js"></script>
+</head>
+
+<body>
+  <!-- 공통 컴포넌트 모음 파일입니다 -->
+  <h1 style="font-size: 40px">1. 버튼리스트</h1>
+  <button class="basic_btn_liner_green">초록그라데이션 버튼</button>
+  <button class="basic_btn_green_border">초록 선 버튼</button>
+  <button class="basic_btn_gray">회색버튼</button>
+  <button class="basic_btn_light_gray">연회색버튼</button>
+  <button class="basic_btn_red">빨강버튼</button>
+  <br />
+  <br />
+  <br />
+  <br />
+  <h1 style="font-size: 40px">2. 셀렉트박스</h1>
+  <br />
+  <p>기본 셀렉트 박스</p>
+  <br />
+  <!-- 버튼 클릭시 active 클래스 추가 -->
+  <!-- <div class="select_box_wrap active"> -->
+  <div class="select_box_wrap">
+    <!-- 셀렉트 박스가 선택되었을때 button 에 active 클래스 넣어주세요 -->
+    <!-- 0. 기본 -->
+    <button class="select_title">선택</button>
+    <!-- 1. 선택되었을때 button에 active 클래스 추가 -->
+    <!-- <button class="active">선택</button> -->
+    <ul>
+      <li class="select_list">옵션1</li>
+      <li class="select_list">옵션1</li>
+      <li class="select_list">옵션1</li>
+    </ul>
+  </div>
+  <br />
+  <br />
+  <p>기본 + 초록화살표 박스</p>
+  <br />
+  <!-- 버튼 클릭시 active 클래스 추가 -->
+  <!-- <div class="select_box_wrap active"> -->
+  <div class="select_box_wrap select_box_wrap_green">
+    <button class="select_title">선택</button>
+    <ul>
+      <li class="select_list">옵션1</li>
+      <li class="select_list">옵션1</li>
+      <li class="select_list">옵션1</li>
+    </ul>
+  </div>
+  <br />
+  <br />
+  <p>회색 셀렉트 박스</p>
+  <br />
+  <!-- 버튼 클릭시 active 클래스 추가 -->
+  <!-- <div class="select_box_wrap_gray active"> -->
+  <div class="select_box_wrap gray">
+    <button class="select_title">선택</button>
+    <ul>
+      <li class="select_list">옵션1</li>
+      <li class="select_list">옵션1</li>
+      <li class="select_list">옵션1</li>
+    </ul>
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <h1 style="font-size: 40px">3. 체크박스</h1>
+  <div class="check_box">
+    <input type="checkbox" id="default1" />
+    <label for="default1">
+      <span class="check_box_img"></span>
+      <span class="check_box_text">체크박스</span>
+    </label>
+  </div>
+  <p>체크되면 초록색 글씨되는 체크박스</p>
+  <div class="check_box green_label">
+    <input type="checkbox" id="default2" />
+    <label for="default2">
+      <span class="check_box_img"></span>
+      <span class="check_box_text">체크박스</span>
+    </label>
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <p>라디오 버튼</p>
+  <div class="radio_box black_label">
+    <input type="radio" id="default3">
+    <label for="default3">
+      <span class="radio_box_img"></span>
+      <span class="radio_box_text">라디오버튼이시라</span>
+    </label>
+  </div>
+  
+  <h1 style="font-size: 40px">4. 기본 배너 네비</h1>
+
+  <section class="banner">
+    <img src="../../images/banner/long_banner.jpg" alt="banner" />
+  </section>
+  <section class="top_section">
+    <article class="nav">
+      <span>HOME</span>
+      <span class="arrow_icon"><img src="../../images/icon/icon_arrow_16px.svg" alt="화살표 아이콘" /></span>
+      <span>MY PAGE</span>
+      <span class="arrow_icon"><img src="../../images/icon/icon_arrow_16px.svg" alt="화살표 아이콘" /></span>
+      <span>음원관리</span>
+    </article>
+    <article class="select_big_wrap">
+      <!-- 버튼 클릭시 active 클래스 추가 -->
+      <!-- <div class="select_box_wrap_gray active"> -->
+      <div class="select_box_wrap gray">
+        <button class="select_title active">음원관리</button>
+        <ul>
+          <li class="select_list">대시보드</li>
+          <li class="select_list">프로필 관리</li>
+          <li class="select_list">음원관리</li>
+        </ul>
+      </div>
+    </article>
+  </section>
+
+  <br />
+  <br />
+  <br />
+  <br />
+  <h1 style="font-size: 40px">5. 기본모달</h1>
+  <button class="test_btn basic_btn_liner_green">버튼 하나 모달</button>
+  <!-- 팝업 -->
+  <div class="modal_bg modal_name">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">음원을 등록하시겠습니까?</p>
+      </div>
+      <div class="button_wrap">
+        <button class="basic_btn_liner_green">확인</button>
+      </div>
+    </div>
+  </div>
+  <button class="test_btn_02 basic_btn_green_border">버튼 두개 모달</button>
+  <!-- 팝업 -->
+  <div class="modal_bg modal_name_02">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">음원을 등록하시겠습니까?</p>
+      </div>
+      <div class="button_wrap">
+        <button class="basic_btn_green_border close_btn">취소</button>
+        <button class="basic_btn_liner_green">확인</button>
+      </div>
+    </div>
+  </div>
+  <br />
+  <br />
+  <br />
+  <br />
+  <!-- 탭 작성 -->
+  <h1 style="font-size: 40px">6. 탭</h1>
+  <div class="list_tab">
+    <button class="tab_list basic_btn_light_gray active" data-tab="payment" >탭1</button>
+    <button class="tab_list basic_btn_light_gray" data-tab="payment" >탭2</button>
+  </div>
+
+  <section id="payment" class="sect tab_sect">
+
+  </section>
+
+
+</body>
+
+</html>

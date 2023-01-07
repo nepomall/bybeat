@@ -1,0 +1,2368 @@
+.music_details textarea {
+  color: #444;
+}
+
+.music_details textarea::placeholder {
+  color: #aaa;
+}
+
+.music_details .record_end {
+  display: none;
+}
+
+.music_details .top_section {
+  margin-bottom: 60px;
+}
+
+.music_details .music_box_section {
+  width: 1260px;
+  margin: 0 auto;
+}
+
+.music_details .music_box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.music_details .music_title_wrap {
+  display: flex;
+  align-items: flex-start;
+}
+
+.music_details .music_box_final_badge {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 79px;
+  font-size: 14px;
+  line-height: 1.25;
+  font-weight: 400;
+  text-align: center;
+
+  padding: 4px 0;
+  color: #ffffff;
+  background: #24ce7b;
+  border-radius: 100px;
+
+  margin-right: 14px;
+}
+
+.music_details .music_title {
+  display: flex;
+  flex-direction: column;
+
+  align-items: flex-start;
+}
+
+.music_details .music_title>b {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.music_details .music_title>span {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+
+  color: #666666;
+
+  margin-top: 7px;
+}
+
+.music_details .music_util {
+  display: flex;
+  align-items: center;
+}
+
+.music_details .music_util>li {
+  width: auto;
+  margin-left: 70px;
+
+  text-align: center;
+}
+
+.music_details .music_record {
+  margin-bottom: 12px;
+  border-bottom: 1px solid #dddddd;
+}
+
+.music_details .record_wrap {
+  display: flex;
+
+  width: 1260px;
+  height: 80px;
+
+  background: #444444;
+  margin-bottom: 15px;
+}
+
+.music_details .record_wrap img {
+  width: 695px;
+  height: 48px;
+
+  margin: auto;
+}
+
+.music_details .record_control {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 15px;
+}
+
+.music_details .control_btn_list {
+  display: flex;
+  align-items: center;
+}
+
+.music_details .control_btn_list>button {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+
+  width: 20px;
+  height: 20px;
+}
+
+.music_details .control_btn_list .play {
+  width: 24px;
+  height: 24px;
+
+  margin: 0 26px;
+}
+
+.music_details .record_time {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+
+  transform: translateY(-50%);
+}
+
+.music_details .tag_upload_section {
+  width: 1260px;
+  margin: 0 auto 30px;
+}
+
+.music_details .info_management_btn {
+  text-align: right;
+  margin-bottom: 2px;
+}
+
+.music_details .info_management_btn>button {
+  width: 107px;
+
+  padding: 10px 0;
+}
+
+.music_details .tag_area h2 {
+  display: flex;
+  align-items: center;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.music_management_list.music_details .tag_icon {
+  display: flex;
+  align-items: center;
+
+  width: 20px;
+  height: 20px;
+
+  margin-right: 10px;
+
+  filter: none;
+}
+
+.music_details .tag_list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+
+  margin-bottom: 40px;
+}
+
+.music_details .tag_list>li {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.42;
+  text-align: center;
+  margin-top: 13px;
+  color: #24ce7b;
+  background: #e9faf2;
+  border-radius: 100px;
+  padding: 7px 28px;
+}
+
+.music_details .tag_list>li+li {
+  margin-left: 10px;
+}
+
+/* 업로드 리스트 */
+
+.music_management_list .upload_wrap {
+  position: relative;
+}
+
+.music_management_list .upload_list_swiper {
+  position: static;
+}
+
+/* 파일 히스토리 */
+.music_details .file_history_section {
+  width: 1260px;
+  margin: 0 auto;
+}
+
+.music_details .file_history_top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 21px;
+}
+
+.music_details .file_history_top>h2 {
+  display: flex;
+  align-items: center;
+
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.music_details .history_icon {
+  display: flex;
+  align-items: center;
+
+  width: 20px;
+  height: 20px;
+
+  margin-right: 10px;
+}
+
+.music_details .btn_list {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.music_details .history_toggle_btn {
+  display: flex;
+  align-items: center;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.music_details .history_toggle_btn .arrow_icon {
+  width: 18px;
+  height: 18px;
+
+  transform: rotate(-90deg);
+  filter: invert(100%) sepia(71%) saturate(5649%) hue-rotate(67deg) brightness(102%) contrast(72%);
+
+  margin-left: 20px;
+}
+
+.music_details .history_toggle_btn.active .arrow_icon {
+  transform: rotate(90deg);
+}
+
+.music_details .file_history_btn_list {
+  /* display: none; */
+  margin-bottom: 12px;
+}
+
+.music_details .file_history_btn_list button {
+  padding: 8px 21px;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.music_details .hide_btn_list {
+  display: none;
+}
+
+.music_details .hide_btn_list>button+button {
+  margin-left: 10px;
+}
+
+/* edit 수정모드 */
+.music_details .file_history_btn_list.edit_mode .change_main_music_btn {
+  display: none;
+}
+
+.music_details .file_history_btn_list.edit_mode .hide_btn_list {
+  display: flex;
+  align-items: center;
+}
+
+.music_details .file_history_btn_list.edit_mode+.version_list_wrap .del_btn_icon,
+.music_details .file_history_btn_list.edit_mode+.version_list_wrap .select_main_btn {
+  display: inline-block;
+  border-radius: 5px;
+}
+
+/* 파일 히스토리 리스트 */
+.music_details .version_list_wrap {
+  /* max-height: 413px; */
+  margin-bottom: 15px;
+  overflow-y: auto;
+}
+
+.music_details .version_list_wrap::-webkit-scrollbar {
+  width: 3px;
+}
+
+.music_details .version_list_wrap::-webkit-scrollbar-thumb {
+  background: #24ce7b;
+  border-radius: 3px;
+}
+
+.music_details .version_list_wrap>li:not(.main_music) {
+  display: none;
+}
+
+.music_details .version_list_wrap.show {
+  margin-bottom: 50px;
+}
+
+.music_details .version_list_wrap.show>li {
+  display: block;
+}
+
+.music_details .version_list {
+  background-color: #f8f8f8;
+  border-radius: 5px;
+  padding: 11px 20px;
+}
+
+.music_details .version_list.main_music {
+  background: #e9faf2;
+}
+
+.music_details .title_badge {
+  width: 63px;
+
+  display: inline-block;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  text-align: center;
+
+  color: #ffffff;
+  background: #24ce7b;
+  border-radius: 100px;
+
+  margin-right: 12px;
+}
+
+.music_details .version_list+li {
+  margin-top: 10px;
+}
+
+.music_details .version_inner_wrap {
+  display: flex;
+  align-items: center;
+}
+
+.music_details .del_btn_icon {
+  display: none;
+  flex-shrink: 0;
+  width: 14px;
+  height: 14px;
+
+  margin-right: 20px;
+}
+
+.music_details .version_inner_wrap:not(:first-child) .del_btn_icon {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+
+.music_details .version_inner_wrap:not(:first-child) {
+  position: relative;
+  margin-top: 13px;
+  padding-left: 107px;
+}
+
+.music_details .version_inner_wrap:not(:first-child) .version_name {
+  padding-left: 0;
+}
+
+.music_details .version_inner_wrap:not(:first-child) .select_main_btn {
+  margin-left: 33px;
+  margin-right: 12px;
+}
+
+.music_details .version_info {
+  display: flex;
+  align-items: center;
+
+  flex-shrink: 0;
+}
+
+.music_details .version_num {
+  position: relative;
+  flex-shrink: 0;
+  order: 1;
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  padding-right: 22px;
+  margin-right: 23px;
+}
+
+.music_details .version_name {
+  display: flex;
+  align-items: center;
+  order: 3;
+  max-width: 850px;
+}
+
+.music_details .select_main_btn {
+  display: none;
+  order: 2;
+  width: 63px;
+
+  flex-shrink: 0;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  text-align: center;
+
+  background: #ffffff;
+  border: 1px solid #666666;
+  border-radius: 5px;
+  margin-right: 12px;
+}
+
+.music_details .select_main_btn.im_main {
+  display: inline-block;
+  background: #24ce7b;
+  color: #fff;
+  border-color: #24ce7b;
+  border-radius: 100px;
+}
+
+.music_details .version_name>span {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+}
+
+.music_details .version_inner_wrap:first-child .version_num:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  width: 1px;
+  height: 16px;
+
+  background: #dddddd;
+}
+
+.music_details .version_util {
+  display: flex;
+  align-items: center;
+
+  margin: 0 20px 0 auto;
+}
+
+.music_details .open_option {
+  display: flex;
+  align-items: center;
+
+  margin-right: 19px;
+}
+
+.music_details .open_option>button:first-child {
+  display: flex;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+
+  margin-right: 22px;
+}
+
+.music_details .download_btn {
+  width: 63px;
+  width: 63px;
+  height: 22px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 22px;
+  text-align: center;
+
+  color: #ffffff;
+  background: #222222;
+  border-radius: 100px;
+}
+
+.music_details .music_time {
+  min-width: 124px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+
+  color: #666666;
+}
+
+/* 댓글 리스트 */
+.music_details .comment_section {
+  display: flex;
+  align-items: flex-start;
+  width: 1260px;
+  margin: 0 auto;
+}
+
+.music_details .member_list {
+  flex-shrink: 0;
+  width: 293px;
+
+  background: #f7f7f7;
+  border-radius: 5px;
+
+  padding: 20px;
+  margin-right: 30px;
+}
+
+.music_details .member_list>li {
+  display: flex;
+  align-items: center;
+}
+
+.music_details .member_list>li+li {
+  margin-top: 22px;
+}
+
+.music_details .member_list .profile_wrap {
+  flex-shrink: 0;
+  width: 38px;
+  height: 38px;
+
+  margin-right: 16px;
+
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.music_details .member_list .nickname {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.music_details .right_comment_big_wrap {
+  flex-shrink: 0;
+  flex: 1;
+}
+
+.music_details .comment_input_warp {
+  margin-bottom: 6px;
+}
+
+.music_details .select_record_wrap {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 15px;
+}
+
+.music_details .comment_input_warp .select_box_wrap {
+  width: 507px;
+  margin-right: 12px;
+}
+
+.music_details .record_btn {
+  width: 40px;
+  height: 40px;
+}
+
+.music_details .comment_input_warp textarea {
+  width: 100%;
+  height: 91px;
+
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 1.42;
+
+  padding: 13px 20px;
+  margin-bottom: 12px;
+}
+
+.music_details .comment_input_warp .submit_btn_wrap {
+  text-align: right;
+}
+
+.music_details .record_big_wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+
+  background: #444444;
+  border-radius: 5px;
+
+  padding: 4px 20px;
+  margin-bottom: 19px;
+}
+
+.music_details .record_big_wrap .cancel_icon {
+  position: absolute;
+  top: 50%;
+  left: 20px;
+
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+
+  transform: translateY(-50%);
+}
+
+.music_details .record_big_wrap .record_img_wrap {
+  width: 395px;
+  height: 27px;
+
+  margin: 0 auto;
+}
+
+.music_details .record_big_wrap .record_util_list {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+
+  display: flex;
+  align-items: center;
+
+  transform: translateY(-50%);
+}
+
+.music_details .record_big_wrap .stop {
+  display: flex;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+}
+
+.music_details .record_big_wrap .play {
+  display: flex;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+
+  margin-right: 17px;
+
+  filter: invert(71%) sepia(81%) saturate(0%) hue-rotate(161deg) brightness(109%) contrast(90%);
+}
+
+.music_details .submit_btn_wrap>button {
+  padding: 10px 27px;
+}
+
+/* 댓글 섹션 시작 리스트 */
+
+.comment_list_article>h2 {
+  display: flex;
+  align-items: center;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  color: #666666;
+}
+
+.comment_list_article>h2 .green {
+  margin-left: 4px;
+  color: #24ce7b;
+}
+
+.comment_list_article .msg_icon {
+  display: flex;
+  align-items: center;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.comment_list_article .comment_list_wrap {
+  margin-bottom: 220px;
+}
+
+.comment_list_article .comment_list+li {
+  padding-top: 50px;
+}
+
+.comment_list_article .main_comment {
+  width: 100%;
+  border-bottom: 1px solid #ccc;
+}
+
+.comment_list_article .is_me .comment_info_left>p {
+  color: #24ce7b;
+}
+
+/* 댓글 - 프로필 */
+.comment_list_article .comment_info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 14px;
+}
+
+.comment_list_article .comment_info_left {
+  display: flex;
+  align-items: center;
+}
+
+.comment_list_article .profile_img_wrap {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+
+  border-radius: 50%;
+  overflow: hidden;
+
+  margin-right: 12px;
+}
+
+.comment_list_article .comment_info_left>p {
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.2;
+}
+
+.comment_list_article .comment_info_right {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+
+  min-width: 100px;
+  padding-left: 10px;
+}
+
+.comment_list_article .comment_time {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+
+  color: #aaaaaa;
+}
+
+.comment_list_article .comment_option_box {
+  position: relative;
+  margin-left: 13px;
+}
+
+.comment_list_article .option_btn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+
+  width: 21px;
+  height: 21px;
+}
+
+.comment_list_article .option_list_wrap {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 98px;
+
+  background: #ffffff;
+  box-shadow: 3px 1px 8px rgba(0, 0, 0, 0.09);
+  border-radius: 5px;
+
+  padding: 4px 0;
+  z-index: 1;
+}
+
+.comment_list_article .option_list_wrap.show {
+  display: block;
+}
+
+.comment_list_article .option_list_wrap>li {
+  padding: 10px 16px;
+
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+
+  cursor: pointer;
+}
+
+.comment_list_article .option_list_wrap>li:hover {
+  color: #24ce7b;
+}
+
+/* 댓글 - 음악 버전 */
+.comment_list_article .comment_version_box {
+  display: flex;
+  align-items: center;
+
+  background: #f7f7f7;
+  border-radius: 5px;
+
+  padding: 6px 0;
+  margin-bottom: 16px;
+}
+
+.comment_list_article .comment_version_info {
+  display: flex;
+  align-items: center;
+}
+
+.comment_list_article .comment_version_num {
+  flex-shrink: 0;
+  position: relative;
+  min-width: 104px;
+
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.2;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.comment_list_article .comment_version_num:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  content: "";
+  width: 1px;
+  height: 16px;
+
+  background: #dddddd;
+}
+
+.comment_list_article .comment_version_name {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+
+  padding: 0 23px;
+}
+
+.comment_list_article .comment_version_util {
+  margin-left: auto;
+
+  display: flex;
+  align-items: center;
+
+  padding-right: 20px;
+}
+
+.comment_list_article .comment_version_util>button {
+  display: flex;
+  align-items: center;
+
+  width: 16px;
+  height: 16px;
+}
+
+.comment_list_article .comment_version_util .play {
+  margin-right: 17px;
+  filter: invert(65%) sepia(36%) saturate(864%) hue-rotate(98deg) brightness(94%) contrast(90%);
+}
+
+/* 댓글 - 정보 업로드 */
+.comment_list_article .edit_msg {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+
+  margin-bottom: 10px;
+}
+
+.comment_list_article .edit_info_list,
+.comment_list_article .edit_info_list>li {
+  list-style: disc;
+  list-style-position: inside;
+}
+
+.comment_list_article .edit_info_list>li {
+  font-weight: 400;
+  line-height: 1.7;
+  color: #666666;
+}
+
+/* 댓글 - 리얼댓글 */
+.comment_list_article .real_comment {
+  margin-bottom: 16px;
+  padding: 0 10px;
+}
+
+.comment_list_article .real_comment>p {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.comment_list_article .comment_util {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 10px;
+  margin-bottom: 16px;
+}
+
+.comment_list_article .like_button_list {
+  display: flex;
+  align-items: center;
+}
+
+.comment_list_article .like_button_list>button {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+}
+
+.comment_list_article .like_button_list>button+button {
+  margin-left: 18px;
+}
+
+.comment_list_article .like_icon,
+.comment_list_article .unlike_icon {
+  display: flex;
+  align-items: center;
+
+  width: 17px;
+  height: 16px;
+
+  margin-right: 10px;
+}
+
+/* 좋아요 싫어요 버튼 효과 */
+.comment_list_article .like_button_list .active .like_icon {
+  filter: invert(52%) sepia(82%) saturate(393%) hue-rotate(98deg) brightness(106%) contrast(96%);
+}
+
+.comment_list_article .like_button_list .active .unlike_icon {
+  filter: invert(46%) sepia(96%) saturate(645%) hue-rotate(319deg) brightness(129%) contrast(116%);
+}
+
+.comment_list_article .like_icon~span,
+.comment_list_article .unlike_icon~span {
+  font-weight: 400;
+  font-size: 12px;
+
+  color: #666666;
+}
+
+.comment_list_article .re_comment_btn {
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.2;
+  text-decoration-line: underline;
+
+  color: #aaaaaa;
+}
+
+/* 대댓글 */
+.comment_list_article .re_comment {
+  position: relative;
+
+  padding-left: 30px;
+  margin: 20px 0 36px 30px;
+}
+
+.comment_list_article .re_comment:after {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  content: "";
+  width: 1px;
+  height: 100%;
+
+  background: #24ce7b;
+  transform: translateY(-50%);
+}
+
+.comment_list_article .re_comment:before {
+  position: absolute;
+  top: calc(100% + 18px);
+  left: 0;
+  content: "";
+  width: 100%;
+  height: 1px;
+  background: #ccc;
+}
+
+.comment_list_article .re_comment_who {
+  display: inline-block;
+
+  font-weight: 500;
+  color: #24ce7b;
+  margin-right: 3px;
+}
+
+.comment_list_article .re_comment .comment_util {
+  margin-bottom: 0;
+}
+
+/* 대댓글 생성 */
+.comment_list_article .new_re_comment {
+  width: 907px;
+  margin-left: auto;
+}
+
+.comment_list_article .new_re_comment textarea {
+  width: 100%;
+  height: 90px;
+
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+
+  padding: 13px 20px;
+  margin-bottom: 10px;
+}
+
+.comment_list_article .new_re_comment_util_list {
+  display: flex;
+  align-items: center;
+}
+
+.comment_list_article .new_re_comment_util_list .record_big_wrap {
+  /* display: none; */
+  margin-right: 15px;
+  margin-bottom: 0;
+}
+
+.comment_list_article .new_re_comment .record_img_wrap {
+  width: 325px;
+}
+
+.comment_list_article .new_re_comment .record_btn {
+  flex-shrink: 0;
+
+  width: 40px;
+  height: 40px;
+
+  margin-left: auto;
+}
+
+.comment_list_article .new_re_comment .submit_btn {
+  flex-shrink: 0;
+  width: 107px;
+  text-align: center;
+
+  margin-left: 12px;
+  padding: 10px 0;
+}
+
+/* 댓글 수정 */
+.comment_list_article .real_comment_edit {
+  display: none;
+  margin-bottom: 20px;
+}
+
+.comment_list_article .real_comment_edit textarea {
+  width: 100%;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.7;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+
+  padding: 20px 10px;
+  margin-bottom: 10px;
+}
+
+.comment_list_article .real_comment_edit .submit_btn_wrap {
+  text-align: right;
+}
+
+
+
+
+/* =============================== 테블릿 =============================== */
+@media screen and (max-width: 1300px) {
+  .music_details .top_section {
+    margin-bottom: calc(100vw * (60/1300));
+  }
+  
+  .music_details .music_box_section {
+    width: calc(100vw * (1200/1300));
+  }
+  
+  .music_details .music_box {
+    margin-bottom: calc(100vw * (18/1300));
+  }
+
+  .music_details .music_box_final_badge {
+    width: calc(100vw * (79/1300));
+    font-size: calc(100vw * (14/1300));
+    padding: calc(100vw * (4/1300)) 0;
+    border-radius: calc(100vw * (100/1300));
+    margin-right: calc(100vw * (14/1300));
+  }
+  
+  .music_details .music_title>b {
+    font-size: calc(100vw * (20/1300));
+  }
+  
+  .music_details .music_title>span {
+    font-size: calc(100vw * (16/1300));
+    margin-top: calc(100vw * (7/1300));
+  }
+  
+  .music_details .music_util>li {
+    margin-left: calc(100vw * (70/1300));
+  }
+  
+  .music_details .music_record {
+    margin-bottom: calc(100vw * (12/1300));
+  }
+  
+  .music_details .record_wrap {
+    width: calc(100vw * (1200/1300));
+    height: calc(100vw * (80/1300));
+    margin-bottom: calc(100vw * (15/1300));
+  }
+  
+  .music_details .record_wrap img {
+    width: calc(100vw * (695/1300));
+    height: calc(100vw * (48/1300));
+  }
+  
+  .music_details .record_control {
+    margin-bottom: calc(100vw * (15/1300));
+  }
+  
+  .music_details .control_btn_list>button {
+    width: calc(100vw * (20/1300));
+    height: calc(100vw * (20/1300));
+  }
+  
+  .music_details .control_btn_list .play {
+    width: calc(100vw * (24/1300));
+    height: calc(100vw * (24/1300));
+    margin: 0 calc(100vw * (26/1300));
+  }
+  
+  .music_details .record_time {
+    right: calc(100vw * (15/1300));
+    font-size: calc(100vw * (16/1300));
+  }
+  
+  .music_details .tag_upload_section {
+    width: calc(100vw * (1200/1300));
+    margin: 0 auto calc(100vw * (30/1300));
+  }
+  
+  .music_details .info_management_btn {
+    margin-bottom: calc(100vw * (2/1300));
+  }
+  
+  .music_details .info_management_btn>button {
+    width: calc(100vw * (107/1300));
+    padding: calc(100vw * (10/1300)) 0;
+  }
+  
+  .music_details .tag_area h2 {
+    font-size: calc(100vw * (16/1300));
+  }
+  
+  .music_management_list.music_details .tag_icon {
+    width: calc(100vw * (20/1300));
+    height: calc(100vw * (20/1300));
+    margin-right: calc(100vw * (10/1300));  
+  }
+  
+  .music_details .tag_list {
+    margin-bottom: calc(100vw * (40/1300));
+  }
+  
+  .music_details .tag_list>li {
+    font-size: calc(100vw * (14/1300));
+    margin-top: calc(100vw * (13/1300));
+    border-radius: calc(100vw * (100/1300));
+    padding: calc(100vw * (7/1300)) calc(100vw * (28/1300));
+  }
+  
+  .music_details .tag_list>li+li {
+    margin-left: calc(100vw * (10/1300));
+  }
+
+  /* 파일 히스토리 */
+  .music_details .file_history_section {
+    width: calc(100vw * (1200/1300));
+  }
+  
+  .music_details .file_history_top {
+    margin-bottom: calc(100vw * (21/1300));
+  }
+  
+  .music_details .file_history_top>h2 {
+    font-size: calc(100vw * (16/1300));
+  }
+  
+  .music_details .history_icon {
+    width: calc(100vw * (20/1300));
+    height: calc(100vw * (20/1300));
+    margin-right: calc(100vw * (10/1300));
+  }
+  
+  .music_details .history_toggle_btn {
+    font-size: calc(100vw * (14/1300));
+    line-height: calc(100vw * (17/1300));
+  }
+  
+  .music_details .history_toggle_btn .arrow_icon {
+    width: calc(100vw * (18/1300));
+    height: calc(100vw * (18/1300));
+    margin-left: calc(100vw * (20/1300));
+  }
+
+  .music_details .file_history_btn_list {
+    margin-bottom: calc(100vw * (12/1300));
+  }
+  
+  .music_details .file_history_btn_list button {
+    padding: calc(100vw * (8/1300)) calc(100vw * (21/1300));
+    font-size: calc(100vw * (16/1300));
+  }
+  
+  .music_details .hide_btn_list>button+button {
+    margin-left: calc(100vw * (10/1300));
+  }
+  
+  /* edit 수정모드 */  
+  .music_details .file_history_btn_list.edit_mode+.version_list_wrap .del_btn_icon,
+  .music_details .file_history_btn_list.edit_mode+.version_list_wrap .select_main_btn {
+    border-radius: calc(100vw * (5/1300));
+  }
+  
+  /* 파일 히스토리 리스트 */
+  .music_details .version_list_wrap {
+    margin-bottom: calc(100vw * (15/1300));
+  }
+  
+  .music_details .version_list_wrap::-webkit-scrollbar {
+    width: calc(100vw * (3/1300));
+  }
+  
+  .music_details .version_list_wrap::-webkit-scrollbar-thumb {
+    background: #24ce7b;
+  }
+  
+  .music_details .version_list_wrap.show {
+    margin-bottom: calc(100vw * (50/1300));
+  }
+  
+  .music_details .version_list {
+    border-radius: calc(100vw * (5/1300));
+    padding: calc(100vw * (11/1300)) calc(100vw * (20/1300));
+  }
+  
+  .music_details .title_badge {
+    width: calc(100vw * (63/1300));
+    font-size: calc(100vw * (12/1300));
+    line-height: calc(100vw * (22/1300));
+    margin-right: calc(100vw * (12/1300));
+  }
+  
+  .music_details .version_list+li {
+    margin-top: calc(100vw * (10/1300));
+  }
+  
+  .music_details .del_btn_icon {
+    width: calc(100vw * (14/1300));
+    height: calc(100vw * (14/1300));
+    margin-right: calc(100vw * (20/1300));
+  }
+ 
+  .music_details .version_inner_wrap:not(:first-child) {
+    margin-top: calc(100vw * (13/1300));
+    padding-left: calc(100vw * (107/1300));
+  }
+  
+  .music_details .version_inner_wrap:not(:first-child) .select_main_btn {
+    margin-left: calc(100vw * (33/1300));
+    margin-right: calc(100vw * (12/1300));
+  }
+  
+  .music_details .version_num {
+    font-size: calc(100vw * (14/1300));
+    padding-right: calc(100vw * (22/1300));
+    margin-right: calc(100vw * (23/1300));
+  }
+  
+  .music_details .version_name {
+    max-width: calc(100vw * (850/1300));
+  }
+  
+  .music_details .select_main_btn {
+    width: calc(100vw * (63/1300));
+    font-size: calc(100vw * (12/1300));
+    line-height: calc(100vw * (22/1300));
+    margin-right: calc(100vw * (12/1300));
+  }
+  
+  .music_details .select_main_btn.im_main {
+    border-radius: calc(100vw * (110020/1300));
+  }
+  
+  .music_details .version_name>span {
+    font-size: calc(100vw * (14/1300));
+  }
+  
+  .music_details .version_inner_wrap:first-child .version_num:after {
+    height: calc(100vw * (16/1300));
+  }
+  
+  .music_details .version_util {
+    margin: 0 calc(100vw * (20/1300)) 0 auto;
+  }
+  
+  .music_details .open_option {
+    margin-right: calc(100vw * (19/1300));
+  }
+  
+  .music_details .open_option>button:first-child {
+    width: calc(100vw * (24/1300));
+    height: calc(100vw * (24/1300));
+    margin-right: calc(100vw * (22/1300));
+  }
+  
+  .music_details .download_btn {
+    width: calc(100vw * (63/1300));
+    width: calc(100vw * (63/1300));
+    height: calc(100vw * (22/1300));
+    font-size: calc(100vw * (12/1300));
+    line-height: calc(100vw * (22/1300));
+  }
+  
+  .music_details .music_time {
+    min-width: calc(100vw * (124/1300));
+    font-size: calc(100vw * (14/1300));
+  }
+  
+  /* 댓글 리스트 */
+  .music_details .comment_section {
+    width: calc(100vw * (1200/1300));
+  }
+  
+  .music_details .member_list {
+    width: calc(100vw * (293/1300));
+    padding: calc(100vw * (20/1300));
+    margin-right: calc(100vw * (30/1300));
+  }
+  
+  .music_details .member_list>li+li {
+    margin-top: calc(100vw * (22/1300));
+  }
+  
+  .music_details .member_list .profile_wrap {
+    width: calc(100vw * (38/1300));
+    height: calc(100vw * (38/1300));
+    margin-right: calc(100vw * (16/1300));
+  }
+  
+  .music_details .member_list .nickname {
+    font-size: calc(100vw * (16/1300));
+  }
+  
+  .music_details .comment_input_warp {
+    margin-bottom: calc(100vw * (6/1300));
+  }
+  
+  .music_details .select_record_wrap {
+    margin-bottom: calc(100vw * (15/1300));
+  }
+  
+  .music_details .comment_input_warp .select_box_wrap {
+    width: calc(100vw * (507/1300));
+    margin-right: calc(100vw * (12/1300));
+  }
+  
+  .music_details .record_btn {
+    width: calc(100vw * (40/1300));
+    height: calc(100vw * (40/1300));
+  }
+  
+  .music_details .comment_input_warp textarea {
+    height: calc(100vw * (91/1300));
+    border-radius: calc(100vw * (5/1300));
+    font-size: calc(100vw * (14/1300));
+    padding: calc(100vw * (13/1300)) calc(100vw * (20/1300));
+    margin-bottom: calc(100vw * (12/1300));
+  }
+  
+  .music_details .record_big_wrap {
+    padding: calc(100vw * (4/1300)) calc(100vw * (20/1300));
+    margin-bottom: calc(100vw * (19/1300));
+  }
+  
+  .music_details .record_big_wrap .cancel_icon {
+    left: calc(100vw * (20/1300));
+    width: calc(100vw * (20/1300));
+    height: calc(100vw * (20/1300));
+    transform: translateY(-50%);
+  }
+  
+  .music_details .record_big_wrap .record_img_wrap {
+    width: calc(100vw * (395/1300));
+    height: calc(100vw * (27/1300));
+  }
+  
+  .music_details .record_big_wrap .record_util_list {
+    right: calc(100vw * (20/1300));
+  }
+  
+  .music_details .record_big_wrap .stop {
+    width: calc(100vw * (16/1300));
+    height: calc(100vw * (16/1300));
+  }
+  
+  .music_details .record_big_wrap .play {
+    width: calc(100vw * (16/1300));
+    height: calc(100vw * (16/1300));
+    margin-right: calc(100vw * (17/1300));
+  }
+  
+  .music_details .submit_btn_wrap>button {
+    padding: calc(100vw * (10/1300)) calc(100vw * (27/1300));
+  }
+  
+  /* 댓글 섹션 시작 리스트 */
+  
+  .comment_list_article>h2 {
+    padding-bottom: calc(100vw * (10/1300));
+    margin-bottom: calc(100vw * (20/1300));
+  }
+
+  .comment_list_article>h2 .green {
+    margin-left: calc(100vw * (4/1300));
+  }
+  
+  .comment_list_article .msg_icon {
+    width: calc(100vw * (16/1300));
+    height: calc(100vw * (16/1300));
+    margin-right: calc(100vw * (8/1300));
+  }
+  
+  .comment_list_article .comment_list_wrap {
+    margin-bottom: calc(100vw * (220/1300));
+  }
+  
+  .comment_list_article .comment_list+li {
+    padding-top: calc(100vw * (50/1300));
+  }
+  
+  .comment_list_article .main_comment {
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* 댓글 - 프로필 */
+  .comment_list_article .comment_info {
+    margin-bottom: calc(100vw * (14/1300));
+  }
+  
+  .comment_list_article .profile_img_wrap {
+    width: calc(100vw * (30/1300));
+    height: calc(100vw * (30/1300));  
+    margin-right: calc(100vw * (12/1300));
+  }
+  
+  .comment_list_article .comment_info_left>p {
+    font-size: calc(100vw * (16/1300));
+  }
+  
+  .comment_list_article .comment_info_right {
+    min-width: calc(100vw * (100/1300));
+    padding-left: calc(100vw * (10/1300));
+  }
+  
+  .comment_list_article .comment_time {
+    font-size: calc(100vw * (14/1300));
+  }
+  
+  .comment_list_article .comment_option_box {
+    margin-left: calc(100vw * (13/1300));
+  }
+  
+  .comment_list_article .option_btn {
+    width: calc(100vw * (21/1300));
+    height: calc(100vw * (21/1300));
+  }
+  
+  .comment_list_article .option_list_wrap {
+    top: calc(100% + calc(100vw * (8/1300)));
+    width: calc(100vw * (98/1300));
+    border-radius: calc(100vw * (5/1300));
+    padding: calc(100vw * (4/1300)) 0;
+  }
+
+  .comment_list_article .option_list_wrap>li {
+    padding: calc(100vw * (10/1300)) calc(100vw * (16/1300));
+    font-size: calc(100vw * (14/1300));
+  }
+  
+  
+  /* 댓글 - 음악 버전 */
+  .comment_list_article .comment_version_box {
+    padding: calc(100vw * (6/1300)) 0;
+    margin-bottom: calc(100vw * (16/1300));
+  }
+  
+  .comment_list_article .comment_version_num {
+    min-width: calc(100vw * (104/1300));
+    font-size: calc(100vw * (14/1300));
+    padding: 0 calc(100vw * (10/1300));
+  }
+  
+  .comment_list_article .comment_version_num:after {
+   height: calc(100vw * (16/1300));
+ }
+  
+  .comment_list_article .comment_version_name {
+    font-size: calc(100vw * (14/1300));
+    padding: 0 calc(100vw * (23/1300));
+  }
+  
+  .comment_list_article .comment_version_util {
+    padding-right: calc(100vw * (20/1300));
+  }
+  
+  .comment_list_article .comment_version_util>button {
+    width: calc(100vw * (16/1300));
+    height: calc(100vw * (16/1300));
+  }
+  
+  .comment_list_article .comment_version_util .play {
+    margin-right: calc(100vw * (17/1300));
+  }
+  
+  /* 댓글 - 정보 업로드 */
+  .comment_list_article .edit_msg {
+    font-size: calc(100vw * (14/1300));
+    margin-bottom: calc(100vw * (10/1300));
+  }
+  
+  
+  /* 댓글 - 리얼댓글 */
+  .comment_list_article .real_comment {
+    margin-bottom: calc(100vw * (16/1300));
+    padding: 0 calc(100vw * (10/1300));
+  }
+  
+  .comment_list_article .real_comment>p {
+    font-size: calc(100vw * (14/1300));
+  }
+  
+  .comment_list_article .comment_util {
+    padding: 0 calc(100vw * (10/1300));
+    margin-bottom: calc(100vw * (16/1300));
+  }
+  
+  .comment_list_article .like_button_list>button+button {
+    margin-left: calc(100vw * (18/1300));
+  }
+  
+  .comment_list_article .like_icon,
+  .comment_list_article .unlike_icon {
+    width: calc(100vw * (17/1300));
+    height: calc(100vw * (16/1300));
+  
+    margin-right: calc(100vw * (10/1300));
+  }
+  
+  /* 좋아요 싫어요 버튼 효과 */
+  .comment_list_article .like_icon~span,
+  .comment_list_article .unlike_icon~span {
+    font-size: calc(100vw * (12/1300));
+  }
+  
+  .comment_list_article .re_comment_btn {
+    font-size: calc(100vw * (12/1300));
+  }
+  
+  /* 대댓글 */
+  .comment_list_article .re_comment {
+    padding-left: calc(100vw * (30/1300));
+    margin: calc(100vw * (20/1300)) 0 calc(100vw * (36/1300)) calc(100vw * (30/1300));
+  }
+  
+  .comment_list_article .re_comment:before {
+    top: calc(100% + calc(100vw * (18/1300)));
+  }
+  
+  .comment_list_article .re_comment_who {
+    margin-right: calc(100vw * (3/1300));
+  }
+  
+  
+  /* 대댓글 생성 */
+  .comment_list_article .new_re_comment {
+    width: calc(100vw * (907/1300));
+  }
+  
+  .comment_list_article .new_re_comment textarea {
+    height: calc(100vw * (90/1300));
+    padding: calc(100vw * (13/1300)) calc(100vw * (20/1300));
+    margin-bottom: calc(100vw * (10/1300));
+  }
+
+  .comment_list_article .new_re_comment_util_list .record_big_wrap {
+    margin-right: calc(100vw * (15/1300));
+  }
+  
+  .comment_list_article .new_re_comment .record_img_wrap {
+    width: calc(100vw * (325/1300));
+  }
+  
+  .comment_list_article .new_re_comment .record_btn {
+    width: calc(100vw * (40/1300));
+    height: calc(100vw * (40/1300));
+  }
+  
+  .comment_list_article .new_re_comment .submit_btn {
+    width: calc(100vw * (107/1300));
+    margin-left: calc(100vw * (12/1300));
+    padding: calc(100vw * (10/1300)) 0;
+  }
+  
+  /* 댓글 수정 */
+  .comment_list_article .real_comment_edit {
+    margin-bottom: calc(100vw * (20/1300));
+  }
+  
+  .comment_list_article .real_comment_edit textarea {
+    font-size: calc(100vw * (14/1300));
+    padding: calc(100vw * (20/1300)) calc(100vw * (10/1300));
+    margin-bottom: calc(100vw * (10/1300));
+  }
+
+}
+
+
+/* =============================== 모바일 =============================== */
+
+@media all and (max-width: 768px) {
+  .music_details {
+    padding-bottom: calc(100vw * (106/375));
+  }
+  .music_details .top_section {
+    margin-bottom: calc(100vw * (32/375));
+  }
+
+  .music_details .music_box_section {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .music_details .music_box {
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: calc(100vw * (20/375));
+  }
+
+  .music_details .music_title_wrap {
+    width: 100%;
+  }
+
+  .music_details .music_box_final_badge {
+    width: calc(100vw * (60/375));
+    font-size: calc(100vw * (12/375));
+    padding: calc(100vw * (7/375)) 0;
+    margin-right: calc(100vw * (8/375));
+  }
+  
+  .music_details .music_title>b {
+    font-size: calc(100vw * (14/375));
+  }
+
+  .music_details .music_title>span {
+    font-size: calc(100vw * (14/375));
+    margin-top: calc(100vw * (5/375));
+  }
+
+  .music_details .music_util {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .music_details .music_util>li {
+    margin-left: 0;
+  }
+
+  .music_details .music_record {
+    margin-bottom: calc(100vw * (19/375));
+  }
+
+  .music_details .record_wrap {
+    width: 100%;
+    height: calc(100vw * (64/375));
+    margin-bottom: calc(100vw * (20/375));
+  }
+
+  .music_details .record_wrap img {
+    width: calc(100vw * (270/375));
+    height: calc(100vw * (19/375));
+  }
+
+  .music_details .record_control {
+    margin-bottom: calc(100vw * (19/375));
+  }
+
+  .music_details .control_btn_list>button {
+    width: calc(100vw * (16/375));
+    height: calc(100vw * (16/375));
+  }
+
+  .music_details .control_btn_list .play {
+    width: calc(100vw * (18/375));
+    height: calc(100vw * (18/375));
+    margin: 0 calc(100vw * (30/375));
+  }
+
+  .music_details .record_time {
+    right: 0;
+    font-size: calc(100vw * (10/375));
+  }
+
+  .music_details .tag_upload_section {
+    width: 100%;
+    margin: 0 auto calc(100vw * (40/375));
+  }
+
+  .music_details .info_management_btn {
+    text-align: right;
+    margin-bottom: calc(100vw * (20/375));
+  }
+
+  .music_details .info_management_btn>button {
+    width: calc(100vw * (117/375));
+    padding: calc(100vw * (10/375)) 0;
+  }
+
+  .music_details .tag_area h2 {
+    margin-bottom: calc(100vw * (10/375));
+    font-size: calc(100vw * (14/375));
+  }
+
+  .music_management_list.music_details .tag_icon {
+    width: calc(100vw * (16/375));
+    height: calc(100vw * (16/375));
+    margin-right: calc(100vw * (7/375));
+  }
+
+  .music_details .tag_list {
+    margin-bottom: calc(100vw * (40/375));
+  }
+
+  .music_details .tag_list>li {
+    line-height: 1;
+    font-size: calc(100vw * (12/375));
+    margin-top: calc(100vw * (8/375));
+    padding: calc(100vw * (7/375)) calc(100vw * (14/375));
+  }
+
+  .music_details .tag_list>li+li {
+    margin-left: calc(100vw * (8/375));
+  }
+
+  /* 업로드 리스트 */
+
+  .music_management_list .upload_wrap {
+    position: relative;
+  }
+
+  .music_management_list .upload_list_swiper {
+    position: static;
+  }
+
+  /* 파일 히스토리 */
+  .music_details .file_history_section {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .music_details .file_history_top {
+    margin-bottom: calc(100vw * (12/375));
+  }
+
+  .music_details .file_history_top>h2 {
+    font-size: calc(100vw * (14/375));
+  }
+
+  .music_details .history_icon {
+    width: calc(100vw * (16/375));
+    height: calc(100vw * (16/375));
+    margin-right: calc(100vw * (7/375));
+  }
+
+  .music_details .btn_list {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .music_details .history_toggle_btn {
+    font-size: calc(100vw * (12/375));
+    line-height: calc(100vw * (14/375));
+  }
+
+  .music_details .history_toggle_btn .arrow_icon {
+    width: calc(100vw * (18/375));
+    height: calc(100vw * (18/375));
+    margin-left: calc(100vw * (6/375));
+  }
+
+  .music_details .history_toggle_btn.active .arrow_icon {
+    transform: rotate(90deg);
+  }
+
+  .music_details .file_history_btn_list {
+    display: none;
+    margin-top: calc(100vw * (20/375));
+    margin-bottom: calc(100vw * (10/375));
+  }
+
+  .music_details .edit_mode+.version_list_wrap.show .version_info{
+    flex-wrap: wrap;
+  }
+  .music_details .edit_mode+.version_list_wrap.show .version_num::after {
+    display: none;
+  }
+  .music_details .edit_mode+.version_list_wrap.show .version_name {
+    width: 100%;
+    margin-top: calc(100vw * (15/375));
+  }
+
+  .music_details .file_history_btn_list button {
+    padding: calc(100vw * (8/375)) calc(100vw * (20/375));
+    font-size: calc(100vw * (14/375));
+    line-height: 1;
+  }
+
+  .music_details .hide_btn_list>button+button {
+    margin-left: calc(100vw * (7/375));
+  }
+
+  /* 파일 히스토리 리스트 */
+  .music_details .version_list_wrap {
+    max-height: unset;
+    margin-bottom: calc(100vw * (15/375));
+  }
+
+  .music_details .version_list_wrap::-webkit-scrollbar {
+    width: calc(100vw * (3/375));
+  }
+
+  .music_details .version_list_wrap::-webkit-scrollbar-thumb {
+    background: #24ce7b;
+    border-radius:  calc(100vw * (3/375));
+  }
+
+  .music_details .version_list_wrap.show {
+    margin-bottom: calc(100vw * (40/375));
+  }
+
+  .music_details .version_list {
+    background-color: #f8f8f8;
+    border-radius:  calc(100vw * (5/375));
+    padding: calc(100vw * (10/375)) calc(100vw * (15/375));
+  }
+
+  .music_details .title_badge {
+    width: calc(100vw * (49/375));
+    font-size: calc(100vw * (12/375));
+    line-height: calc(100vw * (22/375));
+    margin-right: calc(100vw * (9/375));
+  }
+
+  .music_details .version_list_wrap.show>li {
+    position: relative;
+  }
+
+  .music_details .version_list+li {
+    margin-top: calc(100vw * (8/375));
+  }
+
+  .music_details .version_inner_wrap {
+    flex-wrap: wrap;
+  }
+
+  .music_details .del_btn_icon {
+    width: calc(100vw * (18/375));
+    height: calc(100vw * (18/375));
+    margin-left: 0;
+    margin-top: calc(100vw * (4/375));
+  }
+
+
+  .music_details .select_main_btn {
+    order: 1;
+    width: calc(100vw * (49/375));
+    font-size: calc(100vw * (12/375));
+    line-height: calc(100vw * (22/375));
+    margin-right: calc(100vw * (9/375));
+  }
+
+  .music_details .version_info {
+    align-items: flex-start;
+    flex: 1;
+  }
+
+  .music_details .version_num {
+    width: auto;
+    font-size: calc(100vw * (13/375));
+    padding: 0 calc(100vw * (13/375)) 0 0;
+  }
+
+  .music_details .version_name {
+    display: block;
+    max-width: 100%;
+    padding: 0;
+  }
+
+  .music_details .version_name>span {
+    font-size: calc(100vw * (13/375));
+  }
+
+  .music_details .version_inner_wrap:first-child .version_num {
+    position: relative;
+    margin-top: calc(100vw * (4/375));
+  }
+  .music_details .version_inner_wrap:first-child .version_num:after {
+    top: 50%;
+    width: calc(100vw * (1/375));
+    height: calc(100vw * (13/375));
+    transform: translateY(-50%);
+  }
+
+  .music_details .version_util {
+    width: 100%;
+    justify-content: space-between;
+    margin: calc(100vw * (16/375)) 0 0;
+  }
+
+  .music_details .open_option {
+    margin-right: 0;
+  }
+
+  .music_details .open_option>button:first-child {
+    width: calc(100vw * (24/375));
+    height: calc(100vw * (24/375));
+    margin-right: calc(100vw * (15/375));
+  }
+
+  .music_details .download_btn {
+    width: calc(100vw * (63/375));
+    height: calc(100vw * (22/375));
+    font-size: calc(100vw * (12/375));
+    line-height: calc(100vw * (22/375));
+  }
+
+  .music_details .music_time {
+    min-width: calc(100vw * (100/375));
+    font-size: calc(100vw * (11/375));
+  }
+
+  /* 버전 안에 여러 파일 있을 때 */
+  .music_details .version_inner_wrap.many {
+    margin-top: calc(100vw * (16/375));
+    padding-left: calc(100vw * (86/375));
+  }
+
+  .music_details .edit_mode+.version_list_wrap .version_inner_wrap.many {
+    padding-left: 0;
+    margin-top: calc(100vw * (21/375));
+  }
+
+  .music_details .version_inner_wrap.many .del_btn_icon {
+    position: initial;
+    transform: unset;
+  }
+
+  .music_details .edit_mode+.version_list_wrap .version_inner_wrap.many .select_main_btn {
+    margin-left: 0;
+  }
+
+  .music_details .edit_mode+.version_list_wrap .version_inner_wrap.many .version_name {
+    width: auto;
+    flex: 1;
+    margin-top: 0;
+  }
+
+  /* 댓글 리스트 */
+  .music_details .comment_section {
+    display: block;
+    width: 100%;
+  }
+
+  .music_details .member_list {
+    width: 100%;
+    border-radius: calc(100vw * (5/375));
+    padding: calc(100vw * (15/375));
+    margin-right: 0;
+    margin-bottom: calc(100vw * (15/375));
+  }
+
+  .music_details .member_list>li+li {
+    margin-top: calc(100vw * (16/375));
+  }
+
+  .music_details .member_list .profile_wrap {
+    width: calc(100vw * (38/375));
+    height: calc(100vw * (38/375));
+    margin-right: calc(100vw * (19/375));
+  }
+
+  .music_details .member_list .nickname {
+    font-size: calc(100vw * (14/375));
+  }
+
+  .music_details .comment_input_warp {
+    margin-bottom: calc(100vw * (36/375));
+  }
+
+  .music_details .select_record_wrap {
+    margin-bottom: calc(100vw * (12/375));
+  }
+
+  .music_details .comment_input_warp .select_box_wrap {
+    width: calc(100vw * (293/375));
+    height: calc(100vw * (42/375));
+    margin-right: calc(100vw * (10/375));
+  }
+
+  .music_details .record_btn {
+    width: calc(100vw * (40/375));
+    height: calc(100vw * (40/375));
+  }
+
+  .music_details .comment_input_warp textarea {
+    width: 100%;
+    height: calc(100vw * (124/375));
+    border-radius: calc(100vw * (5/375));
+    font-size: calc(100vw * (14/375));
+    color: #222;
+    padding: calc(100vw * (14/375));
+    margin-bottom: calc(100vw * (15/375));
+  }
+
+  .music_details .record_big_wrap {
+    display: block;
+    height: calc(100vw * (71/375));
+    border-radius: calc(100vw * (5/375));
+    padding: calc(100vw * (14/375));
+    margin-bottom: calc(100vw * (30/375));
+    border-radius: 0;
+  }
+
+  .music_details .comment_input_warp .record_big_wrap {
+    margin-bottom: calc(100vw * (10/375));
+  }
+
+  .music_details .record_big_wrap .cancel_icon {
+    top: unset;
+    bottom: calc(100vw * (14/375));
+    left: calc(100vw * (14/375));
+    width: calc(100vw * (16/375));
+    height: calc(100vw * (16/375));
+    transform: unset;
+  }
+
+  .music_details .record_big_wrap .record_img_wrap {
+    width: calc(100vw * (270/375));
+    height: calc(100vw * (19/375));
+  }
+
+  .music_details .record_big_wrap .record_util_list {
+    top: unset;
+    bottom: calc(100vw * (14/375));
+    right: calc(100vw * (14/375));
+    transform: unset;
+  }
+
+  .music_details .record_big_wrap .stop {
+    width: calc(100vw * (16/375));
+    height: calc(100vw * (16/375));
+  }
+
+  .music_details .record_big_wrap .play {
+    width: calc(100vw * (16/375));
+    height: calc(100vw * (16/375));
+    margin-right: calc(100vw * (17/375));
+  }
+
+  .music_details .submit_btn_wrap>button {
+    padding: calc(100vw * (10/375)) calc(100vw * (21/375));
+  }
+
+  /* 댓글 섹션 시작 리스트 */
+  .comment_list_article>h2 {
+    padding-bottom: calc(100vw * (10/375));
+    margin-bottom: calc(100vw * (15/375));
+  }
+
+  .comment_list_article>h2 .green {
+    margin-left: calc(100vw * (4/375));
+  }
+
+  .comment_list_article .msg_icon {
+    width: calc(100vw * (16/375));
+    height: calc(100vw * (16/375));
+    margin-right: calc(100vw * (8/375));
+  }
+
+  .comment_list_article .comment_list_wrap {
+    margin-bottom: calc(100vw * (50/375));
+  }
+
+  .comment_list_article .comment_list+li {
+    padding-top: calc(100vw * (50/375));
+  }
+
+  .comment_list_article .main_comment {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+  }
+
+  /* 댓글 - 프로필 */
+  .comment_list_article .comment_info {
+    margin-bottom: calc(100vw * (14/375));
+  }
+
+  .comment_list_article .profile_img_wrap {
+    width: calc(100vw * (32/375));
+    height: calc(100vw * (32/375));
+    margin-right: calc(100vw * (8/375));
+  }
+
+  .comment_list_article .comment_info_left>p {
+    font-weight: 500;
+    font-size: calc(100vw * (14/375));
+    line-height: 1.2;
+  }
+
+  .comment_list_article .comment_info_right {
+    min-width: unset;
+    padding-left: 0;
+  }
+
+  .comment_list_article .comment_time {
+    line-height: 1;
+    font-size: calc(100vw * (12/375));
+  }
+
+  .comment_list_article .comment_option_box {
+    margin-left: calc(100vw * (13/375));
+  }
+
+  .comment_list_article .option_btn {
+    width: calc(100vw * (21/375));
+    height: calc(100vw * (21/375));
+  }
+
+  .comment_list_article .option_list_wrap {
+    top: calc(100% + calc(100vw * (8/375)));
+    width: calc(100vw * (98/375));
+
+    box-shadow: calc(100vw * (3/375)) 1px calc(100vw * (8/375)) rgba(0, 0, 0, 0.09);
+    border-radius: calc(100vw * (5/375));
+
+    padding: calc(100vw * (14/375)) 0;
+  }
+
+  .comment_list_article .option_list_wrap>li {
+    padding: 0 calc(100vw * (16/375));
+    margin-bottom: calc(100vw * (20/375));
+    font-size: calc(100vw * (14/375));
+  }
+
+  .comment_list_article .option_list_wrap>li:last-child {
+    margin: 0;
+  }
+
+  /* 댓글 - 음악 버전 */
+  .comment_list_article .comment_version_box {
+    flex-wrap: wrap;
+    border-radius: calc(100vw * (5/375));
+    padding: calc(100vw * (10/375)) 0 calc(100vw * (15/375));
+    margin-bottom: calc(100vw * (16/375));
+  }
+
+  .comment_list_article .comment_version_info {
+    align-items: flex-start;
+    margin-bottom: calc(100vw * (4/375));
+  }
+
+  .comment_list_article .comment_version_num {
+    min-width: unset;
+    font-size: calc(100vw * (13/375));
+    padding: 0 calc(100vw * (13/375)) 0 calc(100vw * (15/375));
+  }
+
+  .comment_list_article .comment_version_num:after {
+    height: calc(100vw * (13/375));
+  }
+
+  .comment_list_article .comment_version_name {
+    font-size: calc(100vw * (13/375));
+    padding: 0 calc(100vw * (15/375)) 0 calc(100vw * (13/375));
+  }
+
+  .comment_list_article .comment_version_util {
+    padding-right: calc(100vw * (15/375));
+  }
+
+  .comment_list_article .comment_version_util>button {
+    width: calc(100vw * (16/375));
+    height: calc(100vw * (16/375));
+  }
+
+  .comment_list_article .comment_version_util .play {
+    margin-right: calc(100vw * (17/375));
+  }
+
+  /* 댓글 - 정보 업로드 */
+  .comment_list_article .edit_msg {
+    font-size: calc(100vw * (14/375));
+    margin-bottom: calc(100vw * (15/375));
+  }
+
+  .comment_list_article .edit_info_list>li {
+    font-size: calc(100vw * (13/375));
+  }
+
+  /* 댓글 - 리얼댓글 */
+  .comment_list_article .real_comment {
+    margin-bottom: calc(100vw * (25/375));
+    padding: 0 calc(100vw * (39/375));
+  }
+
+  .comment_list_article .real_comment>p {
+    font-size: calc(100vw * (14/375));
+  }
+
+  .comment_list_article .comment_util {
+    padding: 0;
+    margin-bottom: calc(100vw * (15/375));
+  }
+
+  .comment_list_article .like_button_list>button+button {
+    margin-left: calc(100vw * (18/375));
+  }
+
+  .comment_list_article .like_icon,
+  .comment_list_article .unlike_icon {
+    width: calc(100vw * (17/375));
+    height: calc(100vw * (16/375));
+    margin-right: calc(100vw * (10/375));
+  }
+
+  /* 좋아요 싫어요 버튼 효과 */
+  .comment_list_article .like_icon~span,
+  .comment_list_article .unlike_icon~span {
+    font-size: calc(100vw * (12/375));
+  }
+
+  .comment_list_article .re_comment_btn {
+    font-size: calc(100vw * (12/375));
+  }
+
+  /* 대댓글 */
+  .comment_list_article .re_comment {
+    width: 100%;
+    padding-left: calc(100vw * (30/375));
+    margin: calc(100vw * (20/375)) 0 calc(100vw * (36/375)) auto;
+  }
+
+  .comment_list_article .re_comment:after {
+    left: calc(100vw * (15/375));
+  }
+
+  .comment_list_article .re_comment:before {
+    top: calc(100% + calc(100vw * (18/375)));
+  }
+
+  .comment_list_article .re_comment_who {
+    margin-right: calc(100vw * (3/375));
+  }
+
+  /* 대댓글 생성 */
+  .comment_list_article .new_re_comment {
+    width: 100%;
+  }
+
+  .comment_list_article .new_re_comment textarea {
+    width: 100%;
+    height: calc(100vw * (124/375));
+    border-radius: calc(100vw * (5/375));
+    padding: calc(100vw * (14/375));
+    margin-bottom: calc(100vw * (10/375));
+  }
+
+  .comment_list_article .new_re_comment_util_list {
+    flex-wrap: wrap;
+  }
+
+  .comment_list_article .new_re_comment_util_list .record_big_wrap {
+    order: 3;
+    margin-right: 0;
+    margin-top: calc(100vw * (15/375));
+  }
+
+  .comment_list_article .new_re_comment .record_img_wrap {
+    width: calc(100vw * (270/375));
+  }
+
+  .comment_list_article .new_re_comment .record_btn {
+    width: calc(100vw * (34/375));
+    height: calc(100vw * (34/375));
+  }
+
+  .comment_list_article .new_re_comment .submit_btn {
+    width: calc(100vw * (92/375));
+    height: calc(100vw * (34/375));
+    margin-left: calc(100vw * (10/375));
+    padding: 0;
+  }
+
+  /* 댓글 수정 */
+  .comment_list_article .real_comment_edit {
+    margin-bottom: calc(100vw * (10/375));
+  }
+
+  .comment_list_article .real_comment_edit textarea {
+    height:  calc(100vw * (124/375));
+    font-size: calc(100vw * (14/375));
+    border-radius: calc(100vw * (5/375));
+    padding: calc(100vw * (14/375));
+    margin-bottom: calc(100vw * (10/375));
+  }
+
+}

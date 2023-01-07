@@ -1,0 +1,1416 @@
+/* 멘토관련 페이지 */
+/* 공통 */
+.tab_group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.tab_group .tab_item {
+    width: 232px;
+    min-height: 50px;
+    padding: 5px;
+    margin: 0 10px 10px 0;
+    line-height: 1.2;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    color: #666;
+}
+
+.tab_group .tab_item:nth-of-type(5n) {
+    margin-right: 0;
+}
+
+.tab_group .tab_item.active {
+    background: linear-gradient(92.62deg, #13E880 3.65%, #80E8FF 102.01%);
+    border: transparent;
+    color: #fff;
+}
+
+/* 비었을때 */
+.empty_con {
+    width: 100%;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.empty_con p {
+    font-size: 16px;
+    color: #aaa;
+}
+
+/* 스와이퍼 버튼 */
+.mentor_coaching_list .swiper_btn {
+    width: 38px;
+    height: 38px;
+    box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.1);
+}
+
+.mentor_coaching_list .swiper_btn::after {
+    content: "";
+    width: 18px;
+    height: 18px;
+    background: url("../images/icon/icon_arrow_bold.svg") no-repeat center / 100%;
+}
+
+.mentor_coaching_list .swiper-button-next::after {
+    transform: rotate(180deg);
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled {
+    opacity: 1;
+}
+
+.swiper-button-next.swiper-button-disabled::after,
+.swiper-button-prev.swiper-button-disabled::after {
+    opacity: 0.35;
+}
+
+/* 별점 */
+.star_line {
+    display: flex;
+    align-items: center;
+}
+
+.star_line .star_title {
+    display: flex;
+    align-items: center;
+}
+
+.star_line .total_star {
+    font-size: 16px;
+    font-weight: 400;
+    color: #666;
+}
+
+.star_line .add_star {
+    margin-left: 15px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #ff0000;
+    cursor: pointer;
+}
+
+.star_line .star_line {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.star_line .star_line.active .star_text {
+    color: #ff0000;
+}
+
+.star_line .star-ratings {
+    color: #aaa9a9;
+    position: relative;
+    unicode-bidi: bidi-override;
+    width: max-content;
+    -webkit-text-fill-color: transparent;
+    /* Will override color (regardless of order) */
+    -webkit-text-stroke-width: 1.3px;
+    -webkit-text-stroke-color: #2b2a29;
+}
+
+.star_line .star-fill {
+    color: #fff58c;
+    padding: 0;
+    position: absolute;
+    z-index: 1;
+    display: flex;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    -webkit-text-fill-color: gold;
+}
+
+.star_line .star-img {
+    width: 16px;
+    height: 16px;
+    text-align: left;
+}
+
+.star_line .star-img+.star-img {
+    margin-left: 6px;
+}
+
+.star_line .star-fill .star-img img {
+    object-position: left;
+    object-fit: cover;
+}
+
+.star_line .star-base {
+    display: flex;
+    align-items: center;
+    z-index: 0;
+    padding: 0;
+}
+
+.star_line .star-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 190px;
+    background: #f8f8f8;
+}
+
+.star_line .star_text {
+    color: #444;
+    margin-left: 6px;
+}
+
+.star_line .review_list {
+    display: flex;
+    align-items: center;
+}
+
+.star_line .review_list:not(:last-child) {
+    margin-bottom: 11px;
+}
+
+.star_line .review_list:last-child {
+    margin-bottom: 30px;
+}
+
+.star_line .review_content {
+    width: 100%;
+    height: 110px;
+    padding: 12px 17px;
+    margin-left: 23px;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid #dddddd;
+    line-height: 22px;
+}
+
+.star_line .review_img_wrap {
+    position: relative;
+}
+
+.star_line .review_img {
+    width: 100px;
+    height: 100px;
+}
+
+.star_line .review_img img {
+    object-fit: cover;
+}
+
+.star_line .review_delete_icon {
+    position: absolute;
+    width: 28px;
+    height: 28px;
+    top: -13px;
+    right: -12px;
+    cursor: pointer;
+}
+
+.btn {
+    max-width: 400px;
+    min-width: 400px;
+    width: auto;
+    padding: 15px;
+}
+
+/* 멘토 뮤지션 목록 */
+.mentor_coaching_list {
+    padding-bottom: 203px;
+}
+
+.list_area+.list_area {
+    margin-top: 80px;
+}
+
+.mentor_coaching_list .inner_section {
+    width: 1200px;
+}
+
+.mentor_coaching_list .empty_con {
+    padding: 55px 0;
+    margin-bottom: 42px;
+    border-radius: 5px;
+}
+
+.mentor_coaching_list .title_text {
+    margin-bottom: 29px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.mentor_coaching_list .tab_group {
+    margin-bottom: 30px;
+}
+
+.mentor_coaching_list .user_list_con {
+    position: relative;
+    margin: 15px 0 70px;
+}
+
+.mentor_coaching_list .user_slide {
+    overflow: hidden;
+}
+
+.mentor_coaching_list .user_slide .swiper-slide {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.mentor_coaching_list .user_list_con .swiper-button-next {
+    right: -21px;
+    transform: translateX(100%);
+}
+
+.mentor_coaching_list .user_list_con .swiper-button-prev {
+    left: -21px;
+    transform: translateX(-100%);
+}
+
+.mentor_coaching_list .user_item {
+    margin: 15px 30px 15px 0;
+}
+
+.mentor_coaching_list .user_item:nth-of-type(3n) {
+    margin-right: 0;
+}
+
+.list_area .btn {
+    margin: 0 auto 80px;
+}
+
+/* 코칭 후기 */
+.mentor_coaching_list .review_list_con {
+    position: relative;
+    padding: 20px 0 40px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.mentor_coaching_list .review_slide {
+    overflow: hidden;
+}
+
+.mentor_coaching_list .review_item {
+    cursor: pointer;
+}
+
+.mentor_coaching_list .review_item .user_item {
+    /* width: 380px; */
+    width: 100%;
+    margin-top: 20px;
+}
+
+.mentor_coaching_list .review_item .top_wrap {
+    padding: 10px;
+}
+
+.mentor_coaching_list .review_item .user_info {
+    display: flex;
+    align-content: center;
+    margin-top: 14px;
+}
+
+.mentor_coaching_list .review_item .user_info p {
+    line-height: 1.7;
+}
+
+.mentor_coaching_list .review_item .top_wrap .nickname {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 70%;
+    color: #444;
+}
+
+.mentor_coaching_list .review_item .top_wrap .date::before {
+    display: inline-block;
+    content: "";
+    width: 1px;
+    height: 14px;
+    margin: 0 10.5px;
+    vertical-align: middle;
+    background: #ddd;
+}
+
+.mentor_coaching_list .review_item .date {
+    color: #aaa;
+}
+
+.mentor_coaching_list .review_item .text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.7;
+}
+
+.mentor_coaching_list .review_list_con .swiper_btn_group {
+    position: absolute;
+    right: 0;
+    bottom: -55px;
+    display: flex;
+    transform: translateY(100%);
+}
+
+.mentor_coaching_list .review_list_con .swiper_btn {
+    position: initial;
+}
+
+.mentor_coaching_list .review_list_con .swiper_btn+.swiper_btn {
+    margin-left: 15px;
+}
+
+
+/* 멘토뮤지션 코칭 */
+.mentor_coaching {
+    padding: 170px 0 150px;
+}
+
+.mentor_coaching .empty_con {
+    padding: 247px 0;
+}
+
+.mentor_coaching .chatting_area {
+    display: flex;
+    flex-wrap: wrap;
+    /* max-height: 891px; */
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #24CE7B;
+}
+
+.mentor_coaching .chatting_area .left_box {
+    width: 307px;
+    background: #F2F2F2;
+}
+
+.mentor_coaching .chatting_area .input_group {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.mentor_coaching .chatting_area .select_box_wrap {
+    width: 136px;
+    height: 38px;
+}
+
+.mentor_coaching .input_wrap.search {
+    width: 136px;
+    height: 38px;
+}
+
+.mentor_coaching .chatting_area .select_box_wrap>button {
+    padding: 0 10px;
+}
+
+.mentor_coaching .chatting_area .select_box_wrap .select_list {
+    padding: 10px;
+}
+
+.mentor_coaching .input_wrap.search input {
+    padding: 0 32px 0 10px;
+}
+
+.mentor_coaching .input_wrap.search .search_btn {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    text-indent: -9999px;
+    overflow: hidden;
+    width: 40px;
+    height: 100%;
+    transform: translateY(-50%);
+    background: url("../images/icon/icon_search.svg") no-repeat center / 65%;
+}
+
+.mentor_coaching .user_list {
+    padding: 0 15px;
+}
+
+.mentor_coaching .user_list .item {
+    position: relative;
+    padding: 30px 0;
+    border-top: 1px solid #ddd;
+}
+
+.mentor_coaching .babge {
+    display: inline-block;
+    padding: 4px 21px;
+    margin-bottom: 10px;
+    border-radius: 100px;
+    text-align: center;
+    line-height: 1.2;
+    font-size: 12px;
+    color: #fff;
+    background: #24CE7B;
+}
+
+.mentor_coaching .user_info {
+    display: flex;
+    align-items: center;
+}
+
+.mentor_coaching .user_list .img_wrap {
+    width: 62px;
+    height: 62px;
+    margin-right: 20px;
+    flex-shrink: 0;
+}
+
+.mentor_coaching .user_list .img_wrap img {
+    object-fit: cover;
+}
+
+.mentor_coaching .user_list .nickname {
+    line-height: 1.7;
+    font-size: 16px;
+    color: #444;
+}
+
+.mentor_coaching .user_list .date {
+    line-height: 1.7;
+    color: #666;
+}
+
+.mentor_coaching .user_list .text_content {
+    margin-top: 15px;
+    padding: 10px 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    line-height: 1.5;
+    font-size: 12px;
+    background: #FFFFFF;
+    box-shadow: 3px 4px 7px rgba(0, 0, 0, 0.05);
+    border-radius: 5px;
+    color: #888;
+}
+
+.mentor_coaching .user_list .delete_btn {
+    position: absolute;
+    top: 30px;
+    right: -5px;
+    display: none;
+    width: 25px;
+    height: 25px;
+    text-indent: -9999px;
+    overflow: hidden;
+    background: url("../images/icon/icon_close_bold.svg") no-repeat center / 80%;
+}
+
+.mentor_coaching .done_item .babge {
+    background: #666666;
+}
+
+.mentor_coaching .done_item .delete_btn {
+    display: block;
+}
+
+.mentor_coaching .right_box {
+    flex: 1;
+}
+
+.mentor_coaching .descrip_list>li {
+    padding-bottom: 30px;
+}
+
+.mentor_coaching .descrip_list>li+li {
+    padding-top: 30px;
+    background-image: repeating-linear-gradient(-1deg, #dddddd, #dddddd 7px, transparent 7px, transparent 12px, #dddddd 12px), repeating-linear-gradient(89deg, #dddddd, #dddddd 7px, transparent 7px, transparent 12px, #dddddd 12px), repeating-linear-gradient(179deg, #dddddd, #dddddd 7px, transparent 7px, transparent 12px, #dddddd 12px), repeating-linear-gradient(269deg, #dddddd, #dddddd 7px, transparent 7px, transparent 12px, #dddddd 12px);
+    background-size: 0, 0, 0, 100% 2px;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.mentor_coaching .descrip_list {
+    padding-top: 20px;
+}
+
+.mentor_coaching .descrip_list h2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    color: #24CE7B;
+}
+
+.mentor_coaching .descrip_list .icon_wrap {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+}
+
+.mentor_coaching .descrip_list .round_box {
+    width: 498px;
+    padding: 15px;
+    margin: 22px auto 0;
+    border-radius: 20px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.09);
+    background: #fff;
+}
+
+.mentor_coaching .scroll_content {
+    height: 831px;
+    overflow-y: auto;
+}
+
+.mentor_coaching .descrip_list .title {
+    padding-bottom: 5px;
+    line-height: 1.6;
+    border-bottom: 1px solid #ddd;
+}
+
+.mentor_coaching .descrip_list .title_text {
+    line-height: 1.7;
+    font-weight: 500;
+    font-size: 16px;
+    color: #444;
+}
+
+.mentor_coaching .descrip_list .title+.content {
+    padding-top: 20px;
+}
+
+.mentor_coaching .descrip_list .title_text+p {
+    margin-top: 10px;
+}
+
+.mentor_coaching .descrip_list .price {
+    margin-top: 20px;
+    line-height: 1.7;
+    text-align: right;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.mentor_coaching .descrip_list .price span {
+    font-weight: 600;
+    color: #FF6162;
+}
+
+.mentor_coaching .descrip_list .content p {
+    line-height: 1.7;
+    color: #444444;
+}
+
+.mentor_coaching .tag_list {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -4px -2.5px;
+}
+
+.mentor_coaching .tag_list li {
+    line-height: 1.6;
+    padding: 7px 16px;
+    margin: 4px 2.5px;
+    border-radius: 100px;
+    font-weight: 600;
+    background: rgba(36, 206, 123, 0.1);
+    color: #24CE7B;
+}
+
+.mentor_coaching .music_item .play_btn {
+    display: inline-block;
+    width: 38px;
+    height: 38px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.mentor_coaching .music_item .title {
+    padding-bottom: 15px;
+}
+
+.mentor_coaching .write_area {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-top: 1px solid #D9D9D9;
+}
+
+.mentor_coaching .write_area .end_btn {
+    min-width: 129px;
+    min-height: 40px;
+    padding: 5px;
+}
+
+.mentor_coaching .write_area .end_btn:disabled {
+    background: #eee;
+    color: #222;
+}
+
+.mentor_coaching .write_area .send_group {
+    display: flex;
+    align-items: center;
+}
+
+.mentor_coaching .write_area .record_btn {
+    width: 40px;
+    height: 40px;
+    background: url("../images/icon/icon_record.svg") no-repeat center/ 100%;
+}
+
+.mentor_coaching .write_area textarea {
+    width: 553px;
+    height: 40px;
+    padding: 11px 20px;
+    margin: 0 20px 0 10px;
+    border-radius: 6px;
+    background: #F2F2F2;
+}
+
+.mentor_coaching .write_area textarea::placeholder {
+    color: #aaa;
+}
+
+.mentor_coaching .write_area .send_btn {
+    text-indent: -9999px;
+    overflow: hidden;
+    width: 30px;
+    height: 30px;
+    background: url("../images/icon/icon_send_btn.svg") no-repeat center / 100%;
+}
+
+.mentor_coaching .write_area .send_btn:disabled {
+    filter: invert(73%) sepia(0%) saturate(0%) hue-rotate(76deg) brightness(176%) contrast(92%);
+}
+
+
+/* 멘토 채팅 */
+.mentor_coaching .chatting_list {
+    padding: 20px;
+}
+
+.mentor_coaching .talk_box {
+    display: inline-block;
+    max-width: 555px;
+    min-width: 78px;
+    padding: 20px 30px;
+    line-height: 1.7;
+    font-size: 16px;
+    box-shadow: 3px 1px 9px rgba(0, 0, 0, 0.15);
+}
+
+.mentor_coaching .chat_you {
+    text-align: left;
+}
+
+.mentor_coaching .chat_you .talk_box {
+    color: #444;
+    background: #F7F7F7;
+    border-radius: 60px 60px 60px 0px;
+}
+
+.mentor_coaching .chat_me {
+    text-align: right;
+}
+
+.mentor_coaching .chat_me+.chat_you,
+.mentor_coaching .chat_you+.chat_me {
+    margin-top: 40px;
+}
+
+.mentor_coaching .chat_me+.chat_me {
+    margin-top: 20px;
+}
+
+.mentor_coaching .chat_me .talk_box {
+    margin-left: auto;
+    border-radius: 60px 60px 0 60px;
+    background: #24CE7B;
+    color: #fff;
+}
+
+.mentor_coaching .end_chat {
+    margin-top: 30px;
+    padding-top: 16px;
+    text-align: center;
+    background-image: repeating-linear-gradient(-1deg, #dddddd, #dddddd 7px, transparent 7px, transparent 12px, #dddddd 12px), repeating-linear-gradient(89deg, #dddddd, #dddddd 7px, transparent 7px, transparent 12px, #dddddd 12px), repeating-linear-gradient(179deg, #dddddd, #dddddd 7px, transparent 7px, transparent 12px, #dddddd 12px), repeating-linear-gradient(269deg, #dddddd, #dddddd 7px, transparent 7px, transparent 12px, #dddddd 12px);
+    background-size: 0, 0, 0, 100% 2px;
+    background-position: top;
+    background-repeat: no-repeat;
+}
+
+.mentor_coaching .end_chat span {
+    line-height: 1.7;
+    display: block;
+    color: #666;
+}
+
+.mentor_coaching .end_chat button {
+    margin-top: 11px;
+    min-width: 260px;
+    padding: 11px;
+}
+
+/* 활동중인 멘토뮤지션 코칭 */
+.mentor_coaching_list {}
+
+.current_list .tab_group {
+    margin-bottom: 0;
+}
+
+.current_list .list_area {
+    border-bottom: none;
+}
+
+.mentor_coaching_list .title_group {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 13px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #DDDDDD;
+}
+
+.current_list .user_list_con {
+    margin-top: 50px;
+}
+
+.current_list .user_list_con+.user_list_con {
+    margin-top: 67px;
+}
+
+.mentor_coaching_list .title_group .title_text {
+    margin-bottom: 0;
+}
+
+.mentor_coaching_list .title_group a {
+    min-width: 110px;
+    padding: 8px 29px;
+}
+
+.no_content {
+    padding: 200px 0;
+    text-align: center;
+}
+
+
+
+/* 추천멘토 프로필 */
+.profile_share .mentor_profile {
+    position: relative;
+    align-items: center;
+    padding: 41px 20px 41px 62px;
+    background: #F6F6F6;
+}
+
+.profile_share .mentor_profile.active::before {
+    position: absolute;
+    top: 14px;
+    left: 20px;
+    content: "";
+    width: 28px;
+    height: 24px;
+    background: url(../images/icon/icon_crown.svg) no-repeat center / 100%;
+}
+
+.profile_share .mentor_profile .user_title {
+    width: auto;
+    padding: 0;
+}
+
+.profile_content .mentor_profile .profile_photo {
+    width: 138px;
+    height: 138px;
+    margin-right: 30px;
+}
+
+.profile_share .mentor_profile .nickname {
+    margin-bottom: 10px;
+    color: #222222;
+}
+
+.profile_share .mentor_profile dl {
+    display: flex;
+    vertical-align: middle;
+}
+
+.profile_share .mentor_profile dl dt {
+    margin-right: 0.3rem;
+    flex-shrink: 0;
+}
+
+.profile_share .mentor_profile dl * {
+    line-height: 1.5;
+}
+
+.profile_share .mentor_profile .user_info {
+    width: auto;
+}
+
+.profile_share .num_list li:not(:last-child) {
+    margin-right: 37px;
+}
+
+.profile_share .mentor_profile .num_list .number {
+    width: 80px;
+    height: 80px;
+}
+
+.profile_share .mentor_profile .num_list .number span {
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.profile_share .num_list li:nth-child(1) .number span {
+    color: #FF1E1E;
+}
+
+.profile_share .num_list li:nth-child(2) .number span {
+    color: #EF2AC1;
+}
+
+.profile_share .num_list li:nth-child(4) .number span {
+    color: #FF671D;
+}
+
+.profile_share .mentor_profile .num_list li p {
+    color: #666666;
+}
+
+.profile_share .mentor_profile .num_list li p::before {
+    display: none;
+}
+
+.profile_share .mentor_profile .link_btn {
+    min-width: 185px;
+    padding: 15px;
+}
+
+.profile_share .back_btn {
+    display: inline-block;
+    margin-bottom: 10px;
+    padding: 11px 21px;
+    background: #444;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.review_content .date_group {
+    display: flex;
+    margin-top: 13px;
+}
+
+.review_content .nickname {
+    line-height: 1.7;
+    color: #444;
+}
+
+.review_content .date {
+    line-height: 1.7;
+    color: #aaa;
+}
+
+.review_content .nickname+.date::before {
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 14px;
+    vertical-align: middle;
+    margin: 0 10px;
+    background: #ddd;
+}
+
+.review_content .descrip_text {
+    margin-top: 13px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 1.5;
+    color: #444;
+}
+
+
+/* =============================== 테블릿 =============================== */
+@media screen and (max-width: 1300px) {
+    /* 공통 */
+    .tab_group {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .tab_group .tab_item {
+        width: calc(100vw * (232/1300)); 
+        min-height: calc(100vw * (50/1300));
+        padding: calc(100vw * (5/1300));
+        margin: 0 calc(100vw * (10/1300)) calc(100vw * (10/1300)) 0;
+        font-size: calc(100vw * (16/1300));
+        border-radius: calc(100vw * (5/1300));
+    }
+
+    /* 비었을때 */
+    .empty_con p {
+        font-size: calc(100vw * (16/1300));
+    }
+
+    /* 스와이퍼 버튼 */
+    .mentor_coaching_list .swiper_btn {
+        width: calc(100vw * (38/1300));
+        height: calc(100vw * (38/1300));
+        box-shadow: 0px calc(100vw * (2/1300)) calc(100vw * (7/1300)) rgba(0, 0, 0, 0.1);
+    }
+
+    .mentor_coaching_list .swiper_btn::after {
+        width: calc(100vw * (18/1300));
+        height: calc(100vw * (18/1300));
+    }
+
+    /* 별점 */
+    .star_line .total_star {
+        font-size: calc(100vw * (16/1300));
+    }
+
+    .star_line .add_star {
+        margin-left: calc(100vw * (15/1300));
+        font-size: calc(100vw * (16/1300));
+    }
+
+    .star_line .star_line {
+        margin-top: calc(100vw * (10/1300));
+    }
+
+    .star_line .star-img {
+        width: calc(100vw * (16/1300));
+        height: calc(100vw * (16/1300));
+    }
+
+    .star_line .star-img+.star-img {
+        margin-left: calc(100vw * (6/1300));
+    }
+
+    .star_line .star-box {
+        height: calc(100vw * (190/1300));
+    }
+
+    .star_line .star_text {
+        margin-left: calc(100vw * (6/1300));
+    }
+
+    .star_line .review_list:not(:last-child) {
+        margin-bottom: calc(100vw * (11/1300));
+    }
+
+    .star_line .review_list:last-child {
+        margin-bottom: calc(100vw * (30/1300));
+    }
+
+    .star_line .review_content {
+        height: calc(100vw * (110/1300));
+        padding: calc(100vw * (12/1300)) calc(100vw * (17/1300));
+        margin-left: calc(100vw * (23/1300));
+        font-size: calc(100vw * (16/1300));
+        line-height: calc(100vw * (22/1300));
+    }
+
+    .star_line .review_img {
+        width: calc(100vw * (100/1300));
+        height: calc(100vw * (100/1300));
+    }
+
+    .star_line .review_delete_icon {
+        width: calc(100vw * (28/1300));
+        height: calc(100vw * (28/1300));
+        top: calc(100vw * (-13/1300));
+        right: calc(100vw * (-12/1300));
+    }
+
+    .btn {
+        max-width: calc(100vw * (400/1300));
+        min-width: calc(100vw * (400/1300));
+        padding: calc(100vw * (15/1300));
+    }
+
+    /* 멘토 뮤지션 목록 */
+    .mentor_coaching_list {
+        padding-bottom: calc(100vw * (203/1300));
+    }
+
+    .list_area+.list_area {
+        margin-top: calc(100vw * (80/1300));
+    }
+
+    .mentor_coaching_list .inner_section {
+        width: calc(100vw * (1200/1300));
+    }
+
+    .mentor_coaching_list .empty_con {
+        padding: calc(100vw * (55/1300)) 0;
+        margin-bottom: calc(100vw * (42/1300));
+    }
+
+    .mentor_coaching_list .title_text {
+        margin-bottom: calc(100vw * (29/1300));
+        font-size: calc(100vw * (24/1300));
+    }
+
+    .mentor_coaching_list .tab_group {
+        margin-bottom: calc(100vw * (30/1300));
+    }
+
+    .mentor_coaching_list .user_list_con {
+        margin: calc(100vw * (15/1300)) 0 calc(100vw * (70/1300));
+    }
+
+    .mentor_coaching_list .user_list_con .swiper-button-next {
+        right: calc(100vw * (-21/1300));
+    }
+
+    .mentor_coaching_list .user_list_con .swiper-button-prev {
+        left: calc(100vw * (-21/1300));
+    }
+
+    .mentor_coaching_list .user_item {
+        margin: calc(100vw * (15/1300)) calc(100vw * (30/1300)) calc(100vw * (15/1300)) 0;
+    }
+
+    .list_area .btn {
+        margin: 0 auto calc(100vw * (80/1300));
+    }
+
+    /* 코칭 후기 */
+    .mentor_coaching_list .review_list_con {
+        padding: calc(100vw * (20/1300)) 0 calc(100vw * (40/1300));
+    }
+
+    .mentor_coaching_list .review_item .user_item {
+        margin-top: calc(100vw * (20/1300));
+    }
+
+    .mentor_coaching_list .review_item .top_wrap {
+        padding: calc(100vw * (10/1300));
+    }
+
+    .mentor_coaching_list .review_item .user_info {
+        margin-top: calc(100vw * (14/1300));
+    }
+
+    .mentor_coaching_list .review_item .top_wrap .date::before {
+        height: calc(100vw * (14/1300));
+        margin: 0 calc(100vw * (10.5/1300));
+    }
+
+    .mentor_coaching_list .review_list_con .swiper_btn_group {
+        bottom: calc(100vw * (-55/1300));
+    }
+
+    .mentor_coaching_list .review_list_con .swiper_btn+.swiper_btn {
+        margin-left: calc(100vw * (15/1300));
+    }
+
+
+    /* 멘토뮤지션 코칭 */
+    .mentor_coaching {
+        padding: calc(100vw * (170/1300)) 0 calc(100vw * (150/1300));
+    }
+
+    .mentor_coaching .empty_con {
+        padding: calc(100vw * (247/1300)) 0;
+    }
+
+    .mentor_coaching .chatting_area {
+        border-radius: calc(100vw * (20/1300));
+    }
+
+    .mentor_coaching .chatting_area .left_box {
+        width: calc(100vw * (307/1300));
+    }
+
+    .mentor_coaching .chatting_area .input_group {
+        padding: calc(100vw * (15/1300));
+    }
+
+    .mentor_coaching .chatting_area .select_box_wrap {
+        width: calc(100vw * (136/1300));
+        height: calc(100vw * (38/1300));
+    }
+
+    .mentor_coaching .input_wrap.search {
+        width: calc(100vw * (136/1300));
+        height: calc(100vw * (38/1300));
+    }
+
+    .mentor_coaching .chatting_area .select_box_wrap>button {
+        padding: 0 calc(100vw * (10/1300));
+    }
+
+    .mentor_coaching .chatting_area .select_box_wrap .select_list {
+        padding: calc(100vw * (10/1300));
+    }
+
+    .mentor_coaching .input_wrap.search input {
+        padding: 0 calc(100vw * (32/1300)) 0 calc(100vw * (10/1300));
+    }
+
+    .mentor_coaching .input_wrap.search .search_btn {
+        width: calc(100vw * (40/1300));
+    }
+
+    .mentor_coaching .user_list {
+        padding: 0 calc(100vw * (15/1300));
+    }
+
+    .mentor_coaching .user_list .item {
+        padding: calc(100vw * (30/1300)) 0;
+    }
+
+    .mentor_coaching .babge {
+        padding: calc(100vw * (4/1300)) calc(100vw * (21/1300));
+        margin-bottom: calc(100vw * (10/1300));
+        font-size: calc(100vw * (12/1300));
+    }
+
+    .mentor_coaching .user_list .img_wrap {
+        width: calc(100vw * (62/1300));
+        height: calc(100vw * (62/1300));
+        margin-right: calc(100vw * (20/1300));
+    }
+
+    .mentor_coaching .user_list .nickname {
+        font-size: calc(100vw * (16/1300));
+    }
+
+    .mentor_coaching .user_list .text_content {
+        margin-top: calc(100vw * (15/1300));
+        padding: calc(100vw * (10/1300)) calc(100vw * (12/1300));
+        font-size: calc(100vw * (12/1300));
+    }
+
+    .mentor_coaching .user_list .delete_btn {
+        top: calc(100vw * (30/1300));
+        right: calc(100vw * (-5/1300));
+        width: calc(100vw * (25/1300));
+        height: calc(100vw * (25/1300));
+    }
+
+    .mentor_coaching .descrip_list>li {
+        padding-bottom: calc(100vw * (30/1300));
+    }
+
+    .mentor_coaching .descrip_list>li+li {
+        padding-top: calc(100vw * (30/1300));
+        background-image: repeating-linear-gradient(-1deg, #dddddd, #dddddd 7px, transparent 7px, transparent 12px, #dddddd 12px), repeating-linear-gradient(89deg, #dddddd, #dddddd 7px, transparent 7px, transparent 12px, #dddddd 12px), repeating-linear-gradient(179deg, #dddddd, #dddddd 7px, transparent 7px, transparent 12px, #dddddd 12px), repeating-linear-gradient(269deg, #dddddd, #dddddd 7px, transparent 7px, transparent 12px, #dddddd 12px);
+    }
+
+    .mentor_coaching .descrip_list {
+        padding-top: calc(100vw * (20/1300));
+    }
+
+    .mentor_coaching .descrip_list h2 {
+        font-size: calc(100vw * (16/1300));
+    }
+
+    .mentor_coaching .descrip_list .icon_wrap {
+        width: calc(100vw * (24/1300));
+        height: calc(100vw * (24/1300));
+        margin-right: calc(100vw * (5/1300));
+    }
+
+    .mentor_coaching .descrip_list .round_box {
+        width: calc(100vw * (498/1300));
+        padding: calc(100vw * (15/1300));
+        margin: calc(100vw * (22/1300)) auto 0;
+        border-radius: calc(100vw * (20/1300));
+    }
+
+    .mentor_coaching .scroll_content {
+        height: calc(100vw * (831/1300));
+    }
+
+    .mentor_coaching .descrip_list .title {
+        padding-bottom: calc(100vw * (5/1300));
+    }
+
+    .mentor_coaching .descrip_list .title_text {
+        font-size: calc(100vw * (16/1300));
+    }
+
+    .mentor_coaching .descrip_list .title+.content {
+        padding-top: calc(100vw * (20/1300));
+    }
+
+    .mentor_coaching .descrip_list .title_text+p {
+        margin-top: calc(100vw * (10/1300));
+    }
+
+    .mentor_coaching .descrip_list .price {
+        margin-top: calc(100vw * (20/1300));
+        font-size: calc(100vw * (16/1300));
+    }
+
+    .mentor_coaching .tag_list {
+        margin: calc(100vw * (-4/1300)) calc(100vw * (-2.5/1300));
+    }
+
+    .mentor_coaching .tag_list li {
+        padding: calc(100vw * (7/1300)) calc(100vw * (16 / 1300));
+        margin: calc(100vw * (4/1300)) calc(100vw * (2.5/1300));
+    }
+
+    .mentor_coaching .music_item .play_btn {
+        width: calc(100vw * (38/1300));
+        height: calc(100vw * (38/1300));
+        margin-right: calc(100vw * (10/1300));
+    }
+
+    .mentor_coaching .music_item .title {
+        padding-bottom: calc(100vw * (15/1300));
+    }
+
+    .mentor_coaching .write_area {
+        padding: calc(100vw * (10 / 1300)) calc(100vw * (20/1300));
+    }
+
+    .mentor_coaching .write_area .end_btn {
+        min-width: calc(100vw * (129 / 1300));
+        min-height: calc(100vw * (40 / 1300));
+        padding: calc(100vw * (5 / 1300));
+    }
+
+    .mentor_coaching .write_area .record_btn {
+        width: calc(100vw * (40 / 1300));
+        height: calc(100vw * (40 / 1300));
+    }
+
+    .mentor_coaching .write_area textarea {
+        width: calc(100vw * (553 / 1300));
+        height: calc(100vw * (40 / 1300));
+        padding: calc(100vw * (11 / 1300)) calc(100vw * (20 / 1300));
+        margin: 0 calc(100vw * (20 / 1300)) 0 calc(100vw * (10 / 1300));
+    }
+
+    .mentor_coaching .write_area .send_btn {
+        width: calc(100vw * (30 / 1300));
+        height: calc(100vw * (30 / 1300));
+    }
+
+    /* 멘토 채팅 */
+    .mentor_coaching .chatting_list {
+        padding: calc(100vw * (20 / 1300));
+    }
+
+    .mentor_coaching .talk_box {
+        max-width: calc(100vw * (555 / 1300));
+        min-width: calc(100vw * (78 / 1300));
+        padding: calc(100vw * (20 / 1300)) calc(100vw * (30 / 1300));
+        font-size: calc(100vw * (16 / 1300));
+    }
+
+    .mentor_coaching .chat_you .talk_box {
+        border-radius: calc(100vw * (60 / 1300)) calc(100vw * (60 / 1300)) calc(100vw * (60 / 1300)) 0px;
+    }
+
+    .mentor_coaching .chat_me+.chat_you,
+    .mentor_coaching .chat_you+.chat_me {
+        margin-top: calc(100vw * (40 / 1300));
+    }
+
+    .mentor_coaching .chat_me+.chat_me {
+        margin-top: calc(100vw * (20 / 1300));
+    }
+
+    .mentor_coaching .chat_me .talk_box {
+        border-radius: calc(100vw * (60 / 1300)) calc(100vw * (60 / 1300)) 0 calc(100vw * (60 / 1300));
+    }
+
+    .mentor_coaching .end_chat {
+        margin-top: calc(100vw * (30 / 1300));
+        padding-top: calc(100vw * (16 / 1300));
+    }
+
+    .mentor_coaching .end_chat button {
+        margin-top: calc(100vw * (11 / 1300));
+        min-width: calc(100vw * (260 / 1300));
+        padding: calc(100vw * (11 / 1300));
+    }
+
+    /* 활동중인 멘토뮤지션 코칭 */
+    .mentor_coaching_list .title_group {
+        padding-bottom: calc(100vw * (13 / 1300));
+        margin-bottom: calc(100vw * (20 / 1300));
+    }
+
+    .current_list .user_list_con {
+        margin-top: calc(100vw * (50 / 1300));
+    }
+
+    .current_list .user_list_con+.user_list_con {
+        margin-top: calc(100vw * (67 / 1300));
+    }
+
+    .mentor_coaching_list .title_group a {
+        min-width: calc(100vw * (110 / 1300));
+        padding: calc(100vw * (8 / 1300)) calc(100vw * (29 / 1300));
+    }
+
+    .no_content {
+        padding: calc(100vw * (200 / 1300)) 0;
+    }
+
+
+    /* 추천멘토 프로필 */
+    .profile_share .mentor_profile {
+        padding: calc(100vw * (41 / 1300)) calc(100vw * (20 / 1300)) calc(100vw * (41 / 1300)) calc(100vw * (62 / 1300));
+    }
+
+    .profile_share .mentor_profile.active::before {
+        top: calc(100vw * (14 / 1300));
+        left: calc(100vw * (20 / 1300));
+        width: calc(100vw * (28 / 1300));
+        height: calc(100vw * (24 / 1300));
+    }
+
+    .profile_content .mentor_profile .profile_photo {
+        width: calc(100vw * (138 / 1300));
+        height: calc(100vw * (138 / 1300));
+        margin-right: calc(100vw * (30 / 1300));
+    }
+
+    .profile_share .mentor_profile .nickname {
+        margin-bottom: calc(100vw * (10 / 1300));
+    }
+
+    .profile_share .num_list li:not(:last-child) {
+        margin-right: calc(100vw * (37 / 1300));
+    }
+
+    .profile_share .mentor_profile .num_list .number {
+        width: calc(100vw * (80 / 1300));
+        height: calc(100vw * (80 / 1300));
+    }
+
+    .profile_share .mentor_profile .num_list .number span {
+        font-size: calc(100vw * (18 / 1300));
+    }
+
+    .profile_share .mentor_profile .link_btn {
+        min-width: calc(100vw * (185 / 1300));
+        padding: calc(100vw * (15 / 1300));
+    }
+
+    .profile_share .back_btn {
+        margin-bottom: calc(100vw * (10 / 1300));
+        padding: calc(100vw * (11 / 1300)) calc(100vw * (21 / 1300));
+    }
+
+    .review_content .date_group {
+        margin-top: calc(100vw * (13 / 1300));
+    }
+
+    .review_content .nickname+.date::before {
+        height: calc(100vw * (14 / 1300));
+        margin: 0 calc(100vw * (10 / 1300));
+    }
+
+    .review_content .descrip_text {
+        margin-top: calc(100vw * (13 / 1300));
+    }
+}

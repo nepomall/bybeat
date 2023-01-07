@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BY BEATS</title>
+
+    <!-- favicon -->
+    <link rel="icon" href="../../images/icon/favicon.ico">
+
+    <!-- css -->
+    <link rel="stylesheet" href="../../css/reset.css">
+    <link rel="stylesheet" href="../../css/common.css">
+    <link rel="stylesheet" href="../../css/modal.css">
+    <link rel="stylesheet" href="../../css/login.css">
+    <link rel="stylesheet" href="../../css/mypage.css">
+
+    <!-- js -->
+    <script type='text/javascript' src="../../js/jquery-3.6.0.js"></script>
+    <script type='text/javascript' src="../../js/common.js"></script>
+    <script type='text/javascript' src="../../js/login.js"></script>
+    <script type='text/javascript' src="../../js/mypage.js"></script>
+</head>
+
+<body>
+    <!-- 멘토 뮤지션 개인정보 관리 페이지 -->
+
+    <!-- 모달 - 증빙 파일을 삭제 모달 -->
+    <div class="modal_bg question" style="display: block;">
+        <div class="modal_content">
+            <p class="basic_modal_text">멘토 뮤지션 승인 후 증빙 파일의 삭제, 변경으로 인해 <br>
+                추후 멘토 뮤지션 활동에 불이익이 발생할 수 있습니다. <br>
+                해당 멘토 뮤지션 증빙 파일을 삭제 하시겠습니까?
+            </p>
+            <div class="button_wrap">
+                <button type="button" class="basic_btn_green_border btn_modal">취소</button>
+                <button type="button" class="basic_btn_liner_green btn_modal"
+                    onclick="location.href='./mento_change.html'">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 - 첨부파일 삭제가 완료. -->
+    <div class="modal_bg">
+        <div class="modal_content">
+            <p class="basic_modal_text">첨부파일 삭제가 완료되었습니다.
+            </p>
+            <div class="button_wrap">
+                <button type="button" class="basic_btn_liner_green btn_modal">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 - 회원 정보 수정이 완료 -->
+    <div class="modal_bg">
+        <div class="modal_content">
+            <p class="basic_modal_text">회원 정보 수정이 완료되었습니다.
+            </p>
+            <div class="button_wrap">
+                <button type="button" class="basic_btn_liner_green btn_modal">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 - 소속 국가를 선택해 주세요. -->
+    <div class="modal_bg">
+        <div class="modal_content">
+            <p class="basic_modal_text">소속 국가를 선택해 주세요.
+            </p>
+            <div class="button_wrap">
+                <button type="button" class="basic_btn_liner_green btn_modal">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 - 약관에 동의 후 회원가입이 가능합니다.. -->
+    <div class="modal_bg">
+        <div class="modal_content">
+            <p class="basic_modal_text">(OOO)약관에 동의 후 회원가입이 가능합니다.
+            </p>
+            <div class="button_wrap">
+                <button type="button" class="basic_btn_liner_green btn_modal">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 - 마케팅 정보 수신 동의 -->
+    <div class="modal_bg basic signup terms_modal marketing_modal">
+        <div class="modal_content">
+            <p class="tit">마케팅 정보 수신 동의</p>
+            <div class="terms_txt">
+                <div class="terms_box">
+                    이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용
+                    이용
+                    약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용
+                    약관
+                    내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관
+                    내용
+                    이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용
+                    이용
+                    약관 내용이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용
+                </div>
+            </div>
+            <div class="button_wrap">
+                <button type="button" class="basic_btn_liner_green btn_modal">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 - 위치정보서비스 이용 동의 -->
+    <div class="modal_bg basic signup terms_modal location_modal">
+        <div class="modal_content">
+            <p class="tit">위치정보서비스 이용 동의</p>
+            <div class="terms_txt">
+                <div class="terms_box">
+                    이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용
+                    이용
+                    약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용
+                    약관
+                    내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관
+                    내용
+                    이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용
+                    이용
+                    약관 내용이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용
+                </div>
+            </div>
+            <div class="button_wrap">
+                <button type="button" class="basic_btn_liner_green btn_modal">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 - 이용 약관 -->
+    <div class="modal_bg basic signup terms_modal service">
+        <div class="modal_content">
+            <p class="tit"> 이용 약관</p>
+            <div class="terms_txt">
+                <div class="terms_box">
+                    이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용
+                    이용
+                    약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용
+                    약관
+                    내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관
+                    내용
+                    이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용
+                    이용
+                    약관 내용이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용
+                </div>
+            </div>
+            <div class="button_wrap">
+                <button type="button" class="basic_btn_liner_green btn_modal">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 - 개인정보 수집 이용약관 -->
+    <div class="modal_bg basic signup terms_modal user">
+        <div class="modal_content">
+            <p class="tit">개인정보 수집 이용약관</p>
+            <div class="terms_txt">
+                <div class="terms_box">
+                    이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용
+                    이용
+                    약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용
+                    약관
+                    내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관
+                    내용
+                    이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용 이용 약관 내용이용 약관 내용
+                    이용
+                    약관 내용이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용이용 약관 내용 이용 약관 내용
+                </div>
+            </div>
+            <div class="button_wrap">
+                <button type="button" class="basic_btn_liner_green btn_modal">닫기</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 - 비밀번호 변경 -->
+    <div class="modal_bg basic passward_change_modal">
+        <div class="modal_content">
+            <h2>비밀번호 변경</h2>
+            <form action="">
+                <fieldset>
+                    <legend hidden>비밀번호 변경</legend>
+
+                    <div class="input_area">
+                        <span class="sub_title">현재 비밀번호</span>
+                        <div class="input_wrap error">
+                            <label for=""></label>
+                            <input type="password" placeholder="비밀번호를 입력해 주세요.">
+                        </div>
+
+                        <!-- 오류 - 패스워드  -->
+                        <p class="error_txt">패스워드가 맞지 않습니다.</p>
+                    </div>
+
+                    <div class="input_area">
+                        <span class="sub_title">변경 비밀번호</span>
+                        <div class="input_wrap error">
+                            <label for=""></label>
+                            <input type="password" placeholder="변경하실 비밀번호를 입력해 주세요.">
+
+                            <div class="alert_box wrap">
+                                영문, 숫자, 특수문자( !@#$%^&* ‘) 중 2가지 이상 조합 6자 이상 16자 이하 사용 가능
+                            </div>
+                        </div>
+                        <!-- 오류 - 패스워드  -->
+                        <p class="error_txt">새로운 패스워드 항목은 필수 항목입니다.</p>
+                    </div>
+
+                    <div class="input_area">
+                        <span class="sub_title">변경 비밀번호 재입력</span>
+                        <div class="input_wrap error">
+                            <label for=""></label>
+                            <input type="password" placeholder="변경하실 비밀번호를 한번 더 입력해 주세요.">
+                        </div>
+                        <!-- 오류 - 패스워드  -->
+                        <p class="error_txt">새로운 패스워드 항목은 필수 항목입니다.</p>
+                    </div>
+
+
+                </fieldset>
+
+                <div class="button_wrap">
+                    <button type="button" class="basic_btn_green_border btn_modal">취소</button>
+                    <button type="button" class="basic_btn_liner_green btn_modal">변경하기</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <!-- 모달 - 비밀번호 변경 완료 -->
+    <div class="modal_bg">
+        <div class="modal_content">
+            <p class="basic_modal_text">비밀번호 변경이 완료되었습니다.
+            </p>
+            <div class="button_wrap">
+                <button type="button" class="basic_btn_liner_green btn_modal">확인</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 모달 - 항목을 확인 -->
+    <div class="modal_bg">
+        <div class="modal_content">
+            <p class="basic_modal_text">항목을 확인해 주세요.
+            </p>
+            <div class="button_wrap">
+                <button type="button" class="basic_btn_liner_green btn_modal">확인</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!--페이지 영역-->
+    <div id="wrap">
+        <!-- pc 헤더 -->
+        <header id="header_pc">
+            <div class="header_top">
+                <div class="inner">
+                    <div class="tab active">
+                        <img src="../../images/icon/icon_bybeats_logo_text.svg" alt="바이비츠 로고">
+                    </div>
+                    <div class="tab" onclick="location.href='../../beats_someone/html/index.html';">
+                        <img src="../../images/icon/icon_beatssomeone_logo_text.svg" alt="비트썸원 로고">
+                    </div>
+                </div>
+            </div>
+
+            <div class="header_bottom">
+                <div class="inner">
+                    <div class="left_side">
+                        <h1 class="logo" onclick="location.href='../index.html'"></h1>
+                        <ul class="gnb">
+                            <li class="list">
+                                <a href="../payment/price_list.html" class="link">
+                                    요금제
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="../mypage/music_management_list.html" class="link">
+                                    음원관리
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="../mypage/album_list.html" class="link">
+                                    앨범 퍼블리싱
+                                </a>
+                            </li>
+                            <li class="list">
+                                <a href="#" onclick='return false' class="link">
+                                    내 코칭관리
+                                </a>
+                            </li>
+                            <!-- <li class="list">
+                                <a href="#" onclick='return false' class="link">
+                                    멘토 뮤지션 코칭
+                                </a>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <div class="right_side">
+                        <div class="search_wrap">
+                            <input type="text" placeholder="작곡가, 멘토 뮤지션을 검색해 보세요.">
+                            <button type="button" class="search_btn"
+                                onclick="location.href='../common/search_result_page.html'"></button>
+                        </div>
+                        <div class="icon_wrap">
+                            <div class="alarm_wrap">
+                                <button type="button" class="alarm_btn"></button>
+                                <div class="alarm_box">
+                                    <div class="title_con">
+                                        <div class="title">
+                                            <p>
+                                                알림
+                                            </p>
+                                            <button type="button" class="read_btn">
+                                                모든 알림 읽음 처리
+                                            </button>
+                                        </div>
+                                        <p class="alarm_guide">모든 알림은 알림 확인 후 읽음 처리 됩니다.</p>
+                                    </div>
+                                    <ul class="depth">
+                                        <li class="empty_box">
+                                            <div class="icon_box"></div>
+                                            <span>수신된 알림이 없습니다.</span>
+                                        </li>
+                                        <li class="list not_read">
+                                            <a href="#" onclick="return false" class="link">
+                                                <p class="comment">
+                                                    <span class="blod">(멘토 뮤지션 코칭 - 7일 상품)</span> 결제가 완료되었습니다. (결제일 :
+                                                    0000.00.00 00:00)
+                                                </p>
+                                                <p class="elapsed">
+                                                    2분 전
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li class="list">
+                                            <a href="#" onclick="return false" class="link">
+                                                <p class="comment">
+                                                    <span class="blod">(멘토 뮤지션 코칭 - 7일 상품)</span> 결제가 완료되었습니다. (결제일 :
+                                                    0000.00.00 00:00)
+                                                </p>
+                                                <p class="elapsed">
+                                                    2분 전
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li class="list">
+                                            <a href="#" onclick="return false" class="link">
+                                                <p class="comment">
+                                                    <span class="blod">(멘토 뮤지션 코칭 - 7일 상품)</span> 결제가 완료되었습니다. (결제일 :
+                                                    0000.00.00 00:00)
+                                                </p>
+                                                <p class="elapsed">
+                                                    2분 전
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li class="list">
+                                            <a href="#" onclick="return false" class="link">
+                                                <p class="comment">
+                                                    <span class="blod">(멘토 뮤지션 코칭 - 7일 상품)</span> 결제가 완료되었습니다. (결제일 :
+                                                    0000.00.00 00:00)
+                                                </p>
+                                                <p class="elapsed">
+                                                    2분 전
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li class="list">
+                                            <a href="#" onclick="return false" class="link">
+                                                <p class="comment">
+                                                    <span class="blod">(멘토 뮤지션 코칭 - 7일 상품)</span> 결제가 완료되었습니다. (결제일 :
+                                                    0000.00.00 00:00)
+                                                </p>
+                                                <p class="elapsed">
+                                                    2분 전
+                                                </p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="mail_wrap alarm_wrap">
+                                <button type="button" class="mail_btn"></button>
+                                <div class="alarm_box">
+                                    <div class="title_con">
+                                        <div class="title">
+                                            <p>
+                                                메세지
+                                            </p>
+                                            <button type="button" class="read_btn">
+                                                모든 메세지 삭제
+                                            </button>
+                                        </div>
+                                        <p class="alarm_guide">모든 메세지는 메세지 확인 후 읽음 처리 됩니다.</p>
+                                    </div>
+                                    <ul class="depth">
+                                        <li class="empty_box">
+                                            <div class="icon_box"></div>
+                                            <span>수신된 메세지가 없습니다.</span>
+                                        </li>
+                                        <li class="list not_read">
+                                            <a href="#" onclick="return false" class="link">
+                                                <div class="comment">
+                                                    <p class="nickname">닉네임</p>
+                                                    <p class="content">알겠습니다. 편안한 저녁시간 되기실 바래요. 알겠습니다</p>
+                                                </div>
+                                                <p class="elapsed">
+                                                    2분 전
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li class="list">
+                                            <a href="#" onclick="return false" class="link">
+                                                <div class="comment">
+                                                    <p class="nickname">닉네임</p>
+                                                    <p class="content">알겠습니다. 편안한 저녁시간 되기실 바래요. 알겠습니다</p>
+                                                </div>
+                                                <p class="elapsed">
+                                                    2분 전
+                                                </p>
+                                            </a>
+                                        </li>
+                                        <li class="list not_read">
+                                            <a href="#" onclick="return false" class="link">
+                                                <div class="comment">
+                                                    <p class="nickname">닉네임</p>
+                                                    <p class="content">알겠습니다. 편안한 저녁시간 되기실 바래요. 알겠습니다</p>
+                                                </div>
+                                                <p class="elapsed">
+                                                    2분 전
+                                                </p>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="language_wrap">
+                            <button type="button" class="language_btn"></button>
+                            <div class="language_box">
+                                <ul class="language_list">
+                                    <li class="active">
+                                        <button type="button">한국어</button>
+                                    </li>
+                                    <li>
+                                        <button type="button">English</button>
+                                    </li>
+                                    <li>
+                                        <button type="button">日本</button>
+                                    </li>
+                                    <li>
+                                        <button type="button">中文</button>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- <ul class="user">
+                            <li class="list sign_in">
+                                <a href="#" onclick='return false' class="link">
+                                    로그인
+                                </a>
+                            </li>
+                            <li class="list sign_up">
+                                <a href="#" onclick='return false' class="link">
+                                    회원가입
+                                </a>
+                            </li>
+                        </ul> -->
+                        <div class="user_nav">
+                            <div class="img_box"></div>
+                            <span class="user_name" onclick="location.href='../mypage/mypage.html'">김비트</span>
+                            <ul class="user_menu">
+                                <!-- 새로운 알림이 있을 경우 list에 addClass n_mark를 해주세요 -->
+                                <li class="list">
+                                    <a href="#" onclick='return false' class="link">
+                                        대시보드
+                                    </a>
+                                </li>
+                                <li class="list">
+                                    <a href="../mypage/profile_management.html" class="link">
+                                        프로필 관리
+                                    </a>
+                                </li>
+                                <li class="list">
+                                    <a href="../mypage/user_info.html" class="link">
+                                        개인정보 관리
+                                    </a>
+                                </li>
+                                <li class="list">
+                                    <a href="../mypage/plan_setting.html" class="link">
+                                        요금제 설정
+                                    </a>
+                                </li>
+                                <li class="list n_mark">
+                                    <a href="../mypage/music_management_list.html" class="link">
+                                        음원 관리
+                                    </a>
+                                </li>
+                                <li class="list n_mark">
+                                    <a href="../mypage/album_list.html" class="link">
+                                        앨범 퍼블리싱
+                                    </a>
+                                </li>
+                                <li class="list n_mark">
+                                    <a href="#" onclick='return false' class="link">
+                                        멘토 뮤지션 코칭
+                                    </a>
+                                </li>
+                                <li class="list">
+                                    <a href="#" onclick='return false' class="link">
+                                        내 코칭 관리
+                                    </a>
+                                </li>
+                                <li class="list">
+                                    <a href="../mypage/payment_list.html" class="link">
+                                        결제 및 정산
+                                    </a>
+                                </li>
+                                <li class="list logout">
+                                    <a href="#" onclick='return false' class="link">
+                                        로그아웃
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </header>
+
+        <!-- 하단 네비 -->
+        <ul class="bottom_nav">
+            <li class="list home active">
+                <a href="../index.html" class="link">
+                    <div class="icon_box"></div>
+                    <span>홈</span>
+                </a>
+            </li>
+            <li class="list music_manage">
+                <a href="../mypage/music_management_list.html" class="link">
+                    <div class="icon_box"></div>
+                    <span>음원관리</span>
+                </a>
+            </li>
+            <li class="list publishing">
+                <a href="../mypage/album_list.html" class="link">
+                    <div class="icon_box"></div>
+                    <span>앨범 퍼블리싱</span>
+                </a>
+            </li>
+            <li class="list coaching_manage">
+                <a href="#" onclick="return false;" class="link">
+                    <div class="icon_box"></div>
+                    <span>내 코칭 관리</span>
+                </a>
+            </li>
+            <!-- <li class="list mento_coaching">
+                <a href="#" onclick="return false;" class="link">
+                    <div class="icon_box"></div>
+                    <span>멘토링 코칭</span>
+                </a>
+            </li> -->
+            <li class="list mypage">
+                <a href="../mypage/mypage.html" class="link">
+                    <div class="icon_box"></div>
+                    <span>MY</span>
+                </a>
+            </li>
+        </ul>
+
+        <!-- 모바일 헤더 -->
+        <header id="header_mb">
+            <div class="inner">
+                <div class="left_side">
+                    <!-- <div class="goBack_btn" onclick="goBack()"></div> -->
+                    <h1 class="logo" onclick="location.href='../index.html'"></h1>
+                </div>
+                <div class="icon_wrap">
+                    <div class="alarm_wrap" onclick="location.href='../common/alarm.html'"></div>
+                    <div class="hamburger">
+                        <div>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="side_menu">
+                <div class="flex_box">
+                    <div class="top_area">
+                        <div class="search_btn" onclick="location.href='../common/search_result_page.html'"></div>
+                        <div class="link_wrap">
+                            <a href="#" onclick="return false;" class="link">
+                                BY BEATS
+                            </a>
+                            <a href="#" onclick="return false;" class="link">
+                                BEAT SOMEONE
+                            </a>
+                        </div>
+                        <!-- 로그인 전 -->
+                        <!-- <div class="sign_inup">
+                    <a href="#" onclick="return false;" class="link login">
+                        로그인
+                    </a>
+                    <a href="#" onclick="return false;" class="link sign_up">
+                        회원가입
+                    </a>
+                </div> -->
+                        <!-- 로그인 후 -->
+                        <div class="after_signIn">
+                            <div class="profile_box composer">
+                                <div class="img_box">
+                                    <img src="../../images/icon/icon_profile_mb.svg" alt="프로필 사진">
+                                </div>
+                                <div class="text_area">
+                                    <div class="info">
+                                        <p class="position">
+                                            작곡가
+                                        </p>
+                                        <p class="nickname">
+                                            NICKNAME
+                                        </p>
+                                    </div>
+                                    <a href="#" onclick="return false;" class="info_btn">
+                                        김비트님
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="rate_plan_box">
+                                <h3>이용중인 요금제</h3>
+
+                                <p><span class="green">일반 요금제</span>를 이용중입니다.</p>
+                                <p class="date">0000. 00. 00 - 0000. 00. 00</p>
+
+                                <div class="info">
+                                    <dl>
+                                        <dt>음원 관리</dt>
+                                        <dd><span class="green">11</span>/20곡</dd>
+                                    </dl>
+                                    <dl>
+                                        <dt>앨범 퍼블리싱</dt>
+                                        <dd><span class="green">1</span>/5회 (앨범 당 20트랙) 무료</dd>
+                                    </dl>
+                                </div>
+
+                                <button type="button" class="basic_btn_green_border">요금제 변경하기</button>
+                            </div>
+                            <button type="button" class="transform_btn">
+                                멘토 뮤지션 회원 전환
+                            </button>
+                            <ul class="nav">
+                                <li class="list open">
+                                    <a href="#" onclick="return false;" class="link main_link">
+                                        대시보드
+                                    </a>
+                                    <ul class="sec_depth">
+                                        <li class="list">
+                                            <a href="../mypage/profile_management.html" class="link">
+                                                - 프로필 관리
+                                            </a>
+                                        </li>
+                                        <li class="list">
+                                            <a href="../mypage/user_info.html" class="link">
+                                                - 개인정보 관리
+                                            </a>
+                                        </li>
+                                        <li class="list">
+                                            <a href="../mypage/album_list.html" class="link">
+                                                - 앨범 퍼블리싱
+                                            </a>
+                                        </li>
+                                        <li class="list">
+                                            <a href="../mypage/music_management_list.html" class="link">
+                                                - 음원 관리
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="list">
+                                    <a href="../mypage/plan_setting.html" class="link main_link">
+                                        요금제 설정
+                                    </a>
+                                </li>
+                                <li class="list">
+                                    <a href="#" class="link main_link">
+                                        멘토 뮤지션 코칭
+                                    </a>
+                                </li>
+                                <li class="list">
+                                    <a href="../mypage/payment_list.html" class="link main_link">
+                                        결제 및 정산
+                                    </a>
+                                </li>
+                                <li class="list language open">
+                                    <a href="#" onclick="return false;" class="link main_link">
+                                        언어설정
+                                        <span>한국어</span>
+                                    </a>
+                                    <ul class="sec_depth">
+                                        <li class="list active">
+                                            <a href="#" onclick="return false;" class="link">
+                                                - 한국어
+                                            </a>
+                                        </li>
+                                        <li class="list">
+                                            <a href="#" onclick="return false;" class="link">
+                                                - English
+                                            </a>
+                                        </li>
+                                        <li class="list">
+                                            <a href="#" onclick="return false;" class="link">
+                                                - 日本
+                                            </a>
+                                        </li>
+                                        <li class="list">
+                                            <a href="#" onclick="return false;" class="link">
+                                                - 中文
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- <button type="button" class="logout_btn">
+                로그아웃
+            </button> -->
+                </div>
+            </div>
+            <div class="side_bg"></div>
+        </header>
+
+        <!-- 컨텐츠 -->
+        <div id="wrap_content" class="user_info main login">
+            <div class="wrap_inner">
+                <section class="banner">
+                    <img src="../../images/banner/long_banner.jpg" alt="banner" />
+                </section>
+
+                <section class="top_section selec_view">
+                    <article class="nav">
+                        <span>HOME</span>
+                        <span class="arrow_icon"><img src="../../images/icon/icon_arrow_16px.svg"
+                                alt="화살표 아이콘" /></span>
+                        <span>MYPAGE</span>
+                        <span class="arrow_icon"><img src="../../images/icon/icon_arrow_16px.svg"
+                                alt="화살표 아이콘" /></span>
+                        <span>개인정보 관리</span>
+                    </article>
+                    <article class="select_big_wrap">
+                        <!-- 버튼 클릭시 active 클래스 추가 -->
+                        <!-- <div class="select_box_wrap_gray active"> -->
+                        <div class="select_box_wrap gray">
+                            <button type="button" class="select_title">개인정보 관리</button>
+                            <ul>
+                                <li class="select_list selected">개인정보 관리</li>
+                                <li class="select_list">대시보드</li>
+                                <li class="select_list">프로필관리</li>
+                                <li class="select_list">요금제 관리</li>
+                                <li class="select_list">결제 및 정산</li>
+                                <li class="select_list">회원 탈퇴</li>
+                            </ul>
+                        </div>
+                    </article>
+                </section>
+
+                <section class="info_section">
+                    <h2 class="main_tit">멘토 뮤지션 회원</h2>
+                    <div class="membership_inner">
+                        <form>
+                            <fieldset>
+                                <legend hidden>개인정보 수정</legend>
+                                <div class="input_wrap email readonly">
+                                    <label for=""></label>
+                                    <input type="text" readonly value="urchoco@naver.com">
+                                    <span class="signup_route"><span class="img_wrap"><img
+                                                src="../../images/icon/icon_naver.svg" alt="네이버 아이콘"></span>(Naver 계정으로
+                                        가입)</span>
+                                </div>
+                                <div class="input_wrap">
+                                    <label for=""></label>
+                                    <input type="text" value="bybeats@bybeats.com">
+
+                                    <div class="alert_box wrap">
+                                        ID(email)가 아닌 다른 Email로 정보 수신을 원하실 경우 입력해 주세요.
+                                    </div>
+                                </div>
+                                <button type="submit" class="change_btn basic_btn_green_border">변경하기</button>
+
+                                <div class="input_wrap readonly hover_alert">
+                                    <label for=""></label>
+                                    <input type="text" readonly value="김비트">
+
+                                    <div class="alert_box wrap">
+                                        이름
+                                    </div>
+                                </div>
+                                <div class="input_wrap hover_alert">
+                                    <label for=""></label>
+                                    <input type="text" readonly value="닉네임">
+
+                                    <div class="alert_box wrap">
+                                        닉네임
+                                    </div>
+                                </div>
+
+                                <div class="input_area tel">
+                                    <div class="select_box_wrap country hover_alert">
+                                        <button type="button" class="select_title">국가 (필수)</button>
+                                        <ul>
+                                            <li class="select_list">옵션1</li>
+                                            <li class="select_list">옵션1</li>
+                                            <li class="select_list">옵션1</li>
+                                        </ul>
+
+                                        <div class="alert_box wrap">
+                                            국가선택
+                                        </div>
+                                    </div>
+                                    <div class="select_area">
+                                        <div class="select_box_wrap country_num">
+                                            <button type="button" class="select_title">국번</button>
+                                            <ul>
+                                                <li class="select_list">+82</li>
+                                                <li class="select_list">옵션1</li>
+                                                <li class="select_list">옵션1</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <!--  오류 - error 클래스 추가 -->
+                                    <div class="input_wrap error hover_alert">
+                                        <label for="" hidden></label>
+                                        <!-- 대한민국 선택 시, 핸드폰 입력값 필수/ 다른 국가 선택 시, 핸드폰 입력값 선택 -->
+                                        <input type="text" placeholder="휴대폰 번호 입력 (선택)">
+
+                                        <div class="alert_box wrap">
+                                            휴대폰 전화번호
+                                        </div>
+                                    </div>
+
+                                    <!-- 오류 - 전화번호 입력 -->
+                                    <p class="error_txt last">핸드폰 번호를 입력해 주세요.</p>
+
+                                    <div class="send_number">
+                                        <button type="button" class="basic_btn_green_border resend_btn">재전송</button>
+
+                                        <!-- 인증번호가 맞으면 input_wrap에 addClass done을 해주세요. -->
+                                        <!-- input은 입력 못하게 disabled 해주세요. -->
+                                        <div class="input_wrap done">
+                                            <input type="number" placeholder="인증번호 입력" disabled />
+                                        </div>
+                                        <p class="error_txt">인증번호가 일치하지 않습니다. 다시 시도해주세요.</p>
+                                        <p class="done_txt">인증이 완료되었습니다.</p>
+
+                                        <button type="button" class="basic_btn_green_border">인증번호 받기</button>
+                                        <!-- 인증이 완료되면 인증하기 워딩으로 변경 해주세요 -->
+                                        <!-- <button type="button" class="basic_btn_green_border">인증하기</button> -->
+                                    </div>
+                                </div>
+                            </fieldset>
+                            <fieldset>
+                                <legend class="subtitle">멘토 뮤지션 분야 선택<span>(필수)</span></legend>
+                                <div class="input_area">
+                                    <div class="select_box_wrap country hover_alert">
+                                        <button type="button" class="select_title active">작곡</button>
+                                        <ul>
+                                            <li class="select_list">작곡</li>
+                                            <li class="select_list">프로듀싱</li>
+                                            <li class="select_list">레코딩</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="input_area">
+                                    <div class="select_box_wrap country hover_alert">
+                                        <button type="button" class="select_title active">프로듀싱</button>
+                                        <ul>
+                                            <li class="select_list">작곡</li>
+                                            <li class="select_list">프로듀싱</li>
+                                            <li class="select_list">레코딩</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="input_area">
+                                    <div class="select_box_wrap country hover_alert">
+                                        <button type="button" class="select_title active">레코딩</button>
+                                        <ul>
+                                            <li class="select_list">작곡</li>
+                                            <li class="select_list">프로듀싱</li>
+                                            <li class="select_list">레코딩</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <fieldset>
+                                <legend class="subtitle">멘토 뮤지션 증빙 자료 등록<span>(필수)</span></legend>
+                                <!-- drop 시 , drop_zone에 active 클래스 추가 -->
+                                <div class="drop_zone active">
+                                    <p>멘토 뮤지션 증빙 파일을 이곳에 올려 등록합니다.</p>
+                                    <div class="file_list_area">
+                                        <ul class="file_list bar_custom">
+                                            <li>
+                                                <span class="evidential_file">뮤지션 증빙 자료 뮤지션 증빙 자료 뮤지션 증빙 자료 뮤지션 증빙
+                                                    자료
+                                                    뮤지션 증빙 자료 뮤지션 증빙 자료.pdf</span>
+                                                <button type="button" class="btn_close"><img
+                                                        src="../../images/icon/icon_close_bold.svg"
+                                                        alt="리스트 삭제 버튼"></button>
+                                            </li>
+                                            <li>
+                                                <span class="evidential_file">뮤지션 증빙 자료.pdf</span>
+                                                <button type="button" class="btn_close"><img
+                                                        src="../../images/icon/icon_close_bold.svg"
+                                                        alt="리스트 삭제 버튼"></button>
+                                            </li>
+                                            <li>
+                                                <span class="evidential_file">뮤지션 증빙 자료.pdf</span>
+                                                <button type="button" class="btn_close"><img
+                                                        src="../../images/icon/icon_close_bold.svg"
+                                                        alt="리스트 삭제 버튼"></button>
+                                            </li>
+                                            <li>
+                                                <span class="evidential_file">뮤지션 증빙 자료.pdf</span>
+                                                <button type="button" class="btn_close"><img
+                                                        src="../../images/icon/icon_close_bold.svg"
+                                                        alt="리스트 삭제 버튼"></button>
+                                            </li>
+                                            <li>
+                                                <span class="evidential_file">뮤지션 증빙 자료.pdf</span>
+                                                <button type="button" class="btn_close"><img
+                                                        src="../../images/icon/icon_close_bold.svg"
+                                                        alt="리스트 삭제 버튼"></button>
+                                            </li>
+                                            <li>
+                                                <span class="evidential_file">뮤지션 증빙 자료.pdf</span>
+                                                <button type="button" class="btn_close"><img
+                                                        src="../../images/icon/icon_close_bold.svg"
+                                                        alt="리스트 삭제 버튼"></button>
+                                            </li>
+                                            <li>
+                                                <span class="evidential_file">뮤지션 증빙 자료.pdf</span>
+                                                <button type="button" class="btn_close"><img
+                                                        src="../../images/icon/icon_close_bold.svg"
+                                                        alt="리스트 삭제 버튼"></button>
+                                            </li>
+                                            <li>
+                                                <span class="evidential_file">뮤지션 증빙 자료.pdf</span>
+                                                <button type="button" class="btn_close"><img
+                                                        src="../../images/icon/icon_close_bold.svg"
+                                                        alt="리스트 삭제 버튼"></button>
+                                            </li>
+                                            <li>
+                                                <span class="evidential_file">뮤지션 증빙 자료.pdf wwww</span>
+                                                <button type="button" class="btn_close"><img
+                                                        src="../../images/icon/icon_close_bold.svg"
+                                                        alt="리스트 삭제 버튼"></button>
+                                            </li>
+
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="input_wrap file">
+                                    <label for="file">증빙 파일 첨부하기</label>
+                                    <input type="file" id="file">
+                                </div>
+                                <p>* 증빙 파일은 확장자 제한 없이 파일 1개당 20MB까지 등록 가능합니다.</p>
+                                <p>* 증빙 파일은 최대 10개까지 등록 가능합니다.</p>
+                            </fieldset>
+
+                            <fieldset class="check_area">
+                                <legend hidden>약관동의</legend>
+                                <div class="check_box all">
+                                    <input type="checkbox" id="default1">
+                                    <label for="default1">
+                                        <span class="check_box_img"></span>
+                                        <span class="check_box_text">전체동의</span>
+                                    </label>
+
+                                    <!-- <p class="error_txt">필수약관의 동의 후 회원가입이 가능합니다.</p> -->
+                                </div>
+                                <div class="check_box">
+                                    <input type="checkbox" id="default2" required>
+                                    <label for="default2">
+                                        <span class="check_box_img"></span>
+                                        <span class="check_box_text"><span class="essential">(필수)</span> 통합계정 가입
+                                            동의</span>
+                                    </label>
+                                </div>
+                                <div class="check_box">
+                                    <input type="checkbox" id="default3" required>
+                                    <label for="default3">
+                                        <span class="check_box_img"></span>
+                                        <span class="check_box_text"><span class="essential">(필수)</span> 만 14세
+                                            이상입니다.</span>
+                                    </label>
+                                </div>
+                                <div class="check_box arrow service">
+                                    <input type="checkbox" id="default4" required>
+                                    <label for="default4">
+                                        <span class="check_box_img"></span>
+                                    </label>
+                                    <span class="check_box_text"><span class="essential">(필수)</span> 이용약관</span>
+                                </div>
+                                <div class="check_box arrow user">
+                                    <input type="checkbox" id="default5" required>
+                                    <label for="default5">
+                                        <span class="check_box_img"></span>
+                                    </label>
+                                    <span class="check_box_text"><span class="essential">(필수)</span> 개인정보 수집 및
+                                        이용동의</span>
+                                </div>
+                                <div class="check_box arrow location">
+                                    <input type="checkbox" id="default5" required>
+                                    <label for="default5">
+                                        <span class="check_box_img"></span>
+                                    </label>
+                                    <span class="check_box_text"><span class="essential">(필수)</span> 위치정보서비스
+                                        이용동의</span>
+                                </div>
+                                <div class="check_box arrow marketing">
+                                    <input type="checkbox" id="default6">
+                                    <label for="default6">
+                                        <span class="check_box_img"></span>
+                                    </label>
+                                    <span class="check_box_text"><span class="essential gray">(선택)</span> 마케팅 정보 수신
+                                        동의</span>
+                                </div>
+                            </fieldset>
+                            <button type="button" class="basic_btn_liner_green btn_apply">완료</button>
+                        </form>
+                        <div class="link_area">
+                            <button type="button">회원탈퇴</button>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- 푸터 -->
+        <footer>
+            <div class="inner">
+                <div class="left_side">
+                    <div class="footer_logo"></div>
+                    <button type="button" class="mento_signUp moblie">
+                        멘토 뮤지션 회원가입
+                    </button>
+                    <div class="foot_nav">
+                        <div class="main_text">
+                            <a href="#" onclick="return false" class="link">
+                                About Bybeats
+                            </a>
+                            <a href="#" onclick="return false" class="link">
+                                요금제
+                            </a>
+                            <a href="#" onclick="return false" class="link">
+                                공지사항
+                            </a>
+                            <a href="#" onclick="return false" class="link">
+                                이벤트
+                            </a>
+                            <a href="#" onclick="return false" class="link">
+                                이용약관
+                            </a>
+                            <a href="#" onclick="return false" class="link">
+                                개인정보 취급방침
+                            </a>
+                        </div>
+                        <div class="address">
+                            <address>본사 : 서울특별시 도봉구 마들로13길 84, 서울창업허브 창동 2층 8로(창동, 창동 아우르네)</address>
+                            <address>지점&스튜디오 : 서울특별시 마포구 와우산로3길 16, 203호~205호(상수동, 석진스토리)</address>
+                        </div>
+                        <ul class="foot_info">
+                            <li>대표이사 김용환</li>
+                            <li>사업자등록번호 112-86-01117</li>
+                            <li>통신판매신고번호 제2019-서울마포-2779호</li>
+                            <li>TEL 070.4323.0000</li>
+                            <li>EMAIL support@beatsomeone.com</li>
+                        </ul>
+
+                        <p class="copyright">
+                            Copyright © beatsomeone 2022 .All Right reserved.
+                            <span>(주) 비트썸원</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="right_side">
+                    <button type="button" class="mento_signUp pc">
+                        멘토 뮤지션 회원가입
+                    </button>
+                    <ul class="sns_wrap">
+                        <li class="icon insta"></li>
+                        <li class="icon twitter"></li>
+                        <li class="icon facebook"></li>
+                        <li class="icon youtube"></li>
+                        <li class="icon blog"></li>
+                    </ul>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,309 @@
+/* 약관 공통 */
+.terms_page {
+  padding: 120px 0 150px;
+}
+
+.terms_page .wrap_inner {
+  width: 1260px;
+  margin: 0 auto;
+}
+
+.terms_page .top_section {
+  justify-content: flex-end;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #DDDDDD;
+}
+
+.terms_page .list_tab {
+  margin-bottom: 67px;
+}
+
+.terms_page .title {
+  margin-bottom: 48px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+}
+
+
+/* 약관 목록 */
+.terms_list .list_wrap {}
+
+.terms_list .list_head,
+.terms_list .list_body li {
+  display: flex;
+  align-items: center;
+}
+
+.terms_list .list_head {
+  font-weight: 500;
+  background: #F9F9F9;
+}
+
+.terms_list .list_head div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+}
+
+.terms_list .list_wrap .col_1,
+.terms_list .list_wrap .col_2 {
+  width: 130px;
+}
+
+.terms_list .list_wrap .col_3 {
+  width: 308px;
+}
+
+.terms_list .list_wrap .col_4 {
+  flex: 1;
+}
+
+.terms_list .list_body div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 0;
+}
+
+.terms_list .list_body li {
+  border-bottom: 1px solid #F0EFEF;
+  ;
+}
+
+.terms_list .list_body li a {
+  text-decoration: underline;
+}
+
+/* 약관 상세 */
+.terms_detail .select_box_wrap {
+  width: 198px;
+  margin: 0 0 20px auto;
+}
+
+.terms_detail .content_area .date {
+  margin-bottom: 11px;
+  color: #666666;
+}
+
+.terms_detail .content_area a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 260px;
+  height: 42px;
+  margin-top: 20px;
+  margin-left: auto;
+}
+
+.terms_detail .content_box {
+  width: 100%;
+  height: 514px;
+  white-space: pre-line;
+  line-height: 1.5;
+  overflow-y: scroll;
+  padding: 20px;
+  border: 1px solid #CCCCCC;
+}
+
+.terms_detail .content_box::-webkit-scrollbar {
+  width: 10px;
+}
+
+.terms_detail .content_box::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.terms_detail .content_box::-webkit-scrollbar-thumb {
+  background: #ddd;
+  background-clip: padding-box;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+
+
+
+
+/* ======================== 테블릿 ======================== */
+@media screen and (max-width: 1300px) {
+  /* 약관 공통 */
+.terms_page {
+  padding: calc(100vw * (120/1300)) 0 calc(100vw * (57/1300));
+}
+
+.terms_page .wrap_inner {
+  width: calc(100vw * (1260/1300));
+  margin: 0 auto;
+}
+
+.terms_page .top_section {
+  padding-bottom: calc(100vw * (10/1300));
+  margin-bottom: calc(100vw * (30/1300));
+  border-bottom: 1px solid #DDDDDD;
+  ;
+}
+
+.terms_page .list_tab {
+  margin-bottom: calc(100vw * (67/1300));
+}
+
+.terms_page .title {
+  margin-bottom: calc(100vw * (48/1300));
+  text-align: center;
+  font-size: calc(100vw * (24/1300));
+  font-weight: 500;
+}
+
+
+/* 약관 목록 */
+.terms_list .list_head div {
+  padding: calc(100vw * (12/1300));
+}
+
+.terms_list .list_wrap .col_1,
+.terms_list .list_wrap .col_2 {
+  width: calc(100vw * (130/1300));
+}
+
+.terms_list .list_wrap .col_3 {
+  width: calc(100vw * (308/1300));
+}
+
+
+.terms_list .list_body div {
+  padding: calc(100vw * (15/1300)) 0;
+}
+
+/* 약관 상세 */
+.terms_detail .select_box_wrap {
+  width: calc(100vw * (198/1300));
+  margin: 0 0 calc(100vw * (20/1300)) auto;
+}
+.terms_detail .content_area .date {
+  margin-bottom: calc(100vw * (11/1300));
+}
+
+.terms_detail .content_area a {
+  width: calc(100vw * (260/1300));
+  height: calc(100vw * (42/1300));
+  margin-top: calc(100vw * (20/1300));
+}
+
+.terms_detail .content_box {
+  height: calc(100vw * (514/1300));
+  padding: calc(100vw * (20/1300));
+}
+}
+
+
+
+
+/* ============= 모바일 ============= */
+@media (max-width: 768px) {
+
+  /* 약관 공통 */
+  .terms_page {
+    padding-top: calc(100vw * (57/375));
+    padding-bottom: calc(100vw * (50/375));
+  }
+
+  .terms_page .wrap_inner {
+    width: calc(100vw * (343/375));
+    margin: calc(100vw * (20/375)) auto 0;
+  }
+
+  .terms_page .top_section {
+    width: calc(100vw * (343/375));
+    padding-bottom: 0;
+    margin-bottom: calc(100vw * (30/375));
+    border-bottom: none;
+  }
+
+  .terms_page .list_tab {
+    margin-bottom: calc(100vw * (20/375));
+  }
+
+  .terms_page .list_tab .tab_list {
+    width: calc(100vw * (136/375));
+  }
+
+  .terms_page .title {
+    margin-bottom: calc(100vw * (25/375));
+    font-size: calc(100vw * (20/375));
+  }
+
+  /* 약관 목록 */
+  .terms_list .list_wrap {}
+
+  .terms_list .list_body li {
+    flex-wrap: wrap;
+    padding: calc(100vw * (15/375)) 0;
+  }
+
+  .terms_list .list_head {
+    display: none;
+  }
+
+  .terms_list .list_head div {
+    padding: 0;
+  }
+
+  .terms_list .list_wrap .col_1 {
+    width: 55%;
+  }
+
+  .terms_list .list_wrap .col_2 {
+    width: 15%;
+  }
+
+  .terms_list .list_wrap .col_3 {
+    width: 30%;
+    justify-content: flex-end;
+  }
+
+  .terms_list .list_wrap .col_4 {
+    width: 100%;
+    padding: calc(100vw * (20/375)) 0 0;
+  }
+
+  .terms_list .list_body div {
+    justify-content: flex-start;
+    padding: 0;
+  }
+
+  .terms_list .list_body li {
+    border-bottom: 1px solid #F0EFEF;
+    ;
+  }
+
+  .terms_list .list_body li a {
+    text-decoration: underline;
+  }
+
+  /* 약관 상세 */
+  .terms_detail .select_box_wrap {
+    width: 100%;
+    margin: 0 auto calc(100vw * (20/375));
+  }
+
+  .terms_detail .content_area .date {
+    margin-bottom: calc(100vw * (10/375));
+    font-size: calc(100vw * (12/375));
+  }
+
+  .terms_detail .content_area a {
+    width: calc(100vw * (193/375));
+    height: calc(100vw * (40/375));
+    margin-top: calc(100vw * (16/375));
+  }
+
+  .terms_detail .content_box {
+    height: calc(100vw * (376/375));
+    padding: calc(100vw * (20/375));
+  }
+
+}

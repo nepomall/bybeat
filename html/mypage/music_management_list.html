@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BY BEATS</title>
+
+  <link rel="stylesheet" href="../../css/common.css" />
+  <link rel="stylesheet" href="../../css/reset.css" />
+  <link rel="stylesheet" href="../../css/music_management_list.css" />
+  <!-- favicon -->
+  <link rel="icon" href="../../images/icon/favicon.ico">
+
+  <!-- JS -->
+  <script src="../../js/jquery-3.6.0.js"></script>
+  <script src="../../js/common.js"></script>
+  <script src="../../js/music_list.js"></script>
+</head>
+
+<body>
+  <!-- 음원업로드 페이지 - 음원 등록 모달 -->
+  <div class="modal_bg question music_upload_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">음원을 등록하시겠습니까?</p>
+      </div>
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_green_border close_btn">
+          취소
+        </button>
+        <button type="button" class="basic_btn_liner_green close_btn">
+          확인
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원관리(목록) 페이지 - 링크 복사 모달 -->
+  <div class="modal_bg link_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">링크가 복사되었습니다.</p>
+      </div>
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_liner_green close_btn">
+          확인
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원관리(목록) 페이지 - 삭제 비공개 전환 모달 -->
+  <div class="modal_bg question secret_change_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">
+          음원 삭제는 10일간 비공개로 전환된 후 최종 삭제 됩니다. <br />
+          비공개 기간 동안 삭제를 취소할 수 있습니다. <br />
+          계속 진행하시겠습니까? <br>
+          삭제된 음원은 복구가 불가능하니, 미리 백업해주세요.
+        </p>
+      </div>
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_green_border close_btn">
+          취소
+        </button>
+        <button type="button" class="basic_btn_liner_green confirm_btn">
+          확인
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원관리(목록) 페이지 - 삭제 비공개 전환 완료 모달 -->
+  <div class="modal_bg secret_change_ok_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">
+          비공개 전환이 완료되었습니다. 10일 후 최종 삭제됩니다.
+        </p>
+      </div>
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_green_border close_btn">
+          취소
+        </button>
+        <button type="button" class="basic_btn_liner_green close_btn">
+          확인
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원관리(목록) 페이지 - 삭제 철회 모달 -->
+  <div class="modal_bg question delete_cancel_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">해당 음원의 삭제를 취소하시겠습니까?</p>
+      </div>
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_green_border close_btn">
+          취소
+        </button>
+        <button type="button" class="basic_btn_liner_green confirm_btn">
+          확인
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원관리(목록) 페이지 - 삭제 철회 완료 모달 -->
+  <div class="modal_bg delete_cancel_ok_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">
+          음원 삭제가 취소되었습니다.
+        </p>
+      </div>
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_liner_green close_btn">
+          확인
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원관리(목록) 페이지 - 공동작업 음원 삭제 모달 -->
+  <div class="modal_bg question common_delete_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">
+          공동 작업 음원의 경우 공동 작곡가의 동의 후 <br />
+          음원 삭제가 진행됩니다. 비공개 전환 10일 이후 최종 삭제되며, <br />
+          비공개 기간 동안 삭제를 취소할 수 있습니다. <br />
+          계속 진행하시겠습니까?
+        </p>
+      </div>
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_green_border close_btn">
+          취소
+        </button>
+        <button type="button" class="basic_btn_liner_green confirm_btn">
+          확인
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원관리(목록) 페이지 - 공동작업 음원 삭제 완료 모달 -->
+  <div class="modal_bg common_delete_ok_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">
+          공동 작곡가에게 음원 삭제에 대한 동의를 요청했습니다. <br />
+          전체 작곡가의 동의 이후 음원 삭제가 진행됩니다.
+        </p>
+      </div>
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_liner_green close_btn">
+          확인
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원 업로드 페이지 - 음원 등록하기 모달 -->
+  <div class="modal_bg basic upload_modal upload" style="display: block;">
+    <div class="modal_content">
+      <div class="scroll_wrap">
+        <h2>음원 등록하기</h2>
+        <div class="text_wrap">
+          <!-- 업로드 하기 전 -->
+          <!-- <div class="upload_box">
+                      <button type="button" class="upload_icon">
+                          <img src="../../images/icon/icon_upload.svg" alt="" />
+                      </button>
+                      <input type="file" id="upload" />
+                      <p class="main_text">음원 파일을 선택해 주세요!</p>
+                      <p class="sub_text">
+                          최대 5개까지 한번에 첨부할 수 있습니다. <br/>
+                          파일을 먼저 등록하신 후 음원의 제목, 태그 등 상세 정보 수정이 가능합니다.
+                      </p>
+                  </div> -->
+          <!-- 업로드 한 후 -->
+          <div class="upload_box after">
+            <ul class="upload_inner">
+              <li class="upload_list">
+                <span class="file_icon">
+                  <img src="../../images/icon/icon_music_file.svg" alt="" />
+                </span>
+                <span class="file_name">1.filename.mp3</span>
+                <span class="close_icon">
+                  <img src="../../images/icon/icon_close_thin.svg" alt="" />
+                </span>
+              </li>
+              <li class="upload_list">
+                <span class="file_icon">
+                  <img src="../../images/icon/icon_music_file.svg" alt="" />
+                </span>
+                <span class="file_name">2.filename.mp3</span>
+                <span class="close_icon">
+                  <img src="../../images/icon/icon_close_thin.svg" alt="" />
+                </span>
+              </li>
+              <li class="upload_list">
+                <span class="file_icon">
+                  <img src="../../images/icon/icon_music_file.svg" alt="" />
+                </span>
+                <span class="file_name">3.filename.mp3</span>
+                <span class="close_icon">
+                  <img src="../../images/icon/icon_close_thin.svg" alt="" />
+                </span>
+              </li>
+              <li class="upload_list">
+                <span class="file_icon">
+                  <img src="../../images/icon/icon_music_file.svg" alt="" />
+                </span>
+                <span class="file_name">4.filename.mp3</span>
+                <span class="close_icon">
+                  <img src="../../images/icon/icon_close_thin.svg" alt="" />
+                </span>
+              </li>
+              <li class="upload_list">
+                <span class="file_icon">
+                  <img src="../../images/icon/icon_music_file.svg" alt="" />
+                </span>
+                <span class="file_name">5.filename.mp3</span>
+                <span class="close_icon">
+                  <img src="../../images/icon/icon_close_thin.svg" alt="" />
+                </span>
+              </li>
+            </ul>
+          </div>
+          <label class="file_btn" for="music1">음원 파일 첨부하기</label>
+          <input type="file" id="music1" />
+          <p class="gray_text">
+            * 음원 파일은 PM3, WAV 확장자를 가진 파일만 등록 가능합니다.
+          </p>
+          <p class="gray_text">
+            * 음원 파일의 용량은 개당 10MB 까지 등록 가능합니다.
+          </p>
+          <button type="button" class="black_btn">
+            Sound Cloud에서 가져오기
+          </button>
+          <p class="gray_text">
+            * Sound Cloud에 등록된 음원은 BY BEATS 서비스와 계정 연동 후 이용
+            가능합니다.
+          </p>
+          <!-- 음원 업로드 안하고 올렸을 시 -->
+          <!-- <p class="red_text">음원을 업로드 해주세요.</p> -->
+          <!-- 음원등록 5개 이상 했을시 -->
+          <!-- <p class="red_text">음원 등록은 1회 최대 5개까지 등록 가능합니다.</p> -->
+        </div>
+      </div>
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_green_border close_btn">
+          취소
+        </button>
+        <button type="button" class="basic_btn_liner_green">음원 등록</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원 업로드 페이지 - 음원 등록하기 완료 모달 -->
+  <div class="modal_bg upload_ok_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">5개의 음원 등록이 완료되었습니다.</p>
+      </div>
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_liner_green close_btn">
+          확인
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원 업로드 페이지 - 음원 업데이트 모달 -->
+  <div class="modal_bg basic update_modal upload" style="display: block;">
+    <div class="modal_content">
+      <h2>음원 업데이트</h2>
+      <div class="text_wrap">
+        <p class="music_name">MUSIC NAME</p>
+        <p class="date">0000.00.00</p>
+        <ul class="update_list_wrap">
+          <li class="update_list">
+            <span class="green_icon">
+              <img src="../../images/icon/icon_user_edit_green.svg" alt="" />
+            </span>
+            <span class="update_text">개인작업</span>
+          </li>
+          <li class="update_list">
+            <span class="green_icon">
+              <img src="../../images/icon/icon_recording_green_bold.svg" alt="" />
+            </span>
+            <span class="update_text">작업 진행률 : 50%</span>
+          </li>
+          <li class="update_list">
+            <span class="green_icon">
+              <img src="../../images/icon/icon_clock_green.svg" alt="" />
+            </span>
+            <span class="update_text">재생 시간 : 00:00</span>
+          </li>
+        </ul>
+        <!-- 업로드 하기 전 -->
+        <!-- <div class="upload_box before">
+          <p class="main_text">업데이트 하실 음원 파일을 <br> 이곳에 올려 등록합니다.</p>
+          <p class="sub_text">
+            최대 5개까지 한번에 첨부할 수 있습니다.
+          </p>
+        </div> -->
+        <!-- 업로드 한 후 -->
+        <div class="upload_box after">
+          <ul class="upload_inner">
+            <li class="upload_list">
+              <span class="file_icon">
+                <img src="../../images/icon/icon_music_file.svg" alt="" />
+              </span>
+              <span class="file_name">1.filename.mp3</span>
+              <span class="close_icon">
+                <img src="../../images/icon/icon_close_thin.svg" alt="" />
+              </span>
+            </li>
+          </ul>
+        </div>
+        <label class="file_btn" for="music2">음원 파일 첨부하기</label>
+        <input type="file" id="music2" />
+        <p class="gray_text">
+          * 음원 파일은 PM3, WAV 확장자를 가진 파일만 등록 가능합니다.
+        </p>
+        <p class="gray_text">
+          * 음원 파일의 용량은 개당 10MB 까지 등록 가능합니다.
+        </p>
+        <button type="button" class="black_btn">
+          Sound Cloud에서 가져오기
+        </button>
+        <p class="gray_text">
+          * Sound Cloud에 등록된 음원은 BY BEATS 서비스와 계정 연동 후 이용
+          가능합니다.
+        </p>
+        <!-- 음원 업로드 안하고 올렸을 시 -->
+        <p class="red_text">음원을 업로드 해주세요.</p>
+        <!-- 음원등록 5개 이상 했을시 -->
+        <!-- <p class="red_text">음원 등록은 1회 최대 5개까지 등록 가능합니다.</p> -->
+      </div>
+
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_green_border close_btn">
+          취소
+        </button>
+        <button type="button" class="basic_btn_liner_green">업데이트</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원 업로드 페이지 - 음원 업데이트 완료 모달 -->
+  <div class="modal_bg update_ok_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">음원 업데이트가 완료되었습니다.</p>
+      </div>
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_liner_green close_btn">
+          확인
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div id="wrap">
+    <!-- pc 헤더 -->
+    <header id="header_pc">
+      <div class="header_top">
+        <div class="inner">
+          <div class="tab active">
+            <img src="../../images/icon/icon_bybeats_logo_text.svg" alt="바이비츠 로고">
+          </div>
+          <div class="tab" onclick="location.href='../../beats_someone/html/index.html';">
+            <img src="../../images/icon/icon_beatssomeone_logo_text.svg" alt="비트썸원 로고">
+          </div>
+        </div>
+      </div>
+
+      <div class="header_bottom">
+        <div class="inner">
+          <div class="left_side">
+            <h1 class="logo" onclick="location.href='../index.html'"></h1>
+            <ul class="gnb">
+              <li class="list">
+                <a href="../payment/price_list.html" class="link">
+                  요금제
+                </a>
+              </li>
+              <li class="list">
+                <a href="../mypage/music_management_list.html" class="link">
+                  음원관리
+                </a>
+              </li>
+              <li class="list">
+                <a href="../mypage/album_list.html" class="link">
+                  앨범 퍼블리싱
+                </a>
+              </li>
+              <li class="list">
+                <a href="#" onclick='return false' class="link">
+                  내 코칭관리
+                </a>
+              </li>
+              <!-- <li class="list">
+                          <a href="#" onclick='return false' class="link">
+                              멘토 뮤지션 코칭
+                          </a>
+                      </li> -->
+            </ul>
+          </div>
+          <div class="right_side">
+            <div class="search_wrap">
+              <input type="text" placeholder="작곡가, 멘토 뮤지션을 검색해 보세요.">
+              <button type="button" class="search_btn"
+                onclick="location.href='../common/search_result_page.html'"></button>
+            </div>
+            <div class="icon_wrap">
+              <div class="alarm_wrap">
+                <button type="button" class="alarm_btn"></button>
+                <div class="alarm_box">
+                  <div class="title_con">
+                    <div class="title">
+                      <p>
+                        알림
+                      </p>
+                      <button type="button" class="read_btn">
+                        모든 알림 읽음 처리
+                      </button>
+                    </div>
+                    <p class="alarm_guide">모든 알림은 알림 확인 후 읽음 처리 됩니다.</p>
+                  </div>
+                  <ul class="depth">
+                    <li class="empty_box">
+                      <div class="icon_box"></div>
+                      <span>수신된 알림이 없습니다.</span>
+                    </li>
+                    <li class="list not_read">
+                      <a href="#" onclick="return false" class="link">
+                        <p class="comment">
+                          <span class="blod">(멘토 뮤지션 코칭 - 7일 상품)</span> 결제가 완료되었습니다. (결제일 :
+                          0000.00.00 00:00)
+                        </p>
+                        <p class="elapsed">
+                          2분 전
+                        </p>
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#" onclick="return false" class="link">
+                        <p class="comment">
+                          <span class="blod">(멘토 뮤지션 코칭 - 7일 상품)</span> 결제가 완료되었습니다. (결제일 :
+                          0000.00.00 00:00)
+                        </p>
+                        <p class="elapsed">
+                          2분 전
+                        </p>
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#" onclick="return false" class="link">
+                        <p class="comment">
+                          <span class="blod">(멘토 뮤지션 코칭 - 7일 상품)</span> 결제가 완료되었습니다. (결제일 :
+                          0000.00.00 00:00)
+                        </p>
+                        <p class="elapsed">
+                          2분 전
+                        </p>
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#" onclick="return false" class="link">
+                        <p class="comment">
+                          <span class="blod">(멘토 뮤지션 코칭 - 7일 상품)</span> 결제가 완료되었습니다. (결제일 :
+                          0000.00.00 00:00)
+                        </p>
+                        <p class="elapsed">
+                          2분 전
+                        </p>
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#" onclick="return false" class="link">
+                        <p class="comment">
+                          <span class="blod">(멘토 뮤지션 코칭 - 7일 상품)</span> 결제가 완료되었습니다. (결제일 :
+                          0000.00.00 00:00)
+                        </p>
+                        <p class="elapsed">
+                          2분 전
+                        </p>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mail_wrap alarm_wrap">
+                <button type="button" class="mail_btn"></button>
+                <div class="alarm_box">
+                  <div class="title_con">
+                    <div class="title">
+                      <p>
+                        메세지
+                      </p>
+                      <button type="button" class="read_btn">
+                        모든 메세지 삭제
+                      </button>
+                    </div>
+                    <p class="alarm_guide">모든 메세지는 메세지 확인 후 읽음 처리 됩니다.</p>
+                  </div>
+                  <ul class="depth">
+                    <li class="empty_box">
+                      <div class="icon_box"></div>
+                      <span>수신된 메세지가 없습니다.</span>
+                    </li>
+                    <li class="list not_read">
+                      <a href="#" onclick="return false" class="link">
+                        <div class="comment">
+                          <p class="nickname">닉네임</p>
+                          <p class="content">알겠습니다. 편안한 저녁시간 되기실 바래요. 알겠습니다</p>
+                        </div>
+                        <p class="elapsed">
+                          2분 전
+                        </p>
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#" onclick="return false" class="link">
+                        <div class="comment">
+                          <p class="nickname">닉네임</p>
+                          <p class="content">알겠습니다. 편안한 저녁시간 되기실 바래요. 알겠습니다</p>
+                        </div>
+                        <p class="elapsed">
+                          2분 전
+                        </p>
+                      </a>
+                    </li>
+                    <li class="list not_read">
+                      <a href="#" onclick="return false" class="link">
+                        <div class="comment">
+                          <p class="nickname">닉네임</p>
+                          <p class="content">알겠습니다. 편안한 저녁시간 되기실 바래요. 알겠습니다</p>
+                        </div>
+                        <p class="elapsed">
+                          2분 전
+                        </p>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="language_wrap">
+              <button type="button" class="language_btn"></button>
+              <div class="language_box">
+                <ul class="language_list">
+                  <li class="active">
+                    <button type="button">한국어</button>
+                  </li>
+                  <li>
+                    <button type="button">English</button>
+                  </li>
+                  <li>
+                    <button type="button">日本</button>
+                  </li>
+                  <li>
+                    <button type="button">中文</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- <ul class="user">
+                      <li class="list sign_in">
+                          <a href="#" onclick='return false' class="link">
+                              로그인
+                          </a>
+                      </li>
+                      <li class="list sign_up">
+                          <a href="#" onclick='return false' class="link">
+                              회원가입
+                          </a>
+                      </li>
+                  </ul> -->
+            <div class="user_nav">
+              <div class="img_box"></div>
+              <span class="user_name" onclick="location.href='../mypage/mypage.html'">김비트</span>
+              <ul class="user_menu">
+                <!-- 새로운 알림이 있을 경우 list에 addClass n_mark를 해주세요 -->
+                <li class="list">
+                  <a href="#" onclick='return false' class="link">
+                    대시보드
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../mypage/profile_management.html" class="link">
+                    프로필 관리
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../mypage/user_info.html" class="link">
+                    개인정보 관리
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../mypage/plan_setting.html" class="link">
+                    요금제 설정
+                  </a>
+                </li>
+                <li class="list n_mark">
+                  <a href="../mypage/music_management_list.html" class="link">
+                    음원 관리
+                  </a>
+                </li>
+                <li class="list n_mark">
+                  <a href="../mypage/album_list.html" class="link">
+                    앨범 퍼블리싱
+                  </a>
+                </li>
+                <li class="list n_mark">
+                  <a href="#" onclick='return false' class="link">
+                    멘토 뮤지션 코칭
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="#" onclick='return false' class="link">
+                    내 코칭 관리
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../mypage/payment_list.html" class="link">
+                    결제 및 정산
+                  </a>
+                </li>
+                <li class="list logout">
+                  <a href="#" onclick='return false' class="link">
+                    로그아웃
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+    <!-- 하단 네비 -->
+    <ul class="bottom_nav">
+      <li class="list home active">
+        <a href="../index.html" class="link">
+          <div class="icon_box"></div>
+          <span>홈</span>
+        </a>
+      </li>
+      <li class="list music_manage">
+        <a href="../mypage/music_management_list.html" class="link">
+          <div class="icon_box"></div>
+          <span>음원관리</span>
+        </a>
+      </li>
+      <li class="list publishing">
+        <a href="../mypage/album_list.html" class="link">
+          <div class="icon_box"></div>
+          <span>앨범 퍼블리싱</span>
+        </a>
+      </li>
+      <li class="list coaching_manage">
+        <a href="#" onclick="return false;" class="link">
+          <div class="icon_box"></div>
+          <span>내 코칭 관리</span>
+        </a>
+      </li>
+      <!-- <li class="list mento_coaching">
+                <a href="#" onclick="return false;" class="link">
+                    <div class="icon_box"></div>
+                    <span>멘토링 코칭</span>
+                </a>
+            </li> -->
+      <li class="list mypage">
+        <a href="../mypage/mypage.html" class="link">
+          <div class="icon_box"></div>
+          <span>MY</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- 모바일 헤더 -->
+    <header id="header_mb">
+      <div class="inner">
+        <div class="left_side">
+          <!-- <div class="goBack_btn" onclick="goBack()"></div> -->
+          <h1 class="logo" onclick="location.href='../index.html'"></h1>
+        </div>
+        <div class="icon_wrap">
+          <div class="alarm_wrap" onclick="location.href='../common/alarm.html'"></div>
+          <div class="hamburger">
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="side_menu">
+        <div class="flex_box">
+          <div class="top_area">
+            <div class="search_btn" onclick="location.href='../common/search_result_page.html'"></div>
+            <div class="link_wrap">
+              <a href="#" onclick="return false;" class="link">
+                BY BEATS
+              </a>
+              <a href="#" onclick="return false;" class="link">
+                BEAT SOMEONE
+              </a>
+            </div>
+            <!-- 로그인 전 -->
+            <!-- <div class="sign_inup">
+                  <a href="#" onclick="return false;" class="link login">
+                      로그인
+                  </a>
+                  <a href="#" onclick="return false;" class="link sign_up">
+                      회원가입
+                  </a>
+              </div> -->
+            <!-- 로그인 후 -->
+            <div class="after_signIn">
+              <div class="profile_box composer">
+                <div class="img_box">
+                  <img src="../../images/icon/icon_profile_mb.svg" alt="프로필 사진">
+                </div>
+                <div class="text_area">
+                  <div class="info">
+                    <p class="position">
+                      작곡가
+                    </p>
+                    <p class="nickname">
+                      NICKNAME
+                    </p>
+                  </div>
+                  <a href="#" onclick="return false;" class="info_btn">
+                    김비트님
+                  </a>
+                </div>
+              </div>
+              <div class="rate_plan_box">
+                <h3>이용중인 요금제</h3>
+
+                <p><span class="green">일반 요금제</span>를 이용중입니다.</p>
+                <p class="date">0000. 00. 00 - 0000. 00. 00</p>
+
+                <div class="info">
+                  <dl>
+                    <dt>음원 관리</dt>
+                    <dd><span class="green">11</span>/20곡</dd>
+                  </dl>
+                  <dl>
+                    <dt>앨범 퍼블리싱</dt>
+                    <dd><span class="green">1</span>/5회 (앨범 당 20트랙) 무료</dd>
+                  </dl>
+                </div>
+
+                <button type="button" class="basic_btn_green_border">요금제 변경하기</button>
+              </div>
+              <button type="button" class="transform_btn">
+                멘토 뮤지션 회원 전환
+              </button>
+              <ul class="nav">
+                <li class="list open">
+                  <a href="#" onclick="return false;" class="link main_link">
+                    대시보드
+                  </a>
+                  <ul class="sec_depth">
+                    <li class="list">
+                      <a href="../mypage/profile_management.html" class="link">
+                        - 프로필 관리
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="../mypage/user_info.html" class="link">
+                        - 개인정보 관리
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="../mypage/album_list.html" class="link">
+                        - 앨범 퍼블리싱
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="../mypage/music_management_list.html" class="link">
+                        - 음원 관리
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="list">
+                  <a href="../mypage/plan_setting.html" class="link main_link">
+                    요금제 설정
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="#" class="link main_link">
+                    멘토 뮤지션 코칭
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../mypage/payment_list.html" class="link main_link">
+                    결제 및 정산
+                  </a>
+                </li>
+                <li class="list language open">
+                  <a href="#" onclick="return false;" class="link main_link">
+                    언어설정
+                    <span>한국어</span>
+                  </a>
+                  <ul class="sec_depth">
+                    <li class="list active">
+                      <a href="#" onclick="return false;" class="link">
+                        - 한국어
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#" onclick="return false;" class="link">
+                        - English
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#" onclick="return false;" class="link">
+                        - 日本
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#" onclick="return false;" class="link">
+                        - 中文
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- <button type="button" class="logout_btn">
+              로그아웃
+          </button> -->
+        </div>
+      </div>
+      <div class="side_bg"></div>
+    </header>
+
+    <main id="wrap_content" class="music_management_list">
+      <div class="wrap_inner">
+        <!-- 배너 -->
+        <section class="banner">
+          <img src="../../images/banner/long_banner.jpg" alt="banner" />
+        </section>
+
+        <!-- 카테고리 -->
+        <section class="top_section selec_view">
+          <article class="nav">
+            <span>HOME</span>
+            <span class="arrow_icon"><img src="../../images/icon/icon_arrow_16px.svg" alt="화살표 아이콘" /></span>
+            <span>MY PAGE</span>
+            <span class="arrow_icon"><img src="../../images/icon/icon_arrow_16px.svg" alt="화살표 아이콘" /></span>
+            <span>음원관리</span>
+          </article>
+          <article class="select_big_wrap">
+            <!-- 버튼 클릭시 active 클래스 추가 -->
+            <!-- <div class="select_box_wrap_gray active"> -->
+            <div class="select_box_wrap gray">
+              <button type="button" class="select_title">음원관리</button>
+              <ul>
+                <li class="select_list">대시보드</li>
+                <li class="select_list">프로필 관리</li>
+                <li class="select_list">음원관리</li>
+              </ul>
+            </div>
+          </article>
+        </section>
+
+        <!-- 음원 업로드 섹션 -->
+        <section class="upload_section">
+          <article class="upload_area">
+            <!-- 업로드 상황에 따라 분기처리 -->
+            <!-- 1. 업로드 전 -->
+            <!-- <div class="upload_wrap">
+              <button type="button" class="upload_btn">
+                <span class="upload_icon">
+                  <img src="../../images/icon/icon_upload.svg" alt="업로드" />
+                </span>
+                <span class="upload_text">음원파일을 선택하시거나 음원 파일을<br class="mb-only" />
+                  여기로 끌어 놓으세요!</span>
+              </button>
+            </div> -->
+            <!-- 2. 업로드 후 -->
+            <div class="upload_wrap">
+              <ul>
+                <!-- 3-1. 업로드 중일때 upload_music_list에 loading 클래스 추가 -->
+                <li class="upload_music_list loading">
+                  <div class="album_img_big_wrap">
+                    <div class="album_img_wrap">
+                      <img src="../../images/dummy/album_01.jpg" alt="앨범이미지" />
+                    </div>
+                    <div class="loader">
+                      <img src="../../images/icon/icon_loading.svg" alt="로딩중" />
+                      <span class="loading_num">100%</span>
+                    </div>
+                  </div>
+                  <p class="file_name">VIDEO.mp3</p>
+                </li>
+                <li class="upload_music_list">
+                  <div class="album_img_big_wrap">
+                    <div class="album_img_wrap">
+                      <img src="../../images/dummy/album_02.jpg" alt="앨범이미지" />
+                    </div>
+                  </div>
+                  <p class="file_name">VIDEO.mp3</p>
+                </li>
+                <li class="upload_music_list">
+                  <div class="album_img_big_wrap">
+                    <div class="album_img_wrap">
+                      <img src="../../images/dummy/album_03.jpg" alt="앨범이미지" />
+                    </div>
+                  </div>
+                  <p class="file_name">VIDEO.mp3</p>
+                </li>
+                <li class="upload_music_list">
+                  <div class="album_img_big_wrap">
+                    <div class="album_img_wrap">
+                      <img src="../../images/dummy/album_04.jpg" alt="앨범이미지" />
+                    </div>
+                  </div>
+                  <p class="file_name">VIDEO.mp3</p>
+                </li>
+                <li class="upload_music_list">
+                  <div class="album_img_big_wrap">
+                    <div class="album_img_wrap">
+                      <img src="../../images/dummy/album_05.jpg" alt="앨범이미지" />
+                    </div>
+                  </div>
+                  <p class="file_name">VIDEO.mp3</p>
+                </li>
+              </ul>
+            </div>
+          </article>
+          <!-- 업로드 후 보여지는 버튼 영역 -->
+          <article class="btn_list">
+            <div class="del_list">
+              <!-- 3. 업로드 후에 버튼에 disabled 빼주세요 -->
+              <button type="button" disabled class="basic_btn_gray">
+                삭제
+              </button>
+              <button type="button" disabled class="basic_btn_gray">
+                전체 삭제
+              </button>
+            </div>
+            <!-- 3. 업로드 후에만 아래 버튼 생깁니다-->
+            <div class="add_btn_wrap">
+              <button type="button" class="basic_btn_liner_green music_upload_btn">
+                음원 등록하기
+              </button>
+              <!-- 모든 음원 퍼센테이지가 찼을 때 해당 말풍선 띄우기 -->
+              <div class="alert_box right">
+                음원 등록하기를 통해 음원 등록을 완료해 주세요.
+              </div>
+            </div>
+
+          </article>
+        </section>
+
+        <!-- 음원 업로드 리스트 섹션 -->
+        <section class="content_list_section">
+          <article class="search">
+            <div class="search_wrap">
+              <input type="search" placeholder="작곡가,음원 제목 및 태그 검색" />
+              <button type="button" class="search_icon">
+                <img src="../../images/icon/icon_search.svg" alt="검색" />
+              </button>
+            </div>
+          </article>
+          <article class="filter">
+            <ul>
+              <li class="filter_list">
+                <p>작업 진행률</p>
+                <div class="select_box_wrap select_box_wrap_green">
+                  <!-- 리스트가 없을 때 아래 버튼에 disabled 넣어주세요 -->
+                  <button type="button" class="select_title">전체</button>
+                  <ul>
+                    <li class="select_list">옵션1</li>
+                    <li class="select_list">옵션1</li>
+                    <li class="select_list">옵션1</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="filter_list">
+                <p>공동 작업</p>
+                <div class="select_box_wrap select_box_wrap_green">
+                  <!-- 리스트가 없을 때 아래 버튼에 disabled 넣어주세요 -->
+                  <button type="button" class="select_title">전체</button>
+                  <ul>
+                    <li class="select_list">옵션1</li>
+                    <li class="select_list">옵션1</li>
+                    <li class="select_list">옵션1</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="filter_list">
+                <p>공개 상태</p>
+                <div class="select_box_wrap select_box_wrap_green">
+                  <!-- 리스트가 없을 때 아래 버튼에 disabled 넣어주세요 -->
+                  <button type="button" class="select_title">전체</button>
+                  <ul>
+                    <li class="select_list">옵션1</li>
+                    <li class="select_list">옵션1</li>
+                    <li class="select_list">옵션1</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="filter_list">
+                <p>판매 상태</p>
+                <div class="select_box_wrap select_box_wrap_green">
+                  <!-- 리스트가 없을 때 아래 버튼에 disabled 넣어주세요 -->
+                  <button type="button" class="select_title">전체</button>
+                  <ul>
+                    <li class="select_list">옵션1</li>
+                    <li class="select_list">옵션1</li>
+                    <li class="select_list">옵션1</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="check_list">
+                <div class="check_box detail_search_btn">
+                  <input type="checkbox" id="SearchDetail" />
+                  <label for="SearchDetail">
+                    <span class="check_box_img"></span>
+                    <span class="check_box_text">상세검색</span>
+                  </label>
+                </div>
+              </li>
+            </ul>
+          </article>
+          <!-- 상세검색 클릭시 보이는 부분 -->
+          <article class="search_detail_wrap">
+            <div class="search_detail_box">
+              <ul>
+                <li class="search_detail_list producer_detail_list">
+                  <p class="dt">작업자</p>
+                  <ul class="producer_tag_list_wrap">
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="producer1" />
+                        <label for="producer1">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">빅비트빅비트빅비트</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="producer2" />
+                        <label for="producer2">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">윤비트</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="producer3" />
+                        <label for="producer3">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">최비트</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="producer4" />
+                        <label for="producer4">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">노비트</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="producer5" />
+                        <label for="producer5">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">빅비트빅비트빅비트</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="producer6" />
+                        <label for="producer6">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">윤비트</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="producer7" />
+                        <label for="producer7">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">최비트</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="producer8" />
+                        <label for="producer8">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">노비트</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="producer9" />
+                        <label for="producer9">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">빅비트빅비트빅비트</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="producer10" />
+                        <label for="producer10">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">윤비트</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="producer11" />
+                        <label for="producer11">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">최비트</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="producer12" />
+                        <label for="producer12">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">노비트</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="producer13" />
+                        <label for="producer13">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">빅비트빅비트빅비트</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="producer14" />
+                        <label for="producer14">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">윤비트</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="producer15" />
+                        <label for="producer15">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">최비트</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="producer16" />
+                        <label for="producer16">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">노비트</span>
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="search_detail_list">
+                  <p class="dt">음원 등록일</p>
+                  <!-- TODO :: INPUT 영역, PLACEHOLDER 수정 -->
+                  <div class="date_input_big_wrap">
+                    <label class="date_input_wrap" for="StartDate">
+                      <input type="date" id="StartDate" data-placeholder="YYYY-MM-DD" required />
+                    </label>
+                    <span class="wave pc_only">-</span>
+                    <label class="date_input_wrap" for="EndDate">
+                      <input type="date" id="EndDate" data-placeholder="YYYY-MM-DD" required />
+                    </label>
+                  </div>
+                </li>
+                <li class="search_detail_list">
+                  <p class="dt">태그 설정</p>
+                  <ul class="producer_tag_list_wrap">
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="tag1" />
+                        <label for="tag1">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">OPTION1</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="tag2" />
+                        <label for="tag2">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">OPTION2</span>
+                        </label>
+                      </div>
+                    </li>
+                    <li class="producer_tag_list">
+                      <div class="check_box green_label">
+                        <input type="checkbox" id="tag3" />
+                        <label for="tag3">
+                          <span class="check_box_img"></span>
+                          <span class="check_box_text">OPTION3</span>
+                        </label>
+                      </div>
+                    </li>
+                  </ul>
+                </li>
+                <li class="search_detail_list">
+                  <p class="dt">작업 진행률</p>
+                  <div class="range_big_wrap">
+                    <div class="range_wrap">
+                      <input type="range" min="0" max="100" value="0" class="work_range" id="myRange" />
+                    </div>
+                    <p class="range_value">0%</p>
+                    <div class="range_control">
+                      <button type="button" class="arrow_icon prev">
+                        <img src="../../images/icon/icon_arrow_range.svg" alt="화살표 아이콘" />
+                      </button>
+                      <button type="button" class="arrow_icon">
+                        <img src="../../images/icon/icon_arrow_range.svg" alt="화살표 아이콘" />
+                      </button>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <div class="search_detail_btn_wrap">
+                <button type="button" class="basic_btn_gray">초기화</button>
+                <button type="button" class="basic_btn_green_border">
+                  검색
+                </button>
+              </div>
+            </div>
+
+            <div class="util_btn_list">
+              <!-- 업로드된 곡 유무에 따라 분기처리 부탁드립니다. -->
+              <!-- (1) 업로드된 곡이 없을 때 -->
+              <!-- <button type="button" class="basic_btn_light_gray list_edit_btn" disabled>목록 편집</button> -->
+              <!-- (2) 업로드된 곡이 있을 때 목록 편집 버튼을 누르면 삭제 버튼이 생성-->
+              <div class="edit_function_btn_list">
+                <button type="button" class="basic_btn list_del_btn">
+                  전체 삭제
+                </button>
+                <button type="button" class="basic_btn_light_gray list_del_btn">
+                  선택 삭제
+                </button>
+                <button type="button" class="basic_btn_green_border list_edit_ok_btn">
+                  완료
+                </button>
+              </div>
+              <button type="button" class="basic_btn_green_border list_edit_btn">
+                목록 편집
+              </button>
+            </div>
+          </article>
+
+          <!-- 음악 리스트 테이블 -->
+          <article class="music_table">
+            <div class="thead">
+              <p class="music_title_box">곡제목</p>
+              <p class="music_option">작업 방식</p>
+              <p class="music_option">작업 진행률</p>
+              <p class="music_option">재생 시간</p>
+              <p class="music_option">판매 상태</p>
+              <p class="music_option">공개 상태</p>
+              <p class="option"></p>
+            </div>
+            <!-- 업로드된 곡, 검색된 리스트 유무에 따라 분기처리 부탁드립니다. -->
+            <!-- (1) 업로드된 곡이 없을 때 -->
+            <!-- <p class="empty_list">
+              음원 업로드 후 ‘음원 등록하기' 버튼을 클릭하시면<br />
+              리스트에 음원이 등록됩니다.<br />
+              나만의 곡을 등록하고, 안전하게 관리해보세요!
+            </p> -->
+            <!-- (2) 검색된 곡이 없을 때 -->
+            <!-- <p class="empty_list">
+                            일치하는 검색결과가 없습니다.
+                        </p> -->
+            <!-- (3) 업로드된 곡 or 검색된 곡이 있을 때 -->
+            <ul class="tbody">
+              <li class="music_list on">
+                <div class="music_title_box">
+                  <div class="play_con">
+                    <button type="button" class="play_icon">
+                      <img src="../../images/icon/icon_play_circle.svg" alt="재생" />
+                    </button>
+                  </div>
+                  <div class="music_text">
+                    <!-- 모바일에서는 타이틀을 클릭하면 음악이 재생됩니다. -->
+                    <p class="music_title">
+                      <span class="final_badge">FINAL</span>
+                      <b>MUSIC NAME MUSIC NAME MUSIC NAME MUSIC NAME NAME MUSIC NAME NAME MUSIC NAME</b>
+                    </p>
+                    <div class="date_wrap">
+                      <p class="date">0000.00.00</p>
+                      <div class="profile_wrap">
+                        <ul>
+                          <li>
+                            <img src="../../images/dummy/profile_01.jpg" alt="프로필 이미지1" />
+                          </li>
+                          <li>
+                            <img src="../../images/dummy/profile_02.jpg" alt="프로필 이미지1" />
+                          </li>
+                          <li>
+                            <img src="../../images/dummy/profile_03.jpg" alt="프로필 이미지1" />
+                          </li>
+                        </ul>
+
+                        <span>99</span>
+                      </div>
+                    </div>
+
+                    <div class="tag_list_wrap">
+                      <div class="tag_icon">
+                        <img src="../../images/icon/icon_tag.svg" alt="태그" />
+                      </div>
+                      <p class="music_tag_list_wrap">
+                        단순한, 신남, 아름다운, 긴장되는, 스릴있는, 행복한,
+                        슬픈, 우울한, 단순한, 신남, 아름다움, 긴장되는,
+                        스릴있는, 행복한, 슬픈, 우울한, 기쁨, 완전신남
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="music_option_box">
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_user_edit_gray.svg" alt="개인" />
+                      </div>
+                      <p class="icon_text">개인</p>
+                    </div>
+                  </div>
+                  <div class="music_option">
+                    <!-- 진행률에 따라 각각의 아이콘 노출 및 클래스 처리 부탁드립니다 -->
+                    <!-- 1. 100% 미만 -->
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_recording_gray.svg" alt="100% 미만" />
+                      </div>
+                      <p class="icon_text">50%</p>
+                    </div>
+                    <!-- 2. 100%  === hundred_percent 클래스 추가 -->
+                    <!-- <div class="option_wrap hundred_percent">
+                                          <div class="music_option_icon">
+                                              <img src="../../images/icon/icon_recording_green.svg" alt="100%">
+                                          </div>
+                                          <p class="icon_text">100%</p>
+                                      </div> -->
+                  </div>
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_clock_gray.svg" alt="재생 시간" />
+                      </div>
+                      <p class="icon_text">00:00</p>
+                    </div>
+                  </div>
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_currency_dollar.svg" alt="판매 중" />
+                      </div>
+                      <p class="icon_text">판매 중</p>
+                    </div>
+                  </div>
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <!-- 공개일 경우 -->
+                      <!-- <div class="music_option_icon">
+                                              <img src="../../images/icon/icon_eye.svg" alt="공개">
+                                          </div>
+                                          <p class="icon_text">공개</p> -->
+                      <!-- 비공개일 경우 -->
+                      <div class="music_option_icon secret">
+                        <img src="../../images/icon/icon_eye_secret.svg" alt="공개" />
+                      </div>
+                      <p class="icon_text">비공개</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="option">
+                  <button type="button" class="option_icon">
+                    <img src="../../images/icon/icon_option.svg" alt="옵션" />
+                  </button>
+                  <ul class="option_tab">
+                    <li class="option_list">
+                      <a href="../mypage/info_management.html">정보관리</a>
+                    </li>
+                    <li class="option_list copy">공유하기</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="music_list">
+                <div class="music_title_box">
+                  <div class="play_con">
+                    <button type="button" class="play_icon">
+                      <img src="../../images/icon/icon_play_circle.svg" alt="재생" />
+                    </button>
+                  </div>
+                  <div class="music_text">
+                    <p class="music_title">
+
+                      <b>MUSIC NAME MUSIC NAME MUSIC NAME MUSIC NAME</b>
+                    </p>
+                    <div class="date_wrap">
+                      <p class="date">0000.00.00</p>
+                      <div class="profile_wrap">
+                        <ul>
+                          <li>
+                            <img src="../../images/dummy/profile_01.jpg" alt="프로필 이미지1" />
+                          </li>
+                          <li>
+                            <img src="../../images/dummy/profile_02.jpg" alt="프로필 이미지1" />
+                          </li>
+                          <li>
+                            <img src="../../images/dummy/profile_03.jpg" alt="프로필 이미지1" />
+                          </li>
+                        </ul>
+
+                        <span>99</span>
+                      </div>
+                    </div>
+                    <div class="tag_list_wrap">
+                      <div class="tag_icon">
+                        <img src="../../images/icon/icon_tag.svg" alt="태그" />
+                      </div>
+                      <p class="music_tag_list_wrap">
+                        단순한, 신남, 아름다운, 긴장되는, 스릴있는, 행복한,
+                        슬픈, 우울한, 단순한, 신남, 아름다움, 긴장되는,
+                        스릴있는, 행복한, 슬픈, 우울한, 기쁨, 완전신남
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="music_option_box">
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_user_edit_gray.svg" alt="개인" />
+                      </div>
+                      <p class="icon_text">개인</p>
+                    </div>
+                  </div>
+                  <div class="music_option">
+                    <div class="option_wrap hundred_percent">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_recording_green.svg" alt="100%" />
+                      </div>
+                      <p class="icon_text">100%</p>
+                    </div>
+                  </div>
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_clock_gray.svg" alt="재생 시간" />
+                      </div>
+                      <p class="icon_text">00:00</p>
+                    </div>
+                  </div>
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_currency_dollar.svg" alt="판매 중" />
+                      </div>
+                      <p class="icon_text">판매 중</p>
+                    </div>
+                  </div>
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_eye.svg" alt="공개" />
+                      </div>
+                      <p class="icon_text">공개</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="option">
+                  <button type="button" class="option_icon">
+                    <img src="../../images/icon/icon_option.svg" alt="옵션" />
+                  </button>
+                  <ul class="option_tab">
+                    <li class="option_list">
+                      <a href="../mypage/info_management.html">정보관리</a>
+                    </li>
+                    <li class="option_list copy">공유하기</li>
+                  </ul>
+                </div>
+
+                <!-- 음원 삭제한 후 뜨는 텍스트 -->
+                <div class="delete_list">
+                  <p class="delete_time">DD일 HH시간 MM분 SS초 후 삭제됩니다. </p>
+                  <button type="button" class="basic_btn_green_border delete_cancel_btn">
+                    삭제 철회
+                  </button>
+                </div>
+              </li>
+              <li class="music_list">
+                <div class="music_title_box">
+                  <div class="play_con">
+                    <button type="button" class="play_icon">
+                      <img src="../../images/icon/icon_play_circle.svg" alt="재생" />
+                    </button>
+                  </div>
+                  <div class="music_text">
+                    <p class="music_title">
+
+                      <b>MUSIC NAME MUSIC NAME MUSIC NAME MUSIC NAME</b>
+                    </p>
+                    <div class="date_wrap">
+                      <p class="date">0000.00.00</p>
+                      <div class="profile_wrap">
+                        <ul>
+                          <li>
+                            <img src="../../images/dummy/profile_01.jpg" alt="프로필 이미지1" />
+                          </li>
+                          <li>
+                            <img src="../../images/dummy/profile_02.jpg" alt="프로필 이미지1" />
+                          </li>
+                          <li>
+                            <img src="../../images/dummy/profile_03.jpg" alt="프로필 이미지1" />
+                          </li>
+                        </ul>
+
+                        <span>99</span>
+                      </div>
+                    </div>
+                    <div class="tag_list_wrap">
+                      <div class="tag_icon">
+                        <img src="../../images/icon/icon_tag.svg" alt="태그" />
+                      </div>
+                      <p class="music_tag_list_wrap">
+                        단순한, 신남, 아름다운, 긴장되는, 스릴있는, 행복한,
+                        슬픈, 우울한, 단순한, 신남, 아름다움, 긴장되는,
+                        스릴있는, 행복한, 슬픈, 우울한, 기쁨, 완전신남
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="music_option_box">
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_user_edit_gray.svg" alt="개인" />
+                      </div>
+                      <p class="icon_text">개인</p>
+                    </div>
+                  </div>
+                  <div class="music_option">
+                    <!-- 진행률에 따라 각각의 아이콘 노출 및 클래스 처리 부탁드립니다 -->
+                    <!-- 1. 100% 미만 -->
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_recording_gray.svg" alt="100% 미만" />
+                      </div>
+                      <p class="icon_text">50%</p>
+                    </div>
+                    <!-- 2. 100%  === hundred_percent 클래스 추가 -->
+                    <!-- <div class="option_wrap hundred_percent">
+                                          <div class="music_option_icon">
+                                              <img src="../../images/icon/icon_recording_green.svg" alt="100%">
+                                          </div>
+                                          <p class="icon_text">100%</p>
+                                      </div> -->
+                  </div>
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_clock_gray.svg" alt="재생 시간" />
+                      </div>
+                      <p class="icon_text">00:00</p>
+                    </div>
+                  </div>
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_currency_dollar.svg" alt="판매 중" />
+                      </div>
+                      <p class="icon_text">판매 중</p>
+                    </div>
+                  </div>
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <!-- 공개일 경우 -->
+                      <!-- <div class="music_option_icon">
+                                              <img src="../../images/icon/icon_eye.svg" alt="공개">
+                                          </div>
+                                          <p class="icon_text">공개</p> -->
+                      <!-- 비공개일 경우 -->
+                      <div class="music_option_icon secret">
+                        <img src="../../images/icon/icon_eye_secret.svg" alt="공개" />
+                      </div>
+                      <p class="icon_text">비공개</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="option">
+                  <button type="button" class="option_icon">
+                    <img src="../../images/icon/icon_option.svg" alt="옵션" />
+                  </button>
+                  <ul class="option_tab">
+                    <li class="option_list">
+                      <a href="../mypage/info_management.html">정보관리</a>
+                    </li>
+                    <li class="option_list copy">공유하기</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="music_list">
+                <div class="music_title_box">
+                  <div class="play_con">
+                    <button type="button" class="play_icon">
+                      <img src="../../images/icon/icon_play_circle.svg" alt="재생" />
+                    </button>
+                  </div>
+                  <div class="music_text">
+                    <p class="music_title">
+
+                      <b>MUSIC NAME MUSIC NAME MUSIC NAME MUSIC NAME</b>
+                    </p>
+                    <div class="date_wrap">
+                      <p class="date">0000.00.00</p>
+                      <div class="profile_wrap">
+                        <ul>
+                          <li>
+                            <img src="../../images/dummy/profile_01.jpg" alt="프로필 이미지1" />
+                          </li>
+                          <li>
+                            <img src="../../images/dummy/profile_02.jpg" alt="프로필 이미지1" />
+                          </li>
+                          <li>
+                            <img src="../../images/dummy/profile_03.jpg" alt="프로필 이미지1" />
+                          </li>
+                        </ul>
+
+                        <span>99</span>
+                      </div>
+                    </div>
+                    <div class="tag_list_wrap">
+                      <div class="tag_icon">
+                        <img src="../../images/icon/icon_tag.svg" alt="태그" />
+                      </div>
+                      <p class="music_tag_list_wrap">
+                        단순한, 신남, 아름다운, 긴장되는, 스릴있는, 행복한,
+                        슬픈, 우울한, 단순한, 신남, 아름다움, 긴장되는,
+                        스릴있는, 행복한, 슬픈, 우울한, 기쁨, 완전신남
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="music_option_box">
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_user_edit_gray.svg" alt="개인" />
+                      </div>
+                      <p class="icon_text">개인</p>
+                    </div>
+                  </div>
+                  <div class="music_option">
+                    <!-- 진행률에 따라 각각의 아이콘 노출 및 클래스 처리 부탁드립니다 -->
+                    <!-- 1. 100% 미만 -->
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_recording_gray.svg" alt="100% 미만" />
+                      </div>
+                      <p class="icon_text">50%</p>
+                    </div>
+                    <!-- 2. 100%  === hundred_percent 클래스 추가 -->
+                    <!-- <div class="option_wrap hundred_percent">
+                                          <div class="music_option_icon">
+                                              <img src="../../images/icon/icon_recording_green.svg" alt="100%">
+                                          </div>
+                                          <p class="icon_text">100%</p>
+                                      </div> -->
+                  </div>
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_clock_gray.svg" alt="재생 시간" />
+                      </div>
+                      <p class="icon_text">00:00</p>
+                    </div>
+                  </div>
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_currency_dollar.svg" alt="판매 중" />
+                      </div>
+                      <p class="icon_text">판매 중</p>
+                    </div>
+                  </div>
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <!-- 공개일 경우 -->
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_eye.svg" alt="공개" />
+                      </div>
+                      <p class="icon_text">공개</p>
+                      <!-- 비공개일 경우 -->
+                      <!-- <div class="music_option_icon secret">
+                                              <img src="../../images/icon/icon_eye_secret.svg" alt="공개">
+                                          </div>
+                                          <p class="icon_text">비공개</p> -->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="option">
+                  <button type="button" class="option_icon">
+                    <img src="../../images/icon/icon_option.svg" alt="옵션" />
+                  </button>
+                  <ul class="option_tab">
+                    <li class="option_list">
+                      <a href="../mypage/info_management.html">정보관리</a>
+                    </li>
+                    <li class="option_list copy">공유하기</li>
+                  </ul>
+                </div>
+              </li>
+              <li class="music_list">
+                <div class="music_title_box">
+                  <div class="play_con">
+                    <button type="button" class="play_icon">
+                      <img src="../../images/icon/icon_play_circle.svg" alt="재생" />
+                    </button>
+                  </div>
+                  <div class="music_text">
+                    <p class="music_title">
+                      <span class="final_badge">FINAL</span>
+                      <b>MUSIC NAME MUSIC NAME MUSIC NAME MUSIC NAME</b>
+                    </p>
+                    <div class="date_wrap">
+                      <p class="date">0000.00.00</p>
+                      <div class="profile_wrap">
+                        <ul>
+                          <li>
+                            <img src="../../images/dummy/profile_01.jpg" alt="프로필 이미지1" />
+                          </li>
+                          <li>
+                            <img src="../../images/dummy/profile_02.jpg" alt="프로필 이미지1" />
+                          </li>
+                          <li>
+                            <img src="../../images/dummy/profile_03.jpg" alt="프로필 이미지1" />
+                          </li>
+                        </ul>
+
+                        <span>99</span>
+                      </div>
+                    </div>
+                    <div class="tag_list_wrap">
+                      <div class="tag_icon">
+                        <img src="../../images/icon/icon_tag.svg" alt="태그" />
+                      </div>
+                      <p class="music_tag_list_wrap">
+                        단순한, 신남, 아름다운, 긴장되는, 스릴있는, 행복한,
+                        슬픈, 우울한, 단순한, 신남, 아름다움, 긴장되는,
+                        스릴있는, 행복한, 슬픈, 우울한, 기쁨, 완전신남
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="music_option_box">
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_user_edit_gray.svg" alt="개인" />
+                      </div>
+                      <p class="icon_text">개인</p>
+                    </div>
+                  </div>
+                  <div class="music_option">
+                    <!-- 진행률에 따라 각각의 아이콘 노출 및 클래스 처리 부탁드립니다 -->
+                    <!-- 1. 100% 미만 -->
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_recording_gray.svg" alt="100% 미만" />
+                      </div>
+                      <p class="icon_text">50%</p>
+                    </div>
+                    <!-- 2. 100%  === hundred_percent 클래스 추가 -->
+                    <!-- <div class="option_wrap hundred_percent">
+                                          <div class="music_option_icon">
+                                              <img src="../../images/icon/icon_recording_green.svg" alt="100%">
+                                          </div>
+                                          <p class="icon_text">100%</p>
+                                      </div> -->
+                  </div>
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_clock_gray.svg" alt="재생 시간" />
+                      </div>
+                      <p class="icon_text">00:00</p>
+                    </div>
+                  </div>
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_currency_dollar.svg" alt="판매 중" />
+                      </div>
+                      <p class="icon_text">판매 중</p>
+                    </div>
+                  </div>
+                  <div class="music_option">
+                    <div class="option_wrap">
+                      <!-- 공개일 경우 -->
+                      <div class="music_option_icon">
+                        <img src="../../images/icon/icon_eye.svg" alt="공개" />
+                      </div>
+                      <p class="icon_text">공개</p>
+                      <!-- 비공개일 경우 -->
+                      <!-- <div class="music_option_icon secret">
+                                              <img src="../../images/icon/icon_eye_secret.svg" alt="공개">
+                                          </div>
+                                          <p class="icon_text">비공개</p> -->
+                    </div>
+                  </div>
+                </div>
+
+                <div class="option">
+                  <button type="button" class="option_icon">
+                    <img src="../../images/icon/icon_option.svg" alt="옵션" />
+                  </button>
+                  <ul class="option_tab">
+                    <li class="option_list">
+                      <a href="../mypage/info_management.html">정보관리</a>
+                    </li>
+                    <li class="option_list copy">공유하기</li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </article>
+        </section>
+
+        <!-- 재생버튼 누르면 나오는 하단바 -->
+        <div class="play_bar active">
+          <div class="play_bar_inner">
+            <div class="btn_group">
+              <!-- 이전 곡이 없을 시 disabled 상태 -->
+              <button type="button" class="play_bar_icon prev" disabled>
+                <img src="../../images/icon/icon_skip_forward.svg" alt="이전버튼" />
+              </button>
+              <button type="button" class="play_bar_icon">
+                <img src="../../images/icon/icon_play.svg" alt="재생버튼" />
+              </button>
+              <!-- 정지버튼 -->
+              <!-- <button type="button" class="play_bar_icon">
+                <img src="../../images/icon/icon_pause_gray.svg" alt="정지버튼" />
+              </button> -->
+              <button type="button" class="play_bar_icon">
+                <img src="../../images/icon/icon_skip_forward.svg" alt="다음버튼" />
+              </button>
+            </div>
+            <div class="beat_icon">
+              <img src="../../images/icon/icon_beat.svg" alt="" />
+            </div>
+            <div class="music_name">MUSIC NAME - USER MANE</div>
+          </div>
+        </div>
+
+        <!-- 페이지네이션 -->
+        <div class="pagination_wrap">
+          <button type="button" class="prev_next_btn prev">
+            <img src="../../images/icon/icon_arrow_18px.svg" alt="화살표 아이콘" />
+          </button>
+          <div class="pagination_list">
+            <button type="button" class="active">1</button>
+            <button type="button">2</button>
+            <button type="button">3</button>
+            <button type="button">4</button>
+            <button type="button">5</button>
+            <p>...</p>
+          </div>
+          <button type="button" class="prev_next_btn">
+            <img src="../../images/icon/icon_arrow_18px.svg" alt="화살표 아이콘" />
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer>
+      <div class="inner">
+        <div class="left_side">
+          <div class="footer_logo"></div>
+          <button type="button" class="mento_signUp moblie">
+            멘토 뮤지션 회원가입
+          </button>
+          <div class="foot_nav">
+            <div class="main_text">
+              <a href="#" onclick="return false" class="link">
+                About Bybeats
+              </a>
+              <a href="#" onclick="return false" class="link">
+                요금제
+              </a>
+              <a href="#" onclick="return false" class="link">
+                공지사항
+              </a>
+              <a href="#" onclick="return false" class="link">
+                이벤트
+              </a>
+              <a href="#" onclick="return false" class="link">
+                이용약관
+              </a>
+              <a href="#" onclick="return false" class="link">
+                개인정보 취급방침
+              </a>
+            </div>
+            <div class="address">
+              <address>본사 : 서울특별시 도봉구 마들로13길 84, 서울창업허브 창동 2층 8로(창동, 창동 아우르네)</address>
+              <address>지점&스튜디오 : 서울특별시 마포구 와우산로3길 16, 203호~205호(상수동, 석진스토리)</address>
+            </div>
+            <ul class="foot_info">
+              <li>대표이사 김용환</li>
+              <li>사업자등록번호 112-86-01117</li>
+              <li>통신판매신고번호 제2019-서울마포-2779호</li>
+              <li>TEL 070.4323.0000</li>
+              <li>EMAIL support@beatsomeone.com</li>
+            </ul>
+
+            <p class="copyright">
+              Copyright © beatsomeone 2022 .All Right reserved.
+              <span>(주) 비트썸원</span>
+            </p>
+          </div>
+        </div>
+        <div class="right_side">
+          <button type="button" class="mento_signUp pc">
+            멘토 뮤지션 회원가입
+          </button>
+          <ul class="sns_wrap">
+            <li class="icon insta"></li>
+            <li class="icon twitter"></li>
+            <li class="icon facebook"></li>
+            <li class="icon youtube"></li>
+            <li class="icon blog"></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,214 @@
+/* 회원탈퇴 페이지 */
+.withdrawal_modal .moblie_br {
+    display: none;
+}
+
+.withdrawal .banner {
+    margin-top: 120px;
+}
+
+.withdrawal .banner+.top_section {
+    margin: 0 auto 80px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.withdrawal .banner+.top_section span.big {
+    font-size: 16px;
+}
+
+.withdrawal .content_section .title {
+    font-size: 24px;
+    margin-bottom: 50px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.withdrawal .content_section .comment_wrap {
+    width: 1045px;
+    margin: auto;
+}
+
+.withdrawal .content_section .comment_box {
+    width: 100%;
+    padding: 50px;
+    background: #F9F9F9;
+    border-radius: 5px;
+    margin-bottom: 16px;
+}
+
+.withdrawal .content_section .comment_box h3 {
+    margin-bottom: 15px;
+    font-size: 16px;
+    color: #444444;
+}
+
+.withdrawal .content_section .comment_box p {
+    line-height: 1.5;
+    font-size: 16px;
+    color: #666;
+}
+
+.withdrawal .content_section .comment_box p:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.withdrawal .content_section .comment_box p::before {
+    content: '∙';
+    display: inline-block;
+    vertical-align: baseline;
+    margin-right: 2px;
+}
+
+.withdrawal .check_box .check_box_text {
+    margin-left: 10px;
+    color: #222;
+}
+
+.withdrawal .check_box>input:checked+label .check_box_text {
+    color: #222;
+}
+
+.withdrawal .content_section .check_box>label {
+    justify-content: center;
+    user-select: none;
+}
+
+.withdrawal .content_section .withdrawal_btn {
+    width: 300px;
+    height: 50px;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background: linear-gradient(to right, #13e880 0%, #80e8ff 100%);
+    margin: 90px auto 130px;
+    display: block;
+}
+
+.withdrawal .content_section .withdrawal_btn:disabled {
+    background: #fff;
+    border: 1px solid #00CE7C;
+    color: #00CE7C;
+}
+
+
+/* ======================== 테블릿 ======================== */
+@media screen and (max-width: 1300px) {
+
+    /* 회원탈퇴 페이지 */
+    .withdrawal .banner {
+        margin-top: calc(100vw * (120/1300));
+    }
+
+    .withdrawal .banner+.top_section.withdrawal {
+        margin: 0 auto calc(100vw * (80/1300));
+        padding-bottom: calc(100vw * (10/1300));
+    }
+
+    .withdrawal .banner+.top_section span.big {
+        font-size: calc(100vw * (15/1300));
+    }
+
+    .withdrawal .content_section .title {
+        font-size: calc(100vw * (24/1300));
+        margin-bottom: calc(100vw * (50/1300));
+    }
+
+    .withdrawal .content_section .comment_wrap {
+        width: calc(100vw * (1045/1300));
+    }
+
+    .withdrawal .content_section .comment_box {
+        padding: calc(100vw * (50/1300));
+        border-radius: calc(100vw * (5/1300));
+        margin-bottom: calc(100vw * (16/1300));
+    }
+
+    .withdrawal .content_section .comment_box h3 {
+        margin-bottom: calc(100vw * (15/1300));
+        font-size: calc(100vw * (16/1300));
+    }
+
+    .withdrawal .content_section .comment_box p {
+        font-size: calc(100vw * (16/1300));
+    }
+
+    .withdrawal .content_section .comment_box p:not(:last-child) {
+        margin-bottom: calc(100vw * (15/1300));
+    }
+
+    .withdrawal .content_section .comment_box p::before {
+        margin-right: calc(100vw * (2/1300));
+    }
+
+    .withdrawal .check_box .check_box_text {
+        margin-left: calc(100vw * (10/1300));
+    }
+
+    .withdrawal .content_section .withdrawal_btn {
+        width: calc(100vw * (300/1300));
+        height: calc(100vw * (50/1300));
+        border-radius: calc(100vw * (5/1300));
+        font-size: calc(100vw * (15/1300));
+        margin: calc(100vw * (90/1300)) auto calc(100vw * (130/1300));
+    }
+
+
+}
+
+@media screen and (max-width: 768px) {
+
+    /* 회원탈퇴 페이지 */
+    .withdrawal .banner,
+    .withdrawal .banner+.top_section.withdrawal {
+        display: none;
+    }
+
+    .withdrawal .content_section .title {
+        padding-top: calc(100vw * (87/375));
+        font-size: calc(100vw * (20/375));
+        margin-bottom: calc(100vw * (50/375));
+    }
+
+    .withdrawal .content_section .comment_wrap {
+        width: calc(100vw * (343/375));
+    }
+
+    .withdrawal .content_section .comment_box {
+        padding: calc(100vw * (20/375));
+        border-radius: calc(100vw * (5/375));
+        margin-bottom: calc(100vw * (20/375));
+    }
+
+    .withdrawal .content_section .comment_box p {
+        font-size: calc(100vw * (14/375));
+        line-height: 140%;
+    }
+
+    .withdrawal .content_section .comment_box p:not(:last-child) {
+        margin-bottom: calc(100vw * (15/375));
+    }
+
+    .withdrawal .content_section .comment_box p::before {
+        margin-right: calc(100vw * (2/375));
+    }
+
+    .withdrawal .check_box .check_box_text {
+        margin-left: calc(100vw * (10/375));
+        font-size: calc(100vw * (13/375));
+    }
+
+    .withdrawal .content_section .check_box>label {
+        justify-content: flex-start;
+    }
+
+    .withdrawal .content_section .withdrawal_btn {
+        width: calc(100vw * (343/375));
+        height: calc(100vw * (45/375));
+        border-radius: calc(100vw * (5/375));
+        font-size: calc(100vw * (14/375));
+        margin: calc(100vw * (50/375)) auto calc(100vw * (100/375));
+    }
+
+}

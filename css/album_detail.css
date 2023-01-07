@@ -1,0 +1,1707 @@
+/* ---------------------------------------- mypage ---------------------------------------- */
+/* ---------------------------------------- mypage ---------------------------------------- */
+#wrap_content {
+    padding-top: 120px;
+}
+
+/* ------------------- 앨범 상세보기(album_detail.html) ------------------- */
+.album_detail {
+    padding: 0 0 220px;
+}
+
+.album_detail .banner+.top_section {
+    padding: 0 0 10px;
+    margin: 0 auto 30px;
+    border-bottom: 1px solid #ccc;
+}
+
+.album_detail .detail_section {
+    width: 1260px;
+    margin: 0 auto;
+}
+
+.album_detail .album_info {
+    display: flex;
+}
+
+.album_detail .album_info .img {
+    flex: 0 0 auto;
+    width: 294px;
+    height: 294px;
+    margin-right: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.album_detail .album_info .img img {
+    object-fit: cover;
+}
+
+.album_detail .album_text {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.album_detail .album_text p {
+    margin: 0 0 24px;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.album_detail .album_text span {
+    display: block;
+    width: 800px;
+    line-height: 1.6;
+    font-size: 16px;
+    color: #444;
+}
+
+.album_detail .tag_list {
+    display: flex;
+    margin: 28px 0 0;
+}
+
+.album_detail .tag_list::before {
+    content: '';
+    display: block;
+    flex: 0 0 auto;
+    width: 16px;
+    height: 16px;
+    margin-top: 3px;
+    margin-right: 9px;
+    background: url('../images/icon/icon_tag.svg') no-repeat center / contain;
+    filter: invert(37%) sepia(45%) saturate(14%) hue-rotate(31deg) brightness(96%) contrast(87%);
+}
+
+.album_detail .tag_list ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.album_detail .tag_list li {
+    flex: 0 0 auto;
+    line-height: 1.5;
+    font-size: 13px;
+    color: #666;
+}
+
+.album_detail .tag_list li:not(:last-child)::after {
+    content: ',';
+    margin-right: 2px;
+}
+
+.album_detail .info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+}
+
+.album_detail .count {
+    display: flex;
+    align-items: center;
+}
+
+.album_detail .count li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin-right: 26px;
+    color: #666;
+}
+
+.album_detail .count li::before {
+    content: '';
+    display: block;
+    width: 26px;
+    height: 26px;
+    margin: 0 0 10px;
+}
+
+.album_detail .count li:first-child::before {
+    background: url('../images/icon/icon_clock_gray.svg') no-repeat center / cover;
+}
+
+.album_detail .count li:nth-child(2)::before {
+    background: url('../images/icon/icon_currency_dollar.svg') no-repeat center / cover;
+}
+
+.album_detail .count li:nth-child(3)::before {
+    background: url('../images/icon/icon_eye.svg') no-repeat center / cover;
+}
+
+.album_detail .album_info .btn_group {
+    display: flex;
+    align-items: center;
+}
+
+.album_detail .album_info button {
+    width: 141px;
+    height: 38px;
+    margin-left: 10px;
+}
+
+.album_detail .play_track {
+    margin: 30px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.album_detail .play_track .img_container {
+    padding: 16px 0;
+    background: #444;
+}
+
+.album_detail .play_track .img {
+    width: 695px;
+    height: 48px;
+    margin: 0 auto;
+}
+
+.album_detail .play_track img {
+    object-fit: cover;
+}
+
+.album_detail .track_line {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0;
+}
+
+.album_detail .track_line p:last-child {
+    color: #666;
+}
+
+.album_detail .play_btn_wrap {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.album_detail .play_btn_wrap button:not(:nth-child(2)) {
+    width: 20px;
+    height: 20px;
+}
+
+.album_detail .play_btn_wrap button:nth-child(2) {
+    width: 24px;
+    height: 24px;
+    margin: 0 32px;
+}
+
+.album_detail .play_btn_wrap button:nth-child(2).play img:first-child {
+    display: none;
+}
+
+/* 앨범 밑에 정보들 */
+.album_detail .songwriter_section {
+    display: flex;
+}
+
+.album_detail .songwriter {
+    flex: 0 0 auto;
+    width: 293px;
+    margin-right: 30px;
+}
+
+.album_detail .songwriter>p {
+    margin: 0 0 14px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.album_detail .songwriter .info_box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px;
+    border-radius: 5px;
+    background: #f7f7f7;
+}
+
+.album_detail .songwriter .profile {
+    width: 96px;
+    height: 96px;
+    margin: 0 0 17px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.album_detail .songwriter .profile img {
+    object-fit: cover;
+}
+
+.album_detail .songwriter .text_info {
+    text-align: center;
+}
+
+.album_detail .songwriter .info_box p {
+    margin: 0 0 10px;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: underline;
+}
+
+.album_detail .songwriter ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 37px 0 0;
+}
+
+.album_detail .songwriter li {
+    position: relative;
+    text-align: center;
+}
+
+.album_detail .songwriter li span {
+    font-size: 16px;
+    color: #222;
+}
+
+.album_detail .songwriter .count {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: -14px;
+    color: #24CE7B;
+}
+
+.album_detail .songwriter .count::after {
+    content: '개';
+    margin-left: 3px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.album_detail .songwriter li::before {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 12px;
+    background: #fff;
+}
+
+.album_detail .songwriter .title::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+.album_detail .songwriter li:first-child .title::before {
+    background: url('../images/icon/icon_music_cd.svg') no-repeat center / cover;
+}
+
+.album_detail .songwriter li:nth-child(2) .title::before {
+    background: url('../images/icon/icon_trophy.svg') no-repeat center / cover;
+}
+
+.album_detail .songwriter li:nth-child(3) .title::before {
+    background: url('../images/icon/icon_reword.svg') no-repeat center / cover;
+}
+
+/* 작곡가 정보 */
+.album_detail .song_list {
+    flex: 1;
+}
+
+.album_detail .song_list .tit_wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 14px;
+}
+
+.album_detail .song_list .tit_wrap p {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.album_detail .song_list .list_num span {
+    font-size: 14px;
+    color: #24CE7B;
+}
+
+.album_detail .song_list .tit_wrap .count_sale {
+    font-size: 16px;
+    font-weight: 400;
+    color: #444;
+}
+
+.album_detail .count_sale .dash {
+    text-decoration: line-through;
+    font-size: 16px;
+}
+
+.album_detail .count_sale .color {
+    font-size: 18px;
+    font-weight: 500;
+    color: #f00;
+}
+
+.album_detail .track_list>li {
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.album_detail .track_list>li:last-child {
+    margin: 0;
+}
+
+.album_detail .track_list .title {
+    display: flex;
+    align-items: center;
+}
+
+.album_detail .track_list p {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.album_detail .track_list p::before {
+    content: '판매중';
+    display: block;
+    min-width: 79px;
+    padding: 6px 0;
+    margin-right: 10px;
+    background: #24CE7B;
+    border-radius: 100px;
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+}
+
+.album_detail .track_list .sold_out p::before {
+    content: "판매 완료";
+}
+
+.album_detail .btn_listen {
+    flex: 0 0 auto;
+    width: 28px;
+    height: 28px;
+    margin-left: 16px;
+}
+
+.album_detail .btn_listen img:first-child {
+    display: block;
+}
+
+.album_detail .btn_listen img:last-child {
+    display: none;
+}
+
+.album_detail .btn_listen.on img:first-child {
+    display: none;
+}
+
+.album_detail .btn_listen.on img:last-child {
+    display: block;
+}
+
+.album_detail .team {
+    display: flex;
+    align-items: center;
+    margin: 20px 0 0;
+}
+
+.album_detail .team li {
+    display: flex;
+    align-items: center;
+    margin-right: 30px;
+    color: #666;
+}
+
+.album_detail .team li::before {
+    content: '';
+    display: block;
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    margin-right: 7px;
+    background: url('../images/icon/icon_users.svg') no-repeat center / cover;
+}
+
+.album_detail .team li:first-child::before {
+    background: url('../images/icon/icon_profile.svg') no-repeat center / cover;
+}
+
+.album_detail .track_list {
+    margin: 0 0 60px;
+}
+
+.album_detail .track_list .price {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 111px;
+    padding: 9px 21px;
+    text-align: center;
+    line-height: 1.43;
+    background: rgba(255, 97, 98, 0.2);
+    font-weight: 600;
+    color: #f00;
+}
+
+/* unavailable */
+.album_detail .track_list .unavailable p {
+    color: #AAAAAA;
+}
+
+.album_detail .track_list .unavailable p::before {
+    content: '판매완료';
+    font-weight: 400;
+    background: #AAAAAA;
+}
+
+.album_detail .track_list .unavailable .title button {
+    display: none;
+}
+
+.album_detail .track_list .unavailable .price {
+    background: rgba(170, 170, 170, 0.2);
+    color: #555;
+}
+
+.album_detail .share_box {
+    padding: 0 0 54px;
+    position: relative;
+}
+
+.album_detail .share_inner {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: -16px;
+}
+
+.album_detail .share_box p {
+    min-width: 293px;
+    height: 40px;
+    padding: 9px 14px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+}
+
+.album_detail .share_box p::before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+    background: url('../images/icon/icon_warning.svg') no-repeat center / cover;
+}
+
+.album_detail .share_box button {
+    width: 98px;
+    height: 40px;
+    border-radius: 5px;
+    background: rgba(255, 97, 98, 0.1);
+    font-size: 16px;
+    font-weight: 500;
+    color: #f00;
+}
+
+.album_detail .new_re_comment textarea {
+    width: 100%;
+    height: 91px;
+    padding: 13px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.album_detail .new_re_comment textarea::placeholder {
+    color: #aaaaaa;
+}
+
+.album_detail .new_re_comment .submit_btn_wrap {
+    margin: 0 0 4px;
+    text-align: right;
+}
+
+.album_detail .new_re_comment .submit_btn {
+    flex-shrink: 0;
+    width: 107px;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 12px;
+}
+
+.album_detail .main_comment {
+    padding-bottom: 20px;
+}
+
+.album_detail .re_comment_btn {
+    display: block;
+    margin-left: auto;
+}
+
+/* ------------------- buyer_album_detail.html ------------------- */
+.album_detail.buyer .songwriter {
+    margin-top: 18px;
+}
+
+.album_detail.buyer .song_list .tit_wrap {
+    align-items: flex-end;
+}
+
+.album_detail.buyer .all_btn_con {
+    display: flex;
+    align-items: center;
+}
+
+.album_detail.buyer .all_price {
+    margin-right: 12px;
+}
+
+.album_detail .song_list .tit_wrap .all_price,
+.album_detail.buyer .all_price del {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.album_detail.buyer .all_price .total {
+    font-size: 18px;
+    font-weight: 500;
+    color: #FF1E1E;
+}
+
+.album_detail.buyer .song_list .tit_wrap button {
+    width: 107px;
+    height: 38px;
+    font-size: 14px;
+}
+
+.album_detail .track_list>li {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 20px;
+}
+
+.album_detail.buyer .price_wrap {
+    flex: 0 0 auto;
+    width: 107px;
+    margin-left: 30px;
+}
+
+.album_detail.buyer .track_list .price {
+    position: initial;
+    display: block;
+    width: 100%;
+    height: 32px;
+    padding: 0;
+    margin: 0 0 11px;
+    border-radius: 5px;
+    text-align: center;
+    line-height: 32px;
+}
+
+.album_detail.buyer .price_wrap button {
+    width: 100%;
+    height: 32px;
+    font-size: 14px;
+}
+
+.album_detail.buyer .unavailable button:disabled {
+    border-color: #AAA;
+    color: #aaa;
+}
+
+
+/* ------------------- modal ------------------- */
+.modal_bg legend {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.share_album_modal fieldset {
+    padding: 0 35px;
+}
+
+.share_album_modal .input_wrap {
+    margin: 45px 0 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.share_album_modal .input_wrap.error::after {
+    content: '이메일 주소를 입력해 주세요.';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 100%;
+    padding: 0 20px;
+    background: #fff;
+    text-align: left;
+    line-height: 3;
+    font-size: 16px;
+    color: #FF1E1E;
+    box-sizing: border-box;
+}
+
+.share_album_modal .error_text {
+    display: none;
+    margin: 0 0 20px;
+    text-align: left;
+    font-size: 14px;
+    color: #FF1E1E;
+}
+
+.share_album_modal .input_wrap.error + p {
+    display: block;
+}
+
+.share_album_modal li {
+    margin: 0 0 5px;
+    line-height: 1.7;
+    text-align: left;
+    color: #888;
+}
+
+.share_album_modal li:last-child {
+    margin: 0;
+}
+
+.share_album_modal .button_wrap {
+    margin: 30px 0 0;
+}
+
+/* update_album_modal */
+.update_album_modal fieldset {
+    padding: 0 25px;
+}
+
+.update_album_modal legend {
+    margin: 0 0 45px;
+}
+
+.update_album_modal .input_wrap {
+    margin: 0 0 8px;
+}
+
+.update_album_modal .gray {
+    margin: 0 0 14px;
+    background: #F6F6F6;
+}
+
+.update_album_modal .gray input::placeholder {
+    color: #888;
+}
+
+.update_album_modal .radio_wrap {
+    display: flex;
+    align-items: center;
+}
+
+.update_album_modal .radio_box {
+    margin-right: 14px;
+}
+
+.update_album_modal .radio_box .radio_box_img {
+    background: url('../images/icon/icon_unchecked_round.svg') no-repeat center / cover;
+}
+
+.update_album_modal .radio_box.black_label .radio_box_text {
+    color: #000;
+}
+
+.update_album_modal .text_box_wrap {
+    width: 100%;
+    height: 137px;
+    margin: 24px 0 32px;
+    border: 1px solid #ddd;
+}
+
+.update_album_modal textarea {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    font-weight: 500;
+}
+
+.update_album_modal textarea::placeholder {
+    color: #aaa;
+}
+
+.update_album_modal .modal_content .button_wrap {
+    margin: 55px 0 0;
+}
+
+
+
+/* 태블릿----------------------------------- */
+@media screen and (max-width: 1300px) {
+    #wrap_content {
+        padding-top: calc(100vw * (120/1300));
+    }
+    
+    /* ------------------- 앨범 상세보기(album_detail.html) ------------------- */
+    .album_detail {
+        padding: 0 0 calc(100vw * (220/1300));
+    }
+    
+    .album_detail .banner+.top_section {
+        padding: 0 0 calc(100vw * (10/1300));
+        margin: 0 auto calc(100vw * (30/1300));
+    }
+    
+    .album_detail .detail_section {
+        width: calc(100vw * (1260/1300));
+    }
+    
+    .album_detail .album_info .img {
+        width: calc(100vw * (294/1300));
+        height: calc(100vw * (294/1300));
+        margin-right: calc(100vw * (30/1300));
+        border-radius: calc(100vw * (5/1300));
+    }
+    
+    .album_detail .album_text p {
+        margin: 0 0 calc(100vw * (24/1300));
+        font-size: calc(100vw * (20/1300));
+    }
+    
+    .album_detail .album_text span {
+        width: calc(100vw * (800/1300));
+        font-size: calc(100vw * (16/1300));
+    }
+    
+    .album_detail .tag_list {
+        margin: calc(100vw * (28/1300)) 0 0;
+    }
+    
+    .album_detail .tag_list::before {
+        width: calc(100vw * (16/1300));
+        height: calc(100vw * (16/1300));
+        margin-top: calc(100vw * (3/1300));
+        margin-right: calc(100vw * (9/1300));
+    }
+    
+    .album_detail .tag_list li {
+        font-size: calc(100vw * (13/1300));
+    }
+    
+    .album_detail .tag_list li:not(:last-child)::after {
+        margin-right: calc(100vw * (2/1300));
+    }
+    
+    .album_detail .count li {
+        margin-right: calc(100vw * (26/1300));
+    }
+    
+    .album_detail .count li::before {
+        width: calc(100vw * (26/1300));
+        height: calc(100vw * (26/1300));
+        margin: 0 0 calc(100vw * (10/1300));
+    }
+    
+    .album_detail .album_info button {
+        width: calc(100vw * (141/1300));
+        height: calc(100vw * (38/1300));
+        margin-left: calc(100vw * (10/1300));
+    }
+    
+    .album_detail .play_track {
+        margin: calc(100vw * (30/1300)) 0;
+    }
+    
+    .album_detail .play_track .img_container {
+        padding: calc(100vw * (16/1300)) 0;
+    }
+    
+    .album_detail .play_track .img {
+        width: calc(100vw * (695/1300));
+        height: calc(100vw * (48/1300));
+    }
+    
+    .album_detail .track_line {
+        margin: calc(100vw * (15/1300)) 0;
+    }
+    
+    .album_detail .play_btn_wrap button:not(:nth-child(2)) {
+        width: calc(100vw * (20/1300));
+        height: calc(100vw * (20/1300));
+    }
+    
+    .album_detail .play_btn_wrap button:nth-child(2) {
+        width: calc(100vw * (24/1300));
+        height: calc(100vw * (24/1300));
+        margin: 0 calc(100vw * (32/1300));
+    }
+    
+    .album_detail .songwriter {
+        width: calc(100vw * (293/1300));
+        margin-right: calc(100vw * (30/1300));
+    }
+    
+    .album_detail .songwriter>p {
+        margin: 0 0 calc(100vw * (14/1300));
+        font-size: calc(100vw * (16/1300));
+    }
+    
+    .album_detail .songwriter .info_box {
+        padding: calc(100vw * (30/1300));
+        border-radius: calc(100vw * (5/1300));
+    }
+    
+    .album_detail .songwriter .profile {
+        width: calc(100vw * (96/1300));
+        height: calc(100vw * (96/1300));
+        margin: 0 0 calc(100vw * (17/1300));
+    }
+    
+    .album_detail .songwriter .info_box p {
+        margin: 0 0 calc(100vw * (10/1300));
+        font-size: calc(100vw * (16/1300));
+    }
+    
+    .album_detail .songwriter ul {
+        margin: calc(100vw * (37/1300)) 0 0;
+    }
+    
+    .album_detail .songwriter li span {
+        font-size: calc(100vw * (16/1300));
+    }
+    
+    .album_detail .songwriter .count {
+        margin-top: calc(100vw * (-14/1300));
+    }
+    
+    .album_detail .songwriter .count::after {
+        margin-left: calc(100vw * (3/1300));
+        font-size: calc(100vw * (13/1300));
+    }
+    
+    .album_detail .songwriter li::before {
+        width: calc(100vw * (60/1300));
+        height: calc(100vw * (60/1300));
+        margin-bottom: calc(100vw * (12/1300));
+    }
+    
+    .album_detail .songwriter .title::before {
+        width: calc(100vw * (16/1300));
+        height: calc(100vw * (16/1300));
+        margin-right: calc(100vw * (4/1300));
+    }
+    
+    /* 작곡가 정보 */
+    .album_detail .song_list .tit_wrap {
+        margin: 0 0 calc(100vw * (14/1300));
+    }
+    
+    .album_detail .song_list .tit_wrap p {
+        font-size: calc(100vw * (16/1300));
+    }
+
+    .album_detail .song_list .list_num span {
+        font-size: calc(100vw * (14/1300));
+    }
+    
+    .album_detail .song_list .tit_wrap .count_sale {
+        font-size: calc(100vw * (16/1300));
+    }
+    
+    .album_detail .count_sale .dash {
+        font-size: calc(100vw * (16/1300));
+    }
+    
+    .album_detail .count_sale .color {
+        font-size: calc(100vw * (18/1300));
+    }
+    
+    .album_detail .track_list>li {
+        padding: calc(100vw * (20/1300));
+        margin-bottom: calc(100vw * (10/1300));
+        border-radius: calc(100vw * (5/1300));
+    }
+    
+ 
+    .album_detail .track_list p {
+        font-size: calc(100vw * (16/1300));
+    }
+    
+    .album_detail .track_list p::before {
+        min-width: calc(100vw * (79/1300));
+        padding: calc(100vw * (6/1300)) 0;
+        margin-right: calc(100vw * (10/1300));
+        border-radius: calc(100vw * (100/1300));
+        font-size: calc(100vw * (14/1300));
+    }
+    
+    .album_detail .btn_listen {
+        width: calc(100vw * (28/1300));
+        height: calc(100vw * (28/1300));
+        margin-left: calc(100vw * (16/1300));
+    }
+    
+    .album_detail .team {
+        margin: calc(100vw * (20/1300)) 0 0;
+    }
+    
+    .album_detail .team li {
+        margin-right: calc(100vw * (30/1300));
+        color: #666;
+    }
+    
+    .album_detail .team li::before {
+        width: calc(100vw * (20/1300));
+        height: calc(100vw * (20/1300));
+        margin-right: calc(100vw * (7/1300));
+    }
+
+    .album_detail .track_list {
+        margin: 0 0 calc(100vw * (60/1300));
+    }
+    
+    .album_detail .track_list .price {
+        min-width: calc(100vw * (111/1300));
+        padding: calc(100vw * (9/1300)) calc(100vw * (21/1300));
+    }
+    
+    /* unavailable */
+    .album_detail .share_box {
+        padding: 0 0 calc(100vw * (54/1300));
+    }
+    
+    .album_detail .share_inner {
+        top: calc(100vw * (-16/1300));
+    }
+    
+    .album_detail .share_box p {
+        min-width: calc(100vw * (293/1300));
+        height: calc(100vw * (40/1300));
+        padding: calc(100vw * (9/1300)) calc(100vw * (14/1300));
+        margin-right: calc(100vw * (10/1300));
+        border-radius: calc(100vw * (5/1300));
+    }
+    
+    .album_detail .share_box p::before {
+        width: calc(100vw * (22/1300));
+        height: calc(100vw * (22/1300));
+        margin-right: calc(100vw * (8/1300));
+    }
+    
+    .album_detail .share_box button {
+        width: calc(100vw * (98/1300));
+        height: calc(100vw * (40/1300));
+        border-radius: calc(100vw * (5/1300));
+        font-size: calc(100vw * (16/1300));
+    }
+    
+    .album_detail .new_re_comment textarea {
+        height: calc(100vw * (91/1300));
+        padding: calc(100vw * (13/1300)) calc(100vw * (20/1300));
+    }
+    
+    .album_detail .new_re_comment .submit_btn_wrap {
+        margin: 0 0 calc(100vw * (4/1300));
+    }
+    
+    .album_detail .new_re_comment .submit_btn {
+        width: calc(100vw * (107/1300));
+        padding: calc(100vw * (10/1300)) 0;
+        margin-top: calc(100vw * (12/1300));
+    }
+    
+    .album_detail .main_comment {
+        padding-bottom: calc(100vw * (20/1300));
+    }
+    
+    /* ------------------- buyer_album_detail.html ------------------- */
+    .album_detail.buyer .songwriter {
+        margin-top: calc(100vw * (18/1300));
+    }
+    
+       .album_detail.buyer .all_price {
+        margin-right: calc(100vw * (12/1300));
+    }
+    
+    .album_detail .song_list .tit_wrap .all_price,
+    .album_detail.buyer .all_price del {
+        font-size: calc(100vw * (16/1300));
+    }
+    
+    .album_detail.buyer .all_price .total {
+        font-size: calc(100vw * (18/1300));
+    }
+    
+    .album_detail.buyer .song_list .tit_wrap button {
+        width: calc(100vw * (107/1300));
+        height: calc(100vw * (38/1300));
+        font-size: calc(100vw * (14/1300));
+    }
+    
+    .album_detail .track_list>li {
+        padding: calc(100vw * (15/1300)) calc(100vw * (20/1300));
+    }
+    
+    .album_detail.buyer .price_wrap {
+        width: calc(100vw * (107/1300));
+        margin-left: calc(100vw * (30/1300));
+    }
+    
+    .album_detail.buyer .track_list .price {
+        height: calc(100vw * (32/1300));
+        margin: 0 0 calc(100vw * (11/1300));
+        line-height: calc(100vw * (32/1300));
+    }
+    
+    .album_detail.buyer .price_wrap button {
+        height: calc(100vw * (32/1300));
+        font-size: calc(100vw * (14/1300));
+    }
+    
+   
+    /* ------------------- modal ------------------- */
+    .modal_bg legend {
+        font-size: calc(100vw * (22/1300));
+    }
+    
+    .share_album_modal fieldset {
+        padding: 0 calc(100vw * (35/1300));
+    }
+    
+    .share_album_modal .input_wrap {
+        margin: calc(100vw * (45/1300)) 0 calc(100vw * (10/1300));
+    }
+    
+    .share_album_modal .input_wrap.error::after {
+        padding: 0 calc(100vw * (20/1300));
+        font-size: calc(100vw * (16/1300));
+    }
+    
+    .share_album_modal .error_text {
+        margin: 0 0 calc(100vw * (20/1300));
+        font-size: calc(100vw * (14/1300));
+    }
+    
+    .share_album_modal li {
+        margin: 0 0 calc(100vw * (5/1300));
+    }
+    
+    .share_album_modal .button_wrap {
+        margin: calc(100vw * (30/1300)) 0 0;
+    }
+    
+    /* update_album_modal */
+    .update_album_modal fieldset {
+        padding: 0 calc(100vw * (25/1300));
+    }
+    
+    .update_album_modal legend {
+        margin: 0 0 calc(100vw * (45/1300));
+    }
+    
+    .update_album_modal .input_wrap {
+        margin: 0 0 calc(100vw * (8/1300));
+    }
+    
+    .update_album_modal .gray {
+        margin: 0 0 calc(100vw * (14/1300));
+    }
+    
+    .update_album_modal .radio_box {
+        margin-right: calc(100vw * (14/1300));
+    }
+    
+    .update_album_modal .text_box_wrap {
+        height: calc(100vw * (137/1300));
+        margin: calc(100vw * (24/1300)) 0 calc(100vw * (32/1300));
+    }
+    
+    .update_album_modal textarea {
+        padding: calc(100vw * (20/1300));
+    }
+    
+    .update_album_modal .modal_content .button_wrap {
+        margin: calc(100vw * (55/1300)) 0 0;
+    }
+}
+
+
+@media all and (max-width: 768px) {
+
+    /* #header_pc,
+    .banner,
+    .top_section .select_big_wrap,
+    footer {
+        display: none;
+    } */
+
+    #wrap_content {
+        padding: calc(100vw * (77/375)) 0 0;
+    }
+
+    .wrap_inner {
+        padding: 0 calc(100vw * (16/375));
+    }
+
+    /* ------------------- 앨범 상세보기(album_detail.html) ------------------- */
+    .album_detail {
+        padding: 0 0 calc(100vw * (50/375));
+    }
+
+    .album_detail .banner+.top_section {
+        padding: 0;
+        margin: 0 0 calc(100vw * (30/375));
+        border: none;
+    }
+
+    .album_detail .detail_section {
+        width: 100%;
+    }
+
+    .album_detail .album_info {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .album_detail .album_info .img {
+        width: calc(100vw * (187/375));
+        height: calc(100vw * (187/375));
+        margin: 0 0 calc(100vw * (30/375));
+        border-radius: calc(100vw * (5/375));
+    }
+
+    .album_detail .album_text p {
+        margin: 0 0 calc(100vw * (20/375));
+        line-height: 1.4;
+        font-size: calc(100vw * (14/375));
+    }
+
+    .album_detail .album_text span {
+        width: 100%;
+        font-size: calc(100vw * (14/375));
+    }
+
+    .album_detail .tag_list {
+        margin: calc(100vw * (24/375)) 0 0;
+    }
+
+    .album_detail .tag_list::before {
+        width: calc(100vw * (18/375));
+        height: calc(100vw * (18/375));
+        margin-top: 0;
+        margin-right: calc(100vw * (9/375));
+    }
+
+    .album_detail .tag_list li {
+        font-size: calc(100vw * (12/375));
+    }
+
+    .album_detail .tag_list li:not(:last-child)::after {
+        margin-right: calc(100vw * (2/375));
+    }
+
+    .album_detail .info {
+        flex-wrap: wrap;
+    }
+
+    .album_detail .count {
+        margin: calc(100vw * (30/375)) 0;
+    }
+
+    .album_detail .count li {
+        margin-right: calc(100vw * (28/375));
+        color: #666;
+    }
+
+    .album_detail .count li::before {
+        width: calc(100vw * (20/375));
+        height: calc(100vw * (20/375));
+        margin: 0 0 calc(100vw * (10/375));
+    }
+
+    .album_detail .count li:first-child::before {
+        background: url('../images/icon/icon_clock_gray.svg') no-repeat center / cover;
+    }
+
+    .album_detail .count li:nth-child(2)::before {
+        background: url('../images/icon/icon_currency_dollar.svg') no-repeat center / cover;
+    }
+
+    .album_detail .count li:nth-child(3)::before {
+        background: url('../images/icon/icon_eye.svg') no-repeat center / cover;
+    }
+
+    .album_detail .album_info .btn_group {
+        margin-left: auto;
+    }
+
+    .album_detail .album_info button {
+        width: calc(100vw * (132/375));
+        height: calc(100vw * (38/375));
+        margin-left: calc(100vw * (8/375));
+    }
+
+    .album_detail .play_track {
+        margin: calc(100vw * (26/375)) 0 calc(100vw * (20/375));
+    }
+
+    .album_detail .play_track .img_container {
+        padding: calc(100vw * (23/375)) 0;
+    }
+
+    .album_detail .play_track .img {
+        width: calc(100vw * (270/375));
+        height: calc(100vw * (19/375));
+    }
+
+    .album_detail .track_line {
+        margin: calc(100vw * (10/375)) 0;
+    }
+
+    .album_detail .track_line p,
+    .album_detail .track_line span {
+        font-size: calc(100vw * (12/375));
+    }
+
+    .album_detail .track_line p:first-child {
+        width: calc(100vw * (98/375));
+        line-height: 1.5;
+    }
+
+    .album_detail .play_btn_wrap button:not(:nth-child(2)) {
+        width: calc(100vw * (16/375));
+        height: calc(100vw * (16/375));
+    }
+
+    .album_detail .play_btn_wrap button:nth-child(2) {
+        width: calc(100vw * (18/375));
+        height: calc(100vw * (18/375));
+        margin: 0 calc(100vw * (30/375));
+    }
+
+    .album_detail .track_line p:last-child {
+        color: #222;
+    }
+
+    /* 앨범 밑에 정보들 */
+    .album_detail .songwriter_section {
+        flex-wrap: wrap;
+        margin-bottom: calc(100vw * (120/375));
+    }
+
+    .album_detail .songwriter {
+        width: 100%;
+        margin: 0 0 calc(100vw * (30/375));
+    }
+
+    .album_detail .songwriter>p {
+        margin: 0 0 calc(100vw * (14/375));
+        line-height: 1.4;
+        font-size: calc(100vw * (14/375));
+    }
+
+    .album_detail .songwriter .info_box {
+        flex-flow: wrap row;
+        justify-content: flex-start;
+        padding: calc(100vw * (14/375)) calc(100vw * (40/375));
+        border-radius: calc(100vw * (5/375));
+    }
+
+    .album_detail .songwriter .profile {
+        width: calc(100vw * (63/375));
+        height: calc(100vw * (63/375));
+        margin: 0 calc(100vw * (14/375)) 0 0;
+    }
+
+    .album_detail .songwriter .info_box p {
+        margin: 0 0 calc(100vw * (11/375));
+        font-size: calc(100vw * (13/375));
+    }
+
+    .album_detail .songwriter .text_info {
+        width: calc(100% - calc(100vw * (77/375)));
+        text-align: left;
+    }
+
+    .album_detail .songwriter .text_info span {
+        font-size: calc(100vw * (13/375));
+    }
+
+    .album_detail .songwriter ul {
+        margin: calc(100vw * (20/375)) 0 0;
+    }
+
+    .album_detail .songwriter li span {
+        font-size: calc(100vw * (12/375));
+    }
+
+    .album_detail .songwriter .count {
+        align-items: baseline;
+        margin-top: calc(100vw * (-14/375));
+        font-size: calc(100vw * (18/375));
+        font-weight: 500;
+        color: #24CE7B;
+    }
+
+    .album_detail .songwriter .count::after {
+        margin-top: calc(100vw * (-14/375));
+        margin-left: 1px;
+        font-size: calc(100vw * (10/375));
+        font-weight: 500;
+    }
+
+    .album_detail .songwriter li::before {
+        width: calc(100vw * (60/375));
+        height: calc(100vw * (60/375));
+        margin-bottom: calc(100vw * (13/375));
+    }
+
+    .album_detail .songwriter .title::before {
+        width: calc(100vw * (16/375));
+        height: calc(100vw * (16/375));
+        margin-right: calc(100vw * (4/375));
+    }
+
+    /* 작곡가 정보 */
+    .album_detail .song_list .tit_wrap {
+        flex-wrap: wrap;
+        /* margin: 0 0 calc(100vw * (14/375)); */
+        margin: 0;
+    }
+
+    .album_detail .song_list .tit_wrap p {
+        width: 100%;
+        margin: 0 0 calc(100vw * (15/375));
+        font-size: calc(100vw * (14/375));
+    }
+
+    .album_detail .song_list .list_num span {
+        font-size: calc(100vw * (14/375));
+    }
+
+    .album_detail .song_list .tit_wrap .count_sale {
+        margin: 0 0 calc(100vw * (13/375));
+        text-align: right;
+        font-size: calc(100vw * (12/375));
+    }
+
+    .album_detail .count_sale .dash {
+        font-size: calc(100vw * (12/375));
+    }
+
+    .album_detail .count_sale .color {
+        margin-left: calc(100vw * (7/375));
+        font-size: calc(100vw * (14/375));
+    }
+
+    .album_detail .track_list>li {
+        padding: calc(100vw * (14/375)) calc(100vw * (14/375)) calc(100vw * (4/375));
+        margin-bottom: calc(100vw * (50/375));
+        border: 1px solid #ccc;
+        border-radius: calc(100vw * (5/375));
+        overflow: unset;
+    }
+
+    .album_detail .track_list>li:last-child {
+        margin: 0 0 calc(100vw * (65/375));
+    }
+
+    .album_detail .track_list p {
+        font-size: calc(100vw * (14/375));
+    }
+
+    .album_detail .track_list p::before {
+        min-width: calc(100vw * (63/375));
+        padding: calc(100vw * (4/375)) 0;
+        margin-right: calc(100vw * (10/375));
+        border-radius: calc(100vw * (100/375));
+        font-size: calc(100vw * (12/375));
+        font-weight: 400;
+    }
+
+    .album_detail .btn_listen {
+        width: calc(100vw * (20/375));
+        height: calc(100vw * (20/375));
+        margin-left: calc(100vw * (8/375));
+    }
+
+    .album_detail .team {
+        flex-wrap: wrap;
+        margin: calc(100vw * (10/375)) 0 0;
+    }
+
+    .album_detail .team li {
+        margin-right: calc(100vw * (12/375));
+        margin-bottom: calc(100vw * (10/375));
+        font-size: calc(100vw * (12/375));
+    }
+
+    .album_detail .team li::before {
+        width: calc(100vw * (16/375));
+        height: calc(100vw * (16/375));
+        margin-right: calc(100vw * (4/375));
+    }
+
+    .album_detail .team li span {
+        margin-left: calc(100vw * (3/375));
+        font-size: calc(100vw * (12/375));
+    }
+
+    .album_detail .track_list {
+        margin: 0 0 calc(100vw * (30/375));
+    }
+
+    .album_detail .track_list .price {
+        top: auto;
+        bottom: calc(100vw * (-35/375));
+        min-width: calc(100vw * (82/375));
+        padding: calc(100vw * (8/375)) calc(100vw * (11/375));
+        border-radius: calc(100vw * (5/375));
+        line-height: 1;
+        font-size: calc(100vw * (12/375));
+    }
+
+    .album_detail .share_box {
+        padding: 0 0 calc(100vw * (78/375));
+        margin-bottom: calc(100vw * (30/375));
+    }
+
+    .album_detail .share_inner {
+        top: 0;
+        width: 100%;
+        flex-wrap: wrap;
+    }
+
+    .album_detail .share_box p {
+        width: 100%;
+        min-width: unset;
+        height: calc(100vw * (34/375));
+        padding: calc(100vw * (8/375)) calc(100vw * (14/375));
+        margin: 0;
+        border-radius: calc(100vw * (5/375));
+        border-color: #ddd;
+
+        font-size: calc(100vw * (12/375));
+    }
+
+    .album_detail .share_box p::before {
+        width: calc(100vw * (18/375));
+        height: calc(100vw * (18/375));
+        margin-right: calc(100vw * (8/375));
+    }
+
+    .album_detail .share_box span {
+        font-size: calc(100vw * (12/375));
+    }
+
+    .album_detail .share_box button {
+        width: calc(100vw * (89/375));
+        height: calc(100vw * (34/375));
+        margin: calc(100vw * (10/375)) 0 0 auto;
+        border-radius: calc(100vw * (5/375));
+        font-size: calc(100vw * (13/375));
+    }
+
+    .album_detail .new_re_comment textarea {
+        height: calc(100vw * (124/375));
+        padding: calc(100vw * (11/375)) calc(100vw * (14/375));
+        border-radius: calc(100vw * (5/375));
+    }
+
+    .album_detail .new_re_comment .submit_btn_wrap {
+        margin: 0 0 calc(100vw * (4/375));
+    }
+
+    .album_detail .new_re_comment .submit_btn {
+        width: calc(100vw * (92/375));
+        height: calc(100vw * (34/375));
+        padding: 0;
+        margin-top: calc(100vw * (10/375));
+    }
+
+    .album_detail .main_comment {
+        padding-bottom: calc(100vw * (17/375));
+    }
+
+    .album_detail .comment_list_article .comment_list+li {
+        padding: 0;
+    }
+
+
+
+    /* ------------------- buyer_album_detail.html ------------------- */
+    .album_detail.buyer .songwriter {
+        margin-top: 0;
+    }
+
+    .album_detail.buyer .song_list .tit_wrap {
+        align-items: flex-start;
+        margin: 0 0 calc(100vw * (14/375));
+    }
+
+    .album_detail.buyer .song_list .tit_wrap button {
+        width: calc(100vw * (85/375));
+        height: calc(100vw * (38/375));
+        margin-left: auto;
+        font-size: calc(100vw * (12/375));
+    }
+
+    .album_detail.buyer .track_list>li {
+        padding: calc(100vw * (14/375)) calc(100vw * (14/375)) calc(100vw * (4/375));
+    }
+
+    .album_detail.buyer .price_wrap {
+        position: absolute;
+        right: 0;
+        bottom: calc(100vw * (-35/375));
+        display: flex;
+        align-items: center;
+        width: fit-content;
+        margin-left: 0;
+    }
+
+    .album_detail.buyer .track_list .price {
+        order: 1;
+        width: calc(100vw * (82/375));
+        height: calc(100vw * (28/375));
+        margin: 0;
+        border-radius: calc(100vw * (5/375));
+        line-height: 2.2;
+        font-size: calc(100vw * (12/375));
+    }
+
+    .album_detail.buyer .price_wrap button {
+        order: 0;
+        width: calc(100vw * (82/375));
+        height: calc(100vw * (28/375));
+        margin-right: calc(100vw * (8/375));
+        font-size: calc(100vw * (12/375));
+    }
+
+    .album_detail.buyer .unavailable button:disabled {
+        border-color: #AAA;
+        color: #aaa;
+    }
+
+    /* ------------------- modal ------------------- */
+    .modal_bg legend {
+        font-size: calc(100vw * (20/375));
+    }
+
+    .share_album_modal fieldset {
+        padding: 0;
+    }
+
+    .share_album_modal .input_wrap {
+        position: relative;
+        margin: calc(100vw * (40/375)) 0 calc(100vw * (10/375));
+        overflow: hidden;
+    }
+
+    .share_album_modal .input_wrap.error::after {
+        padding: 0 calc(100vw * (20/375));
+        font-size: calc(100vw * (14/375));
+    }
+
+    .share_album_modal .error_text {
+        margin: 0 0 calc(100vw * (20/375));
+        text-align: left;
+        font-size: calc(100vw * (13/375));
+        color: #FF1E1E;
+    }
+
+    .share_album_modal li {
+        margin: 0 0 calc(100vw * (10/375));
+        line-height: 1.4;
+        font-size: calc(100vw * (14/375));
+    }
+
+    .share_album_modal .button_wrap {
+        margin: calc(100vw * (30/375)) 0 0;
+    }
+
+    /* cancel_share_modal */
+    .cancel_share_modal.modal_bg .modal_content .basic_modal_text {
+        width: calc(100vw * (230/375));
+        margin: 0 auto calc(100vw * (30/375));
+    }
+
+    /* update_album_modal */
+    .update_album_modal fieldset {
+        padding: 0 25px;
+    }
+
+    .update_album_modal legend {
+        margin: 0 0 45px;
+    }
+
+    .update_album_modal .input_wrap {
+        margin: 0 0 8px;
+    }
+
+    .update_album_modal .gray {
+        margin: 0 0 14px;
+        background: #F6F6F6;
+    }
+
+    .update_album_modal .gray input::placeholder {
+        color: #888;
+    }
+
+    .update_album_modal .radio_wrap {
+        display: flex;
+        align-items: center;
+    }
+
+    .update_album_modal .radio_box {
+        margin-right: 14px;
+    }
+
+    .update_album_modal .radio_box .radio_box_img {
+        background: url('../images/icon/icon_unchecked_round.svg') no-repeat center / cover;
+    }
+
+    .update_album_modal .radio_box.black_label .radio_box_text {
+        color: #000;
+    }
+
+    .update_album_modal .text_box_wrap {
+        width: 100%;
+        height: 137px;
+        margin: 24px 0 32px;
+        border: 1px solid #ddd;
+    }
+
+    .update_album_modal textarea {
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        font-weight: 500;
+    }
+
+    .update_album_modal textarea::placeholder {
+        color: #aaa;
+    }
+
+    .update_album_modal .modal_content .button_wrap {
+        margin: 55px 0 0;
+    }
+}

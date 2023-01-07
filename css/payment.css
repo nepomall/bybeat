@@ -1,0 +1,1361 @@
+.payment_section {
+  width: 830px;
+  margin: 240px auto 230px;
+}
+
+.payment_section .title {
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.payment_section .title_wrap {
+  display: flex;
+  align-items: center;
+  margin-top: 53px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.payment_section .title_icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+}
+
+/* 음원정보 섹션 */
+.payment_section .track_wrap {
+  padding-top: 15px;
+}
+
+.payment_section .track_list {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 15px 20px 10px;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+}
+
+.payment_section .track_list:last-child {
+  margin-bottom: 24px;
+}
+
+.payment_section .track_line {
+  display: flex;
+  align-items: center;
+}
+
+.payment_section .track_name {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 500;
+
+  padding-right: 10px;
+}
+
+.payment_section .track_name .icon {
+  flex-shrink: 0;
+  display: flex;
+  width: 28px;
+  height: 28px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+.payment_section .track_name .icon.on img:first-child,
+.payment_section .track_name .icon img:last-child {
+  display: none;
+}
+
+.payment_section .track_name .icon img:first-child,
+.payment_section .track_name .icon.on img:last-child {
+  display: block;
+}
+
+.payment_section .percent {
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff1e1e;
+}
+
+.payment_section .track_line .right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.payment_section .price_btn {
+  flex-shrink: 0;
+  margin-left: auto;
+  padding: 6px 19px;
+  line-height: 1.6;
+  font-size: 14px;
+  font-weight: 600;
+  background: #ffdfe0;
+  color: #ff1e1e;
+  border-radius: 5px;
+}
+
+.payment_section .user_line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 19px 0 0;
+}
+
+.payment_section .user_wrap {
+  display: flex;
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+.payment_section .user_wrap:not(:last-child) {
+  margin-right: 30px;
+}
+
+.payment_section .user_icon {
+  display: block;
+  width: 20px;
+  height: 20px;
+  margin-right: 7px;
+}
+
+.payment_section .user_wrap .nickname {
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+}
+
+.payment_section .price_list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.payment_section .price_list {
+  margin-bottom: 15px;
+}
+
+.payment_section .price_title {
+  font-size: 16px;
+}
+
+.payment_section .price {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.payment_section .total_list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 0 0;
+  border-top: 1px solid #ddd;
+}
+
+.payment_section .total {
+  font-size: 18px;
+  font-weight: 500;
+  color: #24ce7b;
+}
+
+.payment_section .radio_list .radio_box {
+  margin-right: 32px;
+}
+
+/* 결제 수단 섹션 */
+.payment_section .radio_box .radio_box_text,
+.payment_section .radio_box.black_label .radio_box_text {
+  color: #666;
+}
+
+.payment_section .radio_box>input:checked+label .radio_box_text {
+  color: #222;
+}
+
+.payment_section .payment_way_section_wrap {
+  padding-top: 15px;
+}
+
+.payment_section .pay_tab {
+  margin-bottom: 20px;
+}
+
+.payment_section .way_sub_text:first-of-type {
+  margin: 15px 0;
+}
+
+.payment_section .way_sub_text {
+  display: block;
+  margin: 30px 0 15px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.payment_section .check_box {
+  margin-top: 27px;
+}
+
+.payment_section .check_box>input+label .check_box_text {
+  line-height: 1.4;
+  /* color: #666; */
+  color: #222;
+}
+
+.payment_section .way_select {
+  width: 400px;
+}
+
+.payment_section .info_input {
+  width: 400px;
+}
+
+.payment_section .info_input input {
+  width: 100%;
+  height: 100%;
+  padding: 11px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+}
+
+.buy_info_section .info_input input.error {
+  border: 1px solid #ff1e1e;
+}
+
+.buy_info_section .info_input input.error {
+  border: 1px solid #ff1e1e;
+}
+
+.payment_section .gray_text {
+  margin-top: 5px;
+  line-height: 1.7;
+  font-size: 14px;
+  font-weight: 400;
+  color: #888;
+}
+
+.payment_section .gray_text:first-child {
+  margin-top: 15px;
+}
+
+.payment_section .phone_line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.payment_section .phone_line .select_box_wrap {
+  width: 105px;
+  height: 40px;
+}
+
+.payment_section .phone_line .info_input {
+  width: 285px;
+  margin-left: 10px;
+}
+
+.payment_section .gray_text_wrap {
+  margin-top: 15px;
+  padding-top: 5px;
+  border-top: 1px solid #ddd;
+}
+
+.payment_section .red_text {
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ff1e1e;
+}
+
+.payment_section .button_wrap {
+  width: 400px;
+  height: 50px;
+  margin: 40px auto 0;
+}
+
+.payment_section .button_wrap .basic_btn_liner_green {
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.payment_section .pay_tab_sect.card {
+  padding-bottom: 40px;
+}
+
+.payment_section .radio_line {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.payment_section .radio_line .radio_box {
+  margin-right: 32px;
+}
+
+.payment_section .simple_card_wrap {
+  display: flex;
+  align-items: center;
+}
+
+.payment_section .radio_line+.simple_card_wrap {
+  margin-top: 15px;
+}
+
+.payment_section .simple_card_box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 226px;
+  height: 130px;
+  background: #f7f7f7;
+  border: 1px dashed #dddddd;
+  border-radius: 5px;
+}
+
+.payment_section .simple_card_box .card_add_btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-indent: -999px;
+  overflow: hidden;
+}
+
+.payment_section .add_card {
+  width: 226px;
+  height: 130px;
+  margin-left: 15px;
+  background: #24ce7b;
+  border-radius: 5px;
+}
+
+.payment_section .card_icon {
+  display: block;
+  width: 26px;
+  height: 26px;
+}
+
+.payment_section .big_text {
+  margin: 10px 0 7px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #666;
+}
+
+.payment_section .small_text {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 22px;
+  color: #666;
+  text-align: center;
+}
+
+.payment_section .overseas_icon {
+  width: auto;
+  height: 15px;
+}
+
+.payment_section .overseas_icon img {
+  width: auto;
+  height: 100%;
+}
+
+/* .agree_modal {
+  display: block !important;
+} */
+.payment_section .bank_list:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.payment_section .bank_list_title {
+  display: block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.payment_section .bank_list .select_box_wrap {
+  width: 400px;
+}
+
+.payment_section .bank_list .bank_input {
+  width: 400px;
+  height: 40px;
+}
+
+.payment_section .bank_list .bank_input input {
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  font-size: 14px;
+  border: 1px solid #dddddd;
+  background: #ffffff;
+  border-radius: 5px;
+}
+
+.payment_section .bank_list .bank_input input.error {
+  border: 1px solid #ff1e1e;
+}
+
+.payment_section .payment_way_section_wrap.bank .select_line {
+  display: flex;
+  align-items: center;
+}
+
+.payment_section .payment_way_section_wrap.bank .select_line {
+  margin-top: 15px;
+}
+
+.payment_section .payment_way_section_wrap.bank .select_box_wrap {
+  width: 185px;
+  margin-right: 8px;
+}
+
+.payment_section .number_input {
+  width: 207px;
+  height: 40px;
+  background: #ffffff;
+}
+
+.payment_section .number_input input {
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  border: 1px solid #dddddd;
+  border-radius: 5px;
+}
+
+.payment_section .number_input input.error {
+  border: 1px solid #ff1e1e;
+}
+
+/* 입력안했을 시 빨간 보더 */
+.error {
+  border: 1px solid #ff1e1e;
+}
+
+.payment_section .red_text {
+  width: 100%;
+  font-size: 14px;
+  font-weight: 400;
+  color: #ff1e1e;
+}
+
+.select_box_wrap.error ul {
+  border-color: #ff1e1e;
+}
+
+/* ------------결제 완료 페이지------------ */
+.payment_section.complete .date {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 28px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #444;
+}
+
+.payment_section.complete .date span {
+  margin-left: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #444;
+}
+
+.payment_section.complete .notice_wrap {
+  margin-top: 50px;
+}
+
+.payment_section.complete .notice_text {
+  font-size: 14px;
+  font-weight: 400;
+  color: #888;
+  line-height: 1.9;
+  white-space: nowrap;
+}
+
+.payment_section.complete .btn_wrap {
+  text-align: center;
+}
+
+/* .payment_section.complete .basic_btn_liner_green {
+  width: 400px;
+  height: 50px;
+  margin-top: 50px;
+} */
+.payment_modal .basic_modal_text.mb_only {
+  display: none;
+}
+
+/* 코칭 이용권 결제 */
+.coaching_payment .track_list {
+  display: flex;
+  align-items: center;
+  padding: 24px 20px 28px;
+}
+
+.coaching_payment .track_list .text_wrap {
+  margin-right: 50px;
+} 
+
+.coaching_payment .track_line .nickname {
+  display: inline-block;
+  margin-right: 10px;
+  font-weight: 500;
+  font-size: 16px;
+  color: #24ce7b;
+}
+
+.coaching_payment .track_line .prd_title {
+  display: inline-block;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.coaching_payment .track_list .descrip {
+  margin-top: 10px;
+  line-height: 1.4;
+}
+
+.coaching_payment .track_list dl {
+  display: flex;
+  width: 100%;
+  color: #444;
+}
+
+.coaching_payment .track_list dl * {
+  line-height: 1.3;
+}
+
+.coaching_payment .track_list dt {
+  margin-right: 0.5rem;
+}
+
+.coaching_payment .track_list dl+dl {
+  margin-top: 5px;
+}
+
+.payment_section .sub_pay {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px 0 0 25px;
+}
+
+.payment_section .sub_pay li+li {
+  margin-left: 32px;
+}
+
+
+/* ======================== 테블릿 ======================== */
+@media screen and (max-width: 1300px) {
+  .payment_section {
+    width: calc(100vw * (830 / 1300));
+    margin: calc(100vw * (240 / 1300)) auto calc(100vw * (230 / 1300));
+  }
+
+  .payment_section .title {
+    font-size: calc(100vw * (24 / 1300));
+  }
+
+  .payment_section .title_wrap {
+    margin-top: calc(100vw * (53 / 1300));
+    padding-bottom: calc(100vw * (10 / 1300));
+  }
+
+  .payment_section .title_icon {
+    width: calc(100vw * (20 / 1300));
+    height: calc(100vw * (20 / 1300));
+    margin-left: calc(100vw * (10 / 1300));
+  }
+
+  /* 음원정보 섹션 */
+  .payment_section .track_wrap {
+    padding-top: calc(100vw * (15 / 1300));
+  }
+
+  .payment_section .track_list {
+    margin-bottom: calc(100vw * (10 / 1300));
+    padding: calc(100vw * (15 / 1300)) calc(100vw * (20 / 1300)) calc(100vw * (10 / 1300));
+  }
+
+  .payment_section .track_list:last-child {
+    margin-bottom: calc(100vw * (24 / 1300));
+  }
+
+  .payment_section .track_name {
+    font-size: calc(100vw * (16 / 1300));
+    padding-right: calc(100vw * (10 / 1300));
+  }
+
+  .payment_section .track_name .icon {
+    width: calc(100vw * (28 / 1300));
+    height: calc(100vw * (28 / 1300));
+    margin-left: calc(100vw * (15 / 1300));
+  }
+
+  .payment_section .percent {
+    margin-right: calc(100vw * (10 / 1300));
+    font-size: calc(100vw * (14 / 1300));
+  }
+
+  .payment_section .price_btn {
+    padding: calc(100vw * (6 / 1300)) calc(100vw * (19 / 1300));
+    font-size: calc(100vw * (14 / 1300));
+  }
+
+  .payment_section .user_line {
+    margin: calc(100vw * (19 / 1300)) 0 0;
+  }
+
+  .payment_section .user_wrap {
+    margin-bottom: calc(100vw * (10 / 1300));
+  }
+
+  .payment_section .user_wrap:not(:last-child) {
+    margin-right: calc(100vw * (30 / 1300));
+  }
+
+  .payment_section .user_icon {
+    width: calc(100vw * (20 / 1300));
+    height: calc(100vw * (20 / 1300));
+    margin-right: calc(100vw * (7 / 1300));
+  }
+
+  .payment_section .user_wrap .nickname {
+    font-size: calc(100vw * (12 / 1300));
+  }
+
+  .payment_section .price_list {
+    margin-bottom: calc(100vw * (15 / 1300));
+  }
+
+  .payment_section .price_title {
+    font-size: calc(100vw * (15 / 1300));
+  }
+
+  .payment_section .price {
+    font-size: calc(100vw * (15 / 1300));
+  }
+
+  .payment_section .total_list {
+    padding: calc(100vw * (15 / 1300)) 0 0;
+  }
+
+  .payment_section .total {
+    font-size: calc(100vw * (18 / 1300));
+  }
+
+  .payment_section .radio_list .radio_box {
+    margin-right: calc(100vw * (32 / 1300));
+  }
+
+  /* 결제 수단 섹션 */
+  .payment_section .payment_way_section_wrap {
+    padding-top: calc(100vw * (15 / 1300));
+  }
+
+  .payment_section .pay_tab {
+    margin-bottom: calc(100vw * (20 / 1300));
+  }
+
+  .payment_section .way_sub_text:first-of-type {
+    margin: calc(100vw * (15 / 1300)) 0;
+  }
+
+  .payment_section .way_sub_text {
+    margin: calc(100vw * (30 / 1300)) 0 calc(100vw * (15 / 1300));
+    font-size: calc(100vw * (14 / 1300));
+  }
+
+  .payment_section .check_box {
+    margin-top: calc(100vw * (27 / 1300));
+  }
+
+  .payment_section .way_select {
+    width: calc(100vw * (400 / 1300));
+  }
+
+  .payment_section .info_input {
+    width: calc(100vw * (400 / 1300));
+  }
+
+  .payment_section .info_input input {
+    padding: calc(100vw * (11 / 1300)) calc(100vw * (20 / 1300));
+    font-size: calc(100vw * (14 / 1300));
+  }
+
+  .payment_section .gray_text {
+    margin-top: calc(100vw * (5 / 1300));
+    font-size: calc(100vw * (14 / 1300));
+  }
+
+  .payment_section .gray_text:first-child {
+    margin-top: calc(100vw * (15 / 1300));
+  }
+
+  .payment_section .phone_line .select_box_wrap {
+    width: calc(100vw * (105 / 1300));
+    height: calc(100vw * (40 / 1300));
+  }
+
+  .payment_section .phone_line .info_input {
+    width: calc(100vw * (285 / 1300));
+    margin-left: calc(100vw * (10 / 1300));
+  }
+
+  .payment_section .gray_text_wrap {
+    margin-top: calc(100vw * (15 / 1300));
+    padding-top: calc(100vw * (5 / 1300));
+  }
+
+  .payment_section .red_text {
+    margin-top: calc(100vw * (10 / 1300));
+    font-size: calc(100vw * (14 / 1300));
+  }
+
+  .payment_section .button_wrap {
+    width: calc(100vw * (400 / 1300));
+    height: calc(100vw * (50 / 1300));
+    margin: calc(100vw * (40 / 1300)) auto 0;
+  }
+
+  .payment_section .button_wrap .basic_btn_liner_green {
+    font-size: calc(100vw * (15 / 1300));
+  }
+
+  .payment_section .pay_tab_sect.card {
+    padding-bottom: calc(100vw * (40 / 1300));
+  }
+
+  .payment_section .radio_line {
+    margin-left: calc(100vw * (10 / 1300));
+    margin-bottom: calc(100vw * (10 / 1300));
+  }
+
+  .payment_section .radio_line .radio_box {
+    margin-right: calc(100vw * (32 / 1300));
+  }
+
+  .payment_section .radio_line+.simple_card_wrap {
+    margin-top: calc(100vw * (15 / 1300));
+  }
+
+  .payment_section .simple_card_box {
+    width: calc(100vw * (226 / 1300));
+    height: calc(100vw * (130 / 1300));
+  }
+
+  .payment_section .add_card {
+    width: calc(100vw * (226 / 1300));
+    height: calc(100vw * (130 / 1300));
+    margin-left: calc(100vw * (15 / 1300));
+  }
+
+  .payment_section .card_icon {
+    width: calc(100vw * (26 / 1300));
+    height: calc(100vw * (26 / 1300));
+  }
+
+  .payment_section .big_text {
+    margin: calc(100vw * (10 / 1300)) 0 calc(100vw * (7 / 1300));
+    font-size: calc(100vw * (14 / 1300));
+  }
+
+  .payment_section .small_text {
+    font-size: calc(100vw * (12 / 1300));
+  }
+
+  .payment_section .overseas_icon {
+    height: calc(100vw * (15 / 1300));
+  }
+
+  .payment_section .bank_list:not(:last-child) {
+    margin-bottom: calc(100vw * (20 / 1300));
+  }
+
+  .payment_section .bank_list_title {
+    margin-bottom: calc(100vw * (15 / 1300));
+    font-size: calc(100vw * (14 / 1300));
+  }
+
+  .payment_section .bank_list .bank_input {
+    width: calc(100vw * (400 / 1300));
+    height: calc(100vw * (40 / 1300));
+  }
+
+  .payment_section .bank_list .bank_input input {
+    padding: calc(100vw * (10 / 1300)) calc(100vw * (20 / 1300));
+    font-size: calc(100vw * (14 / 1300));
+  }
+
+  .payment_section .payment_way_section_wrap.bank .select_line {
+    margin-top: calc(100vw * (15 / 1300));
+  }
+
+  .payment_section .payment_way_section_wrap.bank .select_box_wrap {
+    width: calc(100vw * (185 / 1300));
+    margin-right: calc(100vw * (8 / 1300));
+  }
+
+  .payment_section .number_input {
+    width: calc(100vw * (207 / 1300));
+    height: calc(100vw * (40 / 1300));
+  }
+
+  .payment_section .number_input input {
+    padding: calc(100vw * (10 / 1300)) calc(100vw * (20 / 1300));
+    font-size: calc(100vw * (14 / 1300));
+  }
+
+  .payment_section .red_text {
+    font-size: calc(100vw * (14 / 1300));
+  }
+
+  /* ------------결제 완료 페이지------------ */
+  .payment_section.complete .date {
+    margin-top: calc(100vw * (28 / 1300));
+    font-size: calc(100vw * (15 / 1300));
+  }
+
+  .payment_section.complete .date span {
+    margin-left: calc(100vw * (14 / 1300));
+    font-size: calc(100vw * (15 / 1300));
+  }
+
+  .payment_section.complete .notice_wrap {
+    margin-top: calc(100vw * (50 / 1300));
+  }
+
+  .payment_section.complete .notice_text {
+    font-size: calc(100vw * (14 / 1300));
+  }
+
+  /* .payment_section.complete .basic_btn_liner_green {
+    width: calc(100vw * (400 / 1300));
+    height: calc(100vw * (50 / 1300));
+    margin-top: calc(100vw * (50 / 1300));
+  } */
+
+  /* 코칭 이용권 결제 */
+  .coaching_payment .track_list {
+    padding: calc(100vw * (24 / 1300)) calc(100vw * (20 / 1300)) calc(100vw * (28 / 1300));
+  }
+
+  .coaching_payment .track_list .text_wrap {
+    margin-right: calc(100vw * (50 / 1300));
+  } 
+
+  .coaching_payment .track_line .nickname {
+    font-size: calc(100vw * (16 / 1300));
+  }
+
+  .coaching_payment .track_line .prd_title {
+    margin-left: calc(100vw * (10 / 1300));
+    font-size: calc(100vw * (16 / 1300));
+  }
+
+  .coaching_payment .track_list .descrip {
+    margin-top: calc(100vw * (10 / 1300));
+  }
+
+  .coaching_payment .track_list dl+dl {
+    margin-top: calc(100vw * (5 / 1300));
+  }
+
+  .payment_section .sub_pay {
+    padding: calc(100vw * (15 / 1300)) 0 0 calc(100vw * (25 / 1300));
+  }
+  
+  .payment_section .sub_pay li+li {
+    margin-left: calc(100vw * (32 / 1300));
+  }
+}
+
+/* 모바일 */
+@media screen and (max-width: 768px) {
+  .payment_section {
+    width: 100%;
+    margin: calc(100vw * (77 / 375)) auto calc(100vw * (50 / 375));
+  }
+
+  .payment_section.complete {
+    width: calc(100vw * (343 / 375));
+  }
+
+  .payment_section .track_section {
+    width: calc(100vw * (343 / 375));
+    margin: 0 auto;
+  }
+
+  .payment_section .title {
+    font-size: calc(100vw * (16 / 375));
+    font-weight: 600;
+  }
+
+  .payment_section .title_wrap {
+    width: calc(100vw * (343 / 375));
+    margin: calc(100vw * (30 / 375)) auto 0;
+    padding-bottom: calc(100vw * (6 / 375));
+  }
+
+  .payment_section .title_icon {
+    width: calc(100vw * (20 / 375));
+    height: calc(100vw * (20 / 375));
+    margin-left: calc(100vw * (8 / 375));
+  }
+
+  .payment_section .sub_title {
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  .payment_section .radio_box .radio_box_text,
+  .payment_section .radio_box.black_label .radio_box_text {
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  /* 음원정보 섹션 */
+  .payment_section .track_wrap {
+    padding-top: calc(100vw * (15 / 375));
+  }
+
+  .payment_section .track_list {
+    position: relative;
+    margin-bottom: calc(100vw * (50 / 375));
+    padding: calc(100vw * (15 / 375)) calc(100vw * (14 / 375)) calc(100vw * (7 / 375));
+  }
+
+  .payment_section .track_list:last-child {
+    margin-bottom: calc(100vw * (65 / 375));
+  }
+
+  .payment_section .track_name {
+    width: 100%;
+    font-size: calc(100vw * (14 / 375));
+    padding-right: 0;
+  }
+
+  .payment_section .track_name .icon {
+    width: calc(100vw * (20 / 375));
+    height: calc(100vw * (20 / 375));
+    margin-left: calc(100vw * (10 / 375));
+  }
+
+  .payment_section .percent {
+    margin-right: 0;
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  .payment_section .price_btn {
+    position: absolute;
+    bottom: calc(100vw * (-35 / 375));
+    right: 0;
+    padding: calc(100vw * (8 / 375)) calc(100vw * (11 / 375));
+    font-size: calc(100vw * (12 / 375));
+  }
+
+  .payment_section .user_line {
+    margin: calc(100vw * (10 / 375)) 0 calc(100vw * (5 / 375));
+  }
+
+  .payment_section .user_wrap {
+    margin-bottom: calc(100vw * (10 / 375));
+  }
+
+  .payment_section .user_wrap:not(:last-child) {
+    margin-right: calc(100vw * (15 / 375));
+  }
+
+  .payment_section .user_icon {
+    width: calc(100vw * (16 / 375));
+    height: calc(100vw * (16 / 375));
+    margin-right: calc(100vw * (4 / 375));
+  }
+
+  .payment_section .user_wrap .nickname {
+    font-size: calc(100vw * (12 / 375));
+  }
+
+  .payment_section .price_list {
+    margin-bottom: calc(100vw * (13 / 375));
+  }
+
+  .payment_section .price_title {
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  .payment_section .price {
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  .payment_section .total_list {
+    padding: calc(100vw * (15 / 375)) 0 0;
+  }
+
+  .payment_section .total {
+    font-size: calc(100vw * (15 / 375));
+  }
+
+  .payment_section .radio_list .radio_box {
+    margin-right: calc(100vw * (32 / 375));
+  }
+
+  /* 결제 수단 섹션 */
+  .payment_section .payment_way_section_wrap {
+    padding-top: calc(100vw * (18 / 375));
+  }
+
+  .payment_section .pay_tab {
+    margin-bottom: calc(100vw * (20 / 375));
+    padding-left: calc(100vw * (16 / 375));
+  }
+
+  .payment_section .way_sub_text:first-of-type {
+    margin: calc(100vw * (15 / 375)) 0;
+  }
+
+  .payment_section .way_sub_text {
+    display: none;
+    margin: calc(100vw * (30 / 375)) 0 calc(100vw * (15 / 375));
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  .payment_section .check_box {
+    margin-top: calc(100vw * (51 / 375));
+    padding: 0 calc(100vw * (16 / 375));
+  }
+
+  .payment_section .way_select {
+    width: calc(100vw * (400 / 375));
+  }
+
+  .payment_section .info_input {
+    width: 100%;
+  }
+
+  .payment_section .info_input input {
+    padding: calc(100vw * (11 / 375)) calc(100vw * (14 / 375));
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  .payment_section .gray_text {
+    margin-top: calc(100vw * (15 / 375));
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  .payment_section .gray_text:first-child {
+    margin-top: calc(100vw * (15 / 375));
+  }
+
+  .payment_section .phone_line .select_box_wrap {
+    width: calc(100vw * (91 / 375));
+    height: calc(100vw * (40 / 375));
+  }
+
+  .payment_section .phone_line .info_input {
+    width: calc(100vw * (242 / 375));
+    margin-left: calc(100vw * (10 / 375));
+  }
+
+  .payment_section .gray_text_wrap {
+    width: calc(100vw * (343 / 375));
+    margin: calc(100vw * (15 / 375)) auto 0;
+    padding-top: calc(100vw * (5 / 375));
+  }
+
+  .payment_section .gray_text_wrap .gray_text {
+    margin-top: calc(100vw * (10 / 375));
+    font-size: calc(100vw * (14 / 375));
+    line-height: 1.4;
+  }
+
+  .payment_section .red_text {
+    margin-top: calc(100vw * (10 / 375));
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  .payment_section .button_wrap {
+    width: calc(100vw * (343 / 375));
+    height: calc(100vw * (46 / 375));
+    margin: calc(100vw * (51 / 375)) auto 0;
+  }
+
+  .payment_section .button_wrap .basic_btn_liner_green {
+    font-size: calc(100vw * (15 / 375));
+  }
+
+  .payment_section .pay_tab_sect {
+    width: 100%;
+    padding: 0 0 calc(100vw * (30 / 375)) calc(100vw * (16 / 375));
+  }
+
+  .payment_section .card_scroll {
+    width: calc(100vw * (343 / 375));
+    overflow-x: scroll;
+  }
+
+  .payment_section .radio_line {
+    margin-left: calc(100vw * (10 / 375));
+    margin-bottom: calc(100vw * (10 / 375));
+  }
+
+  .payment_section .pay_tab_sect.bank {
+    width: calc(100vw * (343 / 375));
+  }
+
+  .payment_section .pay_tab_sect.bank.cash {
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  .payment_section .buy_info_section {
+    width: calc(100vw * (343 / 375));
+    margin: 0 auto;
+  }
+
+  .payment_section .buy_info_section .title_wrap {
+    margin: calc(100vw * (54 / 375)) 0 calc(100vw * (15 / 375));
+  }
+
+  .payment_section .radio_line {
+    margin-left: 0;
+  }
+
+  .payment_section .radio_line .radio_box {
+    margin-right: calc(100vw * (14 / 375));
+  }
+
+  .payment_section .sect.pay_tab_sect.card .radio_line {
+    margin-left: calc(100vw * (10 / 375));
+  }
+
+  .payment_section .h2 {
+    white-space: nowrap;
+    overflow-y: visible;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+  }
+
+  .payment_section .radio_line+.simple_card_wrap {
+    width: calc(100vw * (343 / 375));
+    margin-top: calc(100vw * (20 / 375));
+    padding-right: calc(100vw * (45 / 375));
+    white-space: nowrap;
+    overflow-y: visible;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    -ms-overflow-style: none;
+  }
+
+  .payment_section .simple_card_wrap::-webkit-scrollbar {
+    display: none;
+  }
+
+  .payment_section .simple_card_box {
+    width: calc(100vw * (226 / 375));
+    height: calc(100vw * (130 / 375));
+    flex-shrink: 0;
+  }
+
+  .payment_section .add_card {
+    width: calc(100vw * (226 / 375));
+    height: calc(100vw * (130 / 375));
+    margin-left: calc(100vw * (10 / 375));
+    flex-shrink: 0;
+  }
+
+  .payment_section .card_icon {
+    width: calc(100vw * (22 / 375));
+    height: calc(100vw * (22 / 375));
+  }
+
+  .payment_section .big_text {
+    margin: calc(100vw * (7 / 375)) 0 calc(100vw * (8 / 375));
+    font-size: calc(100vw * (13 / 375));
+  }
+
+  .payment_section .small_text {
+    font-size: calc(100vw * (11 / 375));
+    line-height: 1.4;
+  }
+
+  .payment_section .overseas_icon {
+    height: calc(100vw * (15 / 375));
+  }
+
+  .payment_section .bank_list:not(:last-child) {
+    margin-bottom: calc(100vw * (15 / 375));
+  }
+
+  .payment_section .bank_list_title {
+    display: none;
+    margin-bottom: calc(100vw * (15 / 375));
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  .payment_section .bank_list .select_box_wrap {
+    width: calc(100vw * (343 / 375));
+  }
+
+  .payment_section .bank_list .bank_input {
+    width: calc(100vw * (343 / 375));
+    height: calc(100vw * (40 / 375));
+  }
+
+  .payment_section .bank_list .bank_input input {
+    padding: calc(100vw * (10 / 375)) calc(100vw * (20 / 375));
+    font-size: calc(100vw * (14 / 375));
+  }
+
+  .payment_section .payment_way_section_wrap.bank .select_line {
+    margin-top: calc(100vw * (15 / 375));
+  }
+
+  .payment_section .payment_way_section_wrap.bank .select_box_wrap {
+    width: calc(100vw * (152 / 375));
+    height: calc(100vw * (42 / 375));
+    margin-right: calc(100vw * (8 / 375));
+  }
+
+  .payment_section .number_input {
+    width: calc(100vw * (181 / 375));
+    height: calc(100vw * (42 / 375));
+  }
+
+  .payment_section .number_input input {
+    padding: calc(100vw * (10 / 375)) calc(100vw * (20 / 375));
+    font-size: calc(100vw * (14 / 375));
+    /* 한줄처리 */
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .payment_section .red_text {
+    font-size: calc(100vw * (13 / 375));
+  }
+
+  .payment_section .phone_line {
+    flex-wrap: wrap;
+    margin-top: calc(100vw * (50 / 375));
+  }
+
+  /* ------------결제 완료 페이지------------ */
+  .payment_section.complete .title_wrap:first-child {
+    margin-top: calc(100vw * (30 / 375));
+  }
+
+  .payment_section.complete .date {
+    margin-top: calc(100vw * (17 / 375));
+    font-size: calc(100vw * (13 / 375));
+  }
+
+  .payment_section.complete .date span {
+    margin-left: calc(100vw * (20 / 375));
+    font-size: calc(100vw * (13 / 375));
+    font-weight: 500;
+  }
+
+  .payment_section.complete .notice_wrap {
+    margin-top: calc(100vw * (30 / 375));
+  }
+
+  .payment_section.complete .notice_text {
+    font-size: calc(100vw * (14 / 375));
+    white-space: unset;
+    line-height: 20px;
+  }
+
+  .payment_section.complete .notice_text:not(:last-child) {
+    margin-bottom: calc(100vw * (10 / 375));
+    line-height: 1.4;
+  }
+
+  .payment_section.complete .basic_btn_liner_green {
+    width: 100%;
+    height: calc(100vw * (46 / 375));
+    margin-top: 0;
+  }
+
+  .payment_modal .basic_modal_text {
+    display: none;
+  }
+
+  .payment_modal .basic_modal_text.mb_only {
+    display: block;
+  }
+
+  /* 코칭 이용권 결제 */
+  .coaching_payment .track_list {
+    flex-direction: column;
+    padding: calc(100vw * (17 / 375)) calc(100vw * (15 / 375)) calc(100vw * (15 / 375));
+  }
+
+  .coaching_payment .track_list .text_wrap {
+    margin-right: 0;
+  } 
+
+  .coaching_payment .track_line .nickname {
+    font-size: calc(100vw * (16 / 375));
+  }
+
+  .coaching_payment .track_line .prd_title {
+    margin-left: calc(100vw * (5 / 375));
+    font-size: calc(100vw * (16 / 375));
+  }
+
+  .coaching_payment .track_list .descrip {
+    width: 100%;
+    margin-top: calc(100vw * (15 / 375));
+  }
+
+  .coaching_payment .track_list dl+dl {
+    margin-top: calc(100vw * (5 / 375));
+  }
+
+  .coaching_payment .price_btn {
+    position: initial;
+  }
+
+  .payment_section .sub_pay {
+    padding: calc(100vw * (15 / 375)) 0 0 calc(100vw * (25 / 375));
+  }
+
+  .payment_section .sub_pay li:not(:nth-child(1), :nth-child(2)) {
+    margin-top: calc(100vw * (10 / 375));
+  }
+  
+  
+  .payment_section .sub_pay li+li {
+    margin-left: calc(100vw * (45 / 375));
+  }
+
+  .payment_section .sub_pay li:nth-child(2n+1) {
+    margin-left: 0;
+  }
+
+  .payment_section .sub_pay .radio_box_text {
+    min-width: calc(100vw * (80 / 375));
+  }
+
+  .payment_section .check_box {
+    margin-top: calc(100vw * (15 / 375));
+  }
+}

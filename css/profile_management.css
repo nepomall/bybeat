@@ -1,0 +1,1879 @@
+/* 프로필 관리, 프로필 공유 페이지 */
+
+/* common */
+.profile_content {
+    padding-top: 120px;
+    padding-bottom: 150px;
+}
+
+.profile_content .inner {
+    width: 1260px;
+    margin: 0 auto;
+}
+
+.profile_content .top_section {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #dddddd;
+}
+
+.profile_content .profile_box {
+    position: relative;
+    display: flex;
+    padding: 40px 39px;
+    margin-bottom: 75px;
+    border-radius: 7px;
+    background: #F6F6F6;
+}
+
+.profile_content .profile_box .profile_photo {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin-right: 21px;
+    flex-shrink: 0;
+}
+
+.profile_content .profile_box .img_wrap {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.profile_content .profile_box .img_wrap img {
+    object-fit: cover;
+}
+
+.profile_content .profile_box .add_btn {
+    position: absolute;
+    right: 0;
+    bottom: 7px;
+    width: 26px;
+    height: 26px;
+}
+
+.profile_content input[type="file"] {
+    display: none;
+}
+
+.profile_content .profile_box .add_btn label {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #DDDDDD;
+    border-radius: 50%;
+    background: #fff url("../images/icon/icon_camera.svg") no-repeat center / 65%;
+    cursor: pointer;
+}
+
+.profile_content .profile_box .btn_wrap {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.profile_content .profile_box .share_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+    color: #222222;
+}
+
+.profile_content .profile_box .share_btn::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 18px;
+    margin-right: 0.5rem;
+    background: url("../images/icon/icon_share.svg") no-repeat center / 100%;
+}
+
+.profile_content .save_btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 38px;
+    margin-left: 15px;
+    border-radius: 5px;
+    font-weight: 600;
+    background: #444444;
+    color: #ffffff;
+}
+
+.profile_content .save_btn::before {
+    content: "";
+    display: block;
+    width: 16px;
+    height: 16px;
+    margin-right: 7px;
+    background: url("../images/icon/icon_check.svg") no-repeat center / 100%;
+    filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(52deg) brightness(104%) contrast(101%);
+}
+
+.profile_content .profile_box .input_group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.profile_content .profile_box .input_wrap {
+    width: 230px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+}
+
+.profile_content .profile_box .input_wrap label {
+    position: relative;
+    padding-right: 9px;
+    color: #666;
+}
+
+.profile_content .profile_box .input_wrap label::after {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    content: "";
+    display: inline-block;
+    width: 1px;
+    height: 11px;
+    transform: translateY(-50%);
+    background: #ddd;
+}
+
+.profile_content .alert_box {
+    width: 313px;
+}
+
+.profile_content .profile_box .input_group input {
+    flex: 1;
+    padding: 0 9px;
+    font-weight: 500;
+    background: #ffffff;
+}
+
+.profile_content .descrip p {
+    color: #666666;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.profile_content .descrip p:last-child {
+    margin-bottom: 0;
+}
+
+.profile_content .input_wrap {
+    height: 40px;
+    overflow: hidden;
+}
+
+
+.profile_content .input_wrap input {
+    font-weight: 400;
+}
+
+.profile_content .input_box .label {
+    display: block;
+    line-height: 1.5;
+    margin-bottom: 5px;
+    color: #666666;
+}
+
+.profile_content .input_box {
+    margin-right: 10px;
+}
+
+.profile_content .input_box:last-child {
+    margin-right: 0;
+}
+
+.profile_content .add_form .input_box:last-of-type {
+    margin-right: 0;
+}
+
+.profile_content .input_wrap.date_input {
+    position: relative;
+}
+
+.profile_content input[type="date"]:invalid {
+    color: #AAAAAA;
+}
+
+.profile_content input[type="date"]:invalid::before {
+    content: attr(data-placeholder);
+    width: 100%;
+    color: #aaaaaa;
+    white-space: nowrap;
+}
+
+.profile_content input[type="date"]:focus::before,
+.profile_content input[type="date"]:valid::before {
+    display: none;
+}
+
+.profile_content .input_wrap.date_input::after,
+.profile_content .date_double::after {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    content: "";
+    width: 19px;
+    height: 19px;
+    transform: translateY(-50%);
+    background: url("../images/icon/icon_calendar.svg") no-repeat center / 100%;
+}
+
+.profile_content input[type="date"]::-webkit-clear-button,
+.profile_content input[type="date"]::-webkit-inner-spin-button {
+    display: none;
+}
+
+.profile_content input[type="date"]::-webkit-calendar-picker-indicator {
+    background: transparent;
+    z-index: 1;
+}
+
+.profile_content .file_box .input_wrap {
+    position: relative;
+}
+
+.profile_content .file_btn input[type="file"]+label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #24CE7B;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.profile_content .file_btn input[type="file"]+label::after {
+    display: block;
+    content: "";
+    width: 24px;
+    height: 24px;
+    background: url("../images/icon/icon_folder_upload.svg") no-repeat center / 100%;
+}
+
+.profile_content .list_tab {
+    margin-bottom: 20px;
+}
+
+.error_text {
+    line-height: 1.5;
+    color: #FF1E1E;
+}
+
+.done_text {
+    line-height: 1.5;
+    color: #24CE7B;
+}
+
+.profile_content .input_box {
+    position: relative;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 21px;
+    border-radius: 100px;
+    line-height: 1.3;
+    background: #EF2AC1;
+    color: #fff;
+}
+
+.badge + .input_group {
+    margin-top: 8px;
+}
+
+/* 공통 목록 */
+.list_area .num_text {
+    margin-bottom: 10px;
+    color: #666666;
+}
+
+.list_area .num_text span {
+    font-weight: 600;
+    color: #222222;
+}
+
+.list_area .list {}
+
+.list_area .list_item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 15px 20px 10px;
+    border-bottom: 1px solid #F0EFEF;
+}
+
+.list_area .list_item:first-child {
+    border-top: 1px solid #F0EFEF;
+}
+
+.list_area .move_btn {
+    width: 32px;
+    height: 32px;
+    margin-right: 20px;
+    flex-shrink: 0;
+    background: url("../images/icon/icon_menu.svg") no-repeat center / 100%;
+}
+
+.list_area .list_item .left {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    width: 80%;
+    height: 100%;
+}
+
+.list_area .title {
+    margin-bottom: 8px;
+    line-height: 1.2;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.list_area .date {
+    color: #666666;
+}
+
+
+.list_area .list_item .btn_group {
+    flex-shrink: 0;
+}
+
+.list_area .list_item .btn_group button {
+    display: block;
+    width: 100px;
+    height: 38px;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.list_area .list_item .edit_btn {
+    margin-bottom: 5px;
+    background: #E9FAF2;
+    color: #24CE7B;
+}
+
+.list_area .list_item .delete_btn {
+    background: #F1F1F1;
+    color: #555555;
+}
+
+.no_content {
+    padding: 200px 0;
+    text-align: center;
+    font-size: 16px;
+    border-top: 1px solid #F0EFEF;
+    border-bottom: 1px solid #F0EFEF;
+}
+
+/* 뮤지션 소개 */
+.profile_content .intro_content  .content_box {
+    padding-bottom: 102px;
+    border-bottom: 1px solid #F0EFEF;
+}
+
+.profile_content .intro_content  .editer {
+    min-height: 560px;
+}
+
+.profile_content .apply_btn {
+    min-width: 400px;
+    min-height: 50px;
+    padding: 5px 26px;
+    margin: 30px auto 0;
+    display: block;
+}
+
+/* 앨범발매 */
+.profile_content .album_content {}
+
+.profile_content .add_form {
+    margin-bottom: 60px;
+}
+
+.profile_content .add_form .regi_area {
+    display: flex;
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+
+.profile_content .add_form button {
+    height: 40px;
+    flex-shrink: 0;
+    font-size: 14px;
+}
+
+.profile_content .add_form .tag_btn {
+    width: 90px;
+    margin-left: 10px;
+    font-weight: 400;
+}
+
+.profile_content .add_form .add_item {
+    width: 129px;
+    margin-left: 10px;
+}
+
+.profile_content .add_form .input_box:nth-of-type(1) {
+    width: 160px;
+}
+
+.profile_content .add_form .input_box:nth-of-type(2) {
+    width: 300px;
+}
+
+.profile_content .add_form .input_box:nth-of-type(3) {
+    width: 240px;
+}
+
+.profile_content .add_form .input_box:nth-of-type(4) {
+    width: 240px;
+}
+
+.profile_content .tag_select {
+    margin-bottom: 10px;
+    display: none;
+}
+
+.profile_content .tag_select.on {
+    display: block;
+}
+
+.profile_content .tag_select div {
+    padding: 20px 25px;
+    border-radius: 5px;
+    background: #F7F7F7;
+}
+
+.profile_content .tag_select p {
+    margin-bottom: 10px;
+    font-weight: 500;
+}
+
+.profile_content .tag_list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.profile_content .tag_list li {
+    margin: 5px 12px;
+    color: #666666;
+    cursor: pointer;
+}
+
+.profile_content .tag_list li.active {
+    font-weight: 500;
+    color: #222222;
+}
+
+.album_content .list_area .photo_wrap {
+    width: 116px;
+    height: 116px;
+    margin-right: 12px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.album_content .list_area .photo_wrap img {
+    object-fit: cover;
+}
+
+.album_content .list_area .list_item .tag_wrap {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    padding-left: 25px;
+}
+
+.album_content .list_area .list_item .tag_wrap::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: "";
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    margin-right: 8px;
+    background: url("../images/icon/icon_tag.svg") no-repeat center / 100%;
+    filter: invert(36%) sepia(66%) saturate(13%) hue-rotate(13deg) brightness(93%) contrast(84%);
+}
+
+.album_content .list_area .list_item .tag_wrap span {
+    margin-right: 3px;
+    margin-bottom: 5px;
+    font-size: 13px;
+    color: #666666;
+}
+
+.album_content .list_area .list_item .tag_wrap span:not(:last-child):after {
+    content: ",";
+}
+
+.album_content .list_area .list_item .text_group {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: 70%;
+    min-height: 115px;
+    padding-top: 5px;
+}
+
+/* 수정시 */
+.profile_content .list_item.edit .photo_wrap {
+    margin-bottom: 32px;
+}
+
+.profile_content .list_item.edit .text_group .title .input_wrap {
+    width: 450px;
+}
+
+.profile_content .list_item.edit .text_group .title input {
+    font-size: 16px;
+}
+
+.profile_content .list_item.edit .input_wrap.date_input::after {
+    display: none;
+}
+
+.profile_content .list_item.edit .text_group .date {
+    display: flex;
+    align-items: center;
+}
+
+.profile_content .list_item.edit .text_group .date .input_wrap {
+    width: 115px;
+}
+
+.profile_content .list_item.edit .text_group .date span {
+    margin-right: 10px;
+}
+
+.profile_content .list_item.edit .text_group .date input {
+    padding: 0 15px;
+    color: #666666;
+}
+
+.profile_content .list_item.edit .text_group .tag_wrap {
+    margin-top: 20px;
+}
+
+.profile_content .list_item.edit .text_group .tag_wrap .input_wrap {
+    width: 751px;
+}
+
+.profile_content .list_item.edit .text_group .tag_wrap::before {
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.album_content .list_area .list_item .tag_wrap input {
+    color: #666;
+}
+
+.profile_content .list_item.edit .descrip_text {
+    width: 930px;
+    height: 70px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.profile_content .list_item.edit .text_group .date_double {
+    width: 230px;
+    padding: 0 15px;
+}
+
+.profile_content .list_item.edit .text_group .date_double::after {
+    display: none;
+}
+
+.profile_content .list_item.edit .text_group .date_double input {
+    width: 43%;
+    height: 100%;
+    padding: 0;
+}
+
+.profile_content .list_item.edit .descrip_text textarea {
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    line-height: 1.2;
+    color: #666;
+}
+
+.profile_content .list_item.edit .descrip_text textarea::-webkit-scrollbar {
+    width: 6px;
+}
+
+.profile_content .list_item.edit .descrip_text textarea::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.profile_content .list_item.edit .descrip_text textarea::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 999px;
+    background-clip: padding-box;
+    border-top: 7px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 2px solid transparent;
+    border-left: 2px solid transparent;
+}
+
+.profile_content .career_content .list_item.edit .date {
+    margin-bottom: 20px;
+}
+
+
+/* 수상이력 */
+.profile_content .awards_content {}
+
+.profile_content .album_content .list_area .title {
+    margin-bottom: 5px;
+}
+
+.profile_content .awards_content .add_form .input_box:nth-of-type(2) {
+    width: 500px;
+}
+
+.profile_content .career_content .list_area .move_btn,
+.profile_content .awards_content .list_area .move_btn {
+    margin-right: 34px;
+}
+
+
+/* 경력사항 */
+.profile_content .career_content .add_form .input_box:nth-of-type(1) {
+    width: 280px;
+}
+
+.profile_content .career_content .date_double {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    padding: 0 14px;
+    border: 1px solid #DDD;
+    border-radius: 5px;
+}
+
+.profile_content .career_content .date_double input {
+    position: relative;
+    width: 36%;
+    padding: 0;
+    text-align: center;
+    font-size: 14px;
+}
+
+.profile_content .career_content .date_double span {
+    margin: 0 5px;
+    color: #AAAAAA;
+}
+
+.profile_content input[type="date"]::-webkit-calendar-picker-indicator {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: transparent;
+    z-index: 1;
+}
+
+.profile_content .career_content .add_form .input_box:nth-of-type(3) {
+    width: 475px;
+}
+
+.profile_content .career_content .date {
+    margin-bottom: 25px;
+}
+
+.profile_content .career_content .descrip_text {
+    line-height: 1.4;
+    font-size: 13px;
+    color: #666;
+}
+
+.awards_content .list_area .title,
+.career_content .list_area .title {
+    font-size: 18px;
+}
+
+.career_content .list_area .title {
+    margin-bottom: 5px;
+}
+
+.profile_content .text_group {
+    max-width: 80%;
+}
+
+
+
+/* 프로필 공유 */
+.profile_share .profile_box {
+    justify-content: space-between;
+    padding: 0;
+    background: transparent;
+}
+
+.profile_share .user_title {
+    display: flex;
+    align-items: center;
+    width: 30%;
+    height: 100%;
+    padding: 50px 10px 50px 60px;
+    border-radius: 5px;
+    background: #F6F6F6;
+}
+
+
+.profile_share .user_title .type {
+    display: inline-block;
+    padding: 6px 21px;
+    margin-bottom: 9px;
+    border-radius: 100px;
+    background: #24CE7B;
+    color: #ffffff;
+}
+
+.profile_share .user_title .nickname {
+    font-size: 20px;
+    font-weight: 500;
+    color: #24CE7B;
+}
+
+.profile_share .user_title {}
+
+.profile_share .user_info {
+    display: flex;
+    align-items: center;
+    width: 69%;
+    padding: 32px 0 42px;
+    border-radius: 5px;
+    background: #F6F6F6;
+}
+
+.profile_share .num_list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    line-height: 1.4;
+}
+
+.profile_share .num_list li:not(:last-child) {
+    margin-right: 82px;
+}
+
+.profile_share .num_list .number {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 110px;
+    height: 110px;
+    background: #ffffff;
+    border-radius: 50%;
+    font-size: 18px;
+    font-weight: 500;
+    color: #24CE7B;
+}
+
+.profile_share .num_list .number span {
+    margin-right: 3px;
+    font-size: 34px;
+}
+
+.profile_share .num_list li p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 17px;
+}
+
+.profile_share .num_list li p::before {
+    display: inline-block;
+    content: "";
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
+    background: url("../images/icon/icon_hand_music.svg") no-repeat center / 100%;
+}
+
+.profile_share .num_list li:nth-child(1) p:before {
+    width: 20px;
+    height: 20px;
+}
+
+.profile_share .num_list li:nth-child(2) p:before {
+    background-image: url("../images/icon/icon_music_cd.svg");
+}
+
+.profile_share .num_list li:nth-child(3) p:before {
+    background-image: url("../images/icon/icon_trophy.svg");
+}
+
+.profile_share .num_list li:nth-child(4) p:before {
+    background-image: url("../images/icon/icon_reword.svg");
+}
+
+.profile_share .list_tab {
+    margin-bottom: 40px;
+}
+
+.profile_share .list_area .list_item .left {
+    width: 95%;
+}
+
+.profile_share .list_area .list_item .text_group {
+    max-width: 100%;
+}
+
+.profile_share .list_area .list_item {
+    min-height: 121px;
+}
+
+/* ====================== 태블릿 ====================== */
+@media screen and (max-width: 1300px) {
+    /* 프로필 관리, 프로필 공유 페이지 */
+
+    /* common */
+    .profile_content {
+        padding-top: calc(100vw * (120/1300));
+        padding-bottom: calc(100vw * (150/1300));
+    }
+
+    .profile_content .inner {
+        width: calc(100vw * (1260/1300));
+    }
+
+    .profile_content .top_section {
+        padding-bottom: calc(100vw * (10/1300));
+    }
+
+    .profile_content .profile_box {
+        padding: calc(100vw * (40/1300)) calc(100vw * (39/1300));
+        margin-bottom: calc(100vw * (75/1300));
+    }
+
+    .profile_content .profile_box .profile_photo {
+        width: calc(100vw * (120/1300));
+        height: calc(100vw * (120/1300));
+        margin-right: calc(100vw * (21/1300));
+    }
+
+    .profile_content .profile_box .add_btn {
+        bottom: calc(100vw * (7/1300));
+        width: calc(100vw * (26/1300));
+        height: calc(100vw * (26/1300));
+    }
+
+    .profile_content .profile_box .btn_wrap {
+        top: calc(100vw * (15/1300));
+        right: calc(100vw * (15/1300));
+    }
+
+    .profile_content .profile_box .share_btn::before {
+        width: calc(100vw * (18/1300));
+        height: calc(100vw * (18/1300));
+    }
+
+    .profile_content .save_btn {
+        width: calc(100vw * (80/1300));
+        height: calc(100vw * (38/1300));
+        margin-left: calc(100vw * (15/1300));
+    }
+
+    .profile_content .save_btn::before {
+        width: calc(100vw * (16/1300));
+        height: calc(100vw * (16/1300));
+        margin-right: calc(100vw * (7/1300));
+    }
+
+    .profile_content .profile_box .input_group {
+        margin-bottom: calc(100vw * (12/1300));
+    }
+
+    .profile_content .profile_box .input_wrap {
+        width: calc(100vw * (230/1300));
+        padding: 0 calc(100vw * (20/1300));
+    }
+
+    .profile_content .profile_box .input_wrap label {
+        padding-right: calc(100vw * (9/1300));
+    }
+
+    .profile_content .profile_box .input_wrap label::after {
+        height: calc(100vw * (11/1300));
+    }
+
+    .profile_content .alert_box {
+        width: calc(100vw * (313/1300));
+    }
+
+    .profile_content .profile_box .input_group input {
+        padding: 0 calc(100vw * (9/1300));
+    }
+
+    .profile_content .descrip p {
+        margin-bottom: calc(100vw * (5/1300));
+    }
+
+    .profile_content .input_wrap {
+        height: calc(100vw * (40/1300));
+    }
+
+    .profile_content .input_box .label {
+        margin-bottom: calc(100vw * (5/1300));
+    }
+
+    .profile_content .input_box {
+        margin-right: calc(100vw * (10/1300));
+    }
+
+    .profile_content .input_wrap.date_input::after,
+    .profile_content .date_double::after {
+        right: calc(100vw * (15/1300));
+        width: calc(100vw * (19/1300));
+        height: calc(100vw * (19/1300));
+    }
+
+    .profile_content .file_btn input[type="file"]+label {
+        width: calc(100vw * (40/1300));
+        height: calc(100vw * (40/1300));
+    }
+
+    .profile_content .file_btn input[type="file"]+label::after {
+        width: calc(100vw * (24/1300));
+        height: calc(100vw * (24/1300));
+    }
+
+    .profile_content .list_tab {
+        margin-bottom: calc(100vw * (20/1300));
+    }
+
+    .badge {
+        display: inline-block;
+        padding: calc(100vw * (4/1300)) calc(100vw * (21/1300));
+    }
+    
+    .badge + .input_group {
+        margin-top: calc(100vw * (8/1300));
+    }
+
+    /* 공통 목록 */
+    .list_area .num_text {
+        margin-bottom: calc(100vw * (10/1300));
+    }
+
+    .list_area .list_item {
+        padding: calc(100vw * (20/1300)) calc(100vw * (15/1300)) calc(100vw * (20/1300)) calc(100vw * (10/1300));
+    }
+
+    .list_area .move_btn {
+        width: calc(100vw * (32/1300));
+        height: calc(100vw * (32/1300));
+        margin-right: calc(100vw * (20/1300));
+    }
+
+    .list_area .title {
+        margin-bottom: calc(100vw * (8/1300));
+        font-size: calc(100vw * (16/1300));
+    }
+
+    .list_area .list_item .btn_group button {
+        width: calc(100vw * (100/1300));
+        height: calc(100vw * (38/1300));
+        font-size: calc(100vw * (14/1300));
+    }
+
+    .list_area .list_item .edit_btn {
+        margin-bottom: calc(100vw * (5/1300));
+    }
+
+    .no_content {
+        padding: calc(100vw * (200/1300)) 0;
+        font-size: calc(100vw * (16/1300));
+    }
+
+    /* 뮤지션 소개 */
+    .profile_content .intro_content  .content_box {
+        padding-bottom: calc(100vw * (102/1300));
+        margin-bottom: calc(100vw * (30/1300));
+    }
+
+    .profile_content .intro_content  .editer {
+        min-height: calc(100vw * (560/1300));
+    }
+
+    .profile_content .intro_content .apply_btn {
+        min-width: calc(100vw * (400/1300));
+        min-height: calc(100vw * (50/1300));
+        padding: calc(100vw * (5/1300)) calc(100vw * (26/1300));
+    }
+
+    /* 앨범발매 */
+    .profile_content .add_form {
+        margin-bottom: calc(100vw * (60/1300));
+    }
+
+    .profile_content .add_form .regi_area {
+        margin-bottom: calc(100vw * (15/1300));
+    }
+
+    .profile_content .add_form button {
+        height: calc(100vw * (40/1300));
+        font-size: calc(100vw * (14/1300));
+    }
+
+    .profile_content .add_form .tag_btn {
+        width: calc(100vw * (90/1300));
+        margin-left: calc(100vw * (10/1300));
+    }
+
+    .profile_content .add_form .add_item {
+        width: calc(100vw * (129/1300));
+        margin-left: calc(100vw * (10/1300));
+    }
+
+    .profile_content .add_form .input_box:nth-of-type(1) {
+        width: calc(100vw * (160/1300));
+    }
+
+    .profile_content .add_form .input_box:nth-of-type(2) {
+        width: calc(100vw * (300/1300));
+    }
+
+    .profile_content .add_form .input_box:nth-of-type(3) {
+        width: calc(100vw * (240/1300));
+    }
+
+    .profile_content .add_form .input_box:nth-of-type(4) {
+        width: calc(100vw * (240/1300));
+    }
+
+    .profile_content .tag_select {
+        margin-bottom: calc(100vw * (10/1300));
+    }
+
+    .profile_content .tag_select div {
+        padding: calc(100vw * (20/1300)) calc(100vw * (25/1300));
+    }
+
+    .profile_content .tag_select p {
+        margin-bottom: calc(100vw * (10/1300));
+    }
+
+    .profile_content .tag_list li {
+        margin: calc(100vw * (5/1300)) calc(100vw * (12/1300));
+    }
+
+    .album_content .list_area .photo_wrap {
+        width: calc(100vw * (116/1300));
+        height: calc(100vw * (116/1300));
+        margin-right: calc(100vw * (12/1300));
+    }
+
+    .album_content .list_area .list_item .tag_wrap {
+        padding-left: calc(100vw * (25/1300));
+    }
+
+    .album_content .list_area .list_item .tag_wrap::before {
+        width: calc(100vw * (16/1300));
+        height: calc(100vw * (16/1300));
+        margin-right: calc(100vw * (8/1300));
+    }
+
+    .album_content .list_area .list_item .tag_wrap span {
+        margin-right: calc(100vw * (3/1300));
+        margin-bottom: calc(100vw * (5/1300));
+        font-size: calc(100vw * (13/1300));
+    }
+
+    .album_content .list_area .list_item .text_group {
+        min-height: calc(100vw * (115/1300));
+        padding-top: calc(100vw * (5/1300));
+    }
+
+    /* 수정시 */
+    .profile_content .list_item.edit .photo_wrap {
+        margin-bottom: calc(100vw * (32/1300));
+    }
+
+    .profile_content .list_item.edit .text_group .title .input_wrap {
+        width: calc(100vw * (450/1300));
+    }
+
+    .profile_content .list_item.edit .text_group .title input {
+        font-size: calc(100vw * (16/1300));
+    }
+
+    .profile_content .list_item.edit .text_group .date .input_wrap {
+        width: calc(100vw * (115/1300));
+    }
+
+    .profile_content .list_item.edit .text_group .date span {
+        margin-right: calc(100vw * (10/1300));
+    }
+
+    .profile_content .list_item.edit .text_group .date input {
+        padding: 0 calc(100vw * (15/1300));
+    }
+
+    .profile_content .list_item.edit .text_group .date_double input {
+        padding: 0;
+    }
+
+    .profile_content .list_item.edit .text_group .tag_wrap {
+        margin-top: calc(100vw * (20/1300));
+    }
+
+    .profile_content .list_item.edit .text_group .tag_wrap .input_wrap {
+        width: calc(100vw * (751/1300));
+    }
+
+    .profile_content .list_item.edit .descrip_text {
+        width: calc(100vw * (930/1300));
+        height: calc(100vw * (70/1300));
+    }
+
+    .profile_content .list_item.edit .text_group .date_double {
+        width: calc(100vw * (230/1300));
+        padding: 0 calc(100vw * (15/1300));
+    }
+
+    .profile_content .list_item.edit .descrip_text textarea {
+        padding: calc(100vw * (15/1300));
+    }
+
+    .profile_content .career_content .list_item.edit .date {
+        margin-bottom: calc(100vw * (20/1300));
+    }
+
+
+    /* 수상이력 */
+
+    .profile_content .album_content .list_area .title {
+        margin-bottom: calc(100vw * (5/1300));
+    }
+
+    .profile_content .awards_content .add_form .input_box:nth-of-type(2) {
+        width: calc(100vw * (500/1300));
+    }
+
+    .profile_content .career_content .list_area .move_btn,
+    .profile_content .awards_content .list_area .move_btn {
+        margin-right: calc(100vw * (34/1300));
+    }
+
+
+    /* 경력사항 */
+    .profile_content .career_content .add_form .input_box:nth-of-type(1) {
+        width: calc(100vw * (280/1300));
+    }
+
+    .profile_content .career_content .date_double {
+        height: calc(100vw * (40/1300));
+        padding: 0 calc(100vw * (14/1300));
+    }
+
+    .profile_content .career_content .date_double input {
+        font-size: calc(100vw * (14/1300));
+    }
+
+    .profile_content .career_content .date_double span {
+        margin: 0 calc(100vw * (5/1300));
+    }
+
+    .profile_content .career_content .add_form .input_box:nth-of-type(3) {
+        width: calc(100vw * (475/1300));
+    }
+
+    .profile_content .career_content .date {
+        margin-bottom: calc(100vw * (25/1300));
+    }
+
+    .profile_content .career_content .descrip_text {
+        font-size: calc(100vw * (13/1300));
+    }
+
+    .awards_content .list_area .title,
+    .career_content .list_area .title {
+        font-size: calc(100vw * (18/1300));
+    }
+
+    .career_content .list_area .title {
+        margin-bottom: calc(100vw * (5/1300));
+    }
+
+
+
+    /* 프로필 공유 */
+    .profile_share .profile_box {
+        padding: 0;
+    }
+
+    .profile_share .user_title {
+        padding: 50px 10px 50px 60px;
+        padding: calc(100vw * (50/1300)) calc(100vw * (10/1300)) calc(100vw * (50/1300)) calc(100vw * (60/1300));
+    }
+
+
+    .profile_share .user_title .type {
+        padding: calc(100vw * (6/1300)) calc(100vw * (21/1300));
+        margin-bottom: calc(100vw * (9/1300));
+    }
+
+    .profile_share .user_title .nickname {
+        font-size: calc(100vw * (20/1300));
+    }
+
+    .profile_share .user_info {
+        padding: calc(100vw * (32/1300)) 0 calc(100vw * (42/1300));
+    }
+
+    .profile_share .num_list li:not(:last-child) {
+        margin-right: calc(100vw * (82/1300));
+    }
+
+    .profile_share .num_list .number {
+        width: calc(100vw * (110/1300));
+        height: calc(100vw * (110/1300));
+        font-size: calc(100vw * (18/1300));
+    }
+
+    .profile_share .num_list .number span {
+        margin-right: calc(100vw * (3/1300));
+        font-size: calc(100vw * (34/1300));
+    }
+
+    .profile_share .num_list li p {
+        margin-top: calc(100vw * (17/1300));
+    }
+
+    .profile_share .num_list li p::before {
+        width: calc(100vw * (18/1300));
+        height: calc(100vw * (18/1300));
+        margin-right: calc(100vw * (4/1300));
+    }
+
+    .profile_share .num_list li:nth-child(1) p:before {
+        width: calc(100vw * (20/1300));
+        height: calc(100vw * (20/1300));
+    }
+
+    .profile_share .list_tab {
+        margin-bottom: calc(100vw * (40/1300));
+    }
+
+    .profile_share .list_area .list_item {
+        min-height: calc(100vw * (121/1300));
+    }
+
+
+}
+
+
+/* ========================= 모바일 ========================= */
+@media all and (max-width: 768px) {
+    .profile_content {
+        padding-top: calc(100vw * (78/375));
+        padding-bottom: calc(100vw * (189/375));
+    }
+
+    .profile_content .inner {
+        width: 100%;
+        padding: 0 calc(100vw * (16/375));
+        margin: 0 auto;
+    }
+
+    .profile_content .top_section {
+        padding-bottom: 10px;
+        border-bottom: 1px solid #dddddd;
+    }
+
+    .profile_content .profile_box {
+        flex-direction: column;
+        padding: calc(100vw * (20/375));
+        margin-bottom: calc(100vw * (70/375));
+        border-radius: calc(100vw * (7/375));
+    }
+
+    .profile_content .profile_box .profile_photo {
+        width: calc(100vw * (120/375));
+        height: calc(100vw * (120/375));
+        margin: calc(100vw * (30/375)) 0 calc(100vw * (30/375));
+    }
+
+    .profile_content .profile_box .add_btn {
+        position: absolute;
+        right: 0;
+        bottom: calc(100vw * (7/375));
+        width: calc(100vw * (26/375));
+        height: calc(100vw * (26/375));
+    }
+
+    .profile_content .profile_box .btn_wrap {
+        position: initial;
+        order: 1;
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .profile_content .profile_box .share_btn::before {
+        width: calc(100vw * (18/375));
+        height: calc(100vw * (18/375));
+        margin-right: calc(100vw * (5/375));
+    }
+
+    .profile_content .save_btn {
+        width: calc(100vw * (100/375));
+        height: calc(100vw * (38/375));
+        margin-left: 0;
+        border-radius: calc(100vw * (5/375));
+        font-size: calc(100vw * (14/375));
+    }
+
+    .profile_content .save_btn::before {
+        width: calc(100vw * (16/375));
+        height: calc(100vw * (16/375));
+        margin-right: calc(100vw * (7/375));
+    }
+
+    .profile_content .profile_info {
+        width: 100%;
+        order: 3;
+    }
+
+    .profile_content .profile_box .input_group {
+        display: block;
+        margin-bottom: calc(100vw * (10/375));
+    }
+
+    .profile_content .profile_box .input_wrap {
+        width: 100%;
+    }
+
+    .profile_content .profile_box .error_text,
+    .profile_content .profile_box .done_text {
+        margin-bottom: calc(100vw * (20/375));
+    }
+
+    .profile_content .descrip p {
+        margin-bottom: calc(100vw * (5/375));
+        line-height: 1.5;
+        font-size: calc(100vw * (12/375));
+    }
+
+    .profile_content .input_wrap {
+        overflow: hidden;
+        height: calc(100vw * (40/375));
+    }
+
+    .profile_content .list_area .input_wrap {
+        height: calc(100vw * (34/375));
+    }
+
+    .profile_content .input_box .label {
+        display: block;
+        margin-bottom: calc(100vw * (10/375));
+        color: #666666;
+    }
+
+    .profile_content .input_box {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: calc(100vw * (15/375));
+    }
+
+    .profile_content .input_box:last-child {
+        margin-right: 0;
+    }
+
+    .profile_content .add_form .input_box:last-of-type {
+        margin-right: 0;
+    }
+
+    .profile_content .input_wrap.date_input::after,
+    .profile_content .date_double::after {
+        right: calc(100vw * (11/375));
+        width: calc(100vw * (19/375));
+        height: calc(100vw * (19/375));
+    }
+
+    .profile_content .file_btn {
+        margin-left: calc(100vw * (9/375));
+        margin-bottom: calc(100vw * (15/375));
+    }
+
+    .profile_content .file_btn input[type="file"]+label {
+        width: calc(100vw * (40/375));
+        height: calc(100vw * (40/375));
+        border-radius: calc(100vw * (5/375));
+    }
+
+    .profile_content .file_btn input[type="file"]+label::after {
+        width: calc(100vw * (24/375));
+        height: calc(100vw * (24/375));
+    }
+
+    .profile_content .list_tab {
+        margin-bottom: calc(100vw * (20/375));
+    }
+
+    .error_text,
+    .done_text {
+        font-size: calc(100vw * (12/375));
+    }
+
+    .profile_content .alert_box {
+        width: calc(100vw * (313/375));
+    }
+
+    /* 공통 목록 */
+    .list_area .num_text {
+        margin-bottom: calc(100vw * (10/375));
+    }
+
+    .list_area .list_item {
+        flex-wrap: wrap;
+        padding: calc(100vw * (12/375)) 0;
+        margin-bottom: calc(100vw * (8/375));
+        transition: 0.3s;
+    }
+
+    .list_area .move_btn {
+        width: calc(100vw * (20/375));
+        height: calc(100vw * (20/375));
+        margin-right: calc(100vw * (20/375));
+        margin-top: calc(100vw * (20/375));
+    }
+
+    .list_area .list_item .left {
+        align-items: flex-start;
+        flex-shrink: 0;
+        width: 100%;
+        margin-bottom: calc(100vw * (25/375));
+    }
+
+    .list_area .title {
+        width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-bottom: calc(100vw * (5/375));
+        font-size: calc(100vw * (14/375));
+    }
+
+    .profile_content .list_item.edit .text_group .title .input_wrap,
+    .profile_content .list_item.edit .text_group .date .input_wrap,
+    .profile_content .list_item.edit .text_group .tag_wrap .input_wrap {
+        width: auto;
+        flex: 1;
+    }
+
+    .profile_content .list_item.edit .text_group .title input {
+        font-size: calc(100vw * (14/375));
+    }
+
+    .profile_content .list_item.edit .text_group .date input {
+        font-size: calc(100vw * (12/375));
+        padding: 0 calc(100vw * (12/375));
+        text-align: left;
+    }
+
+
+    .list_area .list_item .btn_group {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    .list_area .list_item .btn_group button {
+        width: calc(100vw * (94/375));
+        height: calc(100vw * (42/375));
+        border-radius: calc(100vw * (5/375));
+        font-size: calc(100vw * (13/375));
+    }
+
+    .list_area .list_item .edit_btn {
+        margin-bottom: 0;
+        margin-right: calc(100vw * (8/375));
+    }
+
+    .no_content {
+        padding: calc(100vw * (200/375)) 0;
+        font-size: calc(100vw * (14/375));
+    }
+
+    /* 앨범발매 */
+    .profile_content .album_content {}
+
+    .profile_content .add_form {
+        margin-bottom: calc(100vw * (37/375));
+    }
+
+    .profile_content .add_form .regi_area {
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom: calc(100vw * (15/375));
+    }
+
+    .profile_content .add_form button {
+        height: calc(100vw * (40/375));
+        font-size: calc(100vw * (14/375));
+    }
+
+    .profile_content .add_form .tag_btn {
+        width: calc(100vw * (90/375));
+        margin-left: calc(100vw * (10/375));
+        margin-bottom: calc(100vw * (15/375));
+    }
+
+    .profile_content .add_form .add_item {
+        width: 100%;
+        margin-left: 0;
+        margin-top: calc(100vw * (5/375));
+    }
+
+    .profile_content .add_form .input_box:nth-of-type(1) {
+        width: calc(100vw * (121/375));
+    }
+
+    .profile_content .add_form .input_box:nth-of-type(2) {
+        width: calc(100vw * (212/375));
+    }
+
+    .profile_content .album_content .add_form .input_box:nth-of-type(3) {
+        width: 100%;
+    }
+
+    .profile_content .album_content .add_form .input_box:nth-of-type(4) {
+        width: calc(100vw * (194/375));
+    }
+
+    .profile_content .tag_select {
+        margin-bottom: calc(100vw * (15/375));
+    }
+
+    .profile_content .tag_select div {
+        padding: calc(100vw * (20/375)) calc(100vw * (25/375));
+        border-radius: calc(100vw * (5/375));
+    }
+
+    .profile_content .tag_select p {
+        margin-bottom: calc(100vw * (9/375));
+    }
+
+    .profile_content .tag_list li {
+        margin: calc(100vw * (5/375)) calc(100vw * (12/375));
+    }
+
+    .list_area .date {
+        font-size: calc(100vw * (12/375));
+    }
+
+    .album_content .list_area .photo_wrap {
+        width: calc(100vw * (60/375));
+        height: calc(100vw * (60/375));
+        margin-right: calc(100vw * (10/375));
+    }
+
+    .album_content .list_area .list_item .tag_wrap {
+        display: block;
+        padding-left: calc(100vw * (20/375));
+        margin-top: calc(100vw * (10/375));
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+
+    .profile_content .list_item.edit .text_group .tag_wrap {
+        margin-top: calc(100vw * (9/375));
+    }
+
+    .album_content .list_area .list_item .tag_wrap::before {
+        width: calc(100vw * (14/375));
+        height: calc(100vw * (14/375));
+        margin-right: 0;
+    }
+
+    .album_content .list_area .list_item .tag_wrap span {
+        flex-shrink: 0;
+        margin-right: calc(100vw * (3/375));
+        margin-bottom: calc(100vw * (5/375));
+        font-size: calc(100vw * (11/375));
+        text-overflow: ellipsis;
+    }
+
+    .album_content .list_area .list_item .tag_wrap input {
+        font-size: calc(100vw * (11/375));
+        padding: 0 calc(100vw * (12/375));
+    }
+
+
+    .album_content .list_area .list_item .text_group {
+        flex: 1;
+        min-height: unset;
+        padding-top: 0;
+    }
+
+    .profile_content .album_content .list_area .title input {
+        font-weight: 500;
+    }
+
+
+    /* 수상이력 */
+    .profile_content .awards_content {}
+
+    .profile_content .awards_content .list_item .left {
+        /* padding: calc(100vw * (10/375)); */
+    }
+
+    .profile_content .awards_content .list_item.move {
+        transform: translateX(calc(100vw * (-100/375)));
+    }
+
+    .profile_content .album_content .list_area .title {
+        margin-bottom: calc(100vw * (5/375));
+    }
+
+    .profile_content .album_content .list_item.edit .title {
+        margin-bottom: calc(100vw * (9/375));
+    }
+
+    .profile_content .awards_content .add_form .input_box:nth-of-type(2) {
+        width: calc(100vw * (212/375));
+    }
+
+    .profile_content .career_content .list_area .move_btn,
+    .profile_content .awards_content .list_area .move_btn {
+        margin-right: calc(100vw * (20/375));
+    }
+
+    .profile_content .awards_content .list_area .move_btn {
+        margin-top: calc(100vw * (8/375));
+    }
+
+    .profile_content .career_content .list_area .move_btn {
+        margin-top: calc(100vw * (31/375));
+    }
+
+    .profile_content .awards_content .list_item.move .btn_group {
+        width: auto;
+        display: flex;
+        align-items: center;
+        margin-left: calc(100vw * (6/375));
+    }
+
+    .profile_content .awards_content .list_item.move .btn_group button {
+        width: calc(100vw * (44/375));
+        height: calc(100vw * (56/375));
+        margin-bottom: 0;
+    }
+
+    .profile_content .awards_content .list_item.move .edit_btn {
+        margin-right: calc(100vw * (6/375));
+    }
+
+
+    /* 경력사항 */
+    .profile_content .career_content .add_form .input_box:nth-of-type(1),
+    .profile_content .career_content .add_form .input_box:nth-of-type(2),
+    .profile_content .career_content .add_form .input_box:nth-of-type(3) {
+        width: 100%;
+    }
+
+    .profile_content .career_content .date_double {
+        height: calc(100vw * (40/375));
+        padding: 0 calc(100vw * (14/375));
+        border-radius: calc(100vw * (5/375));
+    }
+
+    .profile_content .career_content .date_double input {
+        width: 30%;
+        font-size: calc(100vw * (14/375));
+    }
+
+    .profile_content .career_content .date_double span {
+        margin: 0 calc(100vw * (5/375));
+    }
+
+    .profile_content .career_content .list_area .date_double {
+        height: calc(100vw * (34/375));
+    }
+
+    .profile_content .career_content .date {
+        margin-bottom: calc(100vw * (10/375));
+    }
+
+    .profile_content .career_content .descrip_text {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        font-size: calc(100vw * (12/375));
+    }
+
+    .profile_content .list_item.edit .descrip_text {
+        width: auto;
+        height: calc(100vw * (88/375));
+    }
+
+    .profile_content .list_item.edit .descrip_text textarea {
+        padding: calc(100vw * (10/375)) calc(100vw * (14/375));
+    }
+
+    .awards_content .list_area .title,
+    .career_content .list_area .title {
+        font-size: calc(100vw * (14/375));
+    }
+
+    .career_content .list_area .title {
+        margin-bottom: calc(100vw * (5/375));
+    }
+
+    .profile_content .career_content .list_item.edit .title {
+        margin-bottom: calc(100vw * (9/375));
+    }
+
+    .profile_content .career_content .list_item.edit .date {
+        margin-bottom: calc(100vw * (9/375));
+    }
+
+    .profile_content .text_group {
+        max-width: unset;
+        flex: 1;
+    }
+
+    .profile_content .list_item.edit .text_group .date_double {
+        width: auto;
+        padding: 0 calc(100vw * (12/375));
+        flex: 1;
+    }
+
+    .profile_content .list_item.edit .text_group .date_double input {
+        width: calc(100vw * (90/375));
+        padding: 0;
+    }
+
+    .profile_content .career_content .list_item .left {
+        margin-bottom: calc(100vw * (18/375));
+    }
+
+    .profile_content .career_content .list_item.edit .left {
+        margin-bottom: calc(100vw * (8/375));
+    }
+
+    /* 프로필 공유 */
+    .profile_share .profile_box {
+        height: auto;
+        flex-wrap: wrap;
+        padding: 0;
+    }
+
+    .profile_share .user_title {
+        width: 100%;
+        padding: calc(100vw * (50/375)) calc(100vw * (10/375)) calc(100vw * (50/375)) calc(100vw * (30/375));
+        border-radius: calc(100vw * (5/375));
+        margin-bottom: calc(100vw * (10/375));
+    }
+
+    .profile_share .profile_box .profile_photo {
+        margin-bottom: 0;
+        margin-right: calc(100vw * (25/375));
+    }
+
+
+    .profile_share .user_title .type {
+        padding: calc(100vw * (4/375)) calc(100vw * (21/375));
+        margin-bottom: calc(100vw * (9/375));
+    }
+
+    .profile_share .user_title .nickname {
+        font-size: calc(100vw * (20/375));
+    }
+
+    .profile_share .user_info {
+        width: 100%;
+        height: auto;
+        padding: calc(100vw * (32/375)) calc(100vw * (20/375)) calc(100vw * (45/375));
+        border-radius: calc(100vw * (5/375));
+    }
+
+    .profile_share .num_list {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .profile_share .num_list li {
+        margin-right: calc(100vw * (83/375));
+    }
+
+    .profile_share .num_list li:nth-child(1),
+    .profile_share .num_list li:nth-child(2) {
+        margin-bottom: calc(100vw * (70/375));
+    }
+
+    .profile_share .num_list li:nth-child(2n) {
+        margin-right: 0;
+    }
+
+    .profile_share .num_list .number {
+        width: calc(100vw * (110/375));
+        height: calc(100vw * (110/375));
+        font-size: calc(100vw * (18/375));
+    }
+
+    .profile_share .num_list .number span {
+        margin-right: calc(100vw * (6/375));
+        font-size: calc(100vw * (28/375));
+    }
+
+    .profile_share .num_list li p {
+        margin-top: calc(100vw * (15/375));
+    }
+
+    .profile_share .num_list li p::before {
+        width: calc(100vw * (18/375));
+        height: calc(100vw * (18/375));
+        margin-right: calc(100vw * (4/375));
+    }
+
+    .profile_share .num_list li:nth-child(1) p:before {
+        width: calc(100vw * (20/375));
+        height: calc(100vw * (20/375));
+    }
+
+    .profile_share .list_tab {
+        margin-bottom: calc(100vw * (35/375));
+    }
+
+    .profile_share .list_area .list_item .left {
+        width: 100%;
+    }
+
+    .profile_share .album_content .list_area .list_item .text_group {
+        max-width: 78%;
+    }
+
+    .profile_share .list_area .list_item .text_group {
+        max-width: 100%;
+    }
+
+    .profile_share .list_area .list_item {
+        min-height: unset;
+    }
+
+}

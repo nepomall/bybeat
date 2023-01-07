@@ -1,0 +1,2007 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BY BEATS</title>
+
+  <link rel="stylesheet" href="../../css/common.css" />
+  <link rel="stylesheet" href="../../css/reset.css" />
+  <link rel="stylesheet" href="../../css/music_management_list.css" />
+  <link rel="stylesheet" href="../../css/music_detail.css" />
+  <!-- favicon -->
+  <link rel="icon" href="../../images/icon/favicon.ico">
+
+  <!-- JS -->
+  <script src="../../js/jquery-3.6.0.js"></script>
+  <script src="../../js/common.js"></script>
+  <script src="../../js/music_list.js"></script>
+</head>
+
+<body>
+  <!-- 음원상세 페이지 - 댓글 삭제 모달 -->
+  <div class="modal_bg question comment_del_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">댓글을 삭제하시겠습니까?</p>
+      </div>
+
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_green_border close_btn">취소</button>
+        <button type="button" class="basic_btn_liner_green">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원상세 페이지 - 답글 삭제 모달 -->
+  <div class="modal_bg question recomment_del_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">답글을 삭제하시겠습니까?</p>
+      </div>
+
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_green_border close_btn">취소</button>
+        <button type="button" class="basic_btn_liner_green close_btn">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원상세 페이지 - 대표 음원 지정 모달 -->
+  <div class="modal_bg question represent_music_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">
+          Version3 - music name1 <br />
+          음원을 대표 음원으로 지정하시겠습니까?
+        </p>
+      </div>
+
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_liner_green close_btn">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원상세 페이지 - 대표 음원 지정 완료 모달 -->
+  <div class="modal_bg represent_music_save_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">
+          Version3 - music name1 음원이 대표음원으로 <br />
+          저장되었습니다.
+        </p>
+      </div>
+
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_liner_green close_btn">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원상세 페이지 - 음원 삭제 모달 -->
+  <div class="modal_bg question music_del_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">
+          음원을 삭제하시면 기존 히스토리의 모든 음원의 <br />
+          버전이 변경되며, 삭제된 음원은 복구가 불가능합니다. <br />
+          Version3 - music name1 <br />
+          음원을 삭제하시겠습니까?
+        </p>
+      </div>
+
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_green_border">취소</button>
+        <button type="button" class="basic_btn_liner_green confirm_btn">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원상세 페이지 - 음원 삭제 완료 모달 -->
+  <div class="modal_bg music_del_ok_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">음원 삭제가 완료되었습니다.</p>
+      </div>
+
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_liner_green close_btn">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원상세 페이지 - 변경사항 저장 모달 -->
+  <div class="modal_bg file_change_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">변경사항이 저장되었습니다.</p>
+      </div>
+
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_liner_green close_btn">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원 업로드 페이지 - 음원 등록하기 모달 -->
+  <div class="modal_bg basic upload_modal upload" style="display: block;">
+    <div class="modal_content">
+      <h2>음원 등록하기</h2>
+
+      <div class="text_wrap">
+        <!-- 업로드 하기 전 -->
+        <div class="upload_box before">
+          <button type="button" class="upload_icon">
+            <img src="../../images/icon/icon_upload.svg" alt="" />
+          </button>
+          <input type="file" id="upload" />
+          <p class="main_text">이곳에 파일을 올려 음원을 등록합니다.</p>
+          <p class="sub_text">
+            최대 5개까지 한번에 첨부할 수 있습니다. <br />
+            파일을 먼저 등록하신 후 음원의 제목, 태그 등 상세 정보 수정이 가능합니다.
+          </p>
+        </div>
+        <!-- 업로드 한 후 -->
+        <div class="upload_box after">
+          <ul class="upload_inner">
+            <li class="upload_list">
+              <span class="file_icon">
+                <img src="../../images/icon/icon_music_file.svg" alt="" />
+              </span>
+              <span class="file_name">1.filename.mp3</span>
+              <span class="close_icon">
+                <img src="../../images/icon/icon_close_thin.svg" alt="" />
+              </span>
+            </li>
+            <li class="upload_list">
+              <span class="file_icon">
+                <img src="../../images/icon/icon_music_file.svg" alt="" />
+              </span>
+              <span class="file_name">2.filename.mp3</span>
+              <span class="close_icon">
+                <img src="../../images/icon/icon_close_thin.svg" alt="" />
+              </span>
+            </li>
+            <li class="upload_list">
+              <span class="file_icon">
+                <img src="../../images/icon/icon_music_file.svg" alt="" />
+              </span>
+              <span class="file_name">3.filename.mp3</span>
+              <span class="close_icon">
+                <img src="../../images/icon/icon_close_thin.svg" alt="" />
+              </span>
+            </li>
+            <li class="upload_list">
+              <span class="file_icon">
+                <img src="../../images/icon/icon_music_file.svg" alt="" />
+              </span>
+              <span class="file_name">4.filename.mp3</span>
+              <span class="close_icon">
+                <img src="../../images/icon/icon_close_thin.svg" alt="" />
+              </span>
+            </li>
+            <li class="upload_list">
+              <span class="file_icon">
+                <img src="../../images/icon/icon_music_file.svg" alt="" />
+              </span>
+              <span class="file_name">5.filename.mp3</span>
+              <span class="close_icon">
+                <img src="../../images/icon/icon_close_thin.svg" alt="" />
+              </span>
+            </li>
+          </ul>
+        </div>
+        <label class="file_btn" for="music">음원 파일 첨부하기</label>
+        <input type="file" id="music" />
+        <p class="gray_text">
+          * 음원 파일은 PM3, WAV 확장자를 가진 파일만 등록 가능합니다.
+        </p>
+        <p class="gray_text">
+          * 음원 파일의 용량은 개당 10MB 까지 등록 가능합니다.
+        </p>
+        <button type="button" class="black_btn">
+          Sound Cloud에서 가져오기
+        </button>
+        <p class="gray_text">
+          * Sound Cloud에 등록된 음원은 BY BEATS 서비스와 계정 연동 후 이용
+          가능합니다.
+        </p>
+
+        <!-- 음원 업로드 안하고 올렸을 시 -->
+        <p class="red_text">음원을 업로드 해주세요.</p>
+
+        <!-- 음원등록 5개 이상 했을시 -->
+        <!-- <p class="red_text">음원 등록은 1회 최대 5개까지 등록 가능합니다.</p> -->
+      </div>
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_green_border close_btn">취소</button>
+        <button type="button" class="basic_btn_liner_green">음원 등록</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 음원 업로드 페이지 - 음원 등록하기 완료 모달 -->
+  <div class="modal_bg upload_ok_modal" style="display: block;">
+    <div class="modal_content">
+      <div class="text_area">
+        <p class="basic_modal_text">5개의 음원 등록이 완료되었습니다.</p>
+      </div>
+      <div class="button_wrap">
+        <button type="button" class="basic_btn_liner_green close_btn">확인</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="wrap">
+    <!-- pc 헤더 -->
+    <header id="header_pc">
+      <div class="header_top">
+        <div class="inner">
+          <div class="tab active">
+            <img src="../../images/icon/icon_bybeats_logo_text.svg" alt="바이비츠 로고">
+          </div>
+          <div class="tab" onclick="location.href='../../beats_someone/html/index.html';">
+            <img src="../../images/icon/icon_beatssomeone_logo_text.svg" alt="비트썸원 로고">
+          </div>
+        </div>
+      </div>
+
+      <div class="header_bottom">
+        <div class="inner">
+          <div class="left_side">
+            <h1 class="logo" onclick="location.href='../index.html'"></h1>
+            <ul class="gnb">
+              <li class="list">
+                <a href="../payment/price_list.html" class="link">
+                  요금제
+                </a>
+              </li>
+              <li class="list">
+                <a href="../mypage/music_management_list.html" class="link">
+                  음원관리
+                </a>
+              </li>
+              <li class="list">
+                <a href="../mypage/album_list.html" class="link">
+                  앨범 퍼블리싱
+                </a>
+              </li>
+              <li class="list">
+                <a href="#" onclick='return false' class="link">
+                  내 코칭관리
+                </a>
+              </li>
+              <!-- <li class="list">
+                          <a href="#" onclick='return false' class="link">
+                              멘토 뮤지션 코칭
+                          </a>
+                      </li> -->
+            </ul>
+          </div>
+          <div class="right_side">
+            <div class="search_wrap">
+              <input type="text" placeholder="작곡가, 멘토 뮤지션을 검색해 보세요.">
+              <button type="button" class="search_btn"
+                onclick="location.href='../common/search_result_page.html'"></button>
+            </div>
+            <div class="icon_wrap">
+              <div class="alarm_wrap">
+                <button type="button" class="alarm_btn"></button>
+                <div class="alarm_box">
+                  <div class="title_con">
+                    <div class="title">
+                      <p>
+                        알림
+                      </p>
+                      <button type="button" class="read_btn">
+                        모든 알림 읽음 처리
+                      </button>
+                    </div>
+                    <p class="alarm_guide">모든 알림은 알림 확인 후 읽음 처리 됩니다.</p>
+                  </div>
+                  <ul class="depth">
+                    <li class="empty_box">
+                      <div class="icon_box"></div>
+                      <span>수신된 알림이 없습니다.</span>
+                    </li>
+                    <li class="list not_read">
+                      <a href="#" onclick="return false" class="link">
+                        <p class="comment">
+                          <span class="blod">(멘토 뮤지션 코칭 - 7일 상품)</span> 결제가 완료되었습니다. (결제일 :
+                          0000.00.00 00:00)
+                        </p>
+                        <p class="elapsed">
+                          2분 전
+                        </p>
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#" onclick="return false" class="link">
+                        <p class="comment">
+                          <span class="blod">(멘토 뮤지션 코칭 - 7일 상품)</span> 결제가 완료되었습니다. (결제일 :
+                          0000.00.00 00:00)
+                        </p>
+                        <p class="elapsed">
+                          2분 전
+                        </p>
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#" onclick="return false" class="link">
+                        <p class="comment">
+                          <span class="blod">(멘토 뮤지션 코칭 - 7일 상품)</span> 결제가 완료되었습니다. (결제일 :
+                          0000.00.00 00:00)
+                        </p>
+                        <p class="elapsed">
+                          2분 전
+                        </p>
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#" onclick="return false" class="link">
+                        <p class="comment">
+                          <span class="blod">(멘토 뮤지션 코칭 - 7일 상품)</span> 결제가 완료되었습니다. (결제일 :
+                          0000.00.00 00:00)
+                        </p>
+                        <p class="elapsed">
+                          2분 전
+                        </p>
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#" onclick="return false" class="link">
+                        <p class="comment">
+                          <span class="blod">(멘토 뮤지션 코칭 - 7일 상품)</span> 결제가 완료되었습니다. (결제일 :
+                          0000.00.00 00:00)
+                        </p>
+                        <p class="elapsed">
+                          2분 전
+                        </p>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="mail_wrap alarm_wrap">
+                <button type="button" class="mail_btn"></button>
+                <div class="alarm_box">
+                  <div class="title_con">
+                    <div class="title">
+                      <p>
+                        메세지
+                      </p>
+                      <button type="button" class="read_btn">
+                        모든 메세지 삭제
+                      </button>
+                    </div>
+                    <p class="alarm_guide">모든 메세지는 메세지 확인 후 읽음 처리 됩니다.</p>
+                  </div>
+                  <ul class="depth">
+                    <li class="empty_box">
+                      <div class="icon_box"></div>
+                      <span>수신된 메세지가 없습니다.</span>
+                    </li>
+                    <li class="list not_read">
+                      <a href="#" onclick="return false" class="link">
+                        <div class="comment">
+                          <p class="nickname">닉네임</p>
+                          <p class="content">알겠습니다. 편안한 저녁시간 되기실 바래요. 알겠습니다</p>
+                        </div>
+                        <p class="elapsed">
+                          2분 전
+                        </p>
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#" onclick="return false" class="link">
+                        <div class="comment">
+                          <p class="nickname">닉네임</p>
+                          <p class="content">알겠습니다. 편안한 저녁시간 되기실 바래요. 알겠습니다</p>
+                        </div>
+                        <p class="elapsed">
+                          2분 전
+                        </p>
+                      </a>
+                    </li>
+                    <li class="list not_read">
+                      <a href="#" onclick="return false" class="link">
+                        <div class="comment">
+                          <p class="nickname">닉네임</p>
+                          <p class="content">알겠습니다. 편안한 저녁시간 되기실 바래요. 알겠습니다</p>
+                        </div>
+                        <p class="elapsed">
+                          2분 전
+                        </p>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="language_wrap">
+              <button type="button" class="language_btn"></button>
+              <div class="language_box">
+                <ul class="language_list">
+                  <li class="active">
+                    <button type="button">한국어</button>
+                  </li>
+                  <li>
+                    <button type="button">English</button>
+                  </li>
+                  <li>
+                    <button type="button">日本</button>
+                  </li>
+                  <li>
+                    <button type="button">中文</button>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- <ul class="user">
+                      <li class="list sign_in">
+                          <a href="#" onclick='return false' class="link">
+                              로그인
+                          </a>
+                      </li>
+                      <li class="list sign_up">
+                          <a href="#" onclick='return false' class="link">
+                              회원가입
+                          </a>
+                      </li>
+                  </ul> -->
+            <div class="user_nav">
+              <div class="img_box"></div>
+              <span class="user_name" onclick="location.href='../mypage/mypage.html'">김비트</span>
+              <ul class="user_menu">
+                <!-- 새로운 알림이 있을 경우 list에 addClass n_mark를 해주세요 -->
+                <li class="list">
+                  <a href="#" onclick='return false' class="link">
+                    대시보드
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../mypage/profile_management.html" class="link">
+                    프로필 관리
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../mypage/user_info.html" class="link">
+                    개인정보 관리
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../mypage/plan_setting.html" class="link">
+                    요금제 설정
+                  </a>
+                </li>
+                <li class="list n_mark">
+                  <a href="../mypage/music_management_list.html" class="link">
+                    음원 관리
+                  </a>
+                </li>
+                <li class="list n_mark">
+                  <a href="../mypage/album_list.html" class="link">
+                    앨범 퍼블리싱
+                  </a>
+                </li>
+                <li class="list n_mark">
+                  <a href="#" onclick='return false' class="link">
+                    멘토 뮤지션 코칭
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="#" onclick='return false' class="link">
+                    내 코칭 관리
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../mypage/payment_list.html" class="link">
+                    결제 및 정산
+                  </a>
+                </li>
+                <li class="list logout">
+                  <a href="#" onclick='return false' class="link">
+                    로그아웃
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </header>
+
+    <!-- 하단 네비 -->
+    <ul class="bottom_nav">
+      <li class="list home active">
+        <a href="../index.html" class="link">
+          <div class="icon_box"></div>
+          <span>홈</span>
+        </a>
+      </li>
+      <li class="list music_manage">
+        <a href="../mypage/music_management_list.html" class="link">
+          <div class="icon_box"></div>
+          <span>음원관리</span>
+        </a>
+      </li>
+      <li class="list publishing">
+        <a href="../mypage/album_list.html" class="link">
+          <div class="icon_box"></div>
+          <span>앨범 퍼블리싱</span>
+        </a>
+      </li>
+      <li class="list coaching_manage">
+        <a href="#" onclick="return false;" class="link">
+          <div class="icon_box"></div>
+          <span>내 코칭 관리</span>
+        </a>
+      </li>
+      <!-- <li class="list mento_coaching">
+                <a href="#" onclick="return false;" class="link">
+                    <div class="icon_box"></div>
+                    <span>멘토링 코칭</span>
+                </a>
+            </li> -->
+      <li class="list mypage">
+        <a href="../mypage/mypage.html" class="link">
+          <div class="icon_box"></div>
+          <span>MY</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- 모바일 헤더 -->
+    <header id="header_mb">
+      <div class="inner">
+        <div class="left_side">
+          <!-- <div class="goBack_btn" onclick="goBack()"></div> -->
+          <h1 class="logo" onclick="location.href='../index.html'"></h1>
+        </div>
+        <div class="icon_wrap">
+          <div class="alarm_wrap" onclick="location.href='../common/alarm.html'"></div>
+          <div class="hamburger">
+            <div>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="side_menu">
+        <div class="flex_box">
+          <div class="top_area">
+            <div class="search_btn" onclick="location.href='../common/search_result_page.html'"></div>
+            <div class="link_wrap">
+              <a href="#" onclick="return false;" class="link">
+                BY BEATS
+              </a>
+              <a href="#" onclick="return false;" class="link">
+                BEAT SOMEONE
+              </a>
+            </div>
+            <!-- 로그인 전 -->
+            <!-- <div class="sign_inup">
+                  <a href="#" onclick="return false;" class="link login">
+                      로그인
+                  </a>
+                  <a href="#" onclick="return false;" class="link sign_up">
+                      회원가입
+                  </a>
+              </div> -->
+            <!-- 로그인 후 -->
+            <div class="after_signIn">
+              <div class="profile_box composer">
+                <div class="img_box">
+                  <img src="../../images/icon/icon_profile_mb.svg" alt="프로필 사진">
+                </div>
+                <div class="text_area">
+                  <div class="info">
+                    <p class="position">
+                      작곡가
+                    </p>
+                    <p class="nickname">
+                      NICKNAME
+                    </p>
+                  </div>
+                  <a href="#" onclick="return false;" class="info_btn">
+                    김비트님
+                  </a>
+                </div>
+              </div>
+              <div class="rate_plan_box">
+                <h3>이용중인 요금제</h3>
+
+                <p><span class="green">일반 요금제</span>를 이용중입니다.</p>
+                <p class="date">0000. 00. 00 - 0000. 00. 00</p>
+
+                <div class="info">
+                  <dl>
+                    <dt>음원 관리</dt>
+                    <dd><span class="green">11</span>/20곡</dd>
+                  </dl>
+                  <dl>
+                    <dt>앨범 퍼블리싱</dt>
+                    <dd><span class="green">1</span>/5회 (앨범 당 20트랙) 무료</dd>
+                  </dl>
+                </div>
+
+                <button type="button" class="basic_btn_green_border">요금제 변경하기</button>
+              </div>
+              <button type="button" class="transform_btn">
+                멘토 뮤지션 회원 전환
+              </button>
+              <ul class="nav">
+                <li class="list open">
+                  <a href="#" onclick="return false;" class="link main_link">
+                    대시보드
+                  </a>
+                  <ul class="sec_depth">
+                    <li class="list">
+                      <a href="../mypage/profile_management.html" class="link">
+                        - 프로필 관리
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="../mypage/user_info.html" class="link">
+                        - 개인정보 관리
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="../mypage/album_list.html" class="link">
+                        - 앨범 퍼블리싱
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="../mypage/music_management_list.html" class="link">
+                        - 음원 관리
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="list">
+                  <a href="../mypage/plan_setting.html" class="link main_link">
+                    요금제 설정
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="#" class="link main_link">
+                    멘토 뮤지션 코칭
+                  </a>
+                </li>
+                <li class="list">
+                  <a href="../mypage/payment_list.html" class="link main_link">
+                    결제 및 정산
+                  </a>
+                </li>
+                <li class="list language open">
+                  <a href="#" onclick="return false;" class="link main_link">
+                    언어설정
+                    <span>한국어</span>
+                  </a>
+                  <ul class="sec_depth">
+                    <li class="list active">
+                      <a href="#" onclick="return false;" class="link">
+                        - 한국어
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#" onclick="return false;" class="link">
+                        - English
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#" onclick="return false;" class="link">
+                        - 日本
+                      </a>
+                    </li>
+                    <li class="list">
+                      <a href="#" onclick="return false;" class="link">
+                        - 中文
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <!-- <button type="button" class="logout_btn">
+              로그아웃
+          </button> -->
+        </div>
+      </div>
+      <div class="side_bg"></div>
+    </header>
+
+    <main id="wrap_content" class="music_management_list music_details">
+      <div class="wrap_inner">
+        <section class="banner">
+          <img src="../../images/banner/long_banner.jpg" alt="banner" />
+        </section>
+        <section class="top_section">
+          <article class="nav">
+            <span>HOME</span>
+            <span class="arrow_icon"><img src="../../images/icon/icon_arrow_16px.svg" alt="화살표 아이콘" /></span>
+            <span>MY PAGE</span>
+            <span class="arrow_icon"><img src="../../images/icon/icon_arrow_16px.svg" alt="화살표 아이콘" /></span>
+            <span>음원관리</span>
+          </article>
+        </section>
+
+        <!--음원 -->
+        <section class="music_box_section">
+          <article class="music_box">
+            <div class="music_title_wrap">
+              <p class="music_box_final_badge">FINAL</p>
+              <p class="music_title">
+                <b>MUSIC NAME MUSIC NAME MUSIC NAME</b><span>User name</span>
+              </p>
+            </div>
+            <ul class="music_util">
+              <li class="music_option">
+                <div class="option_wrap">
+                  <div class="music_option_icon">
+                    <img src="../../images/icon/icon_user_edit_gray.svg" alt="개인" />
+                  </div>
+                  <p class="icon_text">개인</p>
+                </div>
+              </li>
+              <li class="music_option">
+                <!-- 진행률에 따라 각각의 아이콘 노출 및 클래스 처리 부탁드립니다 -->
+                <!-- 1. 100% 미만 -->
+                <div class="option_wrap">
+                  <div class="music_option_icon">
+                    <img src="../../images/icon/icon_recording_gray.svg" alt="100% 미만" />
+                  </div>
+                  <p class="icon_text">50%</p>
+                </div>
+                <!-- 2. 100%  === hundred_percent 클래스 추가 -->
+                <!-- <div class="work hundred_percent">
+                  <div class="music_option_icon hundred_percent">
+                    <img src="../../images/icon/icon_recording_green.svg" alt="100%">
+                  </div>
+                  <p class="icon_text">100%</p>
+                </div> -->
+              </li>
+
+              <li class="music_option">
+                <div class="option_wrap">
+                  <div class="music_option_icon">
+                    <img src="../../images/icon/icon_clock_gray.svg" alt="재생 시간" />
+                  </div>
+                  <p class="icon_text">00:00</p>
+                </div>
+              </li>
+              <li class="music_option">
+                <div class="option_wrap">
+                  <div class="music_option_icon">
+                    <img src="../../images/icon/icon_currency_dollar.svg" alt="판매 중" />
+                  </div>
+                  <p class="icon_text">판매 중</p>
+                </div>
+              </li>
+            </ul>
+          </article>
+          <article class="music_record">
+            <div class="record_wrap">
+              <img src="../../images/dummy/record_sample.png" alt="음원" />
+            </div>
+            <div class="record_control">
+              <div class="control_btn_list">
+                <button type="button">
+                  <img src="../../images/icon/icon_skip_goback.svg" alt="뒤로 감기" />
+                </button>
+                <button type="button" class="play">
+                  <img src="../../images/icon/icon_play.svg" alt="재생" />
+                  <!-- <img src="../../images/icon/icon_pause_gray.svg" alt="정지"> -->
+                </button>
+                <button type="button">
+                  <img src="../../images/icon/icon_skip_forward.svg" alt="앞으로 감기" />
+                </button>
+              </div>
+              <p class="record_time">00:00 / 00:00</p>
+            </div>
+          </article>
+        </section>
+        <!-- 태그, 음원 업로드 영역 -->
+        <section class="tag_upload_section">
+          <div class="info_management_btn">
+            <button type="button" class="basic_btn_liner_green">
+              <a href="../mypage/info_management.html">음원정보 관리</a>
+            </button>
+          </div>
+          <article class="tag_area">
+            <h2>
+              <span class="tag_icon"><img src="../../images/icon/icon_tag.svg" alt="태그" /></span>태그
+            </h2>
+            <ul class="tag_list">
+              <li>단순한</li>
+              <li>즐거운</li>
+              <li>밝은</li>
+              <li>캐주얼</li>
+              <li>단순한</li>
+              <li>즐거운</li>
+            </ul>
+          </article>
+          <article class="upload_area">
+            <!-- 업로드 상황에 따라 분기처리 -->
+            <!-- 1. 업로드 전 -->
+            <!-- <div class="upload_wrap">
+              <button type="button" class="upload_btn">
+                <span class="upload_icon">
+                  <img src="../../images/icon/icon_upload.svg" alt="업로드" />
+                </span>
+                <span class="upload_text">음원파일을 선택하시거나 음원 파일을 여기로 끌어
+                  놓으세요!</span>
+              </button>
+            </div> -->
+            <!-- 2. 업로드 후 -->
+            <div class="upload_wrap">
+              <ul>
+                <!-- 3-1. 업로드 중일때 upload_music_list에 loading 클래스 추가 -->
+                <li class="upload_music_list loading">
+                  <div class="album_img_big_wrap">
+                    <div class="album_img_wrap">
+                      <img src="../../images/dummy/album_01.jpg" alt="앨범이미지" />
+                    </div>
+                    <div class="loader">
+                      <img src="../../images/icon/icon_loading.svg" alt="로딩중" />
+                      <span class="loading_num">100%</span>
+                    </div>
+                  </div>
+                  <p class="file_name">VIDEO.mp3</p>
+                </li>
+                <li class="upload_music_list">
+                  <div class="album_img_big_wrap">
+                    <div class="album_img_wrap">
+                      <img src="../../images/dummy/album_02.jpg" alt="앨범이미지" />
+                    </div>
+                  </div>
+                  <p class="file_name">VIDEO.mp3</p>
+                </li>
+                <li class="upload_music_list">
+                  <div class="album_img_big_wrap">
+                    <div class="album_img_wrap">
+                      <img src="../../images/dummy/album_03.jpg" alt="앨범이미지" />
+                    </div>
+                  </div>
+                  <p class="file_name">VIDEO.mp3</p>
+                </li>
+                <li class="upload_music_list">
+                  <div class="album_img_big_wrap">
+                    <div class="album_img_wrap">
+                      <img src="../../images/dummy/album_04.jpg" alt="앨범이미지" />
+                    </div>
+                  </div>
+                  <p class="file_name">VIDEO.mp3</p>
+                </li>
+                <li class="upload_music_list">
+                  <div class="album_img_big_wrap">
+                    <div class="album_img_wrap">
+                      <img src="../../images/dummy/album_05.jpg" alt="앨범이미지" />
+                    </div>
+                  </div>
+                  <p class="file_name">VIDEO.mp3</p>
+                </li>
+              </ul>
+            </div>
+          </article>
+          <!-- 업로드 후 보여지는 버튼 영역 -->
+          <article class="btn_list">
+            <div class="del_list">
+              <!-- 3. 업로드 후에 버튼에 disabled 빼주세요 -->
+              <button type="button" disabled class="basic_btn_gray">삭제</button>
+              <button type="button" disabled class="basic_btn_gray">전체 삭제</button>
+            </div>
+            <!-- 3. 업로드 후에만 아래 버튼 생깁니다-->
+            <div class="add_btn_wrap">
+              <button type="button" class="basic_btn_liner_green music_upload_btn">
+                음원 업데이트
+              </button>
+              <!-- 모든 음원 퍼센테이지가 찼을 때 해당 말풍선 띄우기 -->
+              <div class="alert_box right">
+                음원 등록하기를 통해 음원 등록을 완료해 주세요.
+              </div>
+            </div>
+          </article>
+        </section>
+
+        <!-- 파일 히스토리 -->
+        <section class="file_history_section">
+          <div class="file_history_top">
+            <h2>
+              <span class="history_icon"><img src="../../images/icon/icon_document.svg" alt="파일 아이콘" /> </span>파일 히스토리
+            </h2>
+            <button class="history_toggle_btn" type="button">
+              이전 버전 보기
+              <span class="arrow_icon">
+                <img src="../../images/icon/icon_arrow_18px.svg" alt="화살표 아이콘" />
+              </span>
+            </button>
+          </div>
+          <div class="file_history_btn_list">
+            <button class="basic_btn_gray change_main_music_btn" type="button">
+              대표 음원 변경
+            </button>
+            <div class="hide_btn_list">
+              <button class="basic_btn_green_border main_music_change_btn" type="button">
+                변경 완료
+              </button>
+              <button class="basic_btn_red" type="button">취소</button>
+            </div>
+          </div>
+          <ul class="version_list_wrap show">
+            <li class="version_list main_music">
+              <div class="version_inner_wrap">
+                <div class="version_info">
+                  <button type="button" class="del_btn_icon">
+                    <img src="../../images/icon/icon_close_thin.svg" alt="" />
+                  </button>
+                  <button type="button" class="select_main_btn im_main">대표</button>
+                  <p class="version_num">Version 6</p>
+                  <p class="version_name">
+                    <span class="music_name">MUSIC NAME MUSIC NAME MUSIC NAME</span>
+                    -
+                    <span class="music_composer">User name</span>
+                  </p>
+                </div>
+                <div class="version_util">
+                  <div class="open_option">
+                    <button type="button">
+                      <!-- <img src="../../images/icon/icon_play_circle_white.svg" alt="재생"> -->
+                      <img src="../../images/icon/icon_pause_circle_whtie.svg" alt="정지" />
+                    </button>
+                    <button class="download_btn" type="button">다운</button>
+                  </div>
+                  <p class="music_time">0000. 00. 00. 00:00</p>
+                </div>
+              </div>
+
+            </li>
+            <li class="version_list">
+              <div class="version_inner_wrap">
+                <div class="version_info">
+                  <button type="button" class="del_btn_icon">
+                    <img src="../../images/icon/icon_close_thin.svg" alt="" />
+                  </button>
+                  <button type="button" class="select_main_btn">지정</button>
+                  <p class="version_num">Version 5</p>
+                  <p class="version_name">
+                    <span class="music_name">MUSIC NAME MUSIC NAME MUSIC NAME</span>
+                    -
+                    <span class="music_composer">User name</span>
+                  </p>
+                </div>
+                <div class="version_util">
+                  <div class="open_option">
+                    <button type="button">
+                      <img src="../../images/icon/icon_play_circle_white.svg" alt="재생" />
+                      <!-- <img src="../../images/icon/icon_pause_circle_whtie.svg" alt="정지"> -->
+                    </button>
+                    <button class="download_btn" type="button">다운</button>
+                  </div>
+                  <p class="music_time">0000. 00. 00. 00:00</p>
+                </div>
+              </div>
+            </li>
+            <li class="version_list">
+              <div class="version_inner_wrap">
+                <div class="version_info">
+                  <button type="button" class="del_btn_icon">
+                    <img src="../../images/icon/icon_close_thin.svg" alt="" />
+                  </button>
+                  <button type="button" class="select_main_btn">지정</button>
+                  <p class="version_num">Version 4</p>
+                  <p class="version_name">
+                    <span class="music_name">MUSIC NAME MUSIC NAME MUSIC NAME</span>
+                    -
+                    <span class="music_composer">User name</span>
+                  </p>
+                </div>
+                <div class="version_util">
+                  <div class="open_option">
+                    <button type="button">
+                      <img src="../../images/icon/icon_play_circle_white.svg" alt="재생" />
+                      <!-- <img src="../../images/icon/icon_pause_circle_whtie.svg" alt="정지"> -->
+                    </button>
+                    <button class="download_btn" type="button">다운</button>
+                  </div>
+                  <p class="music_time">0000. 00. 00. 00:00</p>
+                </div>
+              </div>
+
+              <!-- 한버전 안에 여러 버전 있을 경우 version_inner_wrap에 sub 클래스를 붙여주세요 -->
+              <div class="version_inner_wrap many">
+                <div class="version_info">
+                  <button type="button" class="del_btn_icon">
+                    <img src="../../images/icon/icon_close_thin.svg" alt="" />
+                  </button>
+                  <button type="button" class="select_main_btn">지정</button>
+                  <p class="version_name">
+                    <span class="music_name">MUSIC NAME MUSIC NAME MUSIC NAME</span>
+                    -
+                    <span class="music_composer">User name</span>
+                  </p>
+                </div>
+                <div class="version_util">
+                  <div class="open_option">
+                    <button type="button">
+                      <img src="../../images/icon/icon_play_circle_white.svg" alt="재생" />
+                      <!-- <img src="../../images/icon/icon_pause_circle_whtie.svg" alt="정지"> -->
+                    </button>
+                    <button class="download_btn" type="button">다운</button>
+                  </div>
+                  <p class="music_time">0000. 00. 00. 00:00</p>
+                </div>
+              </div>
+              <div class="version_inner_wrap many">
+                <div class="version_info">
+                  <button type="button" class="del_btn_icon">
+                    <img src="../../images/icon/icon_close_thin.svg" alt="" />
+                  </button>
+                  <button type="button" class="select_main_btn">지정</button>
+                  <p class="version_name">
+                    <span class="music_name">MUSIC NAME MUSIC NAME MUSIC NAME</span>
+                    -
+                    <span class="music_composer">User name</span>
+                  </p>
+                </div>
+                <div class="version_util">
+                  <div class="open_option">
+                    <button type="button">
+                      <img src="../../images/icon/icon_play_circle_white.svg" alt="재생" />
+                      <!-- <img src="../../images/icon/icon_pause_circle_whtie.svg" alt="정지"> -->
+                    </button>
+                    <button class="download_btn" type="button">다운</button>
+                  </div>
+                  <p class="music_time"></p>
+                </div>
+              </div>
+              <div class="version_inner_wrap many">
+                <div class="version_info">
+                  <button type="button" class="del_btn_icon">
+                    <img src="../../images/icon/icon_close_thin.svg" alt="" />
+                  </button>
+                  <button type="button" class="select_main_btn">지정</button>
+                  <p class="version_name">
+                    <span class="music_name">MUSIC NAME MUSIC NAME MUSIC NAME</span>
+                    -
+                    <span class="music_composer">User name</span>
+                  </p>
+                </div>
+                <div class="version_util">
+                  <div class="open_option">
+                    <button type="button">
+                      <img src="../../images/icon/icon_play_circle_white.svg" alt="재생" />
+                      <!-- <img src="../../images/icon/icon_pause_circle_whtie.svg" alt="정지"> -->
+                    </button>
+                    <button class="download_btn" type="button">다운</button>
+                  </div>
+                  <p class="music_time"></p>
+                </div>
+              </div>
+            </li>
+            <li class="version_list">
+              <div class="version_inner_wrap">
+                <div class="version_info">
+                  <button type="button" class="del_btn_icon">
+                    <img src="../../images/icon/icon_close_thin.svg" alt="" />
+                  </button>
+                  <button type="button" class="select_main_btn">지정</button>
+                  <p class="version_num">Version 3</p>
+                  <p class="version_name">
+                    <span class="music_name">MUSIC NAME MUSIC NAME MUSIC NAME</span>
+                    -
+                    <span class="music_composer">User name</span>
+                  </p>
+                </div>
+                <div class="version_util">
+                  <div class="open_option">
+                    <button type="button">
+                      <img src="../../images/icon/icon_play_circle_white.svg" alt="재생" />
+                      <!-- <img src="../../images/icon/icon_pause_circle_whtie.svg" alt="정지"> -->
+                    </button>
+                    <button class="download_btn" type="button">다운</button>
+                  </div>
+                  <p class="music_time">0000. 00. 00. 00:00</p>
+                </div>
+              </div>
+            </li>
+            <li class="version_list">
+              <div class="version_inner_wrap">
+                <div class="version_info">
+                  <button type="button" class="del_btn_icon">
+                    <img src="../../images/icon/icon_close_thin.svg" alt="" />
+                  </button>
+                  <button type="button" class="select_main_btn">지정</button>
+                  <p class="version_num">Version 2</p>
+                  <p class="version_name">
+                    <span class="music_name">MUSIC NAME MUSIC NAME MUSIC NAME</span>
+                    -
+                    <span class="music_composer">User name</span>
+                  </p>
+                </div>
+                <div class="version_util">
+                  <div class="open_option">
+                    <button type="button">
+                      <img src="../../images/icon/icon_play_circle_white.svg" alt="재생" />
+                      <!-- <img src="../../images/icon/icon_pause_circle_whtie.svg" alt="정지"> -->
+                    </button>
+                    <button class="download_btn" type="button">다운</button>
+                  </div>
+                  <p class="music_time">0000. 00. 00. 00:00</p>
+                </div>
+              </div>
+            </li>
+            <li class="version_list">
+              <div class="version_inner_wrap">
+                <div class="version_info">
+                  <button type="button" class="del_btn_icon">
+                    <img src="../../images/icon/icon_close_thin.svg" alt="" />
+                  </button>
+                  <button type="button" class="select_main_btn">지정</button>
+                  <p class="version_num">Version 1</p>
+                  <p class="version_name">
+                    <span class="music_name">MUSIC NAME MUSIC NAME MUSIC NAME</span>
+                    -
+                    <span class="music_composer">User name</span>
+                  </p>
+                </div>
+                <div class="version_util">
+                  <div class="open_option">
+                    <button type="button">
+                      <img src="../../images/icon/icon_play_circle_white.svg" alt="재생" />
+                      <!-- <img src="../../images/icon/icon_pause_circle_whtie.svg" alt="정지"> -->
+                    </button>
+                    <button class="download_btn" type="button">다운</button>
+                  </div>
+                  <p class="music_time">0000. 00. 00. 00:00</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+
+        <!-- 댓글 -->
+        <section class="comment_section">
+          <ul class="member_list">
+            <li>
+              <div class="profile_wrap">
+                <img src="../../images/dummy/profile.png" alt="프로필 이미지" />
+              </div>
+              <p class="nickname">NICK NAME</p>
+            </li>
+            <li>
+              <div class="profile_wrap">
+                <img src="../../images/dummy/profile.png" alt="프로필 이미지" />
+              </div>
+              <p class="nickname">NICK NAME</p>
+            </li>
+          </ul>
+          <div class="right_comment_big_wrap">
+            <article class="comment_input_warp">
+              <div class="select_record_wrap">
+                <div class="select_box_wrap select_box_wrap_green">
+                  <!-- 음원 버전 선택 시 아래 button 에 class -->
+                  <button type="button" class="select_title">음원 버전을 선택해 주세요.</button>
+                  <ul>
+                    <li class="select_list">Music name 1</li>
+                    <li class="select_list">Music name 2</li>
+                    <li class="select_list">Music name 3</li>
+                  </ul>
+                </div>
+                <button class="record_btn record_start" type="button">
+                  <img src="../../images/icon/icon_record.svg" alt="음성 녹음" />
+                </button>
+                <button class="record_btn record_end" type="button">
+                  <img src="../../images/icon/icon_record_pause.svg" alt="음성 녹음" />
+                </button>
+              </div>
+              <textarea name="comment" id="" placeholder="Version 6 음원에 대한 의견을 작성해 주세요."></textarea>
+              <div class="record_big_wrap">
+                <button class="cancel_icon" type="button">
+                  <img src="../../images/icon/icon_close_gray.svg" alt="녹음 취소" />
+                </button>
+                <div class="record_img_wrap">
+                  <img src="../../images/dummy/record_sample.png" alt="음성 메모 이미지" />
+                </div>
+                <div class="record_util_list">
+                  <button class="play" type="button">
+                    <img src="../../images/icon/icon_play.svg" alt="재생" />
+                  </button>
+                  <button class="stop" type="button">
+                    <img src="../../images/icon/icon_pause_light_gray.svg" alt="정지" />
+                  </button>
+                </div>
+              </div>
+              <div class="submit_btn_wrap">
+                <button type="button" class="basic_btn_light_gray submit_btn">
+                  등록하기
+                </button>
+              </div>
+            </article>
+            <article class="comment_list_article">
+              <h2>
+                <span class="msg_icon">
+                  <img src="../../images/icon/icon_chat.svg" alt="말풍선 아이콘" />
+                </span>
+                총 <span class="green">000개</span>의 댓글이 있습니다.
+              </h2>
+              <!-- 댓글 본인일때 is_me 클래스 추가 -->
+              <!-- 댓글종류 별로 분기 처리 부탁드립니다
+                                0. 정보수정 안내 댓글
+                                1. 본인 댓글
+                                2. 다른 유저 댓글
+                            -->
+              <!-- 본인 댓글만 수정, 삭제 가능. 댓글일땐 댓글삭제 팝업, 답글일땐 답글 삭제 팝업 연결 -->
+              <ul class="comment_list_wrap">
+                <!-- 0. 정보 수정 안내 댓글 (수정,삭제 기능없음 / 답글 불가) -->
+                <li class="comment_list">
+                  <section class="main_comment">
+                    <!-- 댓글 - 프로필 -->
+                    <article class="comment_info">
+                      <div class="comment_info_left">
+                        <div class="profile_img_wrap">
+                          <img src="../../images/dummy/profile.png" alt="프로필 사진" />
+                        </div>
+                        <p>NICK NAME</p>
+                      </div>
+                      <div class="comment_info_right">
+                        <p class="comment_time">1분전</p>
+                      </div>
+                    </article>
+
+                    <!-- 댓글 - 정보수정 내용 -->
+                    <article class="real_comment">
+                      <p class="edit_msg">
+                        [원/공동 작곡가 닉네임] 작곡가님이 음원의 기본 정보를
+                        수정했습니다.
+                      </p>
+                      <ul class="edit_info_list">
+                        <li>제목</li>
+                        <li>작업방식 : 개인작업</li>
+                        <li>작업 진행률 : 50%</li>
+                        <li>태그 추가</li>
+                      </ul>
+                    </article>
+
+                    <!-- 댓글 - 댓글 유틸 -->
+                    <article class="comment_util">
+                      <div class="like_button_list">
+                        <button type="button" class="active">
+                          <span class="like_icon">
+                            <img src="../../images/icon/icon_like_gray.svg" alt="좋아요" />
+                          </span>
+                          <span>999+</span>
+                        </button>
+                        <button type="button">
+                          <span class="unlike_icon">
+                            <img src="../../images/icon/icon_unlike_gray.svg" alt="싫어요" />
+                          </span>
+                          <span>999+</span>
+                        </button>
+                      </div>
+                    </article>
+                  </section>
+                </li>
+                <!-- 1. 본인 댓글 -->
+                <li class="comment_list">
+                  <section class="main_comment is_me">
+                    <!-- 댓글 - 프로필 -->
+                    <article class="comment_info">
+                      <div class="comment_info_left">
+                        <div class="profile_img_wrap">
+                          <img src="../../images/dummy/profile.png" alt="프로필 사진" />
+                        </div>
+                        <p>NICK NAME</p>
+                      </div>
+
+                      <div class="comment_info_right">
+                        <p class="comment_time">1분전</p>
+                        <div class="comment_option_box">
+                          <button type="button" class="option_btn">
+                            <img src="../../images/icon/icon_option.svg" alt="댓글 옵션" />
+                          </button>
+                          <ul class="option_list_wrap">
+                            <li class="comment_edit_btn">수정하기</li>
+                            <li class="comment_del_btn">삭제하기</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
+                    <!-- 댓글 - 음악 버전 -->
+                    <article class="comment_version_box">
+                      <div class="comment_version_info">
+                        <p class="comment_version_num">Version 2</p>
+                        <p class="comment_version_name">
+                          MUSIC NAME MUSIC NAME MUSIC NAME - User name
+                        </p>
+                      </div>
+                      <div class="comment_version_util">
+                        <button class="play" type="button">
+                          <img src="../../images/icon/icon_play.svg" alt="재생" />
+                        </button>
+                        <button type="button">
+                          <img src="../../images/icon/icon_pause_green.svg" alt="정지" />
+                        </button>
+                      </div>
+                    </article>
+                    <!-- 댓글 - 리얼댓글 -->
+                    <article class="real_comment">
+                      <p>
+                        모든 국민은 법률이 정하는 바에 의하여 공무담임권을
+                        가진다. 대통령은 취임에 즈음하여 다음의 선서를 한다.
+                        국군의 조직과 편성은 법률로 정한다. 군사재판을
+                        관할하기 위하여 특별법원으로서 군사법원을 둘 수 있다.
+                      </p>
+                    </article>
+
+                    <!-- 댓글 - 댓글 수정 -->
+                    <article class="real_comment_edit">
+                      <textarea name="" id="">
+모든 국민은 법률이 정하는 바에 의하여 공무담임권을 가진다. 대통령은 취임에 즈음하여 다음의 선서를 한다. 국군의 조직과 편성은 법률로 정한다. 군사재판을 관할하기 위하여 특별법원으로서 군사법원을 둘 수 있다.</textarea>
+                      <div class="submit_btn_wrap">
+                        <button type="button" class="basic_btn_light_gray submit_btn">
+                          저장하기
+                        </button>
+                      </div>
+                    </article>
+
+                    <!-- 댓글 - 댓글 유틸 -->
+                    <article class="comment_util">
+                      <div class="like_button_list">
+                        <button type="button">
+                          <span class="like_icon">
+                            <img src="../../images/icon/icon_like_gray.svg" alt="좋아요" />
+                          </span>
+                          <span>999+</span>
+                        </button>
+                        <button type="button" class="active">
+                          <span class="unlike_icon">
+                            <img src="../../images/icon/icon_unlike_gray.svg" alt="싫어요" />
+                          </span>
+                          <span>999+</span>
+                        </button>
+                      </div>
+                      <!-- 답글 작성 누른 후 워딩 '답글 취소' 로 바꿔주세요 -->
+                      <button type="button" class="re_comment_btn">답글 작성</button>
+                      <!-- <button type="button" class="re_comment_btn">답글 취소</button> -->
+                    </article>
+                  </section>
+
+                  <!-- 대댓글 -->
+                  <section class="re_comment is_me">
+                    <!-- 댓글 - 프로필 -->
+                    <article class="comment_info">
+                      <div class="comment_info_left">
+                        <div class="profile_img_wrap">
+                          <img src="../../images/dummy/profile.png" alt="프로필 사진" />
+                        </div>
+                        <p>NICK NAME</p>
+                      </div>
+
+                      <div class="comment_info_right">
+                        <p class="comment_time">1분전</p>
+                        <div class="comment_option_box">
+                          <button type="button" class="option_btn">
+                            <img src="../../images/icon/icon_option.svg" alt="댓글 옵션" />
+                          </button>
+                          <ul class="option_list_wrap">
+                            <li class="comment_edit_btn">수정하기</li>
+                            <li class="recomment_del_btn">삭제하기</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
+                    <!-- 댓글 - 음악 버전 -->
+                    <article class="comment_version_box">
+                      <div class="comment_version_info">
+                        <p class="comment_version_num">Version 2</p>
+                        <p class="comment_version_name">
+                          MUSIC NAME MUSIC NAME MUSIC NAME - User name
+                        </p>
+                      </div>
+                      <div class="comment_version_util">
+                        <button class="play" type="button">
+                          <img src="../../images/icon/icon_play.svg" alt="재생" />
+                        </button>
+                        <button type="button">
+                          <img src="../../images/icon/icon_pause_green.svg" alt="정지" />
+                        </button>
+                      </div>
+                    </article>
+
+                    <!-- 댓글 - 리얼댓글 -->
+                    <article class="real_comment">
+                      <p>
+                        <span class="re_comment_who">@NICK NAME</span>모든
+                        국민은 법률이 정하는 바에 의하여 공무담임권을 가진다.
+                        대통령은 취임에 즈음하여 다음의 선서를 한다. 국군의
+                        조직과 편성은 법률로 정한다. 군사재판을 관할하기
+                        위하여 특별법원으로서 군사법원을 둘 수 있다.
+                      </p>
+                    </article>
+
+                    <!-- 댓글 - 댓글 수정 -->
+                    <article class="real_comment_edit">
+                      <textarea name="" id="">
+모든 국민은 법률이 정하는 바에 의하여 공무담임권을 가진다. 대통령은 취임에 즈음하여 다음의 선서를 한다. 국군의 조직과 편성은 법률로 정한다. 군사재판을 관할하기 위하여 특별법원으로서 군사법원을 둘 수 있다.</textarea>
+                      <div class="submit_btn_wrap">
+                        <button type="button" class="basic_btn_light_gray submit_btn">
+                          저장하기
+                        </button>
+                      </div>
+                    </article>
+
+                    <!-- 댓글 유틸 -->
+                    <article class="comment_util">
+                      <div class="like_button_list">
+                        <button type="button" class="active">
+                          <span class="like_icon">
+                            <img src="../../images/icon/icon_like_gray.svg" alt="좋아요" />
+                          </span>
+                          <span>999+</span>
+                        </button>
+                        <button type="button">
+                          <span class="unlike_icon">
+                            <img src="../../images/icon/icon_unlike_gray.svg" alt="싫어요" />
+                          </span>
+                          <span>999+</span>
+                        </button>
+                      </div>
+                      <button type="button" class="re_comment_btn">답글 작성</button>
+                    </article>
+                  </section>
+
+                  <!-- 대댓글 -->
+                  <section class="re_comment is_me">
+                    <!-- 댓글 - 프로필 -->
+                    <article class="comment_info">
+                      <div class="comment_info_left">
+                        <div class="profile_img_wrap">
+                          <img src="../../images/dummy/profile.png" alt="프로필 사진" />
+                        </div>
+                        <p>NICK NAME</p>
+                      </div>
+
+                      <div class="comment_info_right">
+                        <p class="comment_time">1분전</p>
+                        <div class="comment_option_box">
+                          <button type="button" class="option_btn">
+                            <img src="../../images/icon/icon_option.svg" alt="댓글 옵션" />
+                          </button>
+                          <ul class="option_list_wrap">
+                            <li class="comment_edit_btn">수정하기</li>
+                            <li class="recomment_del_btn">삭제하기</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </article>
+                    <!-- 댓글 - 음악 버전 -->
+                    <article class="comment_version_box">
+                      <div class="comment_version_info">
+                        <p class="comment_version_num">Version 2</p>
+                        <p class="comment_version_name">
+                          MUSIC NAME MUSIC NAME MUSIC NAME - User name
+                        </p>
+                      </div>
+                      <div class="comment_version_util">
+                        <button class="play" type="button">
+                          <img src="../../images/icon/icon_play.svg" alt="재생" />
+                        </button>
+                        <button type="button">
+                          <img src="../../images/icon/icon_pause_green.svg" alt="정지" />
+                        </button>
+                      </div>
+                    </article>
+
+                    <!-- 댓글 - 리얼댓글 -->
+                    <article class="real_comment">
+                      <p>
+                        <span class="re_comment_who">@NICK NAME</span>모든
+                        국민은 법률이 정하는 바에 의하여 공무담임권을 가진다.
+                        대통령은 취임에 즈음하여 다음의 선서를 한다. 국군의
+                        조직과 편성은 법률로 정한다. 군사재판을 관할하기
+                        위하여 특별법원으로서 군사법원을 둘 수 있다.
+                      </p>
+                    </article>
+
+                    <!-- 댓글 - 댓글 수정 -->
+                    <article class="real_comment_edit">
+                      <textarea name="" id="">
+모든 국민은 법률이 정하는 바에 의하여 공무담임권을 가진다. 대통령은 취임에 즈음하여 다음의 선서를 한다. 국군의 조직과 편성은 법률로 정한다. 군사재판을 관할하기 위하여 특별법원으로서 군사법원을 둘 수 있다.</textarea>
+                      <div class="submit_btn_wrap">
+                        <button type="button" class="basic_btn_light_gray submit_btn">
+                          저장하기
+                        </button>
+                      </div>
+                    </article>
+
+                    <!-- 댓글 유틸 -->
+                    <article class="comment_util">
+                      <div class="like_button_list">
+                        <button type="button">
+                          <span class="like_icon">
+                            <img src="../../images/icon/icon_like_gray.svg" alt="좋아요" />
+                          </span>
+                          <span>999+</span>
+                        </button>
+                        <button type="button">
+                          <span class="unlike_icon">
+                            <img src="../../images/icon/icon_unlike_gray.svg" alt="싫어요" />
+                          </span>
+                          <span>999+</span>
+                        </button>
+                      </div>
+                      <button type="button" class="re_comment_btn">답글 작성</button>
+                    </article>
+                  </section>
+
+                  <!-- 대댓글 생성 -->
+                  <section class="new_re_comment">
+                    <textarea name="" id="" placeholder="답글을 남겨주세요."></textarea>
+                    <div class="new_re_comment_util_list">
+                      <div class="record_big_wrap">
+                        <button class="cancel_icon" type="button">
+                          <img src="../../images/icon/icon_close_gray.svg" alt="녹음 취소" />
+                        </button>
+                        <div class="record_img_wrap">
+                          <img src="../../images/dummy/record_sample.png" alt="음성 메모 이미지" />
+                        </div>
+                        <div class="record_util_list">
+                          <button class="play" type="button">
+                            <img src="../../images/icon/icon_play.svg" alt="재생" />
+                          </button>
+                          <button class="stop" type="button">
+                            <img src="../../images/icon/icon_pause_light_gray.svg" alt="정지" />
+                          </button>
+                        </div>
+                      </div>
+                      <!-- 녹음버튼 -->
+                      <button type="button" class="record_btn record_start">
+                        <img src="../../images/icon/icon_record.svg" alt="음성 녹음" />
+                      </button>
+                      <button type="button" class="record_btn record_end">
+                        <img src="../../images/icon/icon_record_pause.svg" alt="음성 녹음 완료" />
+                      </button>
+                      <div class="submit_btn_wrap">
+                        <button type="button" class="basic_btn_light_gray submit_btn">
+                          등록하기
+                        </button>
+                      </div>
+                    </div>
+                  </section>
+                </li>
+                <!-- 2. 다른 유저 댓글 -->
+                <li class="comment_list">
+                  <section class="main_comment">
+                    <!-- 댓글 - 프로필 -->
+                    <article class="comment_info">
+                      <div class="comment_info_left">
+                        <div class="profile_img_wrap">
+                          <img src="../../images/dummy/profile.png" alt="프로필 사진" />
+                        </div>
+                        <p>NICK NAME</p>
+                      </div>
+
+                      <div class="comment_info_right">
+                        <p class="comment_time">1분전</p>
+                      </div>
+                    </article>
+
+                    <!-- 댓글 - 음악 버전 -->
+                    <article class="comment_version_box">
+                      <div class="comment_version_info">
+                        <p class="comment_version_num">Version 2</p>
+                        <p class="comment_version_name">
+                          MUSIC NAME MUSIC NAME MUSIC NAME - User name
+                        </p>
+                      </div>
+                      <div class="comment_version_util">
+                        <button class="play" type="button">
+                          <img src="../../images/icon/icon_play.svg" alt="재생" />
+                        </button>
+                        <button type="button">
+                          <img src="../../images/icon/icon_pause_green.svg" alt="정지" />
+                        </button>
+                      </div>
+                    </article>
+
+                    <!-- 댓글 - 리얼 댓글 -->
+                    <article class="real_comment">
+                      <p>
+                        모든 국민은 법률이 정하는 바에 의하여 공무담임권을
+                        가진다. 대통령은 취임에 즈음하여 다음의 선서를 한다.
+                        국군의 조직과 편성은 법률로 정한다. 군사재판을
+                        관할하기 위하여 특별법원으로서 군사법원을 둘 수 있다.
+                      </p>
+                    </article>
+
+                    <!-- 댓글 - 음성 댓글 -->
+                    <article class="record_big_wrap">
+                      <!-- <button class="cancel_icon" type="button">
+                          <img
+                            src="../../images/icon/icon_close_gray.svg"
+                            alt="녹음 취소"
+                          />
+                        </button> -->
+                      <div class="record_img_wrap">
+                        <img src="../../images/dummy/record_sample.png" alt="음성 메모 이미지" />
+                      </div>
+                      <div class="record_util_list">
+                        <button class="play" type="button">
+                          <img src="../../images/icon/icon_play.svg" alt="재생" />
+                        </button>
+                        <button class="stop" type="button">
+                          <img src="../../images/icon/icon_pause_light_gray.svg" alt="정지" />
+                        </button>
+                      </div>
+                    </article>
+
+                    <!-- 댓글 유틸 -->
+                    <article class="comment_util">
+                      <div class="like_button_list">
+                        <button type="button">
+                          <span class="like_icon">
+                            <img src="../../images/icon/icon_like_gray.svg" alt="좋아요" />
+                          </span>
+                          <span>999+</span>
+                        </button>
+                        <button type="button">
+                          <span class="unlike_icon">
+                            <img src="../../images/icon/icon_unlike_gray.svg" alt="싫어요" />
+                          </span>
+                          <span>999+</span>
+                        </button>
+                      </div>
+                      <button type="button" class="re_comment_btn">답글 작성</button>
+                    </article>
+                  </section>
+
+                  <!-- 대댓글 -->
+                  <section class="re_comment">
+                    <!-- 프로필 -->
+                    <article class="comment_info">
+                      <div class="comment_info_left">
+                        <div class="profile_img_wrap">
+                          <img src="../../images/dummy/profile.png" alt="프로필 사진" />
+                        </div>
+                        <p>NICK NAME</p>
+                      </div>
+
+                      <div class="comment_info_right">
+                        <p class="comment_time">1분전</p>
+                      </div>
+                    </article>
+                    <!-- 댓글 - 음악 버전 -->
+                    <article class="comment_version_box">
+                      <div class="comment_version_info">
+                        <p class="comment_version_num">Version 2</p>
+                        <p class="comment_version_name">
+                          MUSIC NAME MUSIC NAME MUSIC NAME - User name
+                        </p>
+                      </div>
+                      <div class="comment_version_util">
+                        <button class="play" type="button">
+                          <img src="../../images/icon/icon_play.svg" alt="재생" />
+                        </button>
+                        <button type="button">
+                          <img src="../../images/icon/icon_pause_green.svg" alt="정지" />
+                        </button>
+                      </div>
+                    </article>
+                    <!-- 리얼댓글 -->
+                    <article class="real_comment">
+                      <p>
+                        <span class="re_comment_who">@NICK NAME</span>모든
+                        국민은 법률이 정하는 바에 의하여 공무담임권을 가진다.
+                        대통령은 취임에 즈음하여 다음의 선서를 한다. 국군의
+                        조직과 편성은 법률로 정한다. 군사재판을 관할하기
+                        위하여 특별법원으로서 군사법원을 둘 수 있다.
+                      </p>
+                    </article>
+
+                    <article class="comment_util">
+                      <div class="like_button_list">
+                        <button type="button" class="active">
+                          <span class="like_icon">
+                            <img src="../../images/icon/icon_like_gray.svg" alt="좋아요" />
+                          </span>
+                          <span>999+</span>
+                        </button>
+                        <button type="button">
+                          <span class="unlike_icon">
+                            <img src="../../images/icon/icon_unlike_gray.svg" alt="싫어요" />
+                          </span>
+                          <span>999+</span>
+                        </button>
+                      </div>
+                      <button type="button" class="re_comment_btn">답글 작성</button>
+                    </article>
+                  </section>
+
+                  <!-- 대댓글 생성 -->
+                  <section class="new_re_comment">
+                    <textarea name="" id="" placeholder="답글을 남겨주세요."></textarea>
+                    <div class="new_re_comment_util_list">
+                      <div class="record_big_wrap">
+                        <button class="cancel_icon" type="button">
+                          <img src="../../images/icon/icon_close_gray.svg" alt="녹음 취소" />
+                        </button>
+                        <div class="record_img_wrap">
+                          <img src="../../images/dummy/record_sample.png" alt="음성 메모 이미지" />
+                        </div>
+                        <div class="record_util_list">
+                          <button class="play" type="button">
+                            <img src="../../images/icon/icon_play.svg" alt="재생" />
+                          </button>
+                          <button class="stop" type="button">
+                            <img src="../../images/icon/icon_pause_light_gray.svg" alt="정지" />
+                          </button>
+                        </div>
+                      </div>
+                      <button type="button" class="record_btn record_start">
+                        <img src="../../images/icon/icon_record.svg" alt="음성 녹음" />
+                      </button>
+                      <button type="button" class="record_btn record_end">
+                        <img src="../../images/icon/icon_record_pause.svg" alt="음성 녹음 완료" />
+                      </button>
+                      <div class="submit_btn_wrap">
+                        <button type="button" class="basic_btn_light_gray submit_btn">
+                          등록하기
+                        </button>
+                      </div>
+                    </div>
+                  </section>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <!-- 푸터 -->
+    <footer>
+      <div class="inner">
+        <div class="left_side">
+          <div class="footer_logo"></div>
+          <button type="button" class="mento_signUp moblie">
+            멘토 뮤지션 회원가입
+          </button>
+          <div class="foot_nav">
+            <div class="main_text">
+              <a href="#" onclick="return false" class="link">
+                About Bybeats
+              </a>
+              <a href="#" onclick="return false" class="link">
+                요금제
+              </a>
+              <a href="#" onclick="return false" class="link">
+                공지사항
+              </a>
+              <a href="#" onclick="return false" class="link">
+                이벤트
+              </a>
+              <a href="#" onclick="return false" class="link">
+                이용약관
+              </a>
+              <a href="#" onclick="return false" class="link">
+                개인정보 취급방침
+              </a>
+            </div>
+            <div class="address">
+              <address>본사 : 서울특별시 도봉구 마들로13길 84, 서울창업허브 창동 2층 8로(창동, 창동 아우르네)</address>
+              <address>지점&스튜디오 : 서울특별시 마포구 와우산로3길 16, 203호~205호(상수동, 석진스토리)</address>
+            </div>
+            <ul class="foot_info">
+              <li>대표이사 김용환</li>
+              <li>사업자등록번호 112-86-01117</li>
+              <li>통신판매신고번호 제2019-서울마포-2779호</li>
+              <li>TEL 070.4323.0000</li>
+              <li>EMAIL support@beatsomeone.com</li>
+            </ul>
+
+            <p class="copyright">
+              Copyright © beatsomeone 2022 .All Right reserved.
+              <span>(주) 비트썸원</span>
+            </p>
+          </div>
+        </div>
+        <div class="right_side">
+          <button type="button" class="mento_signUp pc">
+            멘토 뮤지션 회원가입
+          </button>
+          <ul class="sns_wrap">
+            <li class="icon insta"></li>
+            <li class="icon twitter"></li>
+            <li class="icon facebook"></li>
+            <li class="icon youtube"></li>
+            <li class="icon blog"></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // 파일 히스토리 - 이전 버전 보기 리스트 토글 버튼
+    const ShowPrevBtn = document.querySelector(".history_toggle_btn");
+    const VersionList = document.querySelector(".version_list_wrap");
+    const UploadMusicControlBtnList = document.querySelector(
+      ".file_history_btn_list"
+    );
+    const ChangeMainMusicBtn = UploadMusicControlBtnList.querySelector(
+      ".change_main_music_btn"
+    );
+    const SelectMainBtn = VersionList.querySelectorAll(".select_main_btn");
+
+    function ShowPrevEvent() {
+      ShowPrevBtn.classList.toggle("active");
+
+      if (ShowPrevBtn.classList.contains("active")) {
+        VersionList.classList.add("show");
+        UploadMusicControlBtnList.style.display = "block";
+        UploadMusicControlBtnList.classList.remove("edit_mode");
+      } else {
+        VersionList.classList.remove("show");
+        UploadMusicControlBtnList.style.display = "none";
+      }
+    }
+    ShowPrevBtn.addEventListener("click", ShowPrevEvent);
+
+    // 파일 히스토리 - 대표음원 변경
+    ChangeMainMusicBtn.addEventListener("click", () => {
+      UploadMusicControlBtnList.classList.toggle("edit_mode");
+    });
+
+    // 파일 히스토리 - 대표음원 선택
+    SelectMainBtn.forEach((listBtn, idx) => {
+      listBtn.addEventListener("click", () => {
+        const MainClass = "im_main";
+
+        if (listBtn.classList.contains(MainClass)) {
+          listBtn.classList.remove(MainClass);
+          listBtn.innerText = "지정";
+        } else {
+          listBtn.classList.add(MainClass);
+          listBtn.innerText = "대표";
+
+          $(".modal_bg.represent_music_modal").fadeIn(200);
+          scrollOff();
+        }
+      });
+    });
+
+    // 댓글 textarea length > 0 버튼 효과
+    const Textarea = document.querySelectorAll(".music_details textarea");
+
+    Textarea.forEach((item, idx) => {
+      function ButtonActiveEvent(e) {
+        let SubmitBtn = item.nextElementSibling.querySelector(".submit_btn");
+
+        const GreenClass = "basic_btn_green_border";
+        const GrayClass = "basic_btn_light_gray";
+
+        if (e.target.value.length > 0) {
+          SubmitBtn.classList.remove(GrayClass);
+          SubmitBtn.classList.add(GreenClass);
+        } else {
+          SubmitBtn.classList.remove(GreenClass);
+          SubmitBtn.classList.add(GrayClass);
+        }
+      }
+
+      item.addEventListener("keyup", ButtonActiveEvent);
+    });
+
+    // 댓글 좋아요 싫어요 버튼 토글 이벤트
+    const LikeBtn = document.querySelectorAll(".like_button_list > button");
+    LikeBtn.forEach((item, idx) => {
+      item.addEventListener("click", () => {
+        item.classList.toggle("active");
+      });
+    });
+
+    // 댓글 옵션 토글 이벤트
+    const OptionBtn = document.querySelectorAll(".option_btn");
+    OptionBtn.forEach((item, idx) => {
+      const OptionListBtn = document.querySelector(".option_list_wrap > li");
+      item.addEventListener("click", () => {
+        item.nextElementSibling.classList.toggle("show");
+      });
+
+      OptionListBtn.addEventListener("click", () => {
+        item.nextElementSibling.classList.remove("show");
+      });
+    });
+
+    // 댓글 수정 이벤트
+    const EditBtn = $(".music_details .comment_edit_btn");
+    EditBtn.on("click", function () {
+      console.log($(this).closest("section"));
+      $(this).closest("section").find(".real_comment").hide();
+      $(this).closest("section").find(".real_comment_edit").show();
+    });
+
+    // 답글달기
+    const RecommentBtn = document.querySelectorAll(".re_comment_btn");
+
+    RecommentBtn.forEach((item, idx) => {
+      item.addEventListener("click", () => {
+        const NewComment =
+          item.parentNode.parentNode.parentNode.querySelector(
+            ".new_re_comment"
+          );
+        NewComment.style.display = "block";
+      });
+    });
+
+    // 녹음 버튼
+    const RecordStart = document.querySelectorAll(".record_start");
+    const RecordEnd = document.querySelectorAll(".record_end");
+    RecordStart.forEach((item, idx) => {
+      item.addEventListener("click", () => {
+        const RecordBox = item.parentNode.querySelector(".record_big_wrap");
+        RecordBox.style.display = "block";
+        item.style.display = "none";
+        item.nextElementSibling.style.display = "block";
+      });
+    });
+    RecordEnd.forEach((item, idx) => {
+      item.addEventListener("click", () => {
+        const RecordBox = item.parentNode.querySelector(".record_big_wrap");
+        RecordBox.style.display = "none";
+        item.style.display = "none";
+        item.parentNode.querySelector(".record_start").style.display =
+          "block";
+      });
+    });
+
+    // 모달 리스트
+    // 음원 상세페이지 - 댓글 삭제 모달
+    $(".music_details .comment_del_btn").click(function () {
+      $(".modal_bg.comment_del_modal").fadeIn(200);
+      scrollOff();
+    });
+    // 음원 상세페이지 - 답글 삭제 모달
+    $(".music_details .recomment_del_btn").click(function () {
+      $(".modal_bg.recomment_del_modal").fadeIn(200);
+      scrollOff();
+    });
+
+    // 음원 상세페이지 - 대표 음원 지정 완료 모달
+    $(".modal_bg.represent_music_modal .confirm_btn").click(function () {
+      $(".modal_bg.represent_music_modal").fadeOut(200);
+      $(".modal_bg.represent_music_save_modal").fadeIn(200);
+      scrollOff();
+    });
+
+    // 음원 상세페이지 - 음원 삭제 모달
+    $(".music_details .del_btn_icon").click(function () {
+      $(".modal_bg.music_del_modal").fadeIn(200);
+      scrollOff();
+    });
+
+    // 음원 상세페이지 - 음원 삭제 완료 모달
+    $(".modal_bg.music_del_modal .confirm_btn").click(function () {
+      $(".modal_bg.music_del_modal").fadeOut(200);
+      $(".modal_bg.music_del_ok_modal").fadeIn(200);
+      scrollOff();
+    });
+
+    // 음원 상세페이지 - 변경사항 저장 모달
+    $(".music_details .main_music_change_btn").click(function () {
+      $(".modal_bg.file_change_modal").fadeIn(200);
+      scrollOff();
+    });
+  </script>
+</body>
+
+</html>
